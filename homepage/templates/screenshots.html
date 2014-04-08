@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+  <p>Contents</p>
+
+{#    <h1>{{ screenshots }}</h1>#}
+    <ul>
+    {% for screenshot in screenshots %}
+        <li>{{ screenshot.title }}</li>
+        <img src="{{ screenshot.thumb }}">
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
