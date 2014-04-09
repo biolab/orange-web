@@ -1,34 +1,94 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html>
-  <head>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
     <title>{% block title %}Orange Data Mining{% endblock title %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
-  </head>
-  <body style="padding-top:60px">
-    <div class="container">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
+    <meta name="description" content="Orange Data Mining Toolbox">
+    <meta name="author" content="Bioinformatics Laboratory, University of Ljubljana">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/flexslider/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.min.css' %}">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-spy="scroll">
+    <!-- ******HEADER****** -->
+    <header id="top" class="header navbar-fixed-top">
+        <div class="container">
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <img id="logo-image" class="logo-image" src="{% static 'images/orange-logo.png' %}" alt="Logo">
+                </a>
+            </h1><!--//logo-->
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#features">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#how">Download</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#faq">Documentation</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#story">Community</a></li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li>Foo bar</li>
-          </ul>
-        </div>
-      </div>
+    </header><!--//header-->
+
     {% block content %}
     {% endblock content %}
-    </div>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-  </body>
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container">
+            <small class="copyright pull-left">Copyright &copy; University of Ljubljana</small>
+            <ul class="links list-inline">
+                <li><a href="#">License</a></li>
+                <li><a href="#">Citation</a></li>
+                <li><a href="#">A</a></li>
+                <li><a href="#">Citation</a></li>
+            </ul>
+        </div>
+    </footer><!--//footer-->
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="{% static 'plugins/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/detectmobilebrowser.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery.easing.1.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-inview/jquery.inview.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/FitVids/jquery.fitvids.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-scrollTo/jquery.scrollTo.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-placeholder/jquery.placeholder.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/flexslider/jquery.flexslider-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <!--[if !IE]>-->
+    <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
+    <!--<![endif]-->
+</body>
 </html>
 
