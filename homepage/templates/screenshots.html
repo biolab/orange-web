@@ -2,13 +2,16 @@
 
 {% block content %}
 <div>
-  <p>Contents</p>
+  <h1>Screenshots</h1>
 
 {#    <h1>{{ screenshots }}</h1>#}
     <ul>
     {% for screenshot in screenshots %}
-        <li>{{ screenshot.title }}</li>
-        <img src="{{ screenshot.thumb }}">
+        <li>
+        <span>{{ screenshot.title }}</span><br>
+        <a href="{{ screenshot.img }}"><img title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{{ screenshot.thumb }}"></a>
+        </li>
+
     {% endfor %}
     </ul>
 </div>
