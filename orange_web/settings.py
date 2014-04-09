@@ -28,6 +28,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# EMAIL BACKEND publishes mail send by send_mail() function to standard output. To change behavior for production,
+# you will have to set up the SMTP BACKEND. Please refer to documentation: https://docs.djangoproject.com/en/1.6/topics/email/
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Application definition
 

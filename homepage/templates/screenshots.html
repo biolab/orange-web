@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
 <div>
@@ -7,9 +8,10 @@
 {#    <h1>{{ screenshots }}</h1>#}
     <ul>
     {% for screenshot in screenshots %}
+
         <li>
-        <span>{{ screenshot.title }}</span><br>
-        <a href="{{ screenshot.img }}"><img title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{{ screenshot.thumb }}"></a>
+            <span> {{ screenshot.title }}</span><br>
+            <a href="{% static screenshot.img %}"></a><img title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}" /></a>
         </li>
 
     {% endfor %}

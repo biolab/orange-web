@@ -1,8 +1,8 @@
 import xml.dom.minidom
 
-from django.shortcuts import render
 from django.conf import settings
-# from django.template import RequestContext, loader
+from django.shortcuts import render
+from django.core.mail import send_mail
 
 
 doc = xml.dom.minidom.parse(file(settings.SCREENSHOTS_INDEX))
@@ -15,9 +15,9 @@ def screenshots(request):
 		'id': id,
 		'title': node.getAttribute('title'),
 		'hide': node.getAttribute('hide'),
-		'img': node.getAttribute('img') or ('/static/homepage/screenshots/snp-%s.png' % id),
+		'img': node.getAttribute('img') or ('homepage/screenshots/snp-%s.png' % id),
 		'rank': int(node.getAttribute('rank') or 999),
-		'thumb': node.getAttribute('thumb') or ('/static/homepage/screenshots/tbn-%s.png' % id),
+		'thumb': node.getAttribute('thumb') or ('homepage/screenshots/tbn-%s.png' % id),
 		'features': node.getAttribute('features'),
 		}
 		if not screenshot['hide'] == 'yes':
@@ -25,20 +25,12 @@ def screenshots(request):
 	screenshots.sort(key=lambda x: x['rank'])
 	return render(request, 'screenshots.html', {'screenshots': screenshots})
 
-# class LicensePlugin(CMSPluginBase):
-#     """
-#     Displays a license file.
-#     """
-# def render(self, context, instance, placeholder):
-# return context
 
 f=file(settings.LICENSE_INDEX)
 
 def license(request):
-	# name = _('License file')
-	# render_template = 'main/license.html'
-	in_other = False
 	text = ""
+	in_other = False
 	other = []
 	for l in f:
 		if l.startswith('----'):
@@ -56,6 +48,18 @@ def license(request):
 		'other': other,
 	}
 	return render(request, 'license.html', context)
+
+
+def contribute(request):
+	if request.method == 'POST' and request.POST['signature']=="I AGREE":
+		message="This message was sent to you automatically from orange.biolab.si. " \
+		"User "+request.POST['fullname']+" has agreed to and electronically signed Orange Contributor " \
+		"License Agreement. Below are his/her contact information:\n\nFull Name: "+request.POST['fullname']+"\nE-mail: "+request.POST['email']+\
+		"\nMailing Address: "+request.POST['address']+"\nCountry: "+request.POST['country']+"\nTelephone Number: "+request.POST['number']+\
+		"\n\nThe user has agreed to electronically sign the agreement by typing I AGREE in the appropriate Electronic Signature form field.\n\nGood day,\nBiolab Webmaster"
+		send_mail('Orange Contributor License Agreement Receipt', message, 'from@example.com',
+		['mjenko@t-2.net'], fail_silently=False)
+	return render(request, 'contributing-to-orange.html')
 
 
 def index(request):
