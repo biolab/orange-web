@@ -3,22 +3,24 @@
 {% block content %}
 <div>
   <h1>Contributing to Orange</h1>
-    <ul>
-    {% for screenshot in screenshots %}
+{#    <ul>#}
+{#    {% for screenshot in screenshots %}#}
+{##}
+{#    {% endfor %}#}
+{#    </ul>#}
 
-    {% endfor %}
-    </ul>
-
-    <form action="{% url 'contribute' %}" method="post">
+    <form class="license-form" action="{% url 'contribute' %}" method="post">
         {% csrf_token %}
         {#Razporedi v div#}
-        <label>Full Name:</label> <input type="text" name='fullname'><br>
-        <label>E-mail:</label> <input type="text" name='email'><br>
-        <label>Mailing Address:</label> <input type="text" name='address'><br>
-        <label>Country:</label> <input type="text" name='country'><br>
-        <label>Telephone Number:</label> <input type="text" name='number'><br>
-        <label>Electronic Signature (Type "I AGREE")</label> <input type="text" name='signature'><br>
-        <input type="submit" value="Submit">
+        <div><label>Full Name:</label> <input type="text" name='fullname'></div>
+        <div><label>E-mail:</label> <input type="text" name='email'></div>
+
+        <div><label>Mailing Address:</label> <input type="text" name='address'></div>
+        <div><label>Country:</label> <input type="text" name='country'></div>
+        <div><label>Telephone Number:</label> <input type="text" name='number'></div>
+        <div><label>Electronic Signature<br>(Type "I AGREE")</label> <input type="text" name='signature'></div>
+        <div><input type="submit" value="Submit"></div>
+
 	</form>
 </div>
 {% endblock content %}

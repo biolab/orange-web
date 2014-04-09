@@ -1,0 +1,33 @@
+.license-form label {
+    width: 180px;
+    vertical-align: middle;
+    text-align: right;
+    margin: 0 10px 0 0;
+}
+
+.license-form input[type="submit"] {
+    margin: 0 0 0 190px;
+}
+
+.license-form div {
+    padding: .5em 0;
+    border-style: solid;
+    border-color: #DDD;
+    border-width: 1px 0;
+    margin: 0 0 -1px;
+}
+
+.license-form input[type="text"] {
+    vertical-align: middle;
+    padding: 5px;
+    border: 1px solid #ddd;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.2);
+}
+
+.license-form {
+    float: left;
+}
+
+.footer {
+    clear: both;
+}

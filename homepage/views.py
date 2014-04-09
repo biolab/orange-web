@@ -52,11 +52,16 @@ def license(request):
 
 def contribute(request):
 	if request.method == 'POST' and request.POST['signature']=="I AGREE":
-		message="This message was sent to you automatically from orange.biolab.si. " \
-		"User "+request.POST['fullname']+" has agreed to and electronically signed Orange Contributor " \
-		"License Agreement. Below are his/her contact information:\n\nFull Name: "+request.POST['fullname']+"\nE-mail: "+request.POST['email']+\
-		"\nMailing Address: "+request.POST['address']+"\nCountry: "+request.POST['country']+"\nTelephone Number: "+request.POST['number']+\
-		"\n\nThe user has agreed to electronically sign the agreement by typing I AGREE in the appropriate Electronic Signature form field.\n\nGood day,\nBiolab Webmaster"
+		message="This message was sent to you automatically from orange.biolab.si.\n\n" +\
+		request.POST['fullname']+" has agreed to and electronically signed Orange Contributor " \
+		"License Agreement. Below are his/her contact information:" \
+		"\n\nFull Name: "+request.POST['fullname']+\
+		"\nE-mail: "+request.POST['email']+\
+		"\nMailing Address: "+request.POST['address']+\
+		"\nCountry: "+request.POST['country']+\
+		"\nTelephone Number: "+request.POST['number']+\
+		"\n\nThe user has agreed to electronically sign the agreement by typing I AGREE in the appropriate " \
+		"Electronic Signature form field.\n\nGood day,\nBiolab Webmaster"
 		send_mail('Orange Contributor License Agreement Receipt', message, 'from@example.com',
 		['mjenko@t-2.net'], fail_silently=False)
 	return render(request, 'contributing-to-orange.html')
