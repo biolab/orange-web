@@ -2,19 +2,27 @@
 {% load staticfiles %}
 
 {% block content %}
-<div>
-  <h1>Screenshots</h1>
+    <section id="screenshots" class="screenshots section">
+        <div class="row">
+            <h2 class="title text-center sr-only">Features</h2>
+            <div class="container">
+            {% for screenshot in screenshots %}
 
-{#    <h1>{{ screenshots }}</h1>#}
-    <ul>
-    {% for screenshot in screenshots %}
+                {% if forloop.counter|divisibleby:"4" %}
+                    </div>
+                    </div>
+                    <div class="row">
+                    <h2 class="title text-center sr-only">Features</h2>
+                {% endif %}
 
-        <li>
-            <span> {{ screenshot.title }}</span><br>
-            <a href="{% static screenshot.img %}"></a><img title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}" /></a>
-        </li>
-
-    {% endfor %}
-    </ul>
-</div>
+                {# TODO: Fix Bootstrap classes #}
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-left screenshot-container">
+                    <a href="{% static screenshot.img %}"><img class="screenshot" title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}"></a>
+                    <h3 class="title">{{ screenshot.title }}</h3>
+                    <!--//content from template-->
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock content %}

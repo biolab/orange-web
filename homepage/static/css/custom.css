@@ -31,3 +31,27 @@
 .footer {
     clear: both;
 }
+
+.screenshots .section {
+    padding: 80px 0;
+    display: table;
+}
+
+.screenshot-container .title {
+    color: #f8a842;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.screenshot {
+
+  /*-moz-background-clip: padding;*/
+  /*-webkit-background-clip: padding-box;*/
+  /*background-clip: padding-box;*/
+  /*display: table;*/
+
+  /*margin: 0 10px;*/
+  -webkit-transition: -webkit-transform ease-out 0.2s, background 0.3s;
+  -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
+  transition: transform ease-out 0.2s, background 0.3s;
+}
