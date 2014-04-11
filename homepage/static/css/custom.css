@@ -26,8 +26,13 @@
 
 .license-form .address {
     margin-top: 5px;
+    margin-bottom: 140px;
     clear: left;
     vertical-align: top;
+}
+
+.license-form textarea {
+    resize: none;
 }
 
 .footer {
@@ -35,7 +40,7 @@
 }
 
 .license-forms {
-    width:57%;
+    width:69%;
 }
 
 .print-label {

@@ -56,8 +56,8 @@ def contribute(request):
 		"License Agreement. Below are his/her contact information:" \
 		"\n\nFull Name: "+request.POST['fullname']+\
 		"\nE-mail: "+request.POST['email']+\
-		"\nMailing Address: "+request.POST['address']+\
-		"\nCountry: "+request.POST['country']+\
+		"\nMailing Address: \n\n"+request.POST['address']+\
+		"\n\nCountry: "+request.POST['country']+\
 		"\nTelephone Number: "+request.POST['number']+\
 		"\n\nThe user has agreed to electronically sign the agreement by typing I AGREE in the appropriate " \
 		"Electronic Signature form field.\n\nGood day,\nBiolab Webmaster"
