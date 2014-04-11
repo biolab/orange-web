@@ -4,8 +4,6 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 
-import re
-
 doc = xml.dom.minidom.parse(file(settings.SCREENSHOTS_INDEX))
 
 def screenshots(request):
@@ -26,6 +24,7 @@ def screenshots(request):
 	screenshots.sort(key=lambda x: x['rank'])
 	return render(request, 'screenshots.html', {'screenshots': screenshots})
 
+# TODO: Decide what to do with LICENCES
 f=file(settings.LICENSE_INDEX)
 def license(request):
 	text = ""
