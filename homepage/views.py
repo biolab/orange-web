@@ -4,20 +4,21 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 
+import re
 
 doc = xml.dom.minidom.parse(file(settings.SCREENSHOTS_INDEX))
 
 def screenshots(request):
 	screenshots = []
 	for node in doc.getElementsByTagName('screenshot'):
-		id = node.getAttribute('id')
+		iid = node.getAttribute('id')
 		screenshot = {
-		'id': id,
+		'id': iid,
 		'title': node.getAttribute('title'),
 		'hide': node.getAttribute('hide'),
-		'img': node.getAttribute('img') or ('homepage/screenshots/snp-%s.png' % id),
+		'img': node.getAttribute('img') or ('homepage/screenshots/snp-%s.png' % iid),
 		'rank': int(node.getAttribute('rank') or 999),
-		'thumb': node.getAttribute('thumb') or ('homepage/screenshots/tbn-%s.png' % id),
+		'thumb': node.getAttribute('thumb') or ('homepage/screenshots/tbn-%s.png' % iid),
 		'features': node.getAttribute('features'),
 		}
 		if not screenshot['hide'] == 'yes':
@@ -25,9 +26,7 @@ def screenshots(request):
 	screenshots.sort(key=lambda x: x['rank'])
 	return render(request, 'screenshots.html', {'screenshots': screenshots})
 
-
 f=file(settings.LICENSE_INDEX)
-
 def license(request):
 	text = ""
 	in_other = False

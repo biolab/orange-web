@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-  <h1>License</h1>
-    {{ text|striptags|urlize|linebreaks }}
-
-    {% for o in other %}
-        <pre>
-            {{ o }}
-        </pre>
-    {% endfor %}
-    <p>If you would like to use Orange under different license or conditions, please <a href="/contact/">contact us</a>.</p>
-    <p>If you want to cite Orange or give it an attribution, you can find more information <a href="/citation/">here</a>.</p>
-</div>
+<section id="features" class="features section">
+    <div class="container">
+        <h3 class="title">License</h3>
+        {{ text|striptags|urlize|linebreaks }}
+        {% for o in other %}
+            <pre>
+                {{ o }}
+            </pre>
+        {% endfor %}
+        <p>If you would like to use Orange under different license or conditions, please <a href="/contact/">contact us</a>.</p>
+        <p>If you want to cite Orange or give it an attribution, you can find more information <a href="/citation/">here</a>.</p>
+    </div>
+</section>
 {% endblock content %}

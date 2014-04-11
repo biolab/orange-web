@@ -2,26 +2,23 @@
 {% load staticfiles %}
 
 {% block content %}
-    <section id="screenshots" class="screenshots section">
-        <div class="row">
+    <section id="features" class="features section">
+
+        <div class="container">
             <h2 class="title text-center sr-only">Features</h2>
-            <div class="container">
-            {% for screenshot in screenshots %}
-
-                {% if forloop.counter|divisibleby:"4" %}
+            <div class="row">
+                {% for screenshot in screenshots %}
+                    {# TODO: Fix Bootstrap classes #}
+                    <div class="item col-md-3 col-sm-6 col-xs-12 text-left screenshot-container">
+                        <a href="{% static screenshot.img %}"><img class="screenshot" title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}"></a>
+                        <h3 class="title">{{ screenshot.title }}</h3>
+                        <!--//content from template-->
                     </div>
-                    </div>
-                    <div class="row">
-                    <h2 class="title text-center sr-only">Features</h2>
-                {% endif %}
-
-                {# TODO: Fix Bootstrap classes #}
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-left screenshot-container">
-                    <a href="{% static screenshot.img %}"><img class="screenshot" title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}"></a>
-                    <h3 class="title">{{ screenshot.title }}</h3>
-                    <!--//content from template-->
-                </div>
-            {% endfor %}
+                    {% if forloop.counter|divisibleby:"4" %}
+                        </div>
+                        <div class="row">
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>
