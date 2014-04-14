@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'homepage', 'static', 'homepage', 'screenshots')
+SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'homepage',
+                               'static', 'homepage', 'screenshots')
 SCREENSHOTS_INDEX = os.path.join(SCREENSHOTS_DIR, 'screenshots.xml')
 LICENSE_FILE = os.path.join(BASE_DIR, 'LICENSES')
 
@@ -28,8 +29,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si']
 
-# EMAIL BACKEND publishes mail send by send_mail() function to standard output. To change behavior for production,
-# you will have to set up the SMTP BACKEND. Please refer to documentation:
+# EMAIL BACKEND publishes mail send by send_mail() function to standard output.
+# To change behavior for production, you will have to set up the SMTP BACKEND.
+# Please refer to documentation:
 # https://docs.djangoproject.com/en/1.6/topics/email/
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

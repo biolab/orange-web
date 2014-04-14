@@ -12,7 +12,7 @@ install:
  - pip install https://github.com/lamby/django-lint/archive/master.zip pylint --use-mirrors
  - pip install -r requirements.txt --use-mirrors
 before_script:
- - pep8 orange-web
- - pylint orange-web || true
+ - pep8 orange_web
+ - pylint orange_web || true
 script:
  - python -W error manage.py test
