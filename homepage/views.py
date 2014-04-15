@@ -4,6 +4,8 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 
+import feedparser
+
 f = open(settings.SCREENSHOTS_INDEX)
 doc = xml.dom.minidom.parse(f)
 f.close()
@@ -71,5 +73,16 @@ def contribute(request):
     return render(request, 'contributing-to-orange.html')
 
 
+entries = []
+feed = feedparser.parse('http://orange.biolab.si/blog/rss/')
+for i in range(5):
+    # Parses first 5 entries from remote blog feed.
+    entry = {
+        'title': feed['entries'][i]['title'],
+        'link': feed['entries'][i]['link']
+    }
+    entries.append(entry)
+
+
 def index(request):
-    return render(request, 'homepage.html')
+    return render(request, 'homepage.html', {'blog': entries})

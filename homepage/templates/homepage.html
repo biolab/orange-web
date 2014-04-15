@@ -46,4 +46,17 @@
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//features-->
+    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header has-pattern">
+        <div class="container">
+{#            |removetags:"div p span a"|#}
+            {% for entry in blog %}
+                <div class="row">
+                    <ul>
+                        <li><a href="{{ entry.link }}">{{ entry.title }}</a></li>
+                    </ul>
+                </div>
+            {%  endfor %}
+        </div><!--//container-->
+    </section><!--//promo-->
 {% endblock content %}

@@ -10,6 +10,19 @@
             <div class="row">
                 {% for screenshot in screenshots %}
                     <div class="item col-md-3 col-sm-6 col-xs-12 text-left screenshot-container">
+{#                        <a data-toggle="lightbox" href="#demoLightbox">#}
+{#                            <img class="screenshot" title="{{ screenshot.title }}" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">#}
+{#                        </a>#}
+{#                        <div id="demoLightbox" class="lightbox fade"  tabindex="-1" role="dialog" aria-hidden="true">#}
+{#                            <div class='lightbox-dialog'>#}
+{#                                <div class='lightbox-content'>#}
+{#                                    <img src="{% static screenshot.img %}">#}
+{#                                    <div class='lightbox-caption'>#}
+{#                                        {{ screenshot.title }}#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
                         <a href="{% static screenshot.img %}"><img class="screenshot" title="{{ screenshot.title }}"
                                                                    alt="{{ screenshot.title }}"
                                                                    src="{% static screenshot.thumb %}"></a>
