@@ -1,0 +1,18 @@
+language: python
+python: 
+ - 2.6
+ - 2.7
+env: PYTHONPATH=.;DJANGO_SETTINGS_MODULE=orange_web.settings;PYTHONUNBUFFERED=1
+services:
+ - sqlite
+before_install:
+ - sudo rm -rf /dev/shm
+install:
+ - pip install pep8 --use-mirrors
+ - pip install https://github.com/lamby/django-lint/archive/master.zip pylint --use-mirrors
+ - pip install -r requirements.txt --use-mirrors
+before_script:
+ - pep8 orange_web
+ - pylint orange_web || true
+script:
+ - python -W error manage.py test
