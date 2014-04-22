@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="faq" class="faq section">
+    <div class="container">
+        <div class="row">
+            <h1 class="title">Download</h1>
+            <p>This page contains nightly builds of Orange 2.7 from the code repository. These are typically stable and we recommend using them.</p>
+
+            <p>Orange 3.0 is in early stages of development. Those interested can find it on GitHub.</p>
+
+            <h2>Windows</h2>
+
+            <ul>
+                <li>Full package: Snapshot of Orange with Python 2.7 and required libraries<br>
+                    This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.<br>
+                    (Also available: Orange for Python 2.6, Orange for Python 2.5)</li>
+                <li>Pure Orange: Snapshot of Orange for Python 2.7<br>
+                Use this version if you are updating from an earlier snapshot. You can install it over your existing installation.<br>
+                (Also available: Orange for Python 2.6, Orange for Python 2.5)</li>
+            </ul>
+
+            <h2>Mac OS X</h2>
+
+            <ul>
+                <li>Bundle: Orange Snapshot<br>
+            This is an universal bundle with everything packed in and ready for an unadvanced user.</li>
+                <li>easy_install/pip:<br>
+                Orange is available as a PyPi package. To install run:
+                <pre>
+easy_install numpy && easy_install orange</pre></li>
+
+            </ul>
+
+            <h2>Building from source</h2>
+
+            <ul>
+                <li>Nightly packed sources</li>
+                <li>Archive of selected packed sources</li>
+                <li>Orange 2.7 code repository (BitBucket)</li>
+            </ul>
+
+            <h3>setup.py</h3>
+
+            <p>To build and install Orange you can use the setup.py in the root orange directory (requires GCC, Python and numpy development headers). To use it unpack the nightly sources and run:</p>
+
+            <pre>
+python setup.py build
+sudo python setup.py install</pre>
+
+            <p>This will also install orange-canvas script so you can start Orange Canvas from the command line.</p>
+
+            <p>To install orange locally run:</p>
+
+            <pre>
+python setup.py install --user</pre>
+
+            <p>This will install orange in /home/&lt;username&gt;/.local/lib/pythonX.Y/site-packages/orange/.</p>
+
+            <h3>make (for developers)</h3>
+
+            <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008. To compile Orange, you will need an appropriate compiler, Python and NumPy.</p>
+
+            <p>See building from source wiki page for more information.</p>
+
+            <h2>C4.5 files</h2>
+
+            <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are here and instructions here.</p>
+        </div>
+    </div>
+</section>
+{% endblock content %}

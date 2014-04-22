@@ -355,6 +355,8 @@ blockquote {
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
   border: 0;
+  width: 519px;
+  background: transparent;
 }
 .flexslider .flex-control-nav {
   bottom: -35px;
@@ -426,18 +428,19 @@ blockquote {
   display: block;
   width: 200px;
   height: 60px;
-  text-indent: -9999px;
   margin-right: 30px;
+  color: white;
+  margin-bottom: 0;
+  padding-top: 1px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
 }
 .promo .overview .btn-group li a:hover {
   background-color: #9b5a06;
+
 }
-.promo .overview .btn-group li.ios-btn a {
-  background-image: url('../images/buttons/btn-app-store.png');
-}
-.promo .overview .btn-group li.android-btn a {
-  background-image: url('../images/buttons/btn-google-play.png');
-}
+
 .promo .overview .note {
   position: relative;
   color: #cc7608;
@@ -482,7 +485,7 @@ blockquote {
 }
 .promo .iphone .iphone-holder {
   position: relative;
-  width: 320px;
+  width: 620px;
   height: 600px;
   background-repeat: no-repeat;
   background-position: left top;
@@ -495,7 +498,7 @@ blockquote {
 }
 .promo .iphone .iphone-holder-inner {
   position: absolute;
-  width: 222px;
+  width: 522px;
   height: 394px;
   left: 51px;
   top: 103px;
@@ -584,6 +587,11 @@ blockquote {
 .features {
   padding: 80px 0;
 }
+
+.features .title {
+  margin-bottom: 60px;
+}
+
 .features .icon {
   position: relative;
   width: 90px;

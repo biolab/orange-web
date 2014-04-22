@@ -3,10 +3,10 @@
 
 {% block content %}
     <section id="features" class="features section">
-
         <div class="container">
-            <h2 class="title text-center sr-only">Features</h2>
-
+            <div class="row">
+                <h1 class="title">Screenshots</h1>
+            </div>
             <div class="row">
                 {% for screenshot in screenshots %}
                     <div class="item col-md-3 col-sm-6 col-xs-12 text-left screenshot-container">
@@ -22,7 +22,7 @@
                         <div class="row">
                     {% endif %}
                 {% endfor %}
-                </div>
+            </div>
         </div>
     </section>
 {% endblock content %}
