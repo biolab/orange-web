@@ -1,14 +1,13 @@
 ===========================
 Orange Data Mining Homepage
 ===========================
-Î
 
 Install for development
 -----------------------
 
 1. Clone from the repository::
 
-    hg clone https://github.com/biolab/orange-web.git
+    git clone https://github.com/biolab/orange-web.git
 
    You can also use SSH-based URLs or URLs of your forks.
 

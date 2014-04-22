@@ -1,6 +1,102 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
+
+    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header has-pattern">
+        <div class="container">
+            <div class="row">
+                <div class="overview col-md-6 col-sm-12 col-xs-12">
+                    <h2 class="title">Orange - Fruitful and Fun</h2>
+                    <ul class="summary">
+                        <li>Open-source data analysis for novice and experts</li>
+                        <li>Data mining through visual programming</li>
+                        <li>Python scripting</li>
+                        <li>Add-ons: bioinformatics and text mining</li>
+                    </ul>
+                    <div class="download-area">
+                        <ul class="btn-group list-inline">
+                            <li><a href="/download/"><h4>Download Orange 2.7</h4>(Built Apr 22, 2014)</a></li>
+                        </ul>
+                        <div class="note text-center">
+                            <p>Data mining in 3 clicks. Start here!</p>
+                            <span class="right-arrow"></span>
+                        </div><!--//note-->
+                    </div>
+                </div><!--//overview-->
+
+                <!--// iPhone starts -->
+                <div class="phone iphone iphone-black col-md-6 col-sm-12 col-xs-12 ">
+                    <div class="iphone-holder phone-holder">
+                        <div class="iphone-holder-inner">
+                            <div class="slider flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="{% static 'images/monitor-1.png' %}"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'images/monitor-2.png' %}"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'images/monitor-3.png' %}"  alt="" />
+                                    </li>
+                                </ul><!--//slides-->
+                            </div><!--//flexslider-->
+                        </div><!--//iphone-holder-inner-->
+                    </div><!--//iphone-holder-->
+                </div><!--//iphone-->
+                <!--// iPhone ends -->
+
+                <!--// Android starts -->
+                <div class="phone android col-md-4 col-sm-12 col-xs-12" style="display:none">
+                    <div class="android-holder phone-holder">
+                        <div class="android-holder-inner">
+                            <div class="slider flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="assets/images/android/android-slide-1.png"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/android/android-slide-2.png"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/android/android-slide-3.png"  alt="" />
+                                    </li>
+                                </ul><!--//slides-->
+                            </div><!--//flexslider-->
+                        </div><!--//phone-holder-inner-->
+                    </div><!--//iphone-holder-->
+                </div><!--//iphone-->
+                <!--// Android ends -->
+
+                <!--// iPad starts -->
+                <div class="ipad ipad-black col-md-4 col-sm-12 col-xs-12 col-md-pull-1" style="display:none">
+                    <div class="ipad-holder">
+                        <div class="ipad-holder-inner">
+                            <div class="slider flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="assets/images/ipad/ipad-slide-1.png"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/ipad/ipad-slide-2.png"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/ipad/ipad-slide-3.png"  alt="" />
+                                    </li>
+                                </ul><!--//slides-->
+                            </div><!--//flexslider-->
+                        </div><!--//ipad-holder-inner-->
+                    </div><!--//ipad-holder-->
+                </div><!--//ipad-->
+                <!--// iPad ends -->
+
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//promo-->
+
+
     <!-- ******FEATURES****** -->
     <section id="features" class="features section">
         <div class="container">
@@ -46,6 +142,21 @@
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//features-->
+
+
+    <!-- ******HOW****** -->
+    <section id="how" class="how section has-pattern">
+        <div class="container">
+            <div class="row">
+                <div class="content col-md-6 col-sm-6 col-xs-12 text-center">
+                    <h2 class="title">Screenshots</h2>
+                    <p>TODO: 5 screenshots <a href="/screenshots/">with a link</a></p>
+                </div><!--//content-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//how-->
+
+
     <!-- ******PROMO****** -->
     <section id="promo" class="promo section offset-header has-pattern">
         <div class="container">

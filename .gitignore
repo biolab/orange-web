@@ -1,0 +1,29 @@
+# Ignore temporary editor files.
+*.swp
+*~
+
+# Ignore project files
+*.pyproj
+
+# Ignore collected static and media files.
+static/*
+media/*
+
+# Ignore dot files.
+.*
+
+# Ignore backup files.
+*.orig
+*.bak
+
+# Ignore temporary editor files.
+*.swp
+*~
+
+# Ignore binaries.
+*.py[cod]
+*.so
+*.dll
+
+# Ignore DB files
+*.db
