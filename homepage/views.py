@@ -1,4 +1,5 @@
 import xml.dom.minidom
+import random
 
 from django.conf import settings
 from django.shortcuts import render
@@ -10,24 +11,26 @@ f = open(settings.SCREENSHOTS_INDEX)
 doc = xml.dom.minidom.parse(f)
 f.close()
 
+_screenshots = []
+for node in doc.getElementsByTagName('screenshot'):
+    iid = node.getAttribute('id')
+    screenshot = {
+        'id': iid,
+        'title': node.getAttribute('title'),
+        'hide': node.getAttribute('hide'),
+        'img': node.getAttribute('img') or ('homepage/screenshots/snp-%s.png' % iid),
+        'rank': int(node.getAttribute('rank') or 999),
+        'thumb': node.getAttribute('thumb') or ('homepage/screenshots/tbn-%s.png' % iid),
+        'features': node.getAttribute('features'),
+    }
+    if not screenshot['hide'] == 'yes':
+        _screenshots.append(screenshot)
+
 
 def screenshots(request):
-    screenshots = []
-    for node in doc.getElementsByTagName('screenshot'):
-        iid = node.getAttribute('id')
-        screenshot = {
-            'id': iid,
-            'title': node.getAttribute('title'),
-            'hide': node.getAttribute('hide'),
-            'img': node.getAttribute('img') or ('homepage/screenshots/snp-%s.png' % iid),
-            'rank': int(node.getAttribute('rank') or 999),
-            'thumb': node.getAttribute('thumb') or ('homepage/screenshots/tbn-%s.png' % iid),
-            'features': node.getAttribute('features'),
-        }
-        if not screenshot['hide'] == 'yes':
-            screenshots.append(screenshot)
-    screenshots.sort(key=lambda x: x['rank'])
-    return render(request, 'screenshots.html', {'screenshots': screenshots})
+    _screenshots.sort(key=lambda x: x['rank'])
+    return render(request, 'screenshots.html', {'screenshots': _screenshots})
+
 
 fl = open(settings.LICENSE_FILE)
 license_file = fl.readlines()
@@ -85,4 +88,5 @@ for i in range(5):
 
 
 def index(request):
-    return render(request, 'homepage.html', {'blog': entries})
+    return render(request, 'homepage.html', {'blog': entries,
+                                             'random_screenshots': random.sample(_screenshots, 4)})

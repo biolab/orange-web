@@ -147,11 +147,24 @@
     <!-- ******HOW****** -->
     <section id="how" class="how section has-pattern">
         <div class="container">
-            <div class="row">
-                <div class="content col-md-6 col-sm-6 col-xs-12 text-center">
-                    <h2 class="title">Screenshots</h2>
-                    <p>TODO: 5 screenshots <a href="/screenshots/">with a link</a></p>
-                </div><!--//content-->
+            <div class="how row">
+                <!--//TODO: Make title compatible with .content class-->
+                <a href="/screenshots/"><h2 class="title text-left">Screenshots</h2></a>
+                <!--//TODO: Bootstrap jQuery Visage for light-box-like image presentation-->
+                {% for screenshot in random_screenshots %}
+                    <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
+                        <!--//TODO: Make .screenshot-container compatible with .content class-->
+                        <!--//TODO: Fix this behavior on screenshots.html too.-->
+                        <div class="content">
+                            <div class="screenshot">
+                                <a href="{% static screenshot.img %}"><img title="{{ screenshot.title }}"
+                                                                       alt="{{ screenshot.title }}"
+                                                                       src="{% static screenshot.thumb %}"></a>
+                            </div>
+                            <h3 class="title">{{ screenshot.title }}</h3>
+                        </div>
+                    </div>
+                {% endfor %}
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//how-->

@@ -60,6 +60,7 @@
             <h3 class="title">Sign CLA Electronically</h3>
             <p>Alternatively to sending by postal mail, email, or fax, you may also choose to sign the form electronically:</p>
             <br>
+            <!--//TODO: Make use of Bootstrap form classes instead-->
             <form role="form" class="license-form" action="{% url "contribute" %}" method="post" name="license-form">
                 {% csrf_token %}
                 <div><label for="fullName">Full Name:</label> <input type="text" id="fullName" name="fullname" size="25"></div>

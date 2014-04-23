@@ -1,0 +1,142 @@
+#visage-overlay {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 300000;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	background: none;
+	word-spacing: normal;
+	letter-spacing: normal;
+	float: none;
+	clear: none;
+	display: block;
+	background-color: black;
+}
+
+#visage {
+	position: fixed;
+	top: 20%;
+	bottom: 20%;
+	left: 20%;
+	right: 20%;
+	z-index: 300010;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid white;
+	outline: none;
+	text-decoration: none;
+	background: none;
+	word-spacing: normal;
+	letter-spacing: normal;
+	float: none;
+	clear: none;
+	display: block;
+	background-color: white;
+	overflow: visible; /* So that elements around #visage element (moved outside with negative margins) are shown in all browsers */
+}
+
+#visage-container {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	background: transparent url("images/loading.gif") no-repeat scroll center center;
+}
+
+#visage-image {
+	border: none;
+	outline: none;
+	width: 100%;
+	height: 100%;
+}
+
+#visage-nav-prev, #visage-nav-next, #visage-close, #visage-count, #visage-title {
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
+	background: none;
+	float: none;
+	clear: none;
+}
+
+#visage-nav-prev {
+	z-index: 300030;
+	left: 50%;
+	top: 100%;
+	height: 20px;
+	width: 20px;
+	margin-top: -10px;
+	margin-left: -25px;
+	background: transparent url("images/prev.png") no-repeat scroll center left;
+	cursor: pointer;
+}
+
+#visage-nav-next {
+	z-index: 300030;
+	left: 50%;
+	top: 100%;
+	height: 20px;
+	width: 20px;
+	margin-top: -10px;
+	margin-left: 5px;
+	background: transparent url("images/next.png") no-repeat scroll center right;
+	cursor: pointer;
+}
+
+#visage-nav-prev.visage-nav-disabled {
+	background: transparent url("images/prev_disabled.png") no-repeat scroll center left;
+	cursor: default;
+}
+
+#visage-nav-next.visage-nav-disabled {
+	background: transparent url("images/next_disabled.png") no-repeat scroll center right;
+	cursor: default;
+}
+
+#visage-close {
+	z-index: 300005;
+	right: 0%;
+	top: 0%;
+	height: 20px;
+	width: 20px;
+	margin-top: 10px;
+	margin-right: 10px;
+	background: transparent url("images/close.png") no-repeat scroll top right;
+	cursor: pointer;
+}
+
+#visage-count {
+	z-index: 300015;
+	left: 0%;
+	bottom: 100%;
+	padding: 4px 0px;
+	color: #bbbbbb;
+	font-size: 10px;
+	white-space: nowrap;
+}
+
+#visage-title {
+	z-index: 300020;
+	right: 0%;
+	bottom: 100%;
+	padding: 4px 0px;
+	color: white;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+.visage-enabled {
+}
