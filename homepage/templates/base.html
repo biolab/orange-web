@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/flexslider/flexslider.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-visage/res-alt/visage.css' %}" type="text/css" />
 {#    <link rel="stylesheet/less" href="{% static 'plugins/bootstrap-lightbox/css/bootstrap-lightbox.less' %}">#}
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -52,9 +53,11 @@
                     <ul class="nav navbar-nav">
                         <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
                         <li class="nav-item"><a href="/">Home</a></li>
+                        <li class="nav-item"><a href="/screenshots/">Screenshots</a></li>
                         <li class="nav-item"><a href="/download/">Download</a></li>
                         <li class="nav-item"><a href="http://docs.orange.biolab.si">Documentation</a></li>
                         <li class="nav-item"><a href="/community/">Community</a></li>
+                        <li class="nav-item"><a href="/contributing/">Contributing</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
             </nav><!--//main-nav-->
@@ -87,11 +90,13 @@
     <script type="text/javascript" src="{% static 'plugins/jquery-scrollTo/jquery.scrollTo.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-placeholder/jquery.placeholder.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/flexslider/jquery.flexslider-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.init.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/bootstrap-lightbox/bootstrap-lightbox.js' %}"></script>
     <!--[if !IE]>-->
     <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
 
     <!--<![endif]-->
 </body>

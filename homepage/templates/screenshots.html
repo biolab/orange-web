@@ -5,24 +5,21 @@
     <section id="features" class="features section">
         <div class="container">
             <div class="row">
-                <h2 class="title text-left">Screenshots</h2>
-            </div>
-            <div class="row">
+                <h1 class="title">Screenshots</h1>
                 {% for screenshot in screenshots %}
                     <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
-                        <!--//TODO: Bootstrap jQuery Visage for light-box-like image presentation-->
-                        <div class="screenshot">
-                            <a href="{% static screenshot.img %}"><img title="{{ screenshot.title }}"
-                                                                   alt="{{ screenshot.title }}"
-                                                                   src="{% static screenshot.thumb %}"></a>
+                        <div id="visage" class="content">
+                            <div class="screenshot">
+                                <a rel="hovertitle" href="{% static screenshot.img %}"><img
+                                                                       alt="{{ screenshot.title }}"
+                                                                       src="{% static screenshot.thumb %}"></a>
+                            </div>
+                            <div class="screenshot-title"><a href="{% static screenshot.img %}" class="enable-visage" >
+                                    <h3 class="title">{{ screenshot.title }}</h3>
+                                 </a>
+                            </div>
                         </div>
-
-                        <h3 class="title">{{ screenshot.title }}</h3>
                     </div>
-                    {% if forloop.counter|divisibleby:"4" %}
-                        </div>
-                        <div class="row">
-                    {% endif %}
                 {% endfor %}
             </div>
         </div>

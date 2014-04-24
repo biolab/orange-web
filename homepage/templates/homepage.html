@@ -144,24 +144,21 @@
     </section><!--//features-->
 
 
-    <!-- ******HOW****** -->
+    <!-- ******SCREENSHOT SECTION****** -->
     <section id="how" class="how section has-pattern">
         <div class="container">
-            <div class="how row">
-                <!--//TODO: Make title compatible with .content class-->
-                <a href="/screenshots/"><h2 class="title text-left">Screenshots</h2></a>
-                <!--//TODO: Bootstrap jQuery Visage for light-box-like image presentation-->
+            <div class="row">
+                <!--//h2 title is optional-->
+                <h2 class="title text-left">Screenshots</h2>
                 {% for screenshot in random_screenshots %}
                     <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
-                        <!--//TODO: Make .screenshot-container compatible with .content class-->
-                        <!--//TODO: Fix this behavior on screenshots.html too.-->
                         <div class="content">
                             <div class="screenshot">
-                                <a href="{% static screenshot.img %}"><img title="{{ screenshot.title }}"
-                                                                       alt="{{ screenshot.title }}"
-                                                                       src="{% static screenshot.thumb %}"></a>
+                                <a href="/screenshots/" alt="More&#8230;" title="More&#8230;">
+                                    <img rel="hovertitle" data-placement="bottom" data-toggle="tooltip" title="{{ screenshot.title }}"
+                                         alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
+                                </a>
                             </div>
-                            <h3 class="title">{{ screenshot.title }}</h3>
                         </div>
                     </div>
                 {% endfor %}
@@ -170,17 +167,29 @@
     </section><!--//how-->
 
 
-    <!-- ******PROMO****** -->
-    <section id="promo" class="promo section offset-header has-pattern">
+    <!-- ******BLOG SECTION****** -->
+    <section id="faq" class="faq section">
         <div class="container">
-{#            |removetags:"div p span a"|#}
-            {% for entry in blog %}
-                <div class="row">
-                    <ul>
-                        <li><a href="{{ entry.link }}">{{ entry.title }}</a></li>
-                    </ul>
+            <div class="row">
+                <h2 class="title text-left">Learn from Our Bloggers</h2>
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+                    {% for entry in entries_1 %}
+                        <div class="item">
+                            <a href="{{ entry.link }}"><h3 class="question animated fadeInUp delayp2">{{ entry.title }}</h3></a>
+                            <p>{{ entry.text|striptags|truncatewords:30 }}</p>
+                        </div>
+                    {%  endfor %}
                 </div>
-            {%  endfor %}
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+                    {% for entry in entries_2 %}
+                        <div class="item">
+                            <a href="{{ entry.link }}"><h3 class="question animated fadeInUp delayp2">{{ entry.title }}</h3></a>
+                            <p>{{ entry.text|striptags|truncatewords:30 }}</p>
+                        </div>
+                    {%  endfor %}
+                </div>
+            </div>
         </div><!--//container-->
-    </section><!--//promo-->
+    </section><!--//faq-->
+
 {% endblock content %}
