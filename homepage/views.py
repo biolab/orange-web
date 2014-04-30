@@ -5,13 +5,12 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 
-import feedparser
 
 f = open(settings.SCREENSHOTS_INDEX)
 doc = xml.dom.minidom.parse(f)
 f.close()
 
-_screenshots = []
+screenshots = []
 for node in doc.getElementsByTagName('screenshot'):
     iid = node.getAttribute('id')
     screenshot = {
@@ -26,13 +25,13 @@ for node in doc.getElementsByTagName('screenshot'):
         'features': node.getAttribute('features'),
     }
     if not screenshot['hide'] == 'yes':
-        _screenshots.append(screenshot)
+        screenshots.append(screenshot)
 
 
-def screenshots(request):
-    """Sort screenshots by their rank, put them into a list of clusters of 4"""
-    _screenshots.sort(key=lambda x: x['rank'])
-    return render(request, 'screenshots.html', {'screenshots': _screenshots})
+def screens(request):
+    """Sort screenshots by their rank"""
+    screenshots.sort(key=lambda x: x['rank'])
+    return render(request, 'screenshots.html', {'screenshots': screenshots})
 
 
 fl = open(settings.LICENSE_FILE)
@@ -80,32 +79,6 @@ def contribute(request):
     return render(request, 'contributing-to-orange.html')
 
 
-feed = feedparser.parse('http://orange.biolab.si/blog/rss/')
-# Parses first 6 entries from remote blog feed.
-entries_1 = []
-entries_2 = []
-for i in range(6):
-    entry = {
-        'title': feed['entries'][i]['title'],
-        'link': feed['entries'][i]['link'],
-        'text': feed['entries'][i]['summary_detail']['value']
-    }
-    if i % 2 == 0:
-        entries_2.append(entry)
-    else:
-        entries_1.append(entry)
-
-
 def index(request):
     return render(request, 'homepage.html', {
-        'entries_1': entries_1,
-        'entries_2': entries_2,
-        'random_screenshots': random.sample(_screenshots, 4)})
-
-
-def download(request):
-    return render(request, 'download.html')
-
-
-def community(request):
-    return render(request, 'download.html')
+        'random_screenshots': random.sample(screenshots, 4)})

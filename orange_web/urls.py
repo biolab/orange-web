@@ -8,7 +8,7 @@ from homepage import views
 urlpatterns = \
     patterns('',
              url(r'^$', views.index, name='index'),
-             url(r'^screenshots/$', views.screenshots, name='screenshots'),
+             url(r'^screenshots/$', views.screens, name='screenshots'),
              url(r'^license/$', views.license, name='license'),
              url(r'^contributing/$', views.contribute, name='contribute'),
              url(r'^download/$',
