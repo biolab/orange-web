@@ -4,7 +4,8 @@
 {% load tag_extras %}
 
 {% block content %}
-
+{#  TODO: DRY concept everywhere! Example: {% url 'viewfunction' 'possible_arg' %}, i.e. {% url 'download' '' %} #}
+{#  TODO: Latest Orange snapshot file detection. Check orange-homepagex repository on how it's done. #}
     <!-- ******PROMO****** -->
     <section id="promo" class="promo section offset-header has-pattern">
         <div class="container">
@@ -19,7 +20,21 @@
                     </ul>
                     <div class="download-area">
                         <ul class="btn-group list-inline">
-                            <li><a href="/download/"><h4>Download Orange 2.7</h4>(Built Apr 22, 2014)</a></li>
+                            {% if os == "windows" %}
+                                <li><a href="/download/orange-win-w-python-snapshot-hg-2014-05-02-py2.7.exe"><h4>Download Orange 2.7</h4>
+                                    Windows Build - May 5, 2014</a>
+                                </li>
+                            {% elif os == "mac-os-x" %}
+                                <li><a href="/download/Orange-2.7.3-11906.dmg"><h4>Download Orange 2.7</h4>
+                                    Mac OS X Build - Apr 22, 2014</a>
+                                </li>
+                            {% elif os == "linux" %}
+                                <li><a href="/download/orange-source-snapshot-hg-2014-05-02.zip"><h4>
+                                    Download Orange 2.7</h4>Linux Source - May 5, 2014</a>
+                                </li>
+                            {% else %}
+                                <li><a href="{% url 'download' '' %}"><h4>Download Orange 2.7</h4>For Windows, Mac OS X, Linux</a></li>
+                            {% endif %}
                         </ul>
                         <div class="note text-center">
                             <p>Data mining in 3 clicks. Start here!</p>
@@ -147,11 +162,13 @@
 
 
     <!-- ******SCREENSHOT SECTION****** -->
-    <section id="how" class="how section has-pattern">
+    <section id="how" class="how section">
         <div class="container">
             <div class="row">
                 <!--//h2 title is optional-->
-                <h2 class="title text-left">Screenshots</h2>
+                <div class="how-col col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="title text-left">Screenshots</h2>
+                </div>
                 {% for screenshot in random_screenshots %}
                     <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
                         <div class="content">
@@ -173,7 +190,9 @@
     <section id="faq" class="faq section">
         <div class="container">
             <div class="row">
-                <h2 class="title text-left">Learn from Our Bloggers</h2>
+                <div class="how-col col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="title text-left">Learn from Our Bloggers</h2>
+                </div>
                 {% cache 86400 feed %}
                     {% grab_feed %}
                 {% endcache %}

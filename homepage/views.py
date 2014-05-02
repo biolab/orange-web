@@ -1,5 +1,6 @@
 import xml.dom.minidom
 import random
+import re
 
 from django.conf import settings
 from django.shortcuts import render
@@ -75,10 +76,33 @@ def contribute(request):
                   "\"I AGREE\" in the appropriate Electronic Signature form field." \
                   "\n\nGood day,\nBiolab Webmaster"
         send_mail('Orange Contributor License Agreement Receipt', message,
-                  'from@example.com', ['mjenko@t-2.net'], fail_silently=False)
+                  'from@example.com', ['to@example.com'], fail_silently=False)
     return render(request, 'contributing-to-orange.html')
 
 
+def detect_os(user_agent):
+    if re.match(r'.*[Ww]in.*', user_agent):
+        return "windows"
+    elif re.match(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*', user_agent):
+        return "mac-os-x"
+    elif re.match(r'.*[Ll]inux.*', user_agent):
+        return "linux"
+    else:
+        return ""
+
+
 def index(request):
-    return render(request, 'homepage.html', {
-        'random_screenshots': random.sample(screenshots, 4)})
+    response = {
+        'random_screenshots': random.sample(screenshots, 4),
+        'os': detect_os(request.META['HTTP_USER_AGENT'])
+    }
+    return render(request, 'homepage.html', response)
+
+
+def download(request, os):
+    os_response = {'os': None}
+    if os == '':
+        os_response['os'] = detect_os(request.META['HTTP_USER_AGENT'])
+    else:
+        os_response['os'] = os
+    return render(request, 'download.html', os_response)

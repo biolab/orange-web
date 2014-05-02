@@ -8,15 +8,16 @@
 }
 
 .row h2.title {
-    padding: 0 30px;
+    margin-bottom: 30px;
 }
 
 .row .form-group label {
     margin-top: 5px;
 }
 
-.row .form-group label[id="signature"] {
+.row .form-group label[name="signature"] {
     margin-top: 0;
+    line-height: 16px;
 }
 
 div.screenshot-container div.content {
@@ -51,4 +52,17 @@ div.screenshot-container div.content {
 #features div.screenshot-container a h3.title {
     color: #f8a842;
     font-size: 18px;
+}
+
+.custom-reduce-padding {
+    padding-top: 0;
+    padding-bottom: 40px;
+}
+
+.move-down {
+    padding-bottom: 40px;
+}
+
+ul.files li {
+    padding-bottom: 10px;
 }
