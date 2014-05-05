@@ -1,0 +1,32 @@
+{
+    "name": "visage",
+    "version": "0.1.3",
+    "title": "jQuery Visage",
+    "author": {
+        "name": "Mitar",
+        "email": "mitar.jquery@tnode.com",
+        "url": "http://mitar.tnode.com/"
+    },
+    "licenses": [
+        {
+            "type": "BSD",
+            "url": "https://github.com/mitar/jquery-visage/blob/master/LICENSE"
+        },
+        {
+            "type": "CC-BY-SA",
+            "url": "https://github.com/mitar/jquery-visage/blob/master/LICENSE"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.4.2"
+    },
+    "description": "jQuery Visage provides a stable (no partially displayed elements), robust (it closes when you click close), styleable (CSS), customizable (you can reprogram many aspects of its behavior) and clean (being an jQuery plugin) way to display a series of images in a lightbox-like way.",
+    "keywords": [
+        "lightbox",
+        "gallery",
+        "images"
+    ],
+    "homepage": "https://github.com/mitar/jquery-visage",
+    "bugs": "https://github.com/mitar/jquery-visage",
+    "demo": "http://mitar.github.com/jquery-visage/"
+}

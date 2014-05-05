@@ -1,0 +1,139 @@
+#visage-alt-overlay {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 300000;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	background: none;
+	word-spacing: normal;
+	letter-spacing: normal;
+	float: none;
+	clear: none;
+	display: block;
+	background-color: black;
+}
+
+#visage-alt {
+	position: fixed;
+	top: 20%;
+	bottom: 20%;
+	left: 20%;
+	right: 20%;
+	z-index: 300010;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid white;
+	outline: none;
+	text-decoration: none;
+	background: none;
+	word-spacing: normal;
+	letter-spacing: normal;
+	float: none;
+	clear: none;
+	display: block;
+	background-color: white;
+	overflow: visible; /* So that elements around #visage-alt element (moved outside with negative margins) are shown in all browsers */
+}
+
+#visage-alt-container {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	background: transparent url("images/loading.gif") no-repeat scroll center center;
+}
+
+#visage-alt-image {
+	border: none;
+	outline: none;
+	width: 100%;
+	height: 100%;
+}
+
+#visage-alt-nav-prev, #visage-alt-nav-next, #visage-alt-close, #visage-alt-count, #visage-alt-title {
+	position: fixed;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
+	background: none;
+	float: none;
+	clear: none;
+}
+
+#visage-alt-nav-prev {
+	z-index: 300030;
+	left: 0px;
+	top: 50%;
+	height: 100px;
+	width: 50px;
+	margin-top: -50px;
+	background: transparent url("images/prev.png") no-repeat scroll center left;
+	cursor: pointer;
+}
+
+#visage-alt-nav-next {
+	z-index: 300030;
+	right: 0px;
+	top: 50%;
+	height: 100px;
+	width: 50px;
+	margin-top: -50px;
+	background: transparent url("images/next.png") no-repeat scroll center right;
+	cursor: pointer;
+}
+
+#visage-alt-nav-prev.visage-alt-nav-disabled {
+	background: transparent url("images/prev_disabled.png") no-repeat scroll center left;
+	cursor: default;
+}
+
+#visage-alt-nav-next.visage-alt-nav-disabled {
+	background: transparent url("images/next_disabled.png") no-repeat scroll center right;
+	cursor: default;
+}
+#visage-alt-close {
+	z-index: 300040;
+	right: 0px;
+	top: 0px;
+	height: 62px;
+	width: 62px;
+	background: transparent url("images/close.png") no-repeat scroll top right;
+	cursor: pointer;
+}
+
+#visage-alt-count {
+	z-index: 300015;
+	left: 1em;
+	top: 0.3em;
+	padding: 4px 0px;
+	color: #bbbbbb;
+	font-size: 10px;
+	white-space: nowrap;
+}
+
+#visage-alt-title {
+	z-index: 300020;
+	text-align: center;
+	width: 100%;
+	left: 0;
+	top: 0.3em;
+	padding: 4px 0px;
+	color: white;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+.visage-alt-enabled {
+}

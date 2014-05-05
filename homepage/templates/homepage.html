@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load cache %}
+{% load tag_extras %}
 
 {% block content %}
 
@@ -143,15 +145,40 @@
         </div><!--//container-->
     </section><!--//features-->
 
-    <!-- ******HOW****** -->
+
+    <!-- ******SCREENSHOT SECTION****** -->
     <section id="how" class="how section has-pattern">
         <div class="container">
             <div class="row">
-                <div class="content col-md-6 col-sm-6 col-xs-12 text-center">
-                    <h2 class="title">Screenshots</h2>
-                    <p>TODO: 5 screenshots <a href="/screenshots/">with a link</a></p>
-                </div><!--//content-->
+                <!--//h2 title is optional-->
+                <h2 class="title text-left">Screenshots</h2>
+                {% for screenshot in random_screenshots %}
+                    <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
+                        <div class="content">
+                            <div class="screenshot">
+                                <a href="/screenshots/" alt="More&#8230;" title="More&#8230;">
+                                    <img rel="hovertitle" data-placement="bottom" data-toggle="tooltip" title="{{ screenshot.title }}"
+                                         alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//how-->
+
+
+    <!-- ******BLOG SECTION****** -->
+    <section id="faq" class="faq section">
+        <div class="container">
+            <div class="row">
+                <h2 class="title text-left">Learn from Our Bloggers</h2>
+                {% cache 86400 feed %}
+                    {% grab_feed %}
+                {% endcache %}
+            </div>
+        </div><!--//container-->
+    </section><!--//faq-->
+
 {% endblock content %}
