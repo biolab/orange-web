@@ -59,6 +59,11 @@ div.screenshot-container div.content {
     padding-bottom: 40px;
 }
 
+.custom-alert {
+    display: block;
+    margin-top: 30px;
+}
+
 .move-down {
     padding-bottom: 40px;
 }

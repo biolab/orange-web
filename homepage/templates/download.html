@@ -11,21 +11,21 @@
 
                         <p>This page contains nightly builds of Orange 2.7 from the code repository. These are typically stable and we recommend using them.</p>
                         <ul class="files">
-                            <li><p>Full package: <a href="/download/orange-win-w-python-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange with Python 2.7 and required libraries</a><br>
+                            <li><p>Full package: <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange with Python 2.7 and required libraries</a><br>
                                 This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.<br>
-                                (Also available: <a href="/download/orange-win-w-python-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
-                                                 <a href="/download/orange-win-w-python-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
-                            <li><p>Pure Orange: <a href="/download/orange-win-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange for Python 2.7</a><br>
+                                (Also available: <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
+                                                 <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
+                            <li><p>Pure Orange: <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange for Python 2.7</a><br>
                                 Use this version if you are updating from an earlier snapshot. You can install it over your existing installation.<br>
-                                (Also available: <a href="/download/orange-win-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
-                                                 <a href="/download/orange-win-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
+                                (Also available: <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
+                                                 <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
                         </ul>
 
                     {% elif os == "mac-os-x" %}
                         <h2 class="title">Mac OS X</h2>
 
                         <ul class="files">
-                            <li><p>Bundle: <a href="/download/Orange-2.7.3-11906.dmg">Orange Snapshot</a><br>
+                            <li><p>Bundle: <a href="{% url 'download' %}Orange-2.7.3-11906.dmg">Orange Snapshot</a><br>
                                 This is an universal bundle with everything packed in and ready for an unadvanced user.</p></li>
                             <li><p>easy_install/pip:<br>
                                 Orange is available as a PyPi package. To install run:</p>
@@ -47,7 +47,7 @@
                         <p>Orange 3.0 is in early stages of development. Those interested can find it on <a hre="https://github.com/biolab/orange3">GitHub.</a></p>
 
                         <h3>C4.5 files</h3>
-                        <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="/download/buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
+                        <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
                     {% else %}
                         <!--//BLANK-->
                     {% endif %}
@@ -64,47 +64,47 @@
                     <h2 class="title text-left">Supported Platforms</h2>
                 </div>
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="/download/windows/">
+                    <a href="{% url 'download' %}windows/">
                     <div class="icon">
                         <i class="fa fa-windows fa-rotate-90"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="/download/windows/"><h3 class="title">Windows</h3></a>
+                        <a href="{% url 'download' %}windows/"><h3 class="title">Windows</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="/download/mac-os-x/">
+                    <a href="{% url 'download' %}mac-os-x/">
                     <div class="icon">
                         <i class="fa fa-apple"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="/download/mac-os-x/"><h3 class="title">Mac OS X</h3></a>
+                        <a href="{% url 'download' %}mac-os-x/"><h3 class="title">Mac OS X</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="/download/linux/">
+                    <a href="{% url 'download' %}linux/">
                     <div class="icon">
                         <i class="fa fa-linux"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="/download/linux/"><h3 class="title">Linux / Source</h3></a>
+                        <a href="{% url 'download' %}linux/"><h3 class="title">Linux / Source</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="/download/for-developers/">
+                    <a href="{% url 'download' %}for-developers/">
                     <div class="icon">
                         <i class="fa fa-code-fork"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="/download/for-developers/"><h3 class="title">For Developers</h3></a>
+                        <a href="{% url 'download' %}for-developers/"><h3 class="title">For Developers</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
             </div><!--//row-->

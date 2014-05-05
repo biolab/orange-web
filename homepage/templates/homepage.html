@@ -4,8 +4,8 @@
 {% load tag_extras %}
 
 {% block content %}
-{#  TODO: DRY concept everywhere! Example: {% url 'viewfunction' 'possible_arg' %}, i.e. {% url 'download' '' %} #}
-{#  TODO: Latest Orange snapshot file detection. Check orange-homepagex repository on how it's done. #}
+{#  TODO: DRY concept where it still remains! Example: {% url 'download' %}  #}
+{#  TODO: Latest Orange snapshot file detection. Check orange-homepagex for example.  #}
     <!-- ******PROMO****** -->
     <section id="promo" class="promo section offset-header has-pattern">
         <div class="container">
@@ -33,7 +33,7 @@
                                     Download Orange 2.7</h4>Linux Source - May 5, 2014</a>
                                 </li>
                             {% else %}
-                                <li><a href="{% url 'download' '' %}"><h4>Download Orange 2.7</h4>For Windows, Mac OS X, Linux</a></li>
+                                <li><a href="{% url 'download' %}"><h4>Download Orange 2.7</h4>For Windows, Mac OS X, Linux</a></li>
                             {% endif %}
                         </ul>
                         <div class="note text-center">
@@ -173,7 +173,7 @@
                     <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
                         <div class="content">
                             <div class="screenshot">
-                                <a href="/screenshots/" alt="More&#8230;" title="More&#8230;">
+                                <a href="{% url 'screenshots' %}" alt="More&#8230;" title="More&#8230;">
                                     <img rel="hovertitle" data-placement="bottom" data-toggle="tooltip" title="{{ screenshot.title }}"
                                          alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
                                 </a>
@@ -187,17 +187,8 @@
 
 
     <!-- ******BLOG SECTION****** -->
-    <section id="faq" class="faq section">
-        <div class="container">
-            <div class="row">
-                <div class="how-col col-md-12 col-sm-12 col-xs-12">
-                    <h2 class="title text-left">Learn from Our Bloggers</h2>
-                </div>
-                {% cache 86400 feed %}
-                    {% grab_feed %}
-                {% endcache %}
-            </div>
-        </div><!--//container-->
-    </section><!--//faq-->
+    {% cache 86400 feed_all %}
+        {% grab_feed_all %}
+    {% endcache %}
 
 {% endblock content %}

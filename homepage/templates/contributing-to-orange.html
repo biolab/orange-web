@@ -2,12 +2,17 @@
 
 {% block content %}
 <section id="faq" class="faq section">
-    {#  TODO: Submit confirmation, input checking on form #}
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                {% if post %}
-                    <p>Thank you for your contribution!</p>
+                {% if post == 1 %}
+                    <div class="alert alert-success custom-alert text-center fade in">
+                        <strong>Success!</strong> Thank you for your contribution.&nbsp;&nbsp;&nbsp;<button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                {% elif post == -1 %}
+                    <div class="alert alert-danger custom-alert text-center fade in">
+                        <strong>Error!</strong> Please electronically sign and re-submit the form below.&nbsp;&nbsp;&nbsp;<button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
                 {% endif %}
                 <h1>Contributing to Orange</h1>
                 <p>Thank you for contributing code to the Orange project! Like many open source projects, we need a contributor license agreement from you before we can merge in your changes. You only need to fill out this agreement once.</p>
@@ -47,6 +52,7 @@
                     1000 Ljubljana<br>
                     Slovenia<br>
                     </p>
+                    <br><br>
                     <div class="print-label">Full Name:</div>
                     <hr class="col-md-6 col-sm-6 col-xs-10">
                     <div class="print-label">Mailing Address:</div>
@@ -72,37 +78,37 @@
                         <div class="form-group">
                             <label class="col-md-2 col-sm-3 col-xs-10" for="fullname" class="span4">Full Name:</label>
                             <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
-                                <input class="form-control" type="text" id="fullname" name="Full Name">
+                                <input class="form-control" type="text" id="fullname" name="Full Name" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 col-sm-3 col-xs-10" for="email">E-mail:</label>
                             <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
-                                <input class="form-control" type="email" id="email" name="E-mail">
+                                <input class="form-control" type="email" id="email" name="E-mail" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 col-sm-3 col-xs-10" for="address">Mailing Address:</label>
                             <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
-                                <textarea class="form-control" id="address" name='Address' rows="7"></textarea>
+                                <textarea class="form-control" id="address" name='Address' rows="7" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 col-sm-3 col-xs-10" for="country">Country:</label>
                             <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
-                                <input class="form-control" type="text" id="country" name="Country">
+                                <input class="form-control" type="text" id="country" name="Country" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 col-sm-3 col-xs-10" for="number">Telephone Number:</label>
                             <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
-                                <input class="form-control" type="text" id="number" name="Number" size="25">
+                                <input class="form-control" type="text" id="number" name="Number" size="25" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label name="signature" class="col-md-2 col-sm-3 col-xs-10" for="signature">Electronic Signature:<br>(Type "I AGREE")</label>
                             <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
-                                <input class="form-control" type="text" id="signature" name="Signature">
+                                <input class="form-control" type="text" id="signature" name="Signature" required>
                             </div>
                         </div>
                         <div class="form-group">

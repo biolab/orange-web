@@ -60,6 +60,9 @@ ROOT_URLCONF = 'orange_web.urls'
 
 WSGI_APPLICATION = 'orange_web.wsgi.application'
 
+ADMINS = (
+    ('Miha Stajdohar', 'miha.stajdohar@fri.uni-lj.si'),
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

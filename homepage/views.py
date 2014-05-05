@@ -6,6 +6,9 @@ from django.conf import settings
 from django.shortcuts import render
 from django.core.mail import send_mail
 
+# Create a list of admin e-mail addresses.
+admins = [x[1] for x in settings.ADMINS]
+
 
 f = open(settings.SCREENSHOTS_INDEX)
 doc = xml.dom.minidom.parse(f)
@@ -63,8 +66,8 @@ def license(request):
 
 
 def contribute(request):
-    response = {"post": request.method == 'POST' and request.POST['Signature'] == "I AGREE"}
-    if response['post']:
+    response = {"post": None}
+    if request.method == 'POST' and request.POST['Signature'] == "I AGREE":
         message = "This message was sent to you automatically from orange.biolab.si.\n\n" + \
                   request.POST['Full Name'] + " electronically signed Orange Contributor " \
                   "License Agreement. Below are his/her contact information:" \
@@ -77,8 +80,26 @@ def contribute(request):
                   "\"I AGREE\" in the appropriate Electronic Signature form field." \
                   "\n\nGood day,\nBiolab Webmaster"
         send_mail('Orange Contributor License Agreement Receipt', message,
-                  'from@example.com', ['to@example.com'], fail_silently=False)
+                  request.POST['E-mail'], admins, fail_silently=False)
+        response = {"post": 1}
+    elif request.method == 'POST' and request.POST['Signature'] != "I AGREE":
+        response = {"post": -1}
     return render(request, 'contributing-to-orange.html', response)
+
+
+def contact(request):
+    response = {"post": False}
+    if request.method == 'POST':
+        message = "This message was sent to you automatically from orange.biolab.si.\n\n" + \
+                  "A Contact form was submitted. Below are the details:" \
+                  "\n\nE-mail: " + request.POST['E-mail'] + \
+                  "\nSubject: " + request.POST['Subject'] + \
+                  "\nMessage: \n\n" + request.POST['Message'] + \
+                  "\n\nGood day,\nBiolab Webmaster"
+        send_mail('Orange Contact Request', message,
+                  request.POST['E-mail'], admins, fail_silently=False)
+        response = {"post": True}
+    return render(request, 'contact.html', response)
 
 
 def detect_os(user_agent):
@@ -100,9 +121,9 @@ def index(request):
     return render(request, 'homepage.html', response)
 
 
-def download(request, os):
+def download(request, os=None):
     os_response = {'os': None}
-    if os == '':
+    if os is None:
         os_response['os'] = detect_os(request.META['HTTP_USER_AGENT'])
     else:
         os_response['os'] = os

@@ -1,13 +1,31 @@
 {% extends "base.html" %}
+{% load cache %}
+{% load tag_extras %}
 
 {% block content %}
 <section id="faq" class="faq section">
     <div class="container">
         <div class="row">
-            <h1 class="title">Community</h1>
-            <p>Large image 1: Link to Blog</p>
-            <p>Large image 2: Link to Forum</p>
-            <p>Large image 3: Link to Trac</p>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {# TODO: Styling. #}
+                <h1>Community</h1>
+                <h2 class="title">Orange is Open Source</h2>
+
+                <p>Orange is <a href="http://en.wikipedia.org/wiki/Open_source" title="Open_source in wikipedia">open source</a> and <a href="http://en.wikipedia.org/wiki/Free_software" title="Free_software in wikipedia">free software</a>.
+                    You are free to use it and you are free to redistribute it and/or modify it under the terms of the <a href="{% url 'license' %}" title="License">GNU General Public License</a>. By being open source it allows you to see how it works, how are its <a href="http://orange.biolab.si/docs/latest/reference/rst/" title="Reference">algorithms</a> implemented.
+                    It allows you to understand and learn from it. And build upon it new things.</p>
+
+                <h2 class="title">Development</h2>
+                <p>Orange development is not just <a href="http://orange.biolab.si/trac/">public</a>, it is open to you, to community. You can <a href="http://orange.biolab.si/trac/browser">browse the source code</a>, open and follow development through tickets, contribute patches or help with documentation. <a href="http://orange.biolab.si/trac/">Join</a>!</p>
+
+                <!--// What's in the air? -->
+                {% cache 86400 feed_first %}
+                    {% grab_feed_first %}
+                {% endcache %}
+
+                <h2 class="title">Help! I Need Somebody!</h2>
+                <p>Everybody needs sometimes help. For Orange, the place place for help is <a href="http://orange.biolab.si/forum/">our forum</a>. You can post there your questions, problems, suggestions, or ideas. Or browse/search existing posts. And participate in them!</p>
+            </div>
         </div>
     </div>
 </section>

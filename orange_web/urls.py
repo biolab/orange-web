@@ -11,7 +11,7 @@ urlpatterns = \
              url(r'^screenshots/$', views.screens, name='screenshots'),
              url(r'^license/$', views.license, name='license'),
              url(r'^contributing/$', views.contribute, name='contribute'),
-             url(r'^download/()$', views.download, name='download'),
+             url(r'^download/$', views.download, name='download'),
              url(r'^download/(windows|mac-os-x|linux|for-developers)/$',
                  views.download, name='download'),
              url(r'^community/$',
@@ -20,4 +20,7 @@ urlpatterns = \
              url(r'^citation/$',
                  TemplateView.as_view(template_name='citation.html'),
                  name='citation'),
+             url(r'^contact/$',
+                 TemplateView.as_view(template_name='contact.html'),
+                 name='contact'),
              )
