@@ -63,7 +63,8 @@ def license(request):
 
 
 def contribute(request):
-    if request.method == 'POST' and request.POST['Signature'] == "I AGREE":
+    response = {"post": request.method == 'POST' and request.POST['Signature'] == "I AGREE"}
+    if response['post']:
         message = "This message was sent to you automatically from orange.biolab.si.\n\n" + \
                   request.POST['Full Name'] + " electronically signed Orange Contributor " \
                   "License Agreement. Below are his/her contact information:" \
@@ -77,7 +78,7 @@ def contribute(request):
                   "\n\nGood day,\nBiolab Webmaster"
         send_mail('Orange Contributor License Agreement Receipt', message,
                   'from@example.com', ['to@example.com'], fail_silently=False)
-    return render(request, 'contributing-to-orange.html')
+    return render(request, 'contributing-to-orange.html', response)
 
 
 def detect_os(user_agent):
