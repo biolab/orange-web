@@ -22,6 +22,8 @@ media/*
 
 # Ignore binaries.
 *.py[cod]
+*.so
+*.dll
 
 # Ignore DB files
 *.db
