@@ -598,6 +598,7 @@ blockquote {
 
 .features .title {
   margin-bottom: 60px;
+  margin-top: 50px;
 }
 
 .features .icon {
@@ -654,7 +655,7 @@ blockquote {
   padding: 80px 0;
 }
 .how .content {
-  padding: 0 60px;
+  //padding: 0 60px;
 }
 .how .content .title {
   margin-top: 0;
@@ -703,12 +704,17 @@ blockquote {
 .faq {
   padding: 80px 0;
 }
+
+.faq.grey {
+  background-color: #f5f5f5;
+}
+
 .faq .title {
   margin-bottom: 60px;
+  margin-top: 50px;
 }
 .faq .item {
   padding: 30px;
-  background: #f5f5f5;
   margin-bottom: 30px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
