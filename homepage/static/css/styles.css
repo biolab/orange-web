@@ -252,6 +252,14 @@ blockquote {
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
+
+#logo-image {
+    position: absolute;
+    top: 20px;
+    max-height: 86px;
+
+}
+
 .header h1.logo {
   margin-top: 0;
   margin-bottom: 0;
