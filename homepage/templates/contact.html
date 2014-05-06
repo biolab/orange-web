@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="faq" class="faq section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {% if post %}
+                    <div class="alert alert-success custom-alert text-center fade in">
+                        <strong>Success!</strong> Keep in mind that it may take us a while to respond to your inquiry.&nbsp;&nbsp;&nbsp;<button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                {% endif %}
+                <h1>Contact</h1>
+                <p>Please note that support requests and other general questions should be posted in our <a href="http://orange.biolab.si/forum/">forum</a>. To report issues with Orange please use our <a href="http://orange.biolab.si/trac/intertrac/" title="Orange Trac">ticketing system</a>.</p>
+                <br>
+                <form role="form" class="form-horizontal" action="{% url "contribute" %}" method="post" name="license-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-md-1 col-sm-2 col-xs-10" for="email">E-mail:</label>
+                        <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
+                            <input class="form-control" type="email" id="email" name="E-mail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-sm-2 col-xs-10" for="country">Subject:</label>
+                        <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
+                            <input class="form-control" type="text" id="subject" name="Subject" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 col-sm-2 col-xs-10" for="address">Message:</label>
+                        <div class="inline-label-input col-md-4 col-sm-4 col-xs-10">
+                            <textarea class="form-control" id="message" name='Message' rows="7" required></textarea>
+                        </div>
+                    </div>
+
+                    {#  TODO: Captcha #}
+
+                    <div class="form-group">
+                        <div class="col-md-offset-1 col-md-10 col-sm-offset-3 col-sm-9" class="col-sm-4 col-md-4">
+                            <button type="submit" class="btn btn-theme" value="Submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

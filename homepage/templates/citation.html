@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="faq" class="faq section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1>Citation</h1>
+                <p>If you are using or have used Orange in your research, please cite the <a href="http://jmlr.org/papers/volume14/demsar13a/demsar13a.pdf">following article</a>:</p>
+                <p>Demšar, J., Curk, T., &amp; Erjavec, A. Orange: Data Mining Toolbox in Python; Journal of Machine Learning Research 14(Aug):2349−2353, 2013.</p>
+                <p>BibTeX entry:</p>
+<pre>@article{JMLR:demsar13a,
+  author  = {Janez Dem\v{s}ar and Toma\v{z} Curk and Ale\v{s} Erjavec and \v{C}rt Gorup and
+             Toma\v{z} Ho\v{c}evar and Mitar Milutinovi\v{c} and Martin Mo\v{z}ina and Matija Polajnar and
+             Marko Toplak and An\v{z}e Stari\v{c} and Miha \v{S}tajdohar and Lan Umek and
+             Lan \v{Z}agar and Jure \v{Z}bontar and Marinka \v{Z}itnik and Bla\v{z} Zupan},
+  title   = {Orange: Data Mining Toolbox in Python},
+  journal = {Journal of Machine Learning Research},
+  year    = {2013},
+  volume  = {14},
+  pages   = {2349-2353},
+  url     = {http://jmlr.org/papers/v14/demsar13a.html}
+}
+</pre>
+                <p>Orange is developed at Bioinformatics Laboratory, Faculty of Computer and Information Science, University of Ljubljana, Slovenia, together with <a href="{% url 'community' %}" title="Community">open source community</a>.</p>
+                <p>As Orange is also an open source project, do not forget to also satisfy <a href="{% url 'license' %}" title="License">license</a> conditions. If you would like to use Orange under different license or conditions, please <a href="/contact/" title="Contact">contact us</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

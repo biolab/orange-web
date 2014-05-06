@@ -1,16 +1,30 @@
-<div class="faq-col col-md-6 col-sm-6 col-xs-12">
-    {% for entry in entries_1 %}
-        <div class="item">
-            <a href="{{ entry.link }}"><h3 class="question animated fadeInUp delayp2">{{ entry.title }}</h3></a>
-            <p>{{ entry.text|striptags|truncatewords:30 }}</p>
-        </div>
-    {%  endfor %}
-</div>
-<div class="faq-col col-md-6 col-sm-6 col-xs-12">
-    {% for entry in entries_2 %}
-        <div class="item">
-            <a href="{{ entry.link }}"><h3 class="question animated fadeInUp delayp2">{{ entry.title }}</h3></a>
-            <p>{{ entry.text|striptags|truncatewords:30 }}</p>
-        </div>
-    {%  endfor %}
-</div>
+{% if not bozo %}
+    <section id="faq" class="faq section">
+        <div class="container">
+            <div class="row">
+                <div class="how-col col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="title text-left">Learn from Our Bloggers</h2>
+                </div>
+
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+                    {% for entry in entries_1 %}
+                        <div class="item">
+                            <a href="{{ entry.link }}"><h3 class="question animated fadeInUp delayp2">{{ entry.title }}</h3></a>
+                            <p>{{ entry.text|striptags|truncatewords:30 }}</p>
+                        </div>
+                    {%  endfor %}
+                </div>
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+                    {% for entry in entries_2 %}
+                        <div class="item">
+                            <a href="{{ entry.link }}"><h3 class="question animated fadeInUp delayp2">{{ entry.title }}</h3></a>
+                            <p>{{ entry.text|striptags|truncatewords:30 }}</p>
+                        </div>
+                    {%  endfor %}
+                </div>
+            </div>
+        </div><!--//container-->
+    </section><!--//faq-->
+{% else %}
+    <!--// NOTHING -->
+{% endif %}

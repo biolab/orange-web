@@ -1,72 +1,113 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section id="faq" class="faq section">
-    <div class="container">
-        <div class="row">
-            <h1 class="title">Download</h1>
-            <p>This page contains nightly builds of Orange 2.7 from the code repository. These are typically stable and we recommend using them.</p>
+    <section id="faq" class="faq section move-down">
+        <div class="container">
+            <div class="row">
+                <div class="faq-col col-md-12 col-sm-12 col-xs-12">
+                    <h1>Download</h1>
+                    {% if os == "windows" %}
+                        <h2 class="title">Windows</h2>
 
-            <p>Orange 3.0 is in early stages of development. Those interested can find it on GitHub.</p>
+                        <p>This page contains nightly builds of Orange 2.7 from the code repository. These are typically stable and we recommend using them.</p>
+                        <ul class="files">
+                            <li><p>Full package: <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange with Python 2.7 and required libraries</a><br>
+                                This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.<br>
+                                (Also available: <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
+                                                 <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
+                            <li><p>Pure Orange: <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange for Python 2.7</a><br>
+                                Use this version if you are updating from an earlier snapshot. You can install it over your existing installation.<br>
+                                (Also available: <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
+                                                 <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
+                        </ul>
 
-            <h2>Windows</h2>
+                    {% elif os == "mac-os-x" %}
+                        <h2 class="title">Mac OS X</h2>
 
-            <ul>
-                <li>Full package: Snapshot of Orange with Python 2.7 and required libraries<br>
-                    This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.<br>
-                    (Also available: Orange for Python 2.6, Orange for Python 2.5)</li>
-                <li>Pure Orange: Snapshot of Orange for Python 2.7<br>
-                Use this version if you are updating from an earlier snapshot. You can install it over your existing installation.<br>
-                (Also available: Orange for Python 2.6, Orange for Python 2.5)</li>
-            </ul>
+                        <ul class="files">
+                            <li><p>Bundle: <a href="{% url 'download' %}Orange-2.7.3-11906.dmg">Orange Snapshot</a><br>
+                                This is an universal bundle with everything packed in and ready for an unadvanced user.</p></li>
+                            <li><p>easy_install/pip:<br>
+                                Orange is available as a PyPi package. To install run:</p>
+                                <pre>easy_install numpy && easy_install orange</pre></li>
+                        </ul>
+                    {% elif os == "linux" %}
+                        <h2 class="title">Building from source</h2>
+                        {% include "download_source.html" %}
+                    {% elif os == "for-developers" %}
+                        <h2 class="title">For Developers</h2>
+                        <h3>Building from source</h3>
+                        {% include "download_source.html" %}
 
-            <h2>Mac OS X</h2>
+                        <h3>make</h3>
+                        <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008.
+                           To compile Orange, you will need an appropriate compiler, <a href="http://www.python.org/">Python</a> and <a href="http://numpy.scipy.org/">NumPy</a>.
+                           See <a href="http://orange.biolab.si/trac/intertrac/wiki%3ABuildingFromSource" title="wiki:BuildingFromSource in Orange Trac">building from source</a> wiki page for more information.</p>
 
-            <ul>
-                <li>Bundle: Orange Snapshot<br>
-            This is an universal bundle with everything packed in and ready for an unadvanced user.</li>
-                <li>easy_install/pip:<br>
-                Orange is available as a PyPi package. To install run:
-                <pre>
-easy_install numpy && easy_install orange</pre></li>
+                        <p>Orange 3.0 is in early stages of development. Those interested can find it on <a hre="https://github.com/biolab/orange3">GitHub.</a></p>
 
-            </ul>
-
-            <h2>Building from source</h2>
-
-            <ul>
-                <li>Nightly packed sources</li>
-                <li>Archive of selected packed sources</li>
-                <li>Orange 2.7 code repository (BitBucket)</li>
-            </ul>
-
-            <h3>setup.py</h3>
-
-            <p>To build and install Orange you can use the setup.py in the root orange directory (requires GCC, Python and numpy development headers). To use it unpack the nightly sources and run:</p>
-
-            <pre>
-python setup.py build
-sudo python setup.py install</pre>
-
-            <p>This will also install orange-canvas script so you can start Orange Canvas from the command line.</p>
-
-            <p>To install orange locally run:</p>
-
-            <pre>
-python setup.py install --user</pre>
-
-            <p>This will install orange in /home/&lt;username&gt;/.local/lib/pythonX.Y/site-packages/orange/.</p>
-
-            <h3>make (for developers)</h3>
-
-            <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008. To compile Orange, you will need an appropriate compiler, Python and NumPy.</p>
-
-            <p>See building from source wiki page for more information.</p>
-
-            <h2>C4.5 files</h2>
-
-            <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are here and instructions here.</p>
+                        <h3>C4.5 files</h3>
+                        <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
+                    {% else %}
+                        <!--//BLANK-->
+                    {% endif %}
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- ******DOWNLOAD OPTIONS****** -->
+    <section id="features" class="features section custom-reduce-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h2 class="title text-left">Supported Platforms</h2>
+                </div>
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <a href="{% url 'download' %}windows/">
+                    <div class="icon">
+                        <i class="fa fa-windows fa-rotate-90"></i>
+                    </div><!--//icon-->
+                    </a>
+
+                    <div class="content">
+                        <a href="{% url 'download' %}windows/"><h3 class="title">Windows</h3></a>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <a href="{% url 'download' %}mac-os-x/">
+                    <div class="icon">
+                        <i class="fa fa-apple"></i>
+                    </div><!--//icon-->
+                    </a>
+
+                    <div class="content">
+                        <a href="{% url 'download' %}mac-os-x/"><h3 class="title">Mac OS X</h3></a>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <a href="{% url 'download' %}linux/">
+                    <div class="icon">
+                        <i class="fa fa-linux"></i>
+                    </div><!--//icon-->
+                    </a>
+
+                    <div class="content">
+                        <a href="{% url 'download' %}linux/"><h3 class="title">Linux / Source</h3></a>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <a href="{% url 'download' %}for-developers/">
+                    <div class="icon">
+                        <i class="fa fa-code-fork"></i>
+                    </div><!--//icon-->
+                    </a>
+
+                    <div class="content">
+                        <a href="{% url 'download' %}for-developers/"><h3 class="title">For Developers</h3></a>
+                    </div><!--//content-->
+                </div><!--//item-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-->
 {% endblock content %}

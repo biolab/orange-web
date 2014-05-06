@@ -2,14 +2,16 @@
 from django import template
 import feedparser
 
+from django.conf import settings
+
 register = template.Library()
 
 
 @register.inclusion_tag('feed_results.html')
-def grab_feed():
+def grab_feed_all():
     """Grabs an RSS/Atom feed. Django will cache the content."""
-    feed = feedparser.parse('http://orange.biolab.si/blog/rss/')
-    if not feed.bozo:
+    feed = feedparser.parse('http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/')
+    if feed.bozo == 0:
         # Parses first 6 entries from remote blog feed.
         entries_1 = []
         entries_2 = []
@@ -25,6 +27,22 @@ def grab_feed():
                 entries_2.append(entry)
         return {'entries_1': entries_1,
                 'entries_2': entries_2,
+                'bozo': False
                 }
     else:
-        raise feed.bozo_exception
+        return {'bozo': True}
+
+
+@register.inclusion_tag('first_feed_result.html')
+def grab_feed_first():
+    """Grabs an RSS/Atom feed. Django will cache the content."""
+    feed = feedparser.parse('http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/')
+    if feed.bozo == 0:
+        # Parses first entry from remote blog feed.
+        return {'title': feed['entries'][0]['title'],
+                'link': feed['entries'][0]['link'],
+                'text': feed['entries'][0]['summary_detail']['value'],
+                'bozo': False
+                }
+    else:
+        return {'bozo': True}

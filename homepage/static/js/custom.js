@@ -17,4 +17,6 @@ jQuery(document).ready(function($) {
     });
     $('[rel="hovertitle"]').tooltip();
 
+    $('.alert').alert();
+
 });
