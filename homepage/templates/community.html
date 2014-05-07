@@ -1,32 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
 {% load cache %}
 {% load tag_extras %}
 
 {% block content %}
+<!-- ******HOW****** -->
 <section id="faq" class="faq section">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 {# TODO: Styling. #}
-                <h1>Community</h1>
-                <h2 class="title">Orange is Open Source</h2>
+                <h1 class="title">Community</h1>
+                <h2>Orange is Open Source</h2>
 
                 <p>Orange is <a href="http://en.wikipedia.org/wiki/Open_source" title="Open_source in wikipedia">open source</a> and <a href="http://en.wikipedia.org/wiki/Free_software" title="Free_software in wikipedia">free software</a>.
                     You are free to use it and you are free to redistribute it and/or modify it under the terms of the <a href="{% url 'license' %}" title="License">GNU General Public License</a>. By being open source it allows you to see how it works, how are its <a href="http://orange.biolab.si/docs/latest/reference/rst/" title="Reference">algorithms</a> implemented.
                     It allows you to understand and learn from it. And build upon it new things.</p>
-
-                <h2 class="title">Development</h2>
-                <p>Orange development is not just <a href="http://orange.biolab.si/trac/">public</a>, it is open to you, to community. You can <a href="http://orange.biolab.si/trac/browser">browse the source code</a>, open and follow development through tickets, contribute patches or help with documentation. <a href="http://orange.biolab.si/trac/">Join</a>!</p>
-
-                <!--// What's in the air? -->
-                {% cache 86400 feed_first %}
-                    {% grab_feed_first %}
-                {% endcache %}
-
-                <h2 class="title">Help! I Need Somebody!</h2>
-                <p>Everybody needs sometimes help. For Orange, the place place for help is <a href="http://orange.biolab.si/forum/">our forum</a>. You can post there your questions, problems, suggestions, or ideas. Or browse/search existing posts. And participate in them!</p>
             </div>
         </div>
     </div>
 </section>
+
+<section class="faq grey section has-pattern">
+    <div class="container">
+        <div class="row">
+            <div class="content col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6 text-center">
+                <h2 class="title">Help! I Need Somebody!</h2>
+                <p class="intro">Everybody needs help sometimes. For Orange, the place place for help is <a href="http://orange.biolab.si/forum/">our forum</a>. You can post there your questions, problems, suggestions, or ideas. Or browse/search existing posts. And participate in them!</p>
+            </div><!--//content-->
+            <div id="video-container" class="video-container col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6 text-center">
+                <a href="http://orange.biolab.si/forum/"><img src="{% static 'images/forum.png' %}" class="content left" width="80%" alt="Forum"></a>
+            </div><!--//video-->
+        </div><!--//row-->
+    </div><!--//container-->
+</section><!--//how-->
+
+<section class="faq section has-pattern">
+    <div class="container">
+        <div class="row">
+            <div class="content col-md-6 col-sm-6 col-xs-12 text-center">
+                <h2 class="title">Learn from our Bloggers</h2>
+                <p class="intro">Visit <a href="http://orange.biolab.si/blog/">our blog</a>.</p>
+            </div><!--//content-->
+            <div class="content right col-md-6 col-sm-6 col-xs-12 text-center">
+                <a href="http://orange.biolab.si/blog/"><img src="{% static 'images/blog.jpg' %}" alt="Forum"></a>
+            </div><!--//video-->
+        </div><!--//row-->
+    </div><!--//container-->
+</section><!--//how-->
+
+<section class="faq grey section has-pattern">
+    <div class="container">
+        <div class="row">
+            <div class="content col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6 text-center">
+                <h2 class="title">Development</h2>
+                <p class="intro">Orange development is not just <a href="http://orange.biolab.si/trac/">public</a>, it is open to you, to community. You can <a href="http://orange.biolab.si/trac/browser">browse the source code</a>, open and follow development through tickets, contribute patches or help with documentation. <a href="http://orange.biolab.si/trac/">Join</a>!</p>
+            </div><!--//content-->
+            <div class="content left col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6 text-center">
+                <a href="http://orange.biolab.si/trac/"><img src="{% static 'images/trac.png' %}" width="50%" alt="Forum"></a>
+            </div><!--//video-->
+        </div><!--//row-->
+    </div><!--//container-->
+</section><!--//how-->
+
 {% endblock content %}

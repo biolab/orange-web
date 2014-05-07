@@ -5,12 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
-                    <h1>Download</h1>
+                    <h1 class="title">Download</h1>
                     {% if os == "windows" %}
+                        
                         {% include "download_windows.html" %}
 
                     {% elif os == "mac-os-x" %}
-                        <h2 class="title">Mac OS X</h2>
+                        <h2>Mac OS X</h2>
 
                         <ul class="files">
                             <li><p>Bundle: <a href="{% url 'download' %}Orange-2.7.3-11906.dmg">Orange Snapshot</a><br>
@@ -20,10 +21,10 @@
                                 <pre>easy_install numpy && easy_install orange</pre></li>
                         </ul>
                     {% elif os == "linux" %}
-                        <h2 class="title">Building from source</h2>
+                        <h2>Building from source</h2>
                         {% include "download_source.html" %}
                     {% elif os == "for-developers" %}
-                        <h2 class="title">For Developers</h2>
+                        <h2>For Developers</h2>
                         <h3>Building from source</h3>
                         {% include "download_source.html" %}
 
