@@ -7,19 +7,7 @@
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
                     <h1>Download</h1>
                     {% if os == "windows" %}
-                        <h2 class="title">Windows</h2>
-
-                        <p>This page contains nightly builds of Orange 2.7 from the code repository. These are typically stable and we recommend using them.</p>
-                        <ul class="files">
-                            <li><p>Full package: <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange with Python 2.7 and required libraries</a><br>
-                                This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.<br>
-                                (Also available: <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
-                                                 <a href="{% url 'download' %}orange-win-w-python-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
-                            <li><p>Pure Orange: <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.7.exe">Snapshot of Orange for Python 2.7</a><br>
-                                Use this version if you are updating from an earlier snapshot. You can install it over your existing installation.<br>
-                                (Also available: <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.6.exe">Orange for Python 2.6</a>,
-                                                 <a href="{% url 'download' %}orange-win-snapshot-hg-2014-05-02-py2.5.exe">Orange for Python 2.5</a>)</p></li>
-                        </ul>
+                        {% include "download_windows.html" %}
 
                     {% elif os == "mac-os-x" %}
                         <h2 class="title">Mac OS X</h2>
@@ -49,7 +37,7 @@
                         <h3>C4.5 files</h3>
                         <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
                     {% else %}
-                        <!--//BLANK-->
+                        {% include "download_windows.html" %}
                     {% endif %}
                 </div>
             </div>

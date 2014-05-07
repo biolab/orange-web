@@ -46,3 +46,37 @@ def grab_feed_first():
                 }
     else:
         return {'bozo': True}
+
+
+# TODO: CSS na homepage, da se fork ikona ne rotira
+# TODO: download_choices(), da bo class DownloadLink zrenderiral link string direktno, odvisno od platforme, bitnosti, verzije ...
+# TODO: Zaznavanje 64-bit sistema pri USER_AGENT_STRING
+@register.inclusion_tag('download_link.html')
+def download_choices(os, pure=False, ver=None):
+    """
+    os has to be set to either 'win' or 'mac' in template.
+    ver has to be either '2.5', '2.6, or '2.7'.
+    """
+    wanted_files = []
+    ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
+    for line in ffi:
+        ep = line.find('=')
+        key = line[:ep].strip()
+        value = line[ep+1:].strip()
+        if value:
+            if os == 'win':
+                if pure:
+                    pykey = '%s_PY%s' % (key, ver)
+                    wanted_files.append(pykey)
+            else:
+                # if os == 'mac'
+                wanted_files.append(key)
+    ffi.close()
+
+
+class DownloadLink(template.Node):
+    def __init__(self, download_link):
+        self.download_link = download_link
+
+    def render(self, context):
+        return self.download_link
