@@ -85,10 +85,6 @@ ul.files li {
   -o-transform: scale(0.93) rotate(90deg);
 }
 
-.expandable {
-    display: none;
-}
-
 .icon-addons {
     display: inline-block;
     background-color: #F5F5F5;
@@ -107,6 +103,10 @@ ul.files li {
     font-size: 16px;
 }
 
-.icon-addons a:hover {
+.icon-addons i {
+    color: #212121;
+}
+
+.icon-addons #icon-i-hover:hover {
     color: #f8a842;
 }

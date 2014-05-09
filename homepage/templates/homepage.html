@@ -4,8 +4,6 @@
 {% load tag_extras %}
 
 {% block content %}
-{#  TODO: DRY concept where it still remains! Example: {% url 'download' %}  #}
-{#  TODO: Latest Orange snapshot file detection. Check orange-homepagex for example.  #}
     <!-- ******PROMO****** -->
     <section id="promo" class="promo section offset-header has-pattern">
         <div class="container">
@@ -24,16 +22,16 @@
                                 <li>
                                     <a href="{% url 'download' %}{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
                                         <h4>Download Orange 2.7</h4>
-                                        <p style="margin-top: -9px;">Windows Build - May 5, 2014</p>
+                                        <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
                                     </a>
                                 </li>
                             {% elif os == "mac-os-x" %}
                                 <li><a href="{% url 'download' %}{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}"><h4>Download Orange 2.7</h4>
-                                    <p style="margin-top: -9px;">Mac OS X Build - Apr 22, 2014</p></a>
+                                    <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p></a>
                                 </li>
                             {% elif os == "linux" %}
                                 <li><a href="{% url 'download' %}{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}"><h4>Download Orange 2.7</h4>
-                                    <p style="margin-top: -9px;">Linux Source - May 5, 2014</p></a>
+                                    <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p></a>
                                 </li>
                             {% else %}
                                 <li><a href="{% url 'download' %}"><h4>Download Orange 2.7</h4>
@@ -178,7 +176,7 @@
                         <div class="content">
                             <div class="screenshot">
                                 <a href="{% url 'screenshots' %}" alt="More&#8230;" title="More&#8230;">
-                                    <img rel="hovertitle" data-placement="bottom" data-toggle="tooltip" title="{{ screenshot.title }}"
+                                    <img class="hovertitle img-hover" data-placement="bottom" data-toggle="tooltip" title="{{ screenshot.title }}"
                                          alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
                                 </a>
                             </div>

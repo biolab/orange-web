@@ -1,7 +1,6 @@
 """Here we define custom django tags"""
 from django import template
 import feedparser
-import re
 
 from django.conf import settings
 
@@ -34,19 +33,21 @@ def grab_feed_all():
         return {'bozo': True}
 
 
-@register.inclusion_tag('first_feed_result.html')
-def grab_feed_first():
-    """Grabs an RSS/Atom feed. Django will cache the content."""
-    feed = feedparser.parse('http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/')
-    if feed.bozo == 0:
-        # Parses first entry from remote blog feed.
-        return {'title': feed['entries'][0]['title'],
-                'link': feed['entries'][0]['link'],
-                'text': feed['entries'][0]['summary_detail']['value'],
-                'bozo': False
-                }
-    else:
-        return {'bozo': True}
+# Custom tab below useful if admin wants to grab the first post from Orange blog RSS
+#
+# @register.inclusion_tag('first_feed_result.html')
+# def grab_feed_first():
+#     """Grabs an RSS/Atom feed. Django will cache the content."""
+#     feed = feedparser.parse('http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/')
+#     if feed.bozo == 0:
+#         # Parses first entry from remote blog feed.
+#         return {'title': feed['entries'][0]['title'],
+#                 'link': feed['entries'][0]['link'],
+#                 'text': feed['entries'][0]['summary_detail']['value'],
+#                 'bozo': False
+#                 }
+#     else:
+#         return {'bozo': True}
 
 
 def download_choices(os):
@@ -68,34 +69,47 @@ def download_choices(os):
         for line in ffi:
             ep = line.find('=')
             key = line[:ep].strip()
-            value = line[ep+1:].strip()
             if key == 'WIN_SNAPSHOT':
+                value = line[ep+1:].strip()
                 downloads['win25'] = '%s-py2.5.exe' % value
                 downloads['win26'] = '%s-py2.6.exe' % value
                 downloads['win27'] = '%s-py2.7.exe' % value
             elif key == 'WIN_PYTHON_SNAPSHOT':
+                value = line[ep+1:].strip()
                 downloads['winw25'] = '%s-py2.5.exe' % value
                 downloads['winw26'] = '%s-py2.6.exe' % value
                 downloads['winw27'] = '%s-py2.7.exe' % value
             elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
+                value = line[ep+1:].strip()
                 downloads['bio26'] = '%s-py2.6.exe' % value
                 downloads['bio27'] = '%s-py2.7.exe' % value
             elif key == 'ADDON_TEXT_SNAPSHOT':
+                value = line[ep+1:].strip()
                 downloads['text26'] = '%s-py2.6.exe' % value
                 downloads['text27'] = '%s-py2.7.exe' % value
             elif key == 'SOURCE_SNAPSHOT':
+                value = line[ep+1:].strip()
                 downloads['source'] = value
         ffi.close()
         return downloads
-    else:
+    if os == "mac":
         ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
         for line in ffi:
             ep = line.find('=')
             key = line[:ep].strip()
-            value = line[ep+1:].strip()
             if key == 'MAC_DAILY':
+                value = line[ep+1:].strip()
                 ffi.close()
                 return {'mac': value}
+    else:
+        ffi = open(settings.DOWNLOAD_SET_PATTERN % "win", 'rt')
+        for line in ffi:
+            ep = line.find('=')
+            key = line[:ep].strip()
+            if key == 'WIN_SNAPSHOT':
+                value = line[ep+1:].strip()[-10:]
+                ffi.close()
+                return {'date': value}
 
 
 @register.inclusion_tag('download_windows.html')
@@ -126,5 +140,7 @@ def download_link(os):
         return download_choices('win')['winw27']
     elif os == 'mac-os-x':
         return download_choices('mac')['mac']
-    else:
+    elif os == 'source':
         return download_choices('win')['source']
+    else:
+        return download_choices('date')['date']
