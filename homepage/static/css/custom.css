@@ -59,6 +59,11 @@ div.screenshot-container div.content {
     padding-bottom: 40px;
 }
 
+.custom-reduce-padding-2 {
+    padding-top: 80px;
+    padding-bottom: 0;
+}
+
 .custom-alert {
     display: block;
     margin-top: 30px;
@@ -70,4 +75,38 @@ div.screenshot-container div.content {
 
 ul.files li {
     padding-bottom: 10px;
+}
+
+#special-rotate, #special-rotate:hover {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: scale(0.93) rotate(90deg);
+  -moz-transform: scale(0.93) rotate(90deg);
+  -ms-transform: scale(0.93) rotate(90deg);
+  -o-transform: scale(0.93) rotate(90deg);
+}
+
+.expandable {
+    display: none;
+}
+
+.icon-addons {
+    display: inline-block;
+    background-color: #F5F5F5;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 16px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.icon-addons a {
+    display:inline;
+    margin: 0 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.icon-addons a:hover {
+    color: #f8a842;
 }

@@ -1,61 +1,20 @@
 {% extends "base.html" %}
+{% load cache %}
+{% load tag_extras %}
 
 {% block content %}
-    <section id="faq" class="faq section move-down">
-        <div class="container">
-            <div class="row">
-                <div class="faq-col col-md-12 col-sm-12 col-xs-12">
-                    <h1 class="title">Download</h1>
-                    {% if os == "windows" %}
-                        
-                        {% include "download_windows.html" %}
-
-                    {% elif os == "mac-os-x" %}
-                        <h2>Mac OS X</h2>
-
-                        <ul class="files">
-                            <li><p>Bundle: <a href="{% url 'download' %}Orange-2.7.3-11906.dmg">Orange Snapshot</a><br>
-                                This is an universal bundle with everything packed in and ready for an unadvanced user.</p></li>
-                            <li><p>easy_install/pip:<br>
-                                Orange is available as a PyPi package. To install run:</p>
-                                <pre>easy_install numpy && easy_install orange</pre></li>
-                        </ul>
-                    {% elif os == "linux" %}
-                        <h2>Building from source</h2>
-                        {% include "download_source.html" %}
-                    {% elif os == "for-developers" %}
-                        <h2>For Developers</h2>
-                        <h3>Building from source</h3>
-                        {% include "download_source.html" %}
-
-                        <h3>make</h3>
-                        <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008.
-                           To compile Orange, you will need an appropriate compiler, <a href="http://www.python.org/">Python</a> and <a href="http://numpy.scipy.org/">NumPy</a>.
-                           See <a href="http://orange.biolab.si/trac/intertrac/wiki%3ABuildingFromSource" title="wiki:BuildingFromSource in Orange Trac">building from source</a> wiki page for more information.</p>
-
-                        <p>Orange 3.0 is in early stages of development. Those interested can find it on <a hre="https://github.com/biolab/orange3">GitHub.</a></p>
-
-                        <h3>C4.5 files</h3>
-                        <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
-                    {% else %}
-                        {% include "download_windows.html" %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ******DOWNLOAD OPTIONS****** -->
-    <section id="features" class="features section custom-reduce-padding">
+    <section id="features" class="features section custom-reduce-padding-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h2 class="title text-left">Supported Platforms</h2>
+                      <h1 class="title">Download</h1>
+{#                    <h2 class="title text-left">Download</h2>#}
                 </div>
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'download' %}windows/">
                     <div class="icon">
-                        <i class="fa fa-windows fa-rotate-90"></i>
+                        <i class="fa fa-windows"></i>
                     </div><!--//icon-->
                     </a>
 
@@ -99,4 +58,56 @@
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//features-->
+
+    <section id="faq" class="faq section move-down custom-reduce-padding">
+        <div class="container">
+            <div class="row">
+                <div class="faq-col col-md-12 col-sm-12 col-xs-12">
+                    {% if os == "windows" %}
+                        {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
+                    {% elif os == "mac-os-x" %}
+                        {% cache 43200 dl_mac_html %}{% download_mac %}{% endcache %}
+                    {% elif os == "linux" %}
+                        <h2>Building from source</h2>
+                        {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
+                    {% elif os == "for-developers" %}
+                        <h2>For Developers</h2>
+                        <h3>Building from source</h3>
+                        {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
+
+                        <h3>make</h3>
+                        <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008.
+                           To compile Orange, you will need an appropriate compiler, <a href="http://www.python.org/">Python</a> and <a href="http://numpy.scipy.org/">NumPy</a>.
+                           See <a href="http://orange.biolab.si/trac/intertrac/wiki%3ABuildingFromSource" title="wiki:BuildingFromSource in Orange Trac">building from source</a> wiki page for more information.</p>
+
+                        <p>Orange 3.0 is in early stages of development. Those interested can find it on <a hre="https://github.com/biolab/orange3">GitHub.</a></p>
+
+                        <h3>C4.5 files</h3>
+                        <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
+                    {% else %}
+                        {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq section move-down custom-reduce-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    {% include 'download_addons.html' %}
+
+                    <h3>Working with Add-ons</h3>
+                    <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>
+                    <pre>pip install &lt;add-on name&gt;</pre>
+                    <p>For instructions, how to add your add-on to the list, please refer to <a href="http://orange.biolab.si/trac/trac/wiki/AddOns">our Trac wiki</a>.</p>
+
+                    {% if os == "windows" %}
+                        {% cache 43200 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock content %}

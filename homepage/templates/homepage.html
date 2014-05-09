@@ -21,16 +21,18 @@
                     <div class="download-area">
                         <ul class="btn-group list-inline">
                             {% if os == "windows" %}
-                                <li><a href="/download/orange-win-w-python-snapshot-hg-2014-05-02-py2.7.exe"><h4>Download Orange 2.7</h4>
-                                    <p style="margin-top: -9px;">Windows Build - May 5, 2014</p></a>
+                                <li>
+                                    <a href="{% url 'download' %}{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
+                                        <h4>Download Orange 2.7</h4>
+                                        <p style="margin-top: -9px;">Windows Build - May 5, 2014</p>
+                                    </a>
                                 </li>
                             {% elif os == "mac-os-x" %}
-                                <li><a href="/download/Orange-2.7.3-11906.dmg"><h4>Download Orange 2.7</h4>
+                                <li><a href="{% url 'download' %}{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}"><h4>Download Orange 2.7</h4>
                                     <p style="margin-top: -9px;">Mac OS X Build - Apr 22, 2014</p></a>
                                 </li>
                             {% elif os == "linux" %}
-                                <li><a href="/download/orange-source-snapshot-hg-2014-05-02.zip"><h4>
-                                    Download Orange 2.7</h4>
+                                <li><a href="{% url 'download' %}{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}"><h4>Download Orange 2.7</h4>
                                     <p style="margin-top: -9px;">Linux Source - May 5, 2014</p></a>
                                 </li>
                             {% else %}
@@ -123,7 +125,7 @@
                 <h2 class="title text-center sr-only">Features</h2>
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
                     <div class="icon">
-                        <i class="fa fa-code-fork fa-rotate-90"></i>
+                        <i id="special-rotate" class="fa fa-code-fork"></i>
                     </div><!--//icon-->
                     <div class="content">
                         <h3 class="title">Visual Programming</h3>

@@ -9,14 +9,16 @@ jQuery(document).ready(function($) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
         });
     }
-
+    //  TODO: Resolve this.
     $('[rel="hovertitle"]').hover(function() {
         $(this).fadeTo("slow",0.3);
     }, function() {
         $(this).fadeTo("slow",1);
     });
+
     $('[rel="hovertitle"]').tooltip();
 
     $('.alert').alert();
 
+    $('#expandable').accordion({header: "h3", collapsible: true, active: false, heightStyle: "content", animate: 500});
 });

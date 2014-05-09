@@ -1,6 +1,7 @@
 """Here we define custom django tags"""
 from django import template
 import feedparser
+import re
 
 from django.conf import settings
 
@@ -48,35 +49,82 @@ def grab_feed_first():
         return {'bozo': True}
 
 
-# TODO: CSS na homepage, da se fork ikona ne rotira
-# TODO: download_choices(), da bo class DownloadLink zrenderiral link string direktno, odvisno od platforme, bitnosti, verzije ...
-# TODO: Zaznavanje 64-bit sistema pri USER_AGENT_STRING
-@register.inclusion_tag('download_link.html')
-def download_choices(os, pure=False, ver=None):
-    """
-    os has to be set to either 'win' or 'mac' in template.
-    ver has to be either '2.5', '2.6, or '2.7'.
-    """
-    wanted_files = []
-    ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
-    for line in ffi:
-        ep = line.find('=')
-        key = line[:ep].strip()
-        value = line[ep+1:].strip()
-        if value:
-            if os == 'win':
-                if pure:
-                    pykey = '%s_PY%s' % (key, ver)
-                    wanted_files.append(pykey)
-            else:
-                # if os == 'mac'
-                wanted_files.append(key)
-    ffi.close()
+def download_choices(os):
+    if os == 'win':
+        downloads = {
+            'winw25': None,
+            'winw26': None,
+            'winw27': None,
+            'win25': None,
+            'win26': None,
+            'win27': None,
+            'bio26': None,
+            'bio27': None,
+            'text26': None,
+            'text27': None,
+            'source': None,
+        }
+        ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
+        for line in ffi:
+            ep = line.find('=')
+            key = line[:ep].strip()
+            value = line[ep+1:].strip()
+            if key == 'WIN_SNAPSHOT':
+                downloads['win25'] = '%s-py2.5.exe' % value
+                downloads['win26'] = '%s-py2.6.exe' % value
+                downloads['win27'] = '%s-py2.7.exe' % value
+            elif key == 'WIN_PYTHON_SNAPSHOT':
+                downloads['winw25'] = '%s-py2.5.exe' % value
+                downloads['winw26'] = '%s-py2.6.exe' % value
+                downloads['winw27'] = '%s-py2.7.exe' % value
+            elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
+                downloads['bio26'] = '%s-py2.6.exe' % value
+                downloads['bio27'] = '%s-py2.7.exe' % value
+            elif key == 'ADDON_TEXT_SNAPSHOT':
+                downloads['text26'] = '%s-py2.6.exe' % value
+                downloads['text27'] = '%s-py2.7.exe' % value
+            elif key == 'SOURCE_SNAPSHOT':
+                downloads['source'] = value
+        ffi.close()
+        return downloads
+    else:
+        ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
+        for line in ffi:
+            ep = line.find('=')
+            key = line[:ep].strip()
+            value = line[ep+1:].strip()
+            if key == 'MAC_DAILY':
+                ffi.close()
+                return {'mac': value}
 
 
-class DownloadLink(template.Node):
-    def __init__(self, download_link):
-        self.download_link = download_link
+@register.inclusion_tag('download_windows.html')
+def download_win():
+    return download_choices('win')
 
-    def render(self, context):
-        return self.download_link
+
+@register.inclusion_tag('download_mac-os-x.html')
+def download_mac():
+    return download_choices('mac')
+
+
+@register.inclusion_tag('download_source.html')
+def download_source():
+    """Source data is in 'filenames_win.set'"""
+    return download_choices('win')
+
+
+@register.inclusion_tag('download_addons_win.html')
+def download_addons_win():
+    """Source data is in 'filenames_win.set'"""
+    return download_choices('win')
+
+
+@register.simple_tag
+def download_link(os):
+    if os == 'windows':
+        return download_choices('win')['winw27']
+    elif os == 'mac-os-x':
+        return download_choices('mac')['mac']
+    else:
+        return download_choices('win')['source']
