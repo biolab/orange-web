@@ -15,7 +15,7 @@ SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'homepage',
                                'static', 'homepage', 'screenshots')
 SCREENSHOTS_INDEX = os.path.join(SCREENSHOTS_DIR, 'screenshots.xml')
 LICENSE_FILE = os.path.join(BASE_DIR, 'LICENSES')
-DOWNLOAD_SET_PATTERN = os.path.join('/srv/downloads', '/filenames_%s.set')
+DOWNLOAD_SET_PATTERN = os.path.join('/srv/downloads', 'filenames_%s.set')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
