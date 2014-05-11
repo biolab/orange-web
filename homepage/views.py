@@ -101,6 +101,26 @@ def contact(request):
         response = {"post": True}
     return render(request, 'contact.html', response)
 
+# If we ever want to offer 64-bit versions of Orange
+# and wish to discern users by 32/64-bit OS builds.
+# def detect_os(user_agent):
+#     os = {
+#         'type': None,
+#         '64b': True
+#     }
+#     if re.match(r'.*[Ww]in.*', user_agent):
+#         os['type'] = "windows"
+#         if re.match(r'^.*(WOW64|x86_64|Win64).*', user_agent):
+#             os['64b'] = True
+#     elif re.match(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*', user_agent):
+#         os['type'] = "mac-os-x"
+#         if re.match(r'^.*(10_[89]|1[12]_[0-9]).*', user_agent):
+#             os['64b'] = True
+#     elif re.match(r'.*[Ll]inux.*', user_agent):
+#         os['type'] = "linux"
+#     else:
+#         os['type'] = ""
+
 
 def detect_os(user_agent):
     if re.match(r'.*[Ww]in.*', user_agent):

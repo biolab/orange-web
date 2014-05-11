@@ -10,13 +10,15 @@ jQuery(document).ready(function($) {
         });
     }
 
-    $('[rel="hovertitle"]').hover(function() {
-        $(this).fadeTo("slow",0.3);
+    $('.hovertitle').hover(function() {
+        $(this).fadeTo(600, 0.3);
     }, function() {
-        $(this).fadeTo("slow",1);
+        $(this).fadeTo(600, 1);
     });
-    $('[rel="hovertitle"]').tooltip();
+
+    $('.img-hover').tooltip();
 
     $('.alert').alert();
 
+    $('#expandable').accordion({header: "h3", collapsible: true, active: false, heightStyle: "content", animate: 500});
 });
