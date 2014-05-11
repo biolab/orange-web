@@ -12,47 +12,47 @@
 {#                    <h2 class="title text-left">Download</h2>#}
                 </div>
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="{% url 'download' %}windows/">
+                    <a href="{% url 'download' %}files/windows/">
                     <div class="icon">
                         <i class="fa fa-windows"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="{% url 'download' %}windows/"><h3 class="title">Windows</h3></a>
+                        <a href="{% url 'download' %}files/windows/"><h3 class="title">Windows</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="{% url 'download' %}mac-os-x/">
+                    <a href="{% url 'download' %}files/mac-os-x/">
                     <div class="icon">
                         <i class="fa fa-apple"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="{% url 'download' %}mac-os-x/"><h3 class="title">Mac OS X</h3></a>
+                        <a href="{% url 'download' %}files/mac-os-x/"><h3 class="title">Mac OS X</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="{% url 'download' %}linux/">
+                    <a href="{% url 'download' %}files/linux/">
                     <div class="icon">
                         <i class="fa fa-linux"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="{% url 'download' %}linux/"><h3 class="title">Linux / Source</h3></a>
+                        <a href="{% url 'download' %}files/linux/"><h3 class="title">Linux / Source</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a href="{% url 'download' %}for-developers/">
+                    <a href="{% url 'download' %}files/for-developers/">
                     <div class="icon">
                         <i class="fa fa-code-fork"></i>
                     </div><!--//icon-->
                     </a>
 
                     <div class="content">
-                        <a href="{% url 'download' %}for-developers/"><h3 class="title">For Developers</h3></a>
+                        <a href="{% url 'download' %}files/for-developers/"><h3 class="title">For Developers</h3></a>
                     </div><!--//content-->
                 </div><!--//item-->
             </div><!--//row-->
@@ -83,7 +83,7 @@
                         <p>Orange 3.0 is in early stages of development. Those interested can find it on <a hre="https://github.com/biolab/orange3">GitHub.</a></p>
 
                         <h3>C4.5 files</h3>
-                        <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
+                        <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}files/buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
                     {% else %}
                         {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
                     {% endif %}
