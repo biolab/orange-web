@@ -148,3 +148,4 @@ def download(request, os=None):
     else:
         os_response['os'] = os
     return render(request, 'download.html', os_response)
+

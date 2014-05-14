@@ -96,7 +96,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    {% include 'download_addons.html' %}
+                    {% cache 1 dl_addons_html %}{% download_addons %}{% endcache %}
 
                     <h3>Working with Add-ons</h3>
                     <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>

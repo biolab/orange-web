@@ -1,8 +1,15 @@
 """Here we define custom django tags"""
-from django import template
-import feedparser
+# from contextlib import contextmanager
+# import os
+# import shutil
+# import tempfile
 
+from django import template
+from docutils.core import publish_parts
 from django.conf import settings
+import feedparser
+import requests
+import bleach
 
 register = template.Library()
 
@@ -144,3 +151,38 @@ def download_link(os):
         return download_choices('win')['source']
     else:
         return download_choices('date')['date']
+
+
+@register.inclusion_tag('download_addons.html')
+def download_addons():
+    """Fetches addon names from ADDONS_FILE and retrieves info from PyPi JSON API"""
+    fl = open(settings.ADDONS_FILE)
+    names = fl.readlines()
+    fl.close()
+    addons = []
+    for i in range(len(names)):
+        # TODO: Threading, put in a function, add index to function, so we can sort if they get set in wrong order
+        # TODO: Remove first line (title is redundant) from jsonfile['info']['description']
+        # TODO: Turn off animations in animations.js
+        r = requests.get('https://pypi.python.org/pypi/' + names[i][:-1] + '/json')
+        jsonfile = r.json()
+
+        new_json = {
+            'id': i,
+            'name': jsonfile['info']['name'],
+            'version': jsonfile['info']['version'],
+            'description': publish_parts(jsonfile['info']['description'], writer_name='html')['html_body'],
+            'package_url': jsonfile['info']['package_url'],
+            'download_url': jsonfile['info']['download_url'],
+            'repo_url': None,
+            'docs_url': jsonfile['info']['docs_url'],
+            'home_page': jsonfile['info']['home_page'],
+        }
+        dl_url = jsonfile['info']['download_url']
+        if "bitbucket" in dl_url and dl_url.endswith('/downloads'):
+            new_json['repo_url'] = dl_url[:-10]
+        elif "github" in dl_url and dl_url.endswith('/releases'):
+            new_json['repo_url'] = dl_url[:-9]
+        addons.append(new_json)
+    addons.sort(key=lambda x: x['id'])
+    return {'addons': addons}
