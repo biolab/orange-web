@@ -12,7 +12,8 @@ register = template.Library()
 @register.inclusion_tag('feed_results.html')
 def grab_feed_all():
     """Grabs an RSS/Atom feed. Django will cache the content."""
-    feed = feedparser.parse('http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/')
+    url = 'http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/'
+    feed = feedparser.parse(url)
     if feed.bozo == 0:
         # Parses first 6 entries from remote blog feed.
         entries_1 = []
@@ -35,12 +36,13 @@ def grab_feed_all():
         return {'bozo': True}
 
 
-# Custom tab below useful if admin wants to grab the first post from Orange blog RSS
+# Custom tab for grabbing the first post from Orange blog RSS
 #
 # @register.inclusion_tag('first_feed_result.html')
 # def grab_feed_first():
 #     """Grabs an RSS/Atom feed. Django will cache the content."""
-#     feed = feedparser.parse('http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/')
+#     url = 'http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/'
+#     feed = feedparser.parse(url)
 #     if feed.bozo == 0:
 #         # Parses first entry from remote blog feed.
 #         return {'title': feed['entries'][0]['title'],
@@ -142,7 +144,7 @@ def download_link(os):
         return download_choices('win')['winw27']
     elif os == 'mac-os-x':
         return download_choices('mac')['mac']
-    elif os == 'source':
+    elif os == 'linux':
         return download_choices('win')['source']
     else:
         return download_choices('date')['date']
@@ -154,13 +156,16 @@ def download_addons():
     addons = []
     for package in client.search({'keywords': 'orange'}):
         # TODO: Possible threaded URL fetching
-        r = requests.get('https://pypi.python.org/pypi/' + package['name'] + '/json')
+        url = 'https://pypi.python.org/pypi/' + package['name'] + '/json'
+        r = requests.get(url)
         jsonfile = r.json()
         desc = jsonfile['info']['description'].split('\n')
+        # RST -> HTML conversion
+        desc = publish_parts('\n'.join(desc[3:]), writer_name='html')
         new_json = {
             'name': jsonfile['info']['name'],
             'version': jsonfile['info']['version'],
-            'description': publish_parts('\n'.join(desc[3:]), writer_name='html')['html_body'],
+            'description': desc['html_body'],
             'package_url': jsonfile['info']['package_url'],
             'download_url': jsonfile['info']['download_url'],
             'repo_url': None,
