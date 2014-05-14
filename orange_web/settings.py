@@ -11,13 +11,11 @@ import os
 import socket
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-SCREENSHOTS_DIR = os.path.join(BASE_DIR, 'homepage',
-                               'static', 'homepage', 'screenshots')
+SCREENSHOTS_DIR = \
+    os.path.join(BASE_DIR, 'homepage', 'static', 'homepage', 'screenshots')
 SCREENSHOTS_INDEX = os.path.join(SCREENSHOTS_DIR, 'screenshots.xml')
 LICENSE_FILE = os.path.join(BASE_DIR, 'LICENSES')
-ADDONS_FILE = os.path.join(BASE_DIR, 'ADDONS')
-# DOWNLOAD_SET_PATTERN = os.path.join('/srv/download', 'filenames_%s.set')
-DOWNLOAD_SET_PATTERN = os.path.join('homepage', 'filenames_%s.set')
+DOWNLOAD_SET_PATTERN = os.path.join('/srv/download', 'filenames_%s.set')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
