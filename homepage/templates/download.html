@@ -80,7 +80,7 @@
                            To compile Orange, you will need an appropriate compiler, <a href="http://www.python.org/">Python</a> and <a href="http://numpy.scipy.org/">NumPy</a>.
                            See <a href="http://orange.biolab.si/trac/intertrac/wiki%3ABuildingFromSource" title="wiki:BuildingFromSource in Orange Trac">building from source</a> wiki page for more information.</p>
 
-                        <p>Orange 3.0 is in early stages of development. Those interested can find it on <a hre="https://github.com/biolab/orange3">GitHub.</a></p>
+                        <p>Orange 3.0 is in early stages of development. Those interested can find it on <a href="https://github.com/biolab/orange3">GitHub.</a></p>
 
                         <h3>C4.5 files</h3>
                         <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}files/buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
@@ -96,7 +96,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    {% include 'download_addons.html' %}
+                    {% cache 86400 dl_addons_html %}{% download_addons %}{% endcache %}
 
                     <h3>Working with Add-ons</h3>
                     <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>

@@ -5,9 +5,9 @@ jQuery(document).ready(function($) {
     if (jQuery.browser.mobile === false) {
 
         /* Animate elements in #Promo */
-        $('.title').css('opacity', 0).one('inview', function(isInView) {
-            if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
-        });
+        // $('.title').css('opacity', 0).one('inview', function(isInView) {
+        //     if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
+        // });
         $('.summary').css('opacity', 0).one('inview', function(isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp2');}
         });
