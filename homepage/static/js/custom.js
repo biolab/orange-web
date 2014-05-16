@@ -20,5 +20,5 @@ jQuery(document).ready(function($) {
 
     $('.alert').alert();
 
-    $('#expandable').accordion({header: "h3", collapsible: true, active: false, heightStyle: "content", animate: 500});
+    $('.collapse').collapse();
 });
