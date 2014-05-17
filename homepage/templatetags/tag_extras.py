@@ -154,8 +154,7 @@ def download_link(os):
 def download_addons():
     client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')
     addons = []
-    iid = 1
-    for package in client.search({'keywords': 'orange'}):
+    for iid, package in enumerate(client.search({'keywords': 'orange'})):
         # TODO: Possible threaded URL fetching
         url = 'https://pypi.python.org/pypi/' + package['name'] + '/json'
         r = requests.get(url)
@@ -164,7 +163,7 @@ def download_addons():
         # RST -> HTML conversion
         desc = publish_parts('\n'.join(desc[3:]), writer_name='html')
         new_json = {
-            'iid': iid,
+            'iid': iid + 1,
             'name': jsonfile['info']['name'],
             'version': jsonfile['info']['version'],
             'description': desc['html_body'],
@@ -180,5 +179,4 @@ def download_addons():
         elif "github" in dl_url and dl_url.endswith('/releases'):
             new_json['repo_url'] = dl_url[:-9]
         addons.append(new_json)
-        iid += 1
     return {'addons': addons}

@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
     //Only animate elements when using non-mobile devices
     if (jQuery.browser.mobile === false) {
 
-        /* Animate elements in #Promo */
+        /* Animate elements in #Promo - Custom disable */
         // $('.title').css('opacity', 0).one('inview', function(isInView) {
         //     if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
         // });
@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
         });
 
         /* Animate elements in #Features */
-        $('.icon').css('opacity', 0).one('inview', function(event, isInView) {
+        $('.icon, .icon-selected').css('opacity', 0).one('inview', function(event, isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
         });
 

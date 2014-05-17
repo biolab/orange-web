@@ -137,3 +137,30 @@ h4.custom-accordion-title {
 .custom-accordion-container:hover {
     color: #f8a842;
 }
+
+.features .icon-selected {
+    background: #f8a842;
+    color: #f8a842;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border: 4px solid #f8a842;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    display: table;
+    margin: 0 auto;
+    -webkit-transition: -webkit-transform ease-out 0.2s, background 0.3s;
+    -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
+    transition: transform ease-out 0.2s, background 0.3s;
+}
+
+.features .icon-selected .fa {
+    color: #fff;
+    font-size: 48px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}

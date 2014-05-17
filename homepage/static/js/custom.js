@@ -19,6 +19,4 @@ jQuery(document).ready(function($) {
     $('.img-hover').tooltip();
 
     $('.alert').alert();
-
-    $('.collapse').collapse();
 });
