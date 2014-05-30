@@ -164,3 +164,15 @@ h4.custom-accordion-title {
     text-align: center;
     vertical-align: middle;
 }
+
+.flexslider .slides img.custom-slide {
+    width: auto;
+    height: 360px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.promo ul {
+    padding-left: 0;
+}

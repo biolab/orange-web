@@ -1,7 +1,10 @@
 """Here we define custom django tags"""
+from datetime import datetime as dt
+
 from django import template
 from docutils.core import publish_parts
 from django.conf import settings
+
 import feedparser
 import requests
 import xmlrpclib
@@ -16,20 +19,17 @@ def grab_feed_all():
     feed = feedparser.parse(url)
     if feed.bozo == 0:
         # Parses first 6 entries from remote blog feed.
-        entries_1 = []
-        entries_2 = []
+        entries = []
         for i in range(6):
+            pub_date = feed['entries'][i]['published'][:-6]
+            df = '%a, %d %b %Y %H:%M:%S'
             entry = {
                 'title': feed['entries'][i]['title'],
                 'link': feed['entries'][i]['link'],
-                'text': feed['entries'][i]['summary_detail']['value']
+                'published': dt.strptime(pub_date, df).strftime('%d %b'),
             }
-            if i % 2 == 0:
-                entries_1.append(entry)
-            else:
-                entries_2.append(entry)
-        return {'entries_1': entries_1,
-                'entries_2': entries_2,
+            entries.append(entry)
+        return {'entries': entries,
                 'bozo': False
                 }
     else:
