@@ -383,8 +383,8 @@ blockquote {
 }
 /* ======= Promo Section ======= */
 .promo {
-  background-color: #f8a842;
-  color: #fff;
+  background-color: #fff;
+  color: #444444;
 }
 .promo .container {
   padding-bottom: 15px;
@@ -406,16 +406,19 @@ blockquote {
 .promo .overview .summary li {
   margin-bottom: 15px;
   list-style: none;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 300;
-  padding-left: 30px;
-  background: url('../images/bullet.png') no-repeat left center;
+  line-height: 1.1;
+  padding-left: 0;
+  margin-left: 0;
+  /*background: url('../images/bullet.png') no-repeat left center;*/
 }
 .promo .overview .download-area {
   display: inline-block;
 }
 .promo .overview .btn-group {
-  margin-left: 40px;
+  /*margin-left: 40px;*/
+  margin-left: 0;
 }
 .promo .overview .btn-group li {
   padding: 0;
@@ -454,7 +457,7 @@ blockquote {
   color: #cc7608;
 }
 .promo .overview .note p {
-  padding-top: 15px;
+  padding-top: 30px;
 }
 .promo .overview .note .left-arrow {
   position: absolute;

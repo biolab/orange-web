@@ -16,6 +16,8 @@ jQuery(document).ready(function($) {
         $(this).fadeTo(600, 1);
     });
 
+    //    TODO: Download button on:hover darker color, enable on hover. Flexslider blokira, verjetno (probaj zakomentirati js)
+
     $('.img-hover').tooltip();
 
     $('.alert').alert();
