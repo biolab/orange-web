@@ -10,39 +10,43 @@
             <div class="row">
                 <div class="overview col-md-6 col-sm-12 col-xs-12">
                     <h2 class="title">Orange - Fruitful and Fun</h2>
-                    <ul class="summary">
-                        <li>Open-source data analysis for novice and experts</li>
-                        <li>Data mining through visual programming</li>
-                        <li>Python scripting</li>
-                        <li>Add-ons: bioinformatics and text mining</li>
-                    </ul>
+                    <p class="summary">
+                        Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.
+                    </p>
                     <div class="download-area">
                         <ul class="btn-group list-inline">
                             {% if os == "windows" %}
+                                <a class="btn btn-default orange-color" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
+                                    <h4>Download Orange 2.7</h4>
+                                    <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
+                                </a>
+                            {% elif os == "mac-os-x" %}
+                                <a class="btn btn-default orange-color" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
+                                    <h4>Download Orange 2.7</h4>
+                                    <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
+                                </a>
+                            {% elif os == "linux" %}
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
+                                    <h4>Download Orange 2.7</h4>
+                                    <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
+                                </a>
+                            {% else %}
                                 <li>
-                                    <a href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
-                                        <h4>Download Orange 2.7</h4>
-                                        <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
+                                    <a class="btn btn-default orange-color" href="{% url 'download' %}"><h4>Download Orange 2.7</h4>
+                                    <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p>
                                     </a>
                                 </li>
-                            {% elif os == "mac-os-x" %}
-                                <li><a href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}"><h4>Download Orange 2.7</h4>
-                                    <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p></a>
-                                </li>
-                            {% elif os == "linux" %}
-                                <li><a href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}"><h4>Download Orange 2.7</h4>
-                                    <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p></a>
-                                </li>
-                            {% else %}
-                                <li><a href="{% url 'download' %}"><h4>Download Orange 2.7</h4>
-                                    <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p></a></li>
                             {% endif %}
                         </ul>
-                        <div class="note text-center">
-                            <p>Data mining in 3 clicks. Start here!</p>
-                            <span class="right-arrow"></span>
-                        </div><!--//note-->
+{#                        <div class="note text-center">#}
+{#                            <p>Data mining in 3 clicks. Start here!</p>#}
+{#                            <span class="right-arrow"></span>#}
+{#                        </div><!--//note-->#}
                     </div>
+                    <h4 class="title">Latest Blog Entries</h4>
+                    {% cache 1 feed_all %}
+                        {% grab_feed_all %}
+                    {% endcache %}
                 </div><!--//overview-->
 
                 <!--// iPhone starts -->
@@ -51,15 +55,12 @@
                         <div class="iphone-holder-inner">
                             <div class="slider flexslider">
                                 <ul class="slides">
-                                    <li>
-                                        <img src="{% static 'images/monitor-1.png' %}"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{% static 'images/monitor-2.png' %}"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="{% static 'images/monitor-3.png' %}"  alt="" />
-                                    </li>
+                                    {% for screenshot in random_screenshots %}
+                                        <li>
+                                            <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
+                                            alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
+                                        </li>
+                                    {% endfor %}
                                 </ul><!--//slides-->
                             </div><!--//flexslider-->
                         </div><!--//iphone-holder-inner-->
@@ -161,36 +162,5 @@
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//features-->
-
-
-    <!-- ******SCREENSHOT SECTION****** -->
-    <section id="how" class="how section">
-        <div class="container">
-            <div class="row">
-                <!--//h2 title is optional-->
-                <div class="how-col col-md-12 col-sm-12 col-xs-12">
-                    <h2 class="title text-left">Screenshots</h2>
-                </div>
-                {% for screenshot in random_screenshots %}
-                    <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
-                        <div class="content">
-                            <div class="screenshot">
-                                <a href="{% url 'screenshots' %}" title="More&#8230;">
-                                    <img class="hovertitle img-hover" data-placement="bottom" data-toggle="tooltip" title="{{ screenshot.title }}"
-                                         alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div><!--//row-->
-        </div><!--//container-->
-    </section><!--//how-->
-
-
-    <!-- ******BLOG SECTION****** -->
-    {% cache 86400 feed_all %}
-        {% grab_feed_all %}
-    {% endcache %}
 
 {% endblock content %}

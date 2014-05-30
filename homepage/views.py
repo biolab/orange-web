@@ -135,7 +135,7 @@ def detect_os(user_agent):
 
 def index(request):
     response = {
-        'random_screenshots': random.sample(screenshots, 4),
+        'random_screenshots': random.sample(screenshots, 5),
         'os': detect_os(request.META['HTTP_USER_AGENT'])
     }
     return render(request, 'homepage.html', response)
