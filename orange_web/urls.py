@@ -9,6 +9,7 @@ urlpatterns = \
     patterns('',
              url(r'^$', views.index, name='index'),
              url(r'^screenshots/$', views.screens, name='screenshots'),
+             url(r'^getting_started/$', views.start, name='start'),
              url(r'^license/$', views.license, name='license'),
              url(r'^contributing/$', views.contribute, name='contribute'),
              url(r'^download/$', views.download, name='download'),

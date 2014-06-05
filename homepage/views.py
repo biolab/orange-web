@@ -148,3 +148,7 @@ def download(request, os=None):
     else:
         os_response['os'] = os
     return render(request, 'download.html', os_response)
+
+
+def start(request):
+    return render(request, 'start.html', {'screens_root': 'homepage/getting_started'})
