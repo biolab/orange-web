@@ -135,15 +135,19 @@
         <div class="container">
             <div class="row">
                 <h2 class="title text-center sr-only">Features</h2>
+
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <div class="icon">
-                        <i id="special-rotate" class="fa fa-code-fork"></i>
-                    </div><!--//icon-->
+                    <a href="{% url 'start' %}">
+                        <div class="icon">
+                            <i id="special-rotate" class="fa fa-code-fork"></i>
+                        </div><!--//icon-->
+                    </a>
                     <div class="content">
-                        <h3 class="title">Visual Programming</h3>
-                        <p>Data analysis through visual programming. Orange remembers choices and suggests frequently used combinations.</p>
+                        <a href="{% url 'start' %}"><h3 class="title">Getting Started</h3></a>
+                        <p><a href="{% url 'download' %}">Download Orange</a> and run through our tutorial to get a feel for visual programming.</p>
                     </div><!--//content-->
                 </div><!--//item-->
+
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
                     <div class="icon">
                         <i class="fa fa-bar-chart-o"></i>
@@ -153,6 +157,7 @@
                         <p>Orange is packed with different visualizations, from scatterplots, bar charts, trees, to dendrograms, networks and heatmaps.</p>
                     </div><!--//content-->
                 </div><!--//item-->
+
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
                     <div class="icon">
                         <i class="fa fa-gears"></i>
@@ -162,6 +167,7 @@
                         <p>Over 100 widgets and growing. We cover most of standard data analysis tasks. Specialized add-ons available, like Orange Bioinformatics.</p>
                     </div><!--//content-->
                 </div><!--//item-->
+
                 <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
                     <div class="icon">
                         <i class="fa fa-code"></i>
@@ -172,6 +178,7 @@
                         <!-- <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">FontAwsome icons</a>-->
                     </div><!--//content-->
                 </div><!--//item-->
+
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//features-->
