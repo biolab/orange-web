@@ -425,7 +425,7 @@
 		var iRatio = iWidth / iHeight;
 		var ratio = wRatio / iRatio;
 		
-		// We start with an assumption that the image will cover the whole window (except for the space around)
+		// We getting_started with an assumption that the image will cover the whole window (except for the space around)
 		var size = 1.0;
 		
 		// Is the image small enough to display it with the original size?

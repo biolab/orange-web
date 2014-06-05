@@ -24,11 +24,7 @@
     <link id="theme-style" rel="stylesheet" href="{% static 'css/styles.css' %}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 </head>
 <body data-spy="scroll">
     <!-- ******HEADER****** -->
@@ -54,7 +50,8 @@
                         <li class="nav-item"><a href="/">Home</a></li>
                         <li class="nav-item"><a href="{% url 'screenshots' %}">Screenshots</a></li>
                         <li class="nav-item"><a href="{% url 'download' %}">Download</a></li>
-                        <li class="nav-item"><a href="http://docs.orange.biolab.si">Documentation</a></li>
+{#                        <li class="nav-item"><a href="{% url 'start' %}">Get Started</a></li>#}
+                        <li class="nav-item"><a href="http://docs.orange.biolab.si">Docs</a></li>
                         <li class="nav-item"><a href="{% url 'community' %}">Community</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
@@ -92,12 +89,14 @@
     <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.init.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <!--[if !IE]>-->
     <script type="text/javascript" src="{% static 'js/animations.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
-
-
     <!--<![endif]-->
 </body>
 </html>

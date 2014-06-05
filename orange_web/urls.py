@@ -9,6 +9,7 @@ urlpatterns = \
     patterns('',
              url(r'^$', views.index, name='index'),
              url(r'^screenshots/$', views.screens, name='screenshots'),
+             url(r'^getting_started/$', views.start, name='start'),
              url(r'^license/$', views.license, name='license'),
              url(r'^contributing/$', views.contribute, name='contribute'),
              url(r'^download/$', views.download, name='download'),
@@ -20,5 +21,4 @@ urlpatterns = \
              url(r'^citation/$',
                  TemplateView.as_view(template_name='citation.html'),
                  name='citation'),
-             url(r'^contact/$', views.contact, name='contact'),
-             )
+             url(r'^contact/$', views.contact, name='contact'))

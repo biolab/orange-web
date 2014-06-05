@@ -65,6 +65,14 @@ div.screenshot-container div.content {
     padding-bottom: 0;
 }
 
+.custom-reduce-padding-3 {
+    padding-bottom: 10px;
+}
+
+.custom-add-padding {
+    padding-top: 20px;
+}
+
 .custom-alert {
     display: block;
     margin-top: 30px;
@@ -165,14 +173,23 @@ h4.custom-accordion-title {
     vertical-align: middle;
 }
 
-.flexslider .slides img.custom-slide {
-    width: auto;
-    height: 360px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .promo ul {
     padding-left: 0;
+}
+
+.download-area .download-left {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px;
+}
+
+.download-area .download-right {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 270px;
+    padding: 10px 20px;
+}
+
+.table td.custom-td {
+    border-top: none;
 }

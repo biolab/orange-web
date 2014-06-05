@@ -17,7 +17,7 @@ SCREENSHOTS_INDEX = os.path.join(SCREENSHOTS_DIR, 'screenshots.xml')
 LICENSE_FILE = os.path.join(BASE_DIR, 'LICENSES')
 DOWNLOAD_SET_PATTERN = os.path.join('/srv/download', 'filenames_%s.set')
 
-# Quick-start development settings - unsuitable for production
+# Quick-getting_started development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!

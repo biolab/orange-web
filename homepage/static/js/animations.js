@@ -5,9 +5,9 @@ jQuery(document).ready(function($) {
     if (jQuery.browser.mobile === false) {
 
         /* Animate elements in #Promo - Custom disable */
-        // $('.title').css('opacity', 0).one('inview', function(isInView) {
-        //     if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
-        // });
+        /*$('.title').css('opacity', 0).one('inview', function(isInView) {
+             if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
+        });*/
         $('.summary').css('opacity', 0).one('inview', function(isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp2');}
         });
@@ -48,9 +48,9 @@ jQuery(document).ready(function($) {
         $('.answer').css('opacity', 0).one('inview', function(event, isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp3');}
         });
-        $('.btn').css('opacity', 0).one('inview', function(event, isInView) {
+        /*$('.btn').css('opacity', 0).one('inview', function(event, isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp2');}
-        });
+        });*/
 
         /* Animate elements in #story */
         $('.content.left').css('opacity', 0).one('inview', function(event, isInView) {

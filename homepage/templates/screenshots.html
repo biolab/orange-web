@@ -8,21 +8,20 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <h1 class="title">Screenshots</h1>
                 </div>
+                <div id="visage" class="content">
                 {% for screenshot in screenshots %}
                     <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
-                        <div id="visage" class="content">
+                        <div class="content">
                             <div class="screenshot">
-                                <a href="{% static screenshot.img %}"><img class="hovertitle"
-                                   alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
+                                <a href="{% static screenshot.img %}" title="{{ screenshot.title }}">
+                                    <img class="hovertitle" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
                                 </a>
                             </div>
-                            <div class="screenshot-title"><a href="{% static screenshot.img %}" class="enable-visage" >
-                                    <h3 class="title">{{ screenshot.title }}</h3>
-                                 </a>
-                            </div>
+                            <h3 class="title screenshot-title">{{ screenshot.title }}</h3>
                         </div>
                     </div>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </section>

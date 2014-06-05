@@ -8,17 +8,15 @@ jQuery(document).ready(function($) {
         $('.screenshot').css('opacity', 0).one('inview', function(event, isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
         });
+
+        $('.hovertitle').hover(function() {
+            $(this).fadeTo(600, 0.3);
+        }, function() {
+            $(this).fadeTo(600, 1);
+        });
+
+        $('.img-hover').tooltip();
+
+        $('.alert').alert();
     }
-
-    $('.hovertitle').hover(function() {
-        $(this).fadeTo(600, 0.3);
-    }, function() {
-        $(this).fadeTo(600, 1);
-    });
-
-    //    TODO: Download button on:hover darker color, enable on hover. Flexslider blokira, verjetno (probaj zakomentirati js)
-
-    $('.img-hover').tooltip();
-
-    $('.alert').alert();
 });
