@@ -21,5 +21,4 @@ urlpatterns = \
              url(r'^citation/$',
                  TemplateView.as_view(template_name='citation.html'),
                  name='citation'),
-             url(r'^contact/$', views.contact, name='contact'),
-             )
+             url(r'^contact/$', views.contact, name='contact'))
