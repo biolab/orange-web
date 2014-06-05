@@ -50,8 +50,8 @@ div.screenshot-container div.content {
     bottom: 0;
 }
 
-#features div.screenshot-container a h3.title {
-    color: #f8a842;
+#features div.screenshot-container h3.title {
+    color: #444;
     font-size: 18px;
 }
 
