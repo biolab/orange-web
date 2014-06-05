@@ -14,14 +14,14 @@
                         Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.
                     </p>
                     <div class="download-area">
-                        <ul class="btn-group list-inline">
+                        <div class="download-left">
                             {% if os == "windows" %}
-                                <a class="btn btn-default orange-color" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
                                     <h4>Download Orange 2.7</h4>
                                     <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "mac-os-x" %}
-                                <a class="btn btn-default orange-color" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
                                     <h4>Download Orange 2.7</h4>
                                     <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
                                 </a>
@@ -31,18 +31,37 @@
                                     <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
                                 </a>
                             {% else %}
-                                <li>
-                                    <a class="btn btn-default orange-color" href="{% url 'download' %}"><h4>Download Orange 2.7</h4>
-                                    <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p>
-                                    </a>
-                                </li>
+                                <a class="btn btn-warning" href="{% url 'download' %}">
+                                    <h4>Download Orange 2.7</h4>
+                                <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p>
+                                </a>
                             {% endif %}
-                        </ul>
+                        </div>
+                        <div class="download-right">
+                            <script type="text/javascript">
+                            /* <![CDATA[ */
+                            document.write('<fb:like href="http://www.facebook.com/orangedm" show_faces="false" width="250" action="recommend"></fb:like>');
+                            document.write('<g:plusone size="tall" annotation="inline" width="250"></g:plusone>');
+                            /* ]]> */
+                            </script>
+                            <script src="http://connect.facebook.net/en_US/all.js#xfbml=1" type="text/javascript"></script>
+                            <script type="text/javascript">
+                            /* <![CDATA[ */
+                            (function() {
+                                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                po.src = 'https://apis.google.com/js/plusone.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                            })();
+                            /* ]]> */
+                            </script>
+                        </div>
+
 {#                        <div class="note text-center">#}
 {#                            <p>Data mining in 3 clicks. Start here!</p>#}
 {#                            <span class="right-arrow"></span>#}
 {#                        </div><!--//note-->#}
                     </div>
+
                     <h4 class="title">Latest Blog Entries</h4>
                     {% cache 1 feed_all %}
                         {% grab_feed_all %}
@@ -74,15 +93,12 @@
                         <div class="android-holder-inner">
                             <div class="slider flexslider">
                                 <ul class="slides">
-                                    <li>
-                                        <img src="assets/images/android/android-slide-1.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/android/android-slide-2.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/android/android-slide-3.png"  alt="" />
-                                    </li>
+                                    {% for screenshot in random_screenshots %}
+                                        <li>
+                                            <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
+                                            alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
+                                        </li>
+                                    {% endfor %}
                                 </ul><!--//slides-->
                             </div><!--//flexslider-->
                         </div><!--//phone-holder-inner-->
@@ -96,15 +112,12 @@
                         <div class="ipad-holder-inner">
                             <div class="slider flexslider">
                                 <ul class="slides">
-                                    <li>
-                                        <img src="assets/images/ipad/ipad-slide-1.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/ipad/ipad-slide-2.png"  alt="" />
-                                    </li>
-                                    <li>
-                                        <img src="assets/images/ipad/ipad-slide-3.png"  alt="" />
-                                    </li>
+                                    {% for screenshot in random_screenshots %}
+                                        <li>
+                                            <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
+                                            alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
+                                        </li>
+                                    {% endfor %}
                                 </ul><!--//slides-->
                             </div><!--//flexslider-->
                         </div><!--//ipad-holder-inner-->

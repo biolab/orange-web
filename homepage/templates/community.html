@@ -4,7 +4,54 @@
 {% load tag_extras %}
 
 {% block content %}
-<!-- ******HOW****** -->
+<section id="features" class="features section custom-reduce-padding-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h1 class="title">Community</h1>
+            </div>
+
+            <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <a href="http://orange.biolab.si/forum/">
+                    <div class="icon">
+                        <i class="fa fa-comments"></i>
+                    </div><!--//icon-->
+                </a>
+                <div class="content">
+                    <a href="http://orange.biolab.si/forum/"><h3 class="title">Forum</h3></a>
+                    <p>On <a href="http://orange.biolab.si/forum/">our forum</a>, you can post your questions, problems, suggestions, or ideas, or browse/search existing posts.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+
+            <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <a href="http://orange.biolab.si/blog/">
+                    <div class="icon">
+                        <i class="fa fa-wordpress"></i>
+                    </div><!--//icon-->
+                </a>
+                <div class="content">
+                    <a href="http://orange.biolab.si/blog/"><h3 class="title">Blog</h3></a>
+                    <p>Visit <a href="http://orange.biolab.si/blog/">our blog</a> to keep in touch with Orange and learn from our bloggers.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+
+            <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <a href="http://orange.biolab.si/trac/">
+                    <div class="icon">
+                        <i class="fa fa-paw"></i>
+                    </div><!--//icon-->
+                </a>
+                <div class="content">
+                    <a href="http://orange.biolab.si/trac/"><h3 class="title">Development</h3></a>
+                    <p>Browse the <a href="http://orange.biolab.si/trac/browser">source code</a>, open and follow development through tickets, contribute patches or help with documentation.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+
+        </div><!--//row-->
+    </div><!--//container-->
+</section><!--//features-->
+
+{% comment %}<!-- ******HOW****** -->
 <section id="faq" class="faq section">
     <div class="container">
         <div class="row">
@@ -60,6 +107,6 @@
             </div><!--//video-->
         </div><!--//row-->
     </div><!--//container-->
-</section><!--//how-->
+</section><!--//how-->{% endcomment %}
 
 {% endblock content %}

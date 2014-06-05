@@ -1,9 +1,9 @@
 {% if not bozo %}
-    <ul class="summary">
+    <table class="table table-condensed">
     {% for entry in entries %}
-        <li>
-            <p>{{ entry.published }} - <a href="{{ entry.link }}">{{ entry.title }}</a></p>
-        </li>
+        <tr>
+            <td class="custom-td">{{ entry.published }}</td> <td class="custom-td"><a href="{{ entry.link }}">{{ entry.title }}</a></td>
+        </tr>
     {%  endfor %}
-    </ul>
+    </table>
 {% endif %}

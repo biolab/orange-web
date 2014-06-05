@@ -129,9 +129,10 @@ blockquote {
   padding-top: 90px;
 }
 .has-pattern {
-  background-image: url('../images/patterns/pattern-1.png');
-  background-repeat: repeat;
-  background-position: left top;
+  /*background-image: url('../images/patterns/pattern-1.png');*/
+  /*background-repeat: repeat;*/
+  /*background-position: left top;*/
+  background-image: none;
 }
 .delayp1 {
   animation-delay: .1s;
@@ -400,7 +401,7 @@ blockquote {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .promo .overview .summary {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   margin-left: 70px;
 }
 .promo .overview .summary li {
@@ -415,6 +416,7 @@ blockquote {
 }
 .promo .overview .download-area {
   display: inline-block;
+  margin-bottom: 60px;
 }
 .promo .overview .btn-group {
   /*margin-left: 40px;*/
@@ -502,10 +504,12 @@ blockquote {
   background-position: left top;
 }
 .promo .iphone.iphone-black .iphone-holder {
-  background-image: url('../images/iphone/iphone-black.png');
+  /*background-image: url('../images/iphone/iphone-black.png');*/
+  background-image: none;
 }
 .promo .iphone.iphone-white .iphone-holder {
-  background-image: url('../images/iphone/iphone-white.png');
+  /*background-image: url('../images/iphone/iphone-white.png');*/
+  background-image: none;
 }
 .promo .iphone .iphone-holder-inner {
   position: absolute;
@@ -534,9 +538,10 @@ blockquote {
   position: relative;
   width: 320px;
   height: 600px;
-  background-image: url('../images/android/android-black.png');
+  /*background-image: url('../images/android/android-black.png');
   background-repeat: no-repeat;
-  background-position: left top;
+  background-position: left top;*/
+  background-image: none;
 }
 .promo .android .android-holder-inner {
   position: absolute;
@@ -569,10 +574,12 @@ blockquote {
   background-position: left top;
 }
 .promo .ipad.ipad-black .ipad-holder {
-  background-image: url('../images/ipad/ipad-black.png');
+  /*background-image: url('../images/ipad/ipad-black.png');*/
+  background-image: none;
 }
 .promo .ipad.ipad-white .ipad-holder {
-  background-image: url('../images/ipad/ipad-white.png');
+  /*background-image: url('../images/ipad/ipad-white.png');*/
+  background-image: none;
 }
 .promo .ipad .ipad-holder-inner {
   position: absolute;
@@ -596,7 +603,7 @@ blockquote {
 }
 /* ======= Features Section ======= */
 .features {
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 .features .title {
@@ -1099,7 +1106,7 @@ blockquote {
     text-align: left;
   }
   .promo .overview .download-area {
-    margin: 0 auto;
+    margin: 0  auto 30px auto;
   }
   .promo .phone {
     text-align: center;
@@ -1169,7 +1176,7 @@ blockquote {
     text-align: left;
   }
   .promo .overview .download-area {
-    margin: 0 auto;
+    margin: 0  auto 30px auto;
   }
   .promo .phone {
     text-align: center;

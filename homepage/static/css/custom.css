@@ -176,3 +176,20 @@ h4.custom-accordion-title {
 .promo ul {
     padding-left: 0;
 }
+
+.download-area .download-left {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px;
+}
+
+.download-area .download-right {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 270px;
+    padding: 10px 20px;
+}
+
+.table td.custom-td {
+    border-top: none;
+}
