@@ -15,7 +15,8 @@ SCREENSHOTS_DIR = \
     os.path.join(BASE_DIR, 'homepage', 'static', 'homepage', 'screenshots')
 SCREENSHOTS_INDEX = os.path.join(SCREENSHOTS_DIR, 'screenshots.xml')
 LICENSE_FILE = os.path.join(BASE_DIR, 'LICENSES')
-DOWNLOAD_SET_PATTERN = os.path.join('/srv/download', 'filenames_%s.set')
+DOWNLOAD_SET_PATTERN = os.path.join('homepage', 'filenames_%s.set')
+# DOWNLOAD_SET_PATTERN = os.path.join('/srv/download', 'filenames_%s.set')
 
 # Quick-getting_started development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -24,11 +25,11 @@ DOWNLOAD_SET_PATTERN = os.path.join('/srv/download', 'filenames_%s.set')
 SECRET_KEY = '@%@g_gj#h+x+x0*b%vcl*gw^rmfmzq5jeb64atjmm&3j^7=!po'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# FOR TESTING WHEN FALSE: python manage.py runserver --insecure
+DEBUG = False
+TEMPLATE_DEBUG = False
 
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si']
+ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '*']
 
 # EMAIL BACKEND publishes mail send by send_mail() function to standard output.
 # To change behavior for production, you will have to set up the SMTP BACKEND.
@@ -61,8 +62,11 @@ ROOT_URLCONF = 'orange_web.urls'
 
 WSGI_APPLICATION = 'orange_web.wsgi.application'
 
+# ADMINS = (
+#     ('Miha Stajdohar', 'miha.stajdohar@fri.uni-lj.si'),
+# )
 ADMINS = (
-    ('Miha Stajdohar', 'miha.stajdohar@fri.uni-lj.si'),
+    ('Miha Jenko', 'mjenko@t-2.net'),
 )
 
 # Database
@@ -97,7 +101,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'homepage', 'static')
+print(STATIC_ROOT)
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
