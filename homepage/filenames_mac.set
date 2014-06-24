@@ -1,9 +1,0 @@
-SOURCE_STABLE=orange-1.0b.10265.tgz
-SOURCE_BUNDLELITE_STABLE=orange-bundlelite-1.0b.10265.tgz
-MAC_STABLE=orange-bundle-1.0b.10265.dmg
-MAC_64BIT=orange-bundle-64bit-svn-0.0.12741.dmg
-SOURCE_DAILY=orange-svn-0.0.12741.tgz
-SOURCE_BUNDLELITE_DAILY=orange-bundlelite-svn-0.0.12741.tgz
-SOURCE_BIOINFORMATICS_DAILY=orange-bioinformatics-svn-0.0.12741.tgz
-SOURCE_TEXT_DAILY=orange-text-svn-0.0.12741.tgz
-MAC_DAILY=Orange-2.7.3-11910.dmg
