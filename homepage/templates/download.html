@@ -8,9 +8,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h1 class="title">Download</h1>
+                      <h2 class="title">Download</h2>
                 </div>
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'download' %}windows/">
                         <div class="icon{% if os == "windows" %}-selected{% endif %}">
                             <i class="fa fa-windows"></i>
@@ -21,7 +22,7 @@
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'download' %}mac-os-x/">
                         <div class="icon{% if os == "mac-os-x" %}-selected{% endif %}">
                             <i class="fa fa-apple"></i>
@@ -32,7 +33,7 @@
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'download' %}linux/">
                         <div class="icon{% if os == "linux" %}-selected{% endif %}">
                             <i class="fa fa-linux"></i>
@@ -43,7 +44,7 @@
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'download' %}for-developers/">
                         <div class="icon{% if os == "for-developers" %}-selected{% endif %}">
                             <i class="fa fa-code-fork"></i>
@@ -55,9 +56,7 @@
                 </div><!--//item-->
             </div><!--//row-->
         </div><!--//container-->
-    </section><!--//features-->
 
-    <section id="faq" class="faq section move-down custom-reduce-padding">
         <div class="container">
             <div class="row">
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
@@ -66,21 +65,20 @@
                     {% elif os == "mac-os-x" %}
                         {% cache 43200 dl_mac_html %}{% download_mac %}{% endcache %}
                     {% elif os == "linux" %}
-                        <h2>Building from source</h2>
+                        <h3>Linux / Source</h3>
                         {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
                     {% elif os == "for-developers" %}
-                        <h2>For Developers</h2>
-                        <h3>Building from source</h3>
+                        <h3>For Developers</h3>
                         {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
 
-                        <h3>make</h3>
+                        <h4>make</h4>
                         <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008.
                            To compile Orange, you will need an appropriate compiler, <a href="http://www.python.org/">Python</a> and <a href="http://numpy.scipy.org/">NumPy</a>.
                            See <a href="http://orange.biolab.si/trac/intertrac/wiki%3ABuildingFromSource" title="wiki:BuildingFromSource in Orange Trac">building from source</a> wiki page for more information.</p>
 
                         <p>Orange 3.0 is in early stages of development. Those interested can find it on <a href="https://github.com/biolab/orange3">GitHub.</a></p>
 
-                        <h3>C4.5 files</h3>
+                        <h4>C4.5 files</h4>
                         <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}files/buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
                     {% else %}
                         {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
@@ -88,21 +86,26 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="faq" class="faq section move-down custom-reduce-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    {% cache 86400 dl_addons_html %}{% download_addons %}{% endcache %}
+                    {% cache 43200 dl_addons_html %}{% download_addons %}{% endcache %}
+                </div>
+            </div>
+        </div>
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <h3>Working with Add-ons</h3>
-                    <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>
-                    <pre>pip install &lt;add-on name&gt;</pre>
-                    <p>For instructions, how to add your add-on to the list, please refer to <a href="http://orange.biolab.si/trac/trac/wiki/AddOns">our Trac wiki</a>.</p>
 
                     {% if os == "windows" %}
                         {% cache 43200 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
+                    {% else %}
+                        <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>
+                        <pre>pip install &lt;add-on name&gt;</pre>
+                        <p>For instructions, how to add your add-on to the list, please refer to <a href="http://orange.biolab.si/trac/trac/wiki/AddOns">our Trac wiki</a>.</p>
                     {% endif %}
                 </div>
             </div>

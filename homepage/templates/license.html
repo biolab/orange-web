@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section id="features" class="features section">
+<section id="features" class="features section custom-reduce-padding-2">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <h1 class="title">License</h1>
+                <h2 class="title">License</h2>
                 {{ text|striptags|urlize|linebreaks }}
                 {% for o in other %}
                     <pre>

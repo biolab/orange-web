@@ -7,10 +7,11 @@ jQuery(document).ready(function($) {
         /* Animate elements in #Promo - Custom disable */
         /*$('.title').css('opacity', 0).one('inview', function(isInView) {
              if (isInView) {$(this).addClass('animated fadeInUp delayp1');}
-        });*/
+        });
         $('.summary').css('opacity', 0).one('inview', function(isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp2');}
-        });
+        });*/
+
         $('.ios').css('opacity', 0).one('inview', function(isInView) {
             if (isInView) {$(this).addClass('animated fadeInLeft delayp3');}
         });

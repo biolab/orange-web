@@ -339,6 +339,7 @@ blockquote {
 }
 .footer .copyright {
   color: #b3b3b3;
+  margin-top: 3px;
   margin-right: 15px;
 }
 .footer .links {
@@ -364,7 +365,7 @@ blockquote {
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
   border: 0;
-  width: 519px;
+  width: auto;
   background: transparent;
 }
 .flexslider .flex-control-nav {
@@ -391,7 +392,7 @@ blockquote {
   padding-bottom: 15px;
 }
 .promo .overview {
-  margin-top: 60px;
+  margin-top: 30px;
   /*padding-left: 0;*/
   padding-right: 30px;
 }
@@ -401,8 +402,7 @@ blockquote {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .promo .overview .summary {
-  margin-bottom: 30px;
-  margin-left: 70px;
+  margin-bottom: 0;
 }
 .promo .overview .summary li {
   margin-bottom: 15px;
@@ -416,7 +416,9 @@ blockquote {
 }
 .promo .overview .download-area {
   display: inline-block;
-  margin-bottom: 60px;
+  width: 100%;
+  position: relative;
+  margin: 30px 0;
 }
 .promo .overview .btn-group {
   /*margin-left: 40px;*/
@@ -498,8 +500,8 @@ blockquote {
 }
 .promo .iphone .iphone-holder {
   position: relative;
-  width: 420px;
-  height: 400px;
+  width: auto;
+  height: auto;
   background-repeat: no-repeat;
   background-position: left top;
 }
@@ -512,25 +514,25 @@ blockquote {
   background-image: none;
 }
 .promo .iphone .iphone-holder-inner {
-  position: absolute;
-  width: 405px;
-  height: 390px;
+  position: relative;
+  width: auto;
+  height: auto;
   /*left: 51px;*/
-  top: 103px;
+  /*top: 103px;*/
 }
 .promo .iphone .flexslider .flex-control-nav {
   bottom: -50px;
 }
-.promo .iphone:before {
-  content: "";
-  display: block;
-  width: 500px;
-  height: 500px;
-  background: url('../images/glow.png') no-repeat center top;
-  right: 0;
-  top: 0;
-  position: absolute;
-}
+/*.promo .iphone:before {*/
+  /*content: "";*/
+  /*display: block;*/
+  /*width: 500px;*/
+  /*height: 500px;*/
+  /*background: url('../images/glow.png') no-repeat center top;*/
+  /*right: 0;*/
+  /*top: 0;*/
+  /*position: absolute;*/
+/*}*/
 .promo .android {
   position: relative;
 }
@@ -603,12 +605,21 @@ blockquote {
 }
 /* ======= Features Section ======= */
 .features {
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 .features .title {
   margin-bottom: 60px;
   margin-top: 50px;
+}
+
+.features h1.title {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.features h2.title  {
+  font-size: 30px;
+  margin-bottom: 35px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .features .icon {
@@ -648,13 +659,24 @@ blockquote {
   text-align: center;
   vertical-align: middle;
 }
+.features .icon-item {
+  padding-top: 20px;
+}
+.features .icon-item a:active {
+  outline: none;
+  text-decoration: none;
+}
+.features .icon-item a:focus {
+  outline: none;
+  text-decoration: none;
+}
 .features .content {
   padding: 30px;
 }
-.features .content .title {
+.features .content h3.title {
   color: #f8a842;
   font-size: 18px;
-  margin-top: 0;
+  margin: 10px auto;
 }
 .features .content p {
   font-weight: 300;
@@ -723,6 +745,13 @@ blockquote {
   margin-bottom: 60px;
   margin-top: 50px;
 }
+
+.faq h2.title  {
+  font-size: 30px;
+  margin-bottom: 35px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
 .faq .item {
   padding: 30px;
   margin-bottom: 30px;
@@ -1084,9 +1113,6 @@ blockquote {
 }
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
-  .promo .overview .summary li {
-    font-size: 18px;
-  }
   .promo .overview .note .left-arrow {
     left: 0;
   }
@@ -1099,37 +1125,35 @@ blockquote {
   .promo .overview {
     text-align: left;
   }
-  .promo .overview .summary {
-    margin-left: 0;
-  }
   .promo .overview .summary li {
+    font-size: 18px;
     text-align: left;
   }
   .promo .overview .download-area {
-    margin: 0  auto 30px auto;
+    margin: 30px 0;
   }
   .promo .phone {
+    margin: 30px 0 0;
     text-align: center;
   }
   .promo .phone .phone-holder {
-    margin: 0 auto;
     width: auto;
-    -webkit-background-size: 300px auto;
+    /*-webkit-background-size: 300px auto;
     -moz-background-size: 300px auto;
     -o-background-size: 300px auto;
-    background-size: 300px auto;
+    background-size: 300px auto;*/
   }
   .promo .iphone .iphone-holder-inner {
-    width: 208px;
-    height: 394px;
+    width: auto;
+    height: auto;
     /*left: 48px;*/
-    top: 96px;
+    /*top: 96px;*/
   }
   .promo .android .android-holder-inner {
     width: 238px;
     height: 394px;
     /*left: 33px;*/
-    top: 67px;
+    /*top: 67px;*/
   }
   .promo .ipad {
     text-align: center;
@@ -1166,10 +1190,9 @@ blockquote {
 
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 200px;
+    height: 260px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 }
 /* Small devices (tablets, 768px and up) */
@@ -1185,13 +1208,14 @@ blockquote {
     text-align: left;
   }
   .promo .overview .download-area {
-    margin: 0  auto 30px auto;
+    margin: 30px 0;
   }
   .promo .phone {
+    margin: 30px 0 0;
     text-align: left;
   }
   .promo .phone .phone-holder {
-    margin: 0 auto;
+    width: auto;
   }
   .promo .ipad {
     text-align: left;
@@ -1202,10 +1226,9 @@ blockquote {
 
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 200px;
+    height: 260px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 }
 /* Medium devices (desktops, 992px and up) */
@@ -1220,6 +1243,7 @@ blockquote {
     text-align: left;
   }
   .promo .phone {
+    margin: 115px 0 0;
     text-align: left;
   }
   .promo .ipad {
@@ -1228,10 +1252,9 @@ blockquote {
 
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 250px;
+    height: 260px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 }
 /* Medium devices (desktops, 1040px and up) */
@@ -1254,10 +1277,33 @@ blockquote {
 
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 250px;
+    height: 260px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 }
 /* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .promo .overview {
+    text-align: left;
+  }
+  .promo .overview .summary {
+    margin-left: 0;
+  }
+  .promo .overview .summary li {
+    text-align: left;
+  }
+  .promo .phone {
+    text-align: left;
+  }
+  .promo .ipad {
+    text-align: left;
+  }
+
+  .flexslider .slides img.custom-slide {
+    width: auto;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+}

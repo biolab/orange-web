@@ -1,30 +1,29 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% comment %}{% load cache %}
-{% load tag_extras %}{% endcomment %}
 
 {% block content %}
-    <section id="faq" class="faq section move-down custom-reduce-padding-2">
+    <section id="features" class="features section custom-reduce-padding-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h1 class="title custom-reduce-padding-3">Getting Started</h1>
+                    <h2 class="title">Getting Started</h2>
                 </div>
-                <div class="faq-col col-md-12 col-sm-12 col-xs-12">
-                    <h3 class="custom-add-padding">Download and Install</h3>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="custom-reduce-padding">Download and Install</h4>
                     <p>
                         Download the Orange distribution package from the <a href="{% url 'download' %}">Download page</a> and run the
                         installation file on your local computer.
                     </p>
 
-                    <h3 class="custom-add-padding">Run</h3>
+                    <h4>Run</h4>
                     <p>
                         Locate the Orange program icon. It is probably on your desktop (Win, Linux) or in the Applications folder (Mac).
                         Double click on the icon to run Orange.
                     </p>
                     <p><img alt="Orange Icon" src="{% static screens_root %}/orange-icon.png__56x64_q95_crop_upscale.jpg" width="56" height="64" title="Orange Icon"/></p>
 
-                    <h3 class="custom-add-padding">Welcome to Orange</h3>
+                    <h4>Welcome to Orange</h4>
                     <p>
                         Running Orange opens a welcome screen. From here you may create new data mining workflows or browse through the ones
                         you have already created. If you are running Orange for the first time, start by clicking on the Tutorial icon to
@@ -32,7 +31,7 @@
                     </p>
                     <p><img alt="welcome.png" src="{% static screens_root %}/welcome.png__602x417_q95_crop_upscale.jpg" width="602" height="417"/></p>
 
-                    <h3 class="custom-add-padding">Tutorials</h3>
+                    <h4>Tutorials</h4>
                     <p>
                         From the tutorials window, select any of the preloaded data mining workflows. Here, we will choose the one with
                         hierarchical clustering.
@@ -73,7 +72,7 @@
                         with other workflows and widgets. Or create a workflow of your own.
                     </p>
 
-                    <h3 class="custom-add-padding">Your Own Workflow</h3>
+                    <h4>Your Own Workflow</h4>
                     <p>
                         We first need to start with an empty canvas. Click on New on the Orange's welcome screen, or, if Orange is already
                         running, choose New from the File menu.

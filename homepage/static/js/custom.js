@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
         });
 
         $('.hovertitle').hover(function() {
-            $(this).fadeTo(600, 0.3);
+            $(this).fadeTo(600, 0.5);
         }, function() {
             $(this).fadeTo(600, 1);
         });

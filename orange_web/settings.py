@@ -22,12 +22,14 @@ DOWNLOAD_SET_PATTERN = os.path.join('homepage', 'filenames_%s.set')
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = '@%@g_gj#h+x+x0*b%vcl*gw^rmfmzq5jeb64atjmm&3j^7=!po'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # FOR TESTING WHEN FALSE: python manage.py runserver --insecure
-DEBUG = False
-TEMPLATE_DEBUG = False
+
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '*']
 
@@ -35,6 +37,7 @@ ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '*']
 # To change behavior for production, you will have to set up the SMTP BACKEND.
 # Please refer to documentation:
 # https://docs.djangoproject.com/en/1.6/topics/email/
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Application definition
@@ -102,7 +105,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'homepage', 'static')
-print(STATIC_ROOT)
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

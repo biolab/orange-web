@@ -1,10 +1,11 @@
+<h4>Building from source</h4>
 <ul>
     <li><a href="{% url 'download' %}files/{{ source }}">Nightly packed sources</a></li>
     <li><a href="{% url 'download' %}files/archive/">Archive of selected packed sources</a></li>
     <li><a href="https://bitbucket.org/biolab/orange">Orange 2.7 code repository (BitBucket)</a></li>
 </ul>
 
-<h3>setup.py</h3>
+<h4>setup.py</h4>
 <p>To build and install Orange you can use the setup.py in the root orange directory (requires GCC, Python and numpy development headers). To use it unpack the nightly sources and run:</p>
 <pre>python setup.py build<br>sudo python setup.py install</pre>
 <p>This will also install orange-canvas script so you can start Orange Canvas from the command line.</p>
