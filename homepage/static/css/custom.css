@@ -21,17 +21,20 @@
 }
 
 div.screenshot-container div.content {
-    padding: 30px;
+    padding: 0 20px;
 }
 
 #how div.screenshot-container div.content {
-    height: 220px;
+    height: 250px;
+}
+
+#features div.screenshot-container {
+    margin: 0 auto 50px auto;
 }
 
 #features div.screenshot-container div.content {
-    height: 320px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 210px;
+    margin: 0;
 }
 
 .screenshot {
@@ -43,26 +46,22 @@ div.screenshot-container div.content {
     float: left;
 }
 
-.screenshot-title {
+.features .content .screenshot-container h3.screenshot-title {
     float: left;
     max-width: 220px;
     position: absolute;
     bottom: 0;
-}
-
-#features div.screenshot-container h3.title {
     color: #444;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .custom-reduce-padding {
     padding-top: 0;
-    padding-bottom: 40px;
+    padding-bottom: 0;
 }
 
 .custom-reduce-padding-2 {
     padding-top: 80px;
-    padding-bottom: 0;
 }
 
 .custom-reduce-padding-3 {
@@ -135,6 +134,7 @@ a.custom-accordion-title {
 
 h4.custom-accordion-title {
     float: left;
+    padding-top: 0;
 }
 
 .custom-accordion-container {
@@ -181,15 +181,49 @@ h4.custom-accordion-title {
     display: inline-block;
     vertical-align: top;
     padding: 10px 20px;
+    margin: 0 auto;
 }
 
 .download-area .download-right {
     display: inline-block;
     vertical-align: top;
-    max-width: 270px;
+    max-width: 200px;
     padding: 10px 20px;
+    margin: 0 auto;
+}
+
+@media (max-width: 566px) {
+    .download-area {
+        text-align: left;
+    }
+    .download-area .download-left {
+        padding: 10px 10px 0;
+    }
+    .download-area .download-right {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 1199px) {
+    .download-area {
+        text-align: center;
+    }
+}
+
+@media (min-width: 991px) {
+    .download-area {
+        text-align: left;
+    }
+}
+
+.download-btn {
+    padding-top: 0;
 }
 
 .table td.custom-td {
     border-top: none;
+}
+
+h4 {
+    padding-top: 20px;
 }

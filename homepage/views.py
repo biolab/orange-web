@@ -9,7 +9,6 @@ from django.core.mail import send_mail
 # Create a list of admin e-mail addresses.
 admins = [x[1] for x in settings.ADMINS]
 
-
 f = open(settings.SCREENSHOTS_INDEX)
 doc = xml.dom.minidom.parse(f)
 f.close()
@@ -121,13 +120,17 @@ def contact(request):
 #     else:
 #         os['type'] = ""
 
+p_win = re.compile(r'.*[Ww]in.*')
+p_mac = re.compile(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*')
+p_linux = re.compile(r'.*[Ll]inux.*')
+
 
 def detect_os(user_agent):
-    if re.match(r'.*[Ww]in.*', user_agent):
+    if re.match(p_win, user_agent):
         return "windows"
-    elif re.match(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*', user_agent):
+    elif re.match(p_mac, user_agent):
         return "mac-os-x"
-    elif re.match(r'.*[Ll]inux.*', user_agent):
+    elif re.match(p_linux, user_agent):
         return "linux"
     else:
         return ""

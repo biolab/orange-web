@@ -2,11 +2,11 @@
 {% load staticfiles %}
 
 {% block content %}
-    <section id="features" class="features section">
+    <section id="features" class="features section custom-reduce-padding-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h1 class="title">Screenshots</h1>
+                    <h2 class="title">Screenshots</h2>
                 </div>
                 <div id="visage" class="content">
                 {% for screenshot in screenshots %}
@@ -17,7 +17,7 @@
                                     <img class="hovertitle" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
                                 </a>
                             </div>
-                            <h3 class="title screenshot-title">{{ screenshot.title }}</h3>
+                            <h3 class="screenshot-title">{{ screenshot.title }}</h3>
                         </div>
                     </div>
                 {% endfor %}

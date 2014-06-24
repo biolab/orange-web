@@ -9,30 +9,28 @@
         <div class="container">
             <div class="row">
                 <div class="overview col-md-6 col-sm-12 col-xs-12">
-                    <h2 class="title">Orange - Fruitful and Fun</h2>
-                    <p class="summary">
-                        Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.
-                    </p>
+                    <h2 class="title">Data Mining - Fruitful and Fun</h2>
+                    <p class="summary">Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.</p>
                     <div class="download-area">
                         <div class="download-left">
                             {% if os == "windows" %}
                                 <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
-                                    <h4>Download Orange 2.7</h4>
+                                    <h4 class="download-btn">Download Orange 2.7</h4>
                                     <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "mac-os-x" %}
                                 <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
-                                    <h4>Download Orange 2.7</h4>
+                                    <h4 class="download-btn">Download Orange 2.7</h4>
                                     <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "linux" %}
                                 <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
-                                    <h4>Download Orange 2.7</h4>
+                                    <h4 class="download-btn">Download Orange 2.7</h4>
                                     <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
                                 </a>
                             {% else %}
                                 <a class="btn btn-warning" href="{% url 'download' %}">
-                                    <h4>Download Orange 2.7</h4>
+                                    <h4 class="download-btn">Download Orange 2.7</h4>
                                 <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p>
                                 </a>
                             {% endif %}
@@ -55,21 +53,16 @@
                             /* ]]> */
                             </script>
                         </div>
-
-{#                        <div class="note text-center">#}
-{#                            <p>Data mining in 3 clicks. Start here!</p>#}
-{#                            <span class="right-arrow"></span>#}
-{#                        </div><!--//note-->#}
                     </div>
 
-                    <h4 class="title">Latest Blog Entries</h4>
-                    {% cache 1 feed_all %}
+                    <h4 class="title custom-reduce-padding">Latest Blog Entries</h4>
+                    {% cache 43200 feed_all %}
                         {% grab_feed_all %}
                     {% endcache %}
                 </div><!--//overview-->
 
-                <!--// iPhone starts -->
-                <div class="phone iphone iphone-black col-md-6 col-sm-12 col-xs-12 ">
+                <!--// iPhone starts - default/only view -->
+                <div class="phone iphone col-md-6 col-sm-12 col-xs-12 ">
                     <div class="iphone-holder phone-holder">
                         <div class="iphone-holder-inner">
                             <div class="slider flexslider">
@@ -87,44 +80,6 @@
                 </div><!--//iphone-->
                 <!--// iPhone ends -->
 
-                <!--// Android starts -->
-                <div class="phone android col-md-4 col-sm-12 col-xs-12" style="display:none">
-                    <div class="android-holder phone-holder">
-                        <div class="android-holder-inner">
-                            <div class="slider flexslider">
-                                <ul class="slides">
-                                    {% for screenshot in random_screenshots %}
-                                        <li>
-                                            <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
-                                            alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
-                                        </li>
-                                    {% endfor %}
-                                </ul><!--//slides-->
-                            </div><!--//flexslider-->
-                        </div><!--//phone-holder-inner-->
-                    </div><!--//iphone-holder-->
-                </div><!--//iphone-->
-                <!--// Android ends -->
-
-                <!--// iPad starts -->
-                <div class="ipad ipad-black col-md-4 col-sm-12 col-xs-12 col-md-pull-1" style="display:none">
-                    <div class="ipad-holder">
-                        <div class="ipad-holder-inner">
-                            <div class="slider flexslider">
-                                <ul class="slides">
-                                    {% for screenshot in random_screenshots %}
-                                        <li>
-                                            <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
-                                            alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
-                                        </li>
-                                    {% endfor %}
-                                </ul><!--//slides-->
-                            </div><!--//flexslider-->
-                        </div><!--//ipad-holder-inner-->
-                    </div><!--//ipad-holder-->
-                </div><!--//ipad-->
-                <!--// iPad ends -->
-
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//promo-->
@@ -136,7 +91,7 @@
             <div class="row">
                 <h2 class="title text-center sr-only">Features</h2>
 
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'start' %}">
                         <div class="icon">
                             <i id="special-rotate" class="fa fa-code-fork"></i>
@@ -144,11 +99,11 @@
                     </a>
                     <div class="content">
                         <a href="{% url 'start' %}"><h3 class="title">Getting Started</h3></a>
-                        <p><a href="{% url 'download' %}">Download Orange</a> and run through our tutorial to get a feel for visual programming.</p>
+                        <p><a href="{% url 'download' %}">Download Orange</a> and run through our <a href="{% url 'start' %}">tutorial</a> to get a feel for visual programming.</p>
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'screenshots' %}">
                         <div class="icon">
                             <i class="fa fa-bar-chart-o"></i>
@@ -160,7 +115,7 @@
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="http://docs.orange.biolab.si/widgets/rst/index.html">
                         <div class="icon">
                             <i class="fa fa-gears"></i>
@@ -172,7 +127,7 @@
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="http://docs.orange.biolab.si/tutorial/rst/index.html">
                         <div class="icon">
                             <i class="fa fa-code"></i>
