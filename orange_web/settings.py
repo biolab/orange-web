@@ -27,8 +27,8 @@ SECRET_KEY = '@%@g_gj#h+x+x0*b%vcl*gw^rmfmzq5jeb64atjmm&3j^7=!po'
 # SECURITY WARNING: don't run with debug turned on in production!
 # FOR TESTING WHEN FALSE: python manage.py runserver --insecure
 
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si']
 
