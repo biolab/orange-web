@@ -1,5 +1,4 @@
 from orange_web.settings import *
-import os
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
