@@ -1,4 +1,4 @@
-import orange_web.settings
+from orange_web.settings import *
 import os
 
 DEBUG = False
