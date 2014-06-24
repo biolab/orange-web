@@ -1,5 +1,7 @@
-import orange_web.settings
 import os
+
+from settings import *
+
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
