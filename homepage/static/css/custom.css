@@ -33,7 +33,7 @@ div.screenshot-container div.content {
 }
 
 #features div.screenshot-container div.content {
-    height: 210px;
+    height: 205px;
     margin: 0;
 }
 
@@ -46,13 +46,14 @@ div.screenshot-container div.content {
     float: left;
 }
 
-.features .content .screenshot-container h3.screenshot-title {
+.features .content .screenshot-container p.screenshot-title {
     float: left;
     max-width: 220px;
     position: absolute;
     bottom: 0;
     color: #444;
     font-size: 14px;
+    margin-bottom: 0;
 }
 
 .custom-reduce-padding {

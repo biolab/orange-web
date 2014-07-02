@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
 		$('body').scrollTo(target, 800, {offset: -80}, {easing:'easeOutQuad'});
 
         //Collapse mobile menu after clicking
-		if ($('.navbar-collapse').hasClass('in')){
+		if ($('.navbar-collapse').hasClass('in')) {
 			$('.navbar-collapse').removeClass('in').addClass('collapse');
 		}
 

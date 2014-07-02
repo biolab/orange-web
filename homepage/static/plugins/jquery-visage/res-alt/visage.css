@@ -1,19 +1,18 @@
 #visage-alt-overlay {
 	position: fixed;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	z-index: 300000;
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	border: none;
 	outline: none;
 	text-decoration: none;
-	background: none;
 	word-spacing: normal;
 	letter-spacing: normal;
 	float: none;
@@ -30,12 +29,11 @@
 	right: 20%;
 	z-index: 300010;
 	text-align: center;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	border: 1px solid white;
 	outline: none;
 	text-decoration: none;
-	background: none;
 	word-spacing: normal;
 	letter-spacing: normal;
 	float: none;
@@ -48,8 +46,8 @@
 #visage-alt-container {
 	width: 100%;
 	height: 100%;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	border: none;
 	background: transparent url("images/loading.gif") no-repeat scroll center center;
 }
@@ -63,8 +61,8 @@
 
 #visage-alt-nav-prev, #visage-alt-nav-next, #visage-alt-close, #visage-alt-count, #visage-alt-title {
 	position: fixed;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	border: none;
 	outline: none;
 	background: none;
@@ -74,7 +72,7 @@
 
 #visage-alt-nav-prev {
 	z-index: 300030;
-	left: 0px;
+	left: 0;
 	top: 50%;
 	height: 100px;
 	width: 50px;
@@ -85,7 +83,7 @@
 
 #visage-alt-nav-next {
 	z-index: 300030;
-	right: 0px;
+	right: 0;
 	top: 50%;
 	height: 100px;
 	width: 50px;
@@ -105,8 +103,8 @@
 }
 #visage-alt-close {
 	z-index: 300040;
-	right: 0px;
-	top: 0px;
+	right: 0;
+	top: 0;
 	height: 62px;
 	width: 62px;
 	background: transparent url("images/close.png") no-repeat scroll top right;
@@ -117,7 +115,7 @@
 	z-index: 300015;
 	left: 1em;
 	top: 0.3em;
-	padding: 4px 0px;
+	padding: 4px 0;
 	color: #bbbbbb;
 	font-size: 10px;
 	white-space: nowrap;
@@ -129,9 +127,9 @@
 	width: 100%;
 	left: 0;
 	top: 0.3em;
-	padding: 4px 0px;
+	padding: 4px 0;
 	color: white;
-	font-size: 12px;
+	font-size: 18px;
 	white-space: nowrap;
 }
 
