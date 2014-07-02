@@ -52,14 +52,11 @@ a:hover {
   box-shadow: none;
 }
 blockquote {
-  font-size: 13pt;
+  font-size: inherit;
+  border-left: none;
 }
 .text-highlight {
   color: #9b5a06;
-}
-.note {
-  font-family: 'Covered By Your Grace', cursive;
-  font-size: 22px;
 }
 .row-end {
   margin-right: 0;
@@ -129,9 +126,6 @@ blockquote {
   padding-top: 90px;
 }
 .has-pattern {
-  /*background-image: url('../images/patterns/pattern-1.png');*/
-  /*background-repeat: repeat;*/
-  /*background-position: left top;*/
   background-image: none;
 }
 .delayp1 {
@@ -253,14 +247,11 @@ blockquote {
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
-
 #logo-image {
     position: absolute;
     top: 23px;
     max-height: 86px;
-
 }
-
 .header h1.logo {
   margin-top: 0;
   margin-bottom: 0;
@@ -300,7 +291,7 @@ blockquote {
 .header .main-nav .nav .nav-item {
   font-weight: normal;
   text-transform: uppercase;
-  margin-right: 0px;
+  margin-right: 0;
 }
 .header .main-nav .nav .nav-item.active a {
   color: #f8a842;
@@ -393,7 +384,6 @@ blockquote {
 }
 .promo .overview {
   margin-top: 30px;
-  /*padding-left: 0;*/
   padding-right: 30px;
 }
 .promo .overview h2 {
@@ -412,7 +402,6 @@ blockquote {
   line-height: 1.1;
   padding-left: 0;
   margin-left: 0;
-  /*background: url('../images/bullet.png') no-repeat left center;*/
 }
 .promo .overview .download-area {
   display: inline-block;
@@ -421,7 +410,6 @@ blockquote {
   margin: 30px 0;
 }
 .promo .overview .btn-group {
-  /*margin-left: 40px;*/
   margin-left: 0;
 }
 .promo .overview .btn-group li {
@@ -455,7 +443,6 @@ blockquote {
   background-color: #9b5a06;
 
 }
-
 .promo .overview .note {
   position: relative;
   color: #cc7608;
@@ -505,103 +492,13 @@ blockquote {
   background-repeat: no-repeat;
   background-position: left top;
 }
-.promo .iphone.iphone-black .iphone-holder {
-  /*background-image: url('../images/iphone/iphone-black.png');*/
-  background-image: none;
-}
-.promo .iphone.iphone-white .iphone-holder {
-  /*background-image: url('../images/iphone/iphone-white.png');*/
-  background-image: none;
-}
 .promo .iphone .iphone-holder-inner {
   position: relative;
   width: auto;
   height: auto;
-  /*left: 51px;*/
-  /*top: 103px;*/
 }
 .promo .iphone .flexslider .flex-control-nav {
   bottom: -50px;
-}
-/*.promo .iphone:before {*/
-  /*content: "";*/
-  /*display: block;*/
-  /*width: 500px;*/
-  /*height: 500px;*/
-  /*background: url('../images/glow.png') no-repeat center top;*/
-  /*right: 0;*/
-  /*top: 0;*/
-  /*position: absolute;*/
-/*}*/
-.promo .android {
-  position: relative;
-}
-.promo .android .android-holder {
-  position: relative;
-  width: 320px;
-  height: 600px;
-  /*background-image: url('../images/android/android-black.png');
-  background-repeat: no-repeat;
-  background-position: left top;*/
-  background-image: none;
-}
-.promo .android .android-holder-inner {
-  position: absolute;
-  width: 254px;
-  height: 450px;
-  left: 35px;
-  top: 72px;
-}
-.promo .android .flexslider .flex-control-nav {
-  bottom: -50px;
-}
-.promo .android:before {
-  content: "";
-  display: block;
-  width: 500px;
-  height: 500px;
-  background: url('../images/glow.png') no-repeat center top;
-  right: 0;
-  top: 0;
-  position: absolute;
-}
-.promo .ipad {
-  position: relative;
-}
-.promo .ipad .ipad-holder {
-  position: relative;
-  width: 420px;
-  height: 600px;
-  background-repeat: no-repeat;
-  background-position: left top;
-}
-.promo .ipad.ipad-black .ipad-holder {
-  /*background-image: url('../images/ipad/ipad-black.png');*/
-  background-image: none;
-}
-.promo .ipad.ipad-white .ipad-holder {
-  /*background-image: url('../images/ipad/ipad-white.png');*/
-  background-image: none;
-}
-.promo .ipad .ipad-holder-inner {
-  position: absolute;
-  width: 320px;
-  height: 428px;
-  left: 51px;
-  top: 83px;
-}
-.promo .ipad .flexslider .flex-control-nav {
-  bottom: -45px;
-}
-.promo .ipad:before {
-  content: "";
-  display: block;
-  width: 500px;
-  height: 500px;
-  background: url('../images/glow.png') no-repeat left top;
-  right: 0;
-  top: 0;
-  position: absolute;
 }
 /* ======= Features Section ======= */
 .features {
@@ -816,7 +713,7 @@ blockquote {
 }
 .story .team .member .name {
   color: #9b5a06;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .story .team .member .title {
   color: #fdecd6;
@@ -971,8 +868,7 @@ blockquote {
 }
 .contact .social-icons {
   display: inline-block;
-  margin: 0 auto;
-  margin-top: 60px;
+  margin: 60px auto 0 auto;
 }
 /* ======= Configure Style ======= */
 .config-wrapper {
@@ -1138,22 +1034,14 @@ blockquote {
   }
   .promo .phone .phone-holder {
     width: auto;
-    /*-webkit-background-size: 300px auto;
-    -moz-background-size: 300px auto;
-    -o-background-size: 300px auto;
-    background-size: 300px auto;*/
   }
   .promo .iphone .iphone-holder-inner {
     width: auto;
     height: auto;
-    /*left: 48px;*/
-    /*top: 96px;*/
   }
   .promo .android .android-holder-inner {
     width: 238px;
     height: 394px;
-    /*left: 33px;*/
-    /*top: 67px;*/
   }
   .promo .ipad {
     text-align: center;
@@ -1299,7 +1187,6 @@ blockquote {
   .promo .ipad {
     text-align: left;
   }
-
   .flexslider .slides img.custom-slide {
     width: auto;
     height: 400px;
