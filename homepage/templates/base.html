@@ -58,19 +58,25 @@
         </div>
     </header><!--//header-->
 
-    {% block content %}
-    {% endblock content %}
+    <div class="footer-append-container">
+        <div id="main" class="container clear-top">
+            <!-- ******CONTENT****** -->
+            {% block content %}
+            {% endblock content %}
+            <!--//CONTENT-->
+        </div>
+    </div>
 
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container">
-            <small class="copyright pull-left">Copyright &copy; University of Ljubljana</small>
             <ul class="links list-inline pull-right">
                 <li><a href="{% url 'contribute' %}">Contribute</a></li>
                 <li><a href="{% url 'license' %}">License</a></li>
                 <li><a href="{% url 'citation' %}">Citation</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
+            <small class="copyright pull-left">Copyright &copy; University of Ljubljana</small>
         </div>
     </footer><!--//footer-->
 

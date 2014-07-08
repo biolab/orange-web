@@ -228,3 +228,17 @@ h4.custom-accordion-title {
 h4 {
     padding-top: 20px;
 }
+
+.footer-append-container {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 50px;
+}
+
+#main.container {
+    padding-right: 0;
+    padding-left: 0;
+}
