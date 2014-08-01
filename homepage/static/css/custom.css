@@ -1,3 +1,13 @@
+h5, .h5 {
+    font-size:18px
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #f8a842;
+    border-color: #eea236
+}
+
 .faq .custom-margin {
     margin: 40px 0 20px;
 }
