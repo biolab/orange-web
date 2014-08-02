@@ -154,4 +154,5 @@ def download(request, os=None):
 
 
 def start(request):
-    return render(request, 'start.html', {'screens_root': 'homepage/getting_started'})
+    return render(request, 'start.html',
+                  {'screens_root': 'homepage/getting_started'})
