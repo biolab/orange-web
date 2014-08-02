@@ -14,17 +14,17 @@
                     <div class="download-area">
                         <div class="download-left">
                             {% if os == "windows" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 1 dl_win_link %}{% download_link os %}{% endcache %}">
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
                                     <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "mac-os-x" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 1 dl_mac_link %}{% download_link os %}{% endcache %}">
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
                                     <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "linux" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 1 dl_source_link %}{% download_link os %}{% endcache %}">
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
                                     <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
                                 </a>
@@ -45,7 +45,7 @@
                     </div>
 
                     <h3 class="title custom-reduce-padding">Latest Blog Entries</h3>
-                    {% cache 1 feed_all %}
+                    {% cache 43200 feed_all %}
                         {% grab_feed_all %}
                     {% endcache %}
                 </div><!--//overview-->

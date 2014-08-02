@@ -61,15 +61,15 @@
             <div class="row">
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
                     {% if os == "windows" %}
-                        {% cache 1 dl_win_html %}{% download_win %}{% endcache %}
+                        {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
                     {% elif os == "mac-os-x" %}
-                        {% cache 1 dl_mac_html %}{% download_mac %}{% endcache %}
+                        {% cache 43200 dl_mac_html %}{% download_mac %}{% endcache %}
                     {% elif os == "linux" %}
                         <h2>Linux / Source</h2>
-                        {% cache 1 dl_source_html %}{% download_source %}{% endcache %}
+                        {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
                     {% elif os == "for-developers" %}
                         <h2>For Developers</h2>
-                        {% cache 1 dl_source_html %}{% download_source %}{% endcache %}
+                        {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
 
                         <h3>make</h3>
                         <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008.
@@ -81,7 +81,7 @@
                         <h3>C4.5 files</h3>
                         <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}files/buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
                     {% else %}
-                        {% cache 1 dl_win_html %}{% download_win %}{% endcache %}
+                        {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
                     {% endif %}
                 </div>
             </div>
@@ -90,7 +90,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    {% cache 1 dl_addons_html %}{% download_addons %}{% endcache %}
+                    {% cache 43200 dl_addons_html %}{% download_addons %}{% endcache %}
                 </div>
             </div>
         </div>
@@ -101,7 +101,7 @@
                     <h2>Working with Add-ons</h2>
 
                     {% if os == "windows" %}
-                        {% cache 1 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
+                        {% cache 43200 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
                     {% else %}
                         <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>
                         <pre>pip install &lt;add-on name&gt;</pre>

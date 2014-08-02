@@ -335,6 +335,9 @@ blockquote {
   color: #fff;
   padding: 15px 0;
 }
+.docfooter {
+  margin-top: 0;
+}
 .footer .copyright {
   color: #b3b3b3;
   margin-top: 4px;
