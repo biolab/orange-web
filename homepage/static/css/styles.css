@@ -394,7 +394,7 @@ blockquote {
   margin-top: 30px;
   padding-right: 30px;
 }
-.promo .overview h2 {
+.promo .overview h1 {
   font-size: 30px;
   margin-bottom: 35px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -512,21 +512,15 @@ blockquote {
 .features {
   padding: 30px 0;
 }
-
 .features .title {
   margin-bottom: 60px;
   margin-top: 50px;
 }
-
-.features h1.title {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-}
-.features h2.title  {
+.features h1.title  {
   font-size: 30px;
   margin-bottom: 35px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
-
 .features .icon {
   position: relative;
   width: 90px;
@@ -578,7 +572,7 @@ blockquote {
 .features .content {
   padding: 30px;
 }
-.features .content h3.title {
+.features .content h2.title {
   color: #f8a842;
   font-size: 18px;
   margin: 10px auto;
@@ -651,7 +645,7 @@ blockquote {
   margin-top: 50px;
 }
 
-.faq h2.title  {
+.faq h1.title  {
   font-size: 30px;
   margin-bottom: 35px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -943,7 +937,7 @@ blockquote {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.config-panel h5.device-title {
+.config-panel h4.device-title {
   margin-bottom: 5px;
 }
 .config-panel #color-options {

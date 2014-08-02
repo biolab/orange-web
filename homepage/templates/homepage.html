@@ -9,28 +9,28 @@
         <div class="container">
             <div class="row">
                 <div class="overview col-md-6 col-sm-12 col-xs-12">
-                    <h2 class="title">Data Mining - Fruitful and Fun</h2>
+                    <h1 class="title">Data Mining - Fruitful and Fun</h1>
                     <p class="summary">Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.</p>
                     <div class="download-area">
                         <div class="download-left">
                             {% if os == "windows" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
-                                    <h4 class="download-btn">Download Orange 2.7</h4>
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 1 dl_win_link %}{% download_link os %}{% endcache %}">
+                                    <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "mac-os-x" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
-                                    <h4 class="download-btn">Download Orange 2.7</h4>
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 1 dl_mac_link %}{% download_link os %}{% endcache %}">
+                                    <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "linux" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
-                                    <h4 class="download-btn">Download Orange 2.7</h4>
+                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 1 dl_source_link %}{% download_link os %}{% endcache %}">
+                                    <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
                                 </a>
                             {% else %}
                                 <a class="btn btn-warning" href="{% url 'download' %}">
-                                    <h4 class="download-btn">Download Orange 2.7</h4>
+                                    <h3 class="download-btn">Download Orange 2.7</h3>
                                 <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p>
                                 </a>
                             {% endif %}
@@ -44,8 +44,8 @@
                         </div>
                     </div>
 
-                    <h4 class="title custom-reduce-padding">Latest Blog Entries</h4>
-                    {% cache 43200 feed_all %}
+                    <h3 class="title custom-reduce-padding">Latest Blog Entries</h3>
+                    {% cache 1 feed_all %}
                         {% grab_feed_all %}
                     {% endcache %}
                 </div><!--//overview-->
@@ -78,7 +78,7 @@
     <section id="features" class="features section">
         <div class="container">
             <div class="row">
-                <h2 class="title text-center sr-only">Features</h2>
+                <h1 class="title text-center sr-only">Features</h1>
 
                 <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'start' %}">
@@ -87,7 +87,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="{% url 'start' %}"><h3 class="title">Getting Started</h3></a>
+                        <a href="{% url 'start' %}"><h2 class="title">Getting Started</h2></a>
                         <p><a href="{% url 'download' %}">Download Orange</a> and run through our <a href="{% url 'start' %}">tutorial</a> to get a feel for visual programming.</p>
                     </div><!--//content-->
                 </div><!--//item-->
@@ -99,7 +99,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="{% url 'screenshots' %}"><h3 class="title">Visualization</h3></a>
+                        <a href="{% url 'screenshots' %}"><h2 class="title">Visualization</h2></a>
                         <p>Orange is packed with different visualizations, from scatterplots, bar charts, trees, to dendrograms, networks and heatmaps.</p>
                     </div><!--//content-->
                 </div><!--//item-->
@@ -111,7 +111,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="http://docs.orange.biolab.si/widgets/rst/index.html"><h3 class="title">Large Toolbox</h3></a>
+                        <a href="http://docs.orange.biolab.si/widgets/rst/index.html"><h2 class="title">Large Toolbox</h2></a>
                         <p>Over 100 widgets and growing. We cover most of standard data analysis tasks. Specialized add-ons available, like Orange Bioinformatics.</p>
                     </div><!--//content-->
                 </div><!--//item-->
@@ -123,7 +123,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="http://docs.orange.biolab.si/tutorial/rst/index.html"><h3 class="title">Scripting Interface</h3></a>
+                        <a href="http://docs.orange.biolab.si/tutorial/rst/index.html"><h2 class="title">Scripting Interface</h2></a>
                         <p>With Python scripting interface and Orange classes, work on new algorithms and complex analysis procedures is pure joy.</p>
                     </div><!--//content-->
                 </div><!--//item-->

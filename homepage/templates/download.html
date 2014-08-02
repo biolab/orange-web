@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h2 class="title">Download</h2>
+                      <h1 class="title">Download</h1>
                 </div>
 
                 <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
@@ -18,7 +18,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="{% url 'download' %}windows/"><h3 class="title">Windows</h3></a>
+                        <a href="{% url 'download' %}windows/"><h2 class="title">Windows</h2></a>
                     </div><!--//content-->
                 </div><!--//item-->
 
@@ -29,7 +29,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="{% url 'download' %}mac-os-x/"><h3 class="title">Mac OS X</h3></a>
+                        <a href="{% url 'download' %}mac-os-x/"><h2 class="title">Mac OS X</h2></a>
                     </div><!--//content-->
                 </div><!--//item-->
 
@@ -40,7 +40,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="{% url 'download' %}linux/"><h3 class="title">Linux / Source</h3></a>
+                        <a href="{% url 'download' %}linux/"><h2 class="title">Linux / Source</h2></a>
                     </div><!--//content-->
                 </div><!--//item-->
 
@@ -51,7 +51,7 @@
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a href="{% url 'download' %}for-developers/"><h3 class="title">For Developers</h3></a>
+                        <a href="{% url 'download' %}for-developers/"><h2 class="title">For Developers</h2></a>
                     </div><!--//content-->
                 </div><!--//item-->
             </div><!--//row-->
@@ -61,27 +61,27 @@
             <div class="row">
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
                     {% if os == "windows" %}
-                        {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
+                        {% cache 1 dl_win_html %}{% download_win %}{% endcache %}
                     {% elif os == "mac-os-x" %}
-                        {% cache 43200 dl_mac_html %}{% download_mac %}{% endcache %}
+                        {% cache 1 dl_mac_html %}{% download_mac %}{% endcache %}
                     {% elif os == "linux" %}
-                        <h3>Linux / Source</h3>
-                        {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
+                        <h2>Linux / Source</h2>
+                        {% cache 1 dl_source_html %}{% download_source %}{% endcache %}
                     {% elif os == "for-developers" %}
-                        <h3>For Developers</h3>
-                        {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
+                        <h2>For Developers</h2>
+                        {% cache 1 dl_source_html %}{% download_source %}{% endcache %}
 
-                        <h4>make</h4>
+                        <h3>make</h3>
                         <p>Source distribution also includes makefiles for Linux and Mac OS X and project files for MS Visual Studio 2008.
                            To compile Orange, you will need an appropriate compiler, <a href="http://www.python.org/">Python</a> and <a href="http://numpy.scipy.org/">NumPy</a>.
                            See <a href="http://orange.biolab.si/trac/intertrac/wiki%3ABuildingFromSource" title="wiki:BuildingFromSource in Orange Trac">building from source</a> wiki page for more information.</p>
 
                         <p>Orange 3.0 is in early stages of development. Those interested can find it on <a href="https://github.com/biolab/orange3">GitHub.</a></p>
 
-                        <h4>C4.5 files</h4>
+                        <h3>C4.5 files</h3>
                         <p>We have no rights to distribute the original C4.5 in any form, but we can provide assistance for building an Orange plug-in from the sources you download yourself from the Ross Quinlan's site. The files required for compiling C4.5 are <a href="{% url 'download' %}files/buildC45.zip">here</a> and instructions <a href="/doc/reference/Orange.classification.tree/#c4-5-classifier-and-learner">here</a>.</p>
                     {% else %}
-                        {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
+                        {% cache 1 dl_win_html %}{% download_win %}{% endcache %}
                     {% endif %}
                 </div>
             </div>
@@ -90,7 +90,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    {% cache 43200 dl_addons_html %}{% download_addons %}{% endcache %}
+                    {% cache 1 dl_addons_html %}{% download_addons %}{% endcache %}
                 </div>
             </div>
         </div>
@@ -98,10 +98,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h3>Working with Add-ons</h3>
+                    <h2>Working with Add-ons</h2>
 
                     {% if os == "windows" %}
-                        {% cache 43200 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
+                        {% cache 1 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
                     {% else %}
                         <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>
                         <pre>pip install &lt;add-on name&gt;</pre>
