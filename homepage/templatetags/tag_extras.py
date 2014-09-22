@@ -18,9 +18,9 @@ def grab_feed_all():
     url = 'http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/'
     feed = feedparser.parse(url)
     if feed.bozo == 0:
-        # Parses first 6 entries from remote blog feed.
+        # Parses first 3 entries from remote blog feed.
         entries = []
-        for i in range(6):
+        for i in range(3):
             pub_date = feed['entries'][i]['published'][:-6]
             df = '%a, %d %b %Y %H:%M:%S'
             entry = {

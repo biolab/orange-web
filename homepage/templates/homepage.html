@@ -8,10 +8,32 @@
     <section id="promo" class="promo section offset-header has-pattern">
         <div class="container">
             <div class="row">
-                <div class="overview col-md-6 col-sm-12 col-xs-12">
-                    <h1 class="title">Data Mining - Fruitful and Fun</h1>
-                    <p class="summary">Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.</p>
-                    <div class="download-area">
+                <div class="overview">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h1 class="title">Data Mining - Fruitful and Fun</h1>
+                        <p class="summary">Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.</p>
+                    </div>
+
+                    <!--// iPhone starts - default/only view -->
+                    <div class="phone iphone col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right">
+                        <div class="iphone-holder phone-holder">
+                            <div class="iphone-holder-inner">
+                                <div class="slider flexslider">
+                                    <ul class="slides">
+                                        {% for screenshot in random_screenshots %}
+                                            <li>
+                                                <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
+                                                alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
+                                            </li>
+                                        {% endfor %}
+                                    </ul><!--//slides-->
+                                </div><!--//flexslider-->
+                            </div><!--//iphone-holder-inner-->
+                        </div><!--//iphone-holder-->
+                    </div><!--//iphone-->
+                    <!--// iPhone ends -->
+
+                    <div class="download-area col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="download-left">
                             {% if os == "windows" %}
                                 <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
@@ -35,6 +57,7 @@
                                 </a>
                             {% endif %}
                         </div>
+
                         <div class="download-right">
                             <div class="g-plusone" data-size="tall" data-annotation="inline" data-width="250" ></div>
                             <div id="fb-root"></div>
@@ -44,31 +67,15 @@
                         </div>
                     </div>
 
-                    <h3 class="title custom-reduce-padding">Latest Blog Entries</h3>
-                    {% cache 43200 feed_all %}
-                        {% grab_feed_all %}
-                    {% endcache %}
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <h2 class="title custom-reduce-padding">Latest Blog Entries</h2>
+                        {% cache 43200 feed_all %}
+                            {% grab_feed_all %}
+                        {% endcache %}
+                    </div>
+
+
                 </div><!--//overview-->
-
-                <!--// iPhone starts - default/only view -->
-                <div class="phone iphone col-md-6 col-sm-12 col-xs-12 ">
-                    <div class="iphone-holder phone-holder">
-                        <div class="iphone-holder-inner">
-                            <div class="slider flexslider">
-                                <ul class="slides">
-                                    {% for screenshot in random_screenshots %}
-                                        <li>
-                                            <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
-                                            alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
-                                        </li>
-                                    {% endfor %}
-                                </ul><!--//slides-->
-                            </div><!--//flexslider-->
-                        </div><!--//iphone-holder-inner-->
-                    </div><!--//iphone-holder-->
-                </div><!--//iphone-->
-                <!--// iPhone ends -->
-
             </div><!--//row-->
         </div><!--//container-->
     </section><!--//promo-->
