@@ -5,6 +5,9 @@
  * Website: http://3rdwavemedia.com/
 */
 /* ======= Base ======= */
+html, body {
+    height: 100%;
+}
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #444444;
@@ -324,19 +327,27 @@ blockquote {
 }
 /* ======= Footer ======= */
 .footer {
+  position: relative;
+  margin-top: -50px; /* negative value of footer height */
+  min-height: 50px;
+  clear:both;
   background: #444444;
   color: #fff;
   padding: 15px 0;
 }
+.docfooter {
+  margin-top: 0;
+}
 .footer .copyright {
   color: #b3b3b3;
-  margin-top: 3px;
+  margin-top: 4px;
   margin-right: 15px;
 }
 .footer .links {
+  margin-top: 3px;
   margin-bottom: 0;
 }
-.footer .links a {
+.footer .links a {''
   color: #808080;
 }
 .footer .links a:hover {
@@ -386,7 +397,7 @@ blockquote {
   margin-top: 30px;
   padding-right: 30px;
 }
-.promo .overview h2 {
+.promo .overview h1 {
   font-size: 30px;
   margin-bottom: 35px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -402,12 +413,6 @@ blockquote {
   line-height: 1.1;
   padding-left: 0;
   margin-left: 0;
-}
-.promo .overview .download-area {
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  margin: 30px 0;
 }
 .promo .overview .btn-group {
   margin-left: 0;
@@ -504,21 +509,15 @@ blockquote {
 .features {
   padding: 30px 0;
 }
-
 .features .title {
   margin-bottom: 60px;
   margin-top: 50px;
 }
-
-.features h1.title {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-}
-.features h2.title  {
+.features h1.title  {
   font-size: 30px;
   margin-bottom: 35px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
-
 .features .icon {
   position: relative;
   width: 90px;
@@ -570,7 +569,7 @@ blockquote {
 .features .content {
   padding: 30px;
 }
-.features .content h3.title {
+.features .content h2.title {
   color: #f8a842;
   font-size: 18px;
   margin: 10px auto;
@@ -643,7 +642,7 @@ blockquote {
   margin-top: 50px;
 }
 
-.faq h2.title  {
+.faq h1.title  {
   font-size: 30px;
   margin-bottom: 35px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -935,7 +934,7 @@ blockquote {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.config-panel h5.device-title {
+.config-panel h4.device-title {
   margin-bottom: 5px;
 }
 .config-panel #color-options {
@@ -1017,6 +1016,7 @@ blockquote {
   }
   .promo .overview .summary {
     margin-left: 0;
+    padding-left: 1px;
   }
   .promo .overview {
     text-align: left;
@@ -1090,7 +1090,7 @@ blockquote {
   }
   .promo .overview .summary {
     margin-left: 0;
-    padding-left: 20px;
+    padding-left: 1px;
   }
   .promo .overview .summary li {
     text-align: left;
@@ -1124,20 +1124,16 @@ blockquote {
   .promo .overview {
     text-align: left;
   }
-  .promo .overview .summary {
-    margin-left: 0;
-  }
   .promo .overview .summary li {
     text-align: left;
   }
   .promo .phone {
-    margin: 115px 0 0;
+    margin: 83px 0 0;
     text-align: left;
   }
   .promo .ipad {
     text-align: left;
   }
-
   .flexslider .slides img.custom-slide {
     width: auto;
     height: 260px;
@@ -1150,9 +1146,6 @@ blockquote {
   .promo .overview {
     text-align: left;
   }
-  .promo .overview .summary {
-    margin-left: 0;
-  }
   .promo .overview .summary li {
     text-align: left;
   }
@@ -1162,7 +1155,6 @@ blockquote {
   .promo .ipad {
     text-align: left;
   }
-
   .flexslider .slides img.custom-slide {
     width: auto;
     height: 260px;
@@ -1175,9 +1167,6 @@ blockquote {
   .promo .overview {
     text-align: left;
   }
-  .promo .overview .summary {
-    margin-left: 0;
-  }
   .promo .overview .summary li {
     text-align: left;
   }
@@ -1189,7 +1178,7 @@ blockquote {
   }
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 400px;
+    height: 330px;
     display: block;
     margin: 0 auto;
   }

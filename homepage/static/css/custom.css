@@ -1,20 +1,40 @@
+h1, .h1 {
+    font-size: 30px;
+}
+h2, .h2 {
+    font-size: 24px;
+}
+h3, .h3 {
+    font-size: 18px;
+    padding-top: 20px;
+}
+h4, .h4 {
+    font-size: 18px;
+}
+h5, .h5 {
+    font-size: 14px;
+}
+h6, .h6 {
+    font-size: 12px;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #f8a842;
+    border-color: #eea236
+}
 .faq .custom-margin {
     margin: 40px 0 20px;
 }
-
 .print-label {
     font-weight: bold;
     clear: both;
 }
-
-.row h2.title {
+.row h1.title {
     margin-bottom: 30px;
 }
-
 .row .form-group label {
     margin-top: 5px;
 }
-
 .row .form-group label[name="signature"] {
     margin-top: 0;
     line-height: 16px;
@@ -23,20 +43,16 @@
 div.screenshot-container div.content {
     padding: 0 20px;
 }
-
 #how div.screenshot-container div.content {
     height: 250px;
 }
-
 #features div.screenshot-container {
     margin: 0 auto 50px auto;
 }
-
 #features div.screenshot-container div.content {
     height: 205px;
     margin: 0;
 }
-
 .screenshot {
     -webkit-transition: -webkit-transform ease-out 0.2s, background 0.3s;
     -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
@@ -45,7 +61,6 @@ div.screenshot-container div.content {
     max-width: 220px;
     float: left;
 }
-
 .features .content .screenshot-container p.screenshot-title {
     float: left;
     max-width: 220px;
@@ -55,37 +70,29 @@ div.screenshot-container div.content {
     font-size: 14px;
     margin-bottom: 0;
 }
-
 .custom-reduce-padding {
     padding-top: 0;
     padding-bottom: 0;
 }
-
 .custom-reduce-padding-2 {
     padding-top: 80px;
 }
-
 .custom-reduce-padding-3 {
     padding-bottom: 10px;
 }
-
 .custom-add-padding {
     padding-top: 20px;
 }
-
 .custom-alert {
     display: block;
     margin-top: 30px;
 }
-
 .move-down {
     padding-bottom: 40px;
 }
-
 ul.files li {
     padding-bottom: 10px;
 }
-
 #special-rotate, #special-rotate:hover {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
     -webkit-transform: scale(0.93) rotate(90deg);
@@ -93,7 +100,6 @@ ul.files li {
     -ms-transform: scale(0.93) rotate(90deg);
     -o-transform: scale(0.93) rotate(90deg);
 }
-
 .icon-addons {
     display: inline-block;
     background-color: #F5F5F5;
@@ -104,26 +110,21 @@ ul.files li {
     -moz-border-radius: 0 0 4px 4px;
     border-radius: 0 0 4px 4px;
 }
-
 .icon-addons a {
     display:inline;
     margin: 0 5px;
     margin-bottom: 20px;
     font-size: 16px;
 }
-
 .icon-addons i {
     color: #212121;
 }
-
 .icon-addons #icon-i-hover:hover {
     color: #f8a842;
 }
-
 .custom-panel-body {
     padding: 0 15px 15px;
 }
-
 a.custom-accordion-title {
     -webkit-transition: none;
     -moz-transition: none;
@@ -132,21 +133,17 @@ a.custom-accordion-title {
     outline: none;
     text-decoration: none;
 }
-
-h4.custom-accordion-title {
+h3.custom-accordion-title {
     float: left;
     padding-top: 0;
 }
-
 .custom-accordion-container {
     color: #333;
     background-color: #f5f5f5
 }
-
 .custom-accordion-container:hover {
     color: #f8a842;
 }
-
 .features .icon-selected {
     background: #f8a842;
     color: #f8a842;
@@ -165,7 +162,6 @@ h4.custom-accordion-title {
     -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
     transition: transform ease-out 0.2s, background 0.3s;
 }
-
 .features .icon-selected .fa {
     color: #fff;
     font-size: 48px;
@@ -173,58 +169,78 @@ h4.custom-accordion-title {
     text-align: center;
     vertical-align: middle;
 }
-
 .promo ul {
     padding-left: 0;
 }
-
-.download-area .download-left {
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px 20px;
-    margin: 0 auto;
-}
-
 .download-area .download-right {
     display: inline-block;
     vertical-align: top;
     max-width: 200px;
-    padding: 10px 20px;
     margin: 0 auto;
 }
-
-@media (max-width: 566px) {
+.download-area .download-left {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 200px;
+    margin: 0 auto;
+}
+@media (max-width: 767px) {
+    .download-area {
+        text-align: center;
+    }
+    .download-area .download-left {
+        padding: 10px 10px 25px 1px;
+        margin: 0 auto;
+    }
+    .download-area .download-right {
+        padding: 25px 20px 10px 10px;
+        margin: 0;
+    }
+}
+@media (min-width: 768px) {
     .download-area {
         text-align: left;
     }
     .download-area .download-left {
-        padding: 10px 10px 0;
+        padding: 10px 0 25px 1px;
     }
     .download-area .download-right {
-        padding: 10px 0;
+        padding: 25px 20px 10px 1px;
     }
 }
-
-@media (max-width: 1199px) {
-    .download-area {
-        text-align: center;
-    }
-}
-
-@media (min-width: 991px) {
+@media (min-width: 992px) {
     .download-area {
         text-align: left;
     }
+    .download-area .download-left {
+        padding: 10px 10px 25px 1px;
+    }
+    .download-area .download-right {
+        padding: 25px 0 10px 10px;
+    }
 }
+@media (min-width: 1040px) {
 
+}
+@media (min-width: 1200px) {
+
+}
 .download-btn {
     padding-top: 0;
 }
-
 .table td.custom-td {
     border-top: none;
+    padding: 5px 0;
+}
+.footer-append-container {
+    min-height: 100%;
+}
+#main {
+    overflow: auto;
+    padding-bottom: 50px;
+}
+#main.container {
+    padding-right: 0;
+    padding-left: 0;
 }
 
-h4 {
-    padding-top: 20px;
-}
