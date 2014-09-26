@@ -39,7 +39,15 @@ h6, .h6 {
     margin-top: 0;
     line-height: 16px;
 }
-
+.section ul, .section ol {
+    padding-left: 20px;
+}
+.section ul li {
+    list-style-type: square;
+}
+.section ul.slides li {
+    list-style-type: none;
+}
 div.screenshot-container div.content {
     padding: 0 20px;
 }
@@ -243,4 +251,3 @@ h3.custom-accordion-title {
     padding-right: 0;
     padding-left: 0;
 }
-
