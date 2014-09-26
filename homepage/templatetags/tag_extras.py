@@ -15,7 +15,7 @@ register = template.Library()
 @register.inclusion_tag('feed_results.html')
 def grab_feed_all():
     """Grabs an RSS/Atom feed. Django will cache the content."""
-    url = 'http://{0}/blog/rss/'.format(settings.BLOG_HOST)
+    url = 'http://{0}'.format(settings.BLOG_HOST)
     feed = feedparser.parse(url)
     if feed.bozo == 0:
         # Parses first 3 entries from remote blog feed.

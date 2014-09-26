@@ -31,7 +31,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si']
 
-BLOG_HOST = 'orange.biolab.si'
+BLOG_HOST = 'blog.biolab.si'
 
 # EMAIL BACKEND publishes mail send by send_mail() function to standard output.
 # To change behavior for production, you will have to set up the SMTP BACKEND.
