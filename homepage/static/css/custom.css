@@ -45,6 +45,9 @@ h6, .h6 {
 .section ul li {
     list-style-type: square;
 }
+.section ul.slides li {
+    list-style-type: none;
+}
 div.screenshot-container div.content {
     padding: 0 20px;
 }

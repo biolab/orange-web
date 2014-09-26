@@ -15,7 +15,7 @@ register = template.Library()
 @register.inclusion_tag('feed_results.html')
 def grab_feed_all():
     """Grabs an RSS/Atom feed. Django will cache the content."""
-    url = 'http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/'
+    url = 'http://{0}/blog/rss/'.format(settings.BLOG_HOST)
     feed = feedparser.parse(url)
     if feed.bozo == 0:
         # Parses first 3 entries from remote blog feed.
@@ -75,22 +75,22 @@ def download_choices(os):
             key = line[:ep].strip()
             if key == 'WIN_SNAPSHOT':
                 value = line[ep+1:].strip()
-                downloads['win25'] = '%s-py2.5.exe' % value
-                downloads['win26'] = '%s-py2.6.exe' % value
-                downloads['win27'] = '%s-py2.7.exe' % value
+                downloads['win25'] = '{0}-py2.5.exe'.format(value)
+                downloads['win26'] = '{0}-py2.6.exe'.format(value)
+                downloads['win27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'WIN_PYTHON_SNAPSHOT':
                 value = line[ep+1:].strip()
-                downloads['winw25'] = '%s-py2.5.exe' % value
-                downloads['winw26'] = '%s-py2.6.exe' % value
-                downloads['winw27'] = '%s-py2.7.exe' % value
+                downloads['winw25'] = '{0}-py2.5.exe'.format(value)
+                downloads['winw26'] = '{0}-py2.6.exe'.format(value)
+                downloads['winw27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
                 value = line[ep+1:].strip()
-                downloads['bio26'] = '%s-py2.6.exe' % value
-                downloads['bio27'] = '%s-py2.7.exe' % value
+                downloads['bio26'] = '{0}-py2.6.exe'.format(value)
+                downloads['bio27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_TEXT_SNAPSHOT':
                 value = line[ep+1:].strip()
-                downloads['text26'] = '%s-py2.6.exe' % value
-                downloads['text27'] = '%s-py2.7.exe' % value
+                downloads['text26'] = '{0}-py2.6.exe'.format(value)
+                downloads['text27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'SOURCE_SNAPSHOT':
                 value = line[ep+1:].strip()
                 downloads['source'] = value
@@ -156,7 +156,7 @@ def download_addons():
     addons = []
     for iid, package in enumerate(client.search({'keywords': 'orange'})):
         # TODO: Possible threaded URL fetching
-        url = 'https://pypi.python.org/pypi/' + package['name'] + '/json'
+        url = 'https://pypi.python.org/pypi/{0}/json'.format(package['name'])
         r = requests.get(url)
         jsonfile = r.json()
         desc = jsonfile['info']['description'].split('\n')
