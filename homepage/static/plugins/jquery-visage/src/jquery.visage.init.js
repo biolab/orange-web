@@ -25,7 +25,7 @@ $.fn.visage.defaults.addDOM = function (visageDOM, options) {
 $(document).ready(function () {
 	var exts = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 
-    $("#visage.content").each(function (i, el) {
+    $("#visage.imgcontent").each(function (i, el) {
 		$("a[href]:has(img)", el).visage();
 		$("a[href].enable-visage", el).visage({
 			"imageValues": function (image, options) {
