@@ -11,19 +11,23 @@
                 <div class="overview">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <h1 class="title">Data Mining - Fruitful and Fun</h1>
-                        <p class="summary">Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.</p>
+                        <div class="content">
+                            <p class="summary">Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.</p>
+                        </div>
                     </div>
 
                     <!--// iPhone starts - default/only view -->
                     <div class="phone iphone col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right">
                         <div class="iphone-holder phone-holder">
                             <div class="iphone-holder-inner">
-                                <div class="slider flexslider">
+                                <div id="visage" class="slider flexslider imgcontent">
                                     <ul class="slides">
                                         {% for screenshot in random_screenshots %}
                                             <li>
-                                                <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
-                                                alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
+                                                <a href="{% static screenshot.img %}" title="{{ screenshot.title }}">
+                                                    <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
+                                                    alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
+                                                <a href="{% static screenshot.img %}" title="{{ screenshot.title }}">
                                             </li>
                                         {% endfor %}
                                     </ul><!--//slides-->

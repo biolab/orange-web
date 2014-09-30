@@ -567,7 +567,7 @@ blockquote {
   text-decoration: none;
 }
 .features .content {
-  padding: 30px;
+  padding: 0;
 }
 .features .content h2.title {
   color: #f8a842;
@@ -575,6 +575,9 @@ blockquote {
   margin: 10px auto;
 }
 .features .content p {
+  font-weight: 300;
+}
+.overview .content p {
   font-weight: 300;
 }
 /* ======= How Section ======= */

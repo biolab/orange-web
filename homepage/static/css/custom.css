@@ -22,7 +22,7 @@ h6, .h6 {
     background-color: #f8a842;
     border-color: #eea236
 }
-.faq .custom-margin {
+.features .custom-margin {
     margin: 40px 0 20px;
 }
 .print-label {
@@ -192,7 +192,22 @@ h3.custom-accordion-title {
     max-width: 200px;
     margin: 0 auto;
 }
-@media (max-width: 767px) {
+@media (max-width: 487px) {
+    .download-area {
+        text-align: center;
+    }
+
+    .download-area .download-left {
+        padding: 10px 10px 25px 1px;
+        margin: 0 auto;
+    }
+
+    .download-area .download-right {
+        padding: 25px 20px 10px 0;
+        margin: 0;
+    }
+}
+@media (min-width: 488px) {
     .download-area {
         text-align: center;
     }
@@ -201,7 +216,7 @@ h3.custom-accordion-title {
         margin: 0 auto;
     }
     .download-area .download-right {
-        padding: 25px 20px 10px 10px;
+        padding: 30px 20px 10px 20px;
         margin: 0;
     }
 }
@@ -224,14 +239,8 @@ h3.custom-accordion-title {
         padding: 10px 10px 25px 1px;
     }
     .download-area .download-right {
-        padding: 25px 0 10px 10px;
+        padding: 30px 0 10px 10px;
     }
-}
-@media (min-width: 1040px) {
-
-}
-@media (min-width: 1200px) {
-
 }
 .download-btn {
     padding-top: 0;
