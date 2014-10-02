@@ -25,7 +25,9 @@ $.fn.visage.defaults.addDOM = function (visageDOM, options) {
 	$(visageDOM.prev).add(visageDOM.next).add(visageDOM.count).add(visageDOM.title).appendTo(visageDOM.overlay);
 };
 $(document).ready(function () {
-    $("#visage.imgcontent").each(function (i, el) {
-		$("a[href]:has(img)", el).visage();
-	});
+    if (jQuery.browser.mobile === false) {
+        $("#visage.imgcontent").each(function (i, el) {
+            $("a[href]:has(img)", el).visage();
+        });
+    }
 });

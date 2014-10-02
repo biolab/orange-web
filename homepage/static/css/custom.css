@@ -251,6 +251,7 @@ h3.custom-accordion-title {
 }
 .footer-append-container {
     min-height: 100%;
+    margin-bottom: -53px;
 }
 #main {
     overflow: auto;

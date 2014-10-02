@@ -566,6 +566,9 @@ blockquote {
   outline: none;
   text-decoration: none;
 }
+.features .icon-item .content {
+  margin: 30px;
+}
 .features .content {
   padding: 0;
 }
@@ -1185,4 +1188,10 @@ blockquote {
     display: block;
     margin: 0 auto;
   }
+}
+
+/* Custom */
+pre {
+    overflow-x: auto;
+    word-wrap: normal;
 }

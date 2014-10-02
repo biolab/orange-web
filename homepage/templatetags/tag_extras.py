@@ -36,24 +36,6 @@ def grab_feed_all():
         return {'bozo': True}
 
 
-# Custom tab for grabbing the first post from Orange blog RSS
-#
-# @register.inclusion_tag('first_feed_result.html')
-# def grab_feed_first():
-#     """Grabs an RSS/Atom feed. Django will cache the content."""
-#     url = 'http://' + settings.ALLOWED_HOSTS[0] + '/blog/rss/'
-#     feed = feedparser.parse(url)
-#     if feed.bozo == 0:
-#         # Parses first entry from remote blog feed.
-#         return {'title': feed['entries'][0]['title'],
-#                 'link': feed['entries'][0]['link'],
-#                 'text': feed['entries'][0]['summary_detail']['value'],
-#                 'bozo': False
-#                 }
-#     else:
-#         return {'bozo': True}
-
-
 def download_choices(os):
     if os == 'win':
         downloads = {

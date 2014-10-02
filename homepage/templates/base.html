@@ -18,7 +18,6 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/flexslider/flexslider.css' %}">
-    <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/jquery-visage/res-alt/visage.css' %}" type="text/css" />
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -84,23 +83,18 @@
     <script type="text/javascript" src="{% static 'plugins/jquery-1.10.2.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-migrate-1.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/detectmobilebrowser.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/jquery.easing.1.3.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/jquery-inview/jquery.inview.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/FitVids/jquery.fitvids.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/jquery-scrollTo/jquery.scrollTo.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/jquery-placeholder/jquery.placeholder.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/flexslider/jquery.flexslider-min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.init.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script type="text/javascript" src="{% static 'plugins/html5shiv.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'plugins/respond.min.js' %}"></script>
     <![endif]-->
     <!--[if !IE]>-->
-    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
     <!--<![endif]-->
     {% if url == 'homepage' %}
         <script src="http://connect.facebook.net/en_US/all.js#xfbml=1" type="text/javascript"></script>

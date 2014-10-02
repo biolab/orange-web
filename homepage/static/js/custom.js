@@ -3,7 +3,6 @@ jQuery(document).ready(function($) {
 
     // Allow tooltips only when using non-mobile devices
     if (jQuery.browser.mobile === false) {
-        $('.img-hover').tooltip();
         $('.alert').alert();
     }
 
@@ -31,4 +30,18 @@ jQuery(document).ready(function($) {
         })();
     }
     loadFBGP();
+
+    function resizeImages() {
+        var pImgs = $('.features .content p img');
+        pImgs.removeAttr('style');
+        var pWidth = $('.features .content p').width();
+        pImgs.each(function(i, el) {
+            if ( pWidth < $(this, el).width() ) {
+                $(this, el).css('width', pWidth);
+            }
+        });
+    }
+    resizeImages();
+
+    $(window).resize(resizeImages);
 });
