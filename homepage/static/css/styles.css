@@ -347,7 +347,7 @@ blockquote {
   margin-top: 3px;
   margin-bottom: 0;
 }
-.footer .links a {''
+.footer .links a {
   color: #808080;
 }
 .footer .links a:hover {
@@ -589,7 +589,7 @@ blockquote {
   padding: 80px 0;
 }
 .how .content {
-  //padding: 0 60px;
+  /* padding: 0 60px; */
 }
 .how .content .title {
   margin-top: 0;
