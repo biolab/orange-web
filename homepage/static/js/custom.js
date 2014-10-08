@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
 
     function loadFBGP() {
         /* Facebook */
-        if (!/127\.0\.0\.1/.test(window.location.hostname) || window.location.pathname.length > 1) {
+        if (window.location.pathname.length > 1) {
             return;
         }
         (function (d, s, id) {
