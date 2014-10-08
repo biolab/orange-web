@@ -8,18 +8,17 @@
  */
 
 get_header(); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<section id="features" class="features section custom-reduce-padding-2">
 		        <div class="container">
 		            <div class="row">
-		            	<div class="col-md-9 col-sm-7 col-xs-12">
+		            	<div class="col-md-9 col-sm-7 col-xs-12 documentwrapper">
 
 							<?php if ( have_posts() ) : ?>
 
 								<header class="page-header">
-									<h1 class="page-title">
+									<h1 class="title">
 										<?php
 											if ( is_category() ) :
 												single_cat_title();
@@ -28,7 +27,7 @@ get_header(); ?>
 												single_tag_title();
 
 											elseif ( is_author() ) :
-												printf( __( 'Author: %s', 'orange-web-theme' ), '<span class="vcard">' . get_the_author() . '</span>' );
+												printf( __( 'Author: %s', 'orange-web-theme' ), '<span>' . get_the_author() . '</span>' );
 
 											elseif ( is_day() ) :
 												printf( __( 'Day: %s', 'orange-web-theme' ), '<span>' . get_the_date() . '</span>' );
