@@ -214,6 +214,7 @@ input[type="submit"].search-submit {
 	line-height: 14px;
 }
 .widget-area {
+	min-width: 250px;
     max-width: 320px;
 	padding: 0 10px;
     border: 1px solid #e8e8e8;

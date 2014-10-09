@@ -10,7 +10,7 @@
 /**
 * Main homepage
 */
-$web_home_url = 'http://new.orange.biolab.si';
+$web_home_url = 'http://orange.biolab.si';
 
 function orange_web_home_url() {
 	echo esc_url( $GLOBALS['web_home_url'] );
