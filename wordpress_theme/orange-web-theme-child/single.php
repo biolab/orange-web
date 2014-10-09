@@ -11,7 +11,7 @@ get_header(); ?>
 			<section id="features" class="features section custom-reduce-padding-2">
 		        <div class="container">
 		            <div class="row">
-		            	<div class="col-md-9 col-sm-7 col-xs-12 documentwrapper">
+		            	<div class="col-lg-9 col-md-8 col-sm-7 col-xs-12 documentwrapper">
 							<?php while ( have_posts() ) : the_post(); ?>
 
 								<?php get_template_part( 'content', 'single' ); ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 
 							<?php endwhile; // end of the loop. ?>
 						</div>
-						<div class="col-md-3 col-sm-5 col-xs-12">
+						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
 							<?php get_sidebar(); ?>
 						</div>
 					</div><!--//row-->
