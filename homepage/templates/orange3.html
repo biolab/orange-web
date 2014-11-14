@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<section id="features" class="features section custom-reduce-padding-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1 class="title">Orange3</h1>
+                <div class="content">
+                    <p>Orange3 is a ground-up reimplementation of Orange.</p>
+                    <ol>
+                        <li>We moved to <a href="https://www.python.org/download/releases/3.0/">Python 3</a>; no backward compatibility.</li>
+                        <li>We moved from custom data format to <a href="http://www.numpy.org">numpy</a>.</li>
+                        <li>We dropped our C++ code and use <a href="http://scikit-learn.org/">Scikit-learn</a> (wherever possible) and <a href="http://cython.org">Cython</a> (where not).</li>
+                        <li>Visual programming environment stays the same, just ported to Python 3.</li>
+                        <li>No more PyQwt, OrangeQt... Viva <a href="http://www.pyqtgraph.org">Pyqtgraph</a>!</li>
+                        <li>Simpler widgets - above and under the hood. Like box plot below.</li>
+                        <li>Widgets can store data in (Postgres) SQL and pass around queries. Viva <a href="http://axleproject.eu">AXLE</a>!</li>
+                    </ol>
+                    <p>Orange3 is in development and we plan to release its first version in late 2015. Check out our progress at <a href="https://github.com/biolab/orange3">github</a>.</p>
+                    <img src="{% static "homepage/other/o3-boxplot.png" %}" alt="Boxplot in Orange3"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

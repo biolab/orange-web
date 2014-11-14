@@ -22,5 +22,8 @@ urlpatterns = \
                  name='community'),
              url(r'^citation/$',
                  TemplateView.as_view(template_name='citation.html'),
-                 name='citation')
+                 name='citation'),
+             url(r'^orange3/$',
+                 TemplateView.as_view(template_name='orange3.html'),
+                 name='orange3'),
              )

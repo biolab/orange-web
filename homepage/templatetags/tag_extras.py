@@ -51,6 +51,9 @@ def download_choices(os):
             'text27': None,
             'source': None,
         }
+        if not settings.DOWNLOAD_SET_PATTERN:
+            return downloads
+
         ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
         for line in ffi:
             ep = line.find('=')
@@ -79,6 +82,9 @@ def download_choices(os):
         ffi.close()
         return downloads
     if os == "mac":
+        if not settings.DOWNLOAD_SET_PATTERN:
+            return {'mac': None}
+
         ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
         for line in ffi:
             ep = line.find('=')
@@ -88,6 +94,8 @@ def download_choices(os):
                 ffi.close()
                 return {'mac': value}
     else:
+        if not settings.DOWNLOAD_SET_PATTERN:
+            return {'date': None}
         ffi = open(settings.DOWNLOAD_SET_PATTERN % "win", 'rt')
         for line in ffi:
             ep = line.find('=')
