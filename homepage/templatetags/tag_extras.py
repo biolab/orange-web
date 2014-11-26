@@ -7,7 +7,7 @@ from django.conf import settings
 
 import feedparser
 import requests
-import xmlrpclib
+from six.moves import xmlrpc_client as xmlrpclib
 
 register = template.Library()
 
