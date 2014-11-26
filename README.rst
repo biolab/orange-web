@@ -18,7 +18,7 @@ Install for development
 
 3. Move to location where you cloned the repository and run::
 
-    pip install -r requirements
+    pip install -r requirements.txt
 
 4. Run::
 
