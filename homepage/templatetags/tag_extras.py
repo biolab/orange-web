@@ -2,6 +2,7 @@
 from datetime import datetime as dt
 
 from django import template
+from django.core.urlresolvers import reverse
 from docutils.core import publish_parts
 from django.conf import settings
 
@@ -111,6 +112,11 @@ def download_link(os):
         return download_choices('win').get('source', '')
     else:
         return download_choices('date').get('date', '')
+
+
+@register.simple_tag
+def orange3_bundle_url():
+    return reverse('download') + 'files/' + download_choices('mac').get('bundle-orange3', '')
 
 
 @register.inclusion_tag('download_addons.html')

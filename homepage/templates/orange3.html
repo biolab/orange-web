@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load tag_extras %}
 
 {% block content %}
 <section id="features" class="features section custom-reduce-padding-2">
@@ -19,6 +20,9 @@
                         <li>Widgets can store data in (Postgres) SQL and pass around queries. Viva <a href="http://axleproject.eu">AXLE</a>!</li>
                     </ol>
                     <p>Orange3 is in development and we plan to release its first version in late 2015. Check out our progress at <a href="https://github.com/biolab/orange3">github</a>.</p>
+
+                    <p><a href="{% orange3_bundle_url %}">Download latest bundle for OSX.</a></p>
+
                     <img src="{% static "homepage/other/o3-boxplot.png" %}" alt="Boxplot in Orange3"/>
                 </div>
             </div>
