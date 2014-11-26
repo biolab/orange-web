@@ -36,74 +36,47 @@ def grab_feed_all():
         return {'bozo': True}
 
 
-def download_choices(os):
-    if os == 'win':
-        downloads = {
-            'winw25': None,
-            'winw26': None,
-            'winw27': None,
-            'win25': None,
-            'win26': None,
-            'win27': None,
-            'bio26': None,
-            'bio27': None,
-            'text26': None,
-            'text27': None,
-            'source': None,
-        }
-        if not settings.DOWNLOAD_SET_PATTERN:
-            return downloads
+def download_set_patterns(os):
+    if settings.DOWNLOAD_SET_PATTERN:
+        with open(settings.DOWNLOAD_SET_PATTERN % os, 'rt') as f:
+            for line in f:
+                key, value = line.split("=", 1)
+                yield key.strip(), value.strip()
 
-        ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
-        for line in ffi:
-            ep = line.find('=')
-            key = line[:ep].strip()
+
+def download_choices(os='win'):
+    downloads = {}
+
+    if os == 'win':
+        for key, value in download_set_patterns(os):
             if key == 'WIN_SNAPSHOT':
-                value = line[ep+1:].strip()
                 downloads['win25'] = '{0}-py2.5.exe'.format(value)
                 downloads['win26'] = '{0}-py2.6.exe'.format(value)
                 downloads['win27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'WIN_PYTHON_SNAPSHOT':
-                value = line[ep+1:].strip()
                 downloads['winw25'] = '{0}-py2.5.exe'.format(value)
                 downloads['winw26'] = '{0}-py2.6.exe'.format(value)
                 downloads['winw27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
-                value = line[ep+1:].strip()
                 downloads['bio26'] = '{0}-py2.6.exe'.format(value)
                 downloads['bio27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_TEXT_SNAPSHOT':
-                value = line[ep+1:].strip()
                 downloads['text26'] = '{0}-py2.6.exe'.format(value)
                 downloads['text27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'SOURCE_SNAPSHOT':
-                value = line[ep+1:].strip()
                 downloads['source'] = value
-        ffi.close()
-        return downloads
-    if os == "mac":
-        if not settings.DOWNLOAD_SET_PATTERN:
-            return {'mac': None}
-
-        ffi = open(settings.DOWNLOAD_SET_PATTERN % os, 'rt')
-        for line in ffi:
-            ep = line.find('=')
-            key = line[:ep].strip()
+    elif os == "mac":
+        for key, value in download_set_patterns(os):
             if key == 'MAC_DAILY':
-                value = line[ep+1:].strip()
-                ffi.close()
-                return {'mac': value}
+                downloads['mac'] = value
+            if key == 'MAC_ORANGE3_DAILY':
+                downloads['bundle-orange3'] = value
     else:
-        if not settings.DOWNLOAD_SET_PATTERN:
-            return {'date': None}
-        ffi = open(settings.DOWNLOAD_SET_PATTERN % "win", 'rt')
-        for line in ffi:
-            ep = line.find('=')
-            key = line[:ep].strip()
+        for key, value in download_set_patterns('win'):
             if key == 'WIN_SNAPSHOT':
-                value = line[ep+1:].strip()[-10:]
-                ffi.close()
-                return {'date': value}
+                downloads['date'] = value[-10:]
+
+    return downloads
 
 
 @register.inclusion_tag('download_windows.html')
@@ -131,13 +104,13 @@ def download_addons_win():
 @register.simple_tag
 def download_link(os):
     if os == 'windows':
-        return download_choices('win')['winw27']
+        return download_choices('win').get('winw27', '')
     elif os == 'mac-os-x':
-        return download_choices('mac')['mac']
+        return download_choices('mac').get('mac', '')
     elif os == 'linux':
-        return download_choices('win')['source']
+        return download_choices('win').get('source', '')
     else:
-        return download_choices('date')['date']
+        return download_choices('date').get('date', '')
 
 
 @register.inclusion_tag('download_addons.html')
