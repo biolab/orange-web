@@ -77,7 +77,7 @@ class TestDownloadLink(TestCase):
 {% load tag_extras %}
 {% download_link 'other' %}
         """)
-        self.assertEqual('WIN_SNAPSHOT', template.render(Context()).strip())
+        self.assertEqual('N_SNAPSHOT', template.render(Context()).strip())
 
         settings.DOWNLOAD_SET_PATTERN = ''
         self.assertEqual('', template.render(Context()).strip())
