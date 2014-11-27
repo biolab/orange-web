@@ -116,7 +116,9 @@ def download_link(os):
 
 @register.simple_tag
 def orange3_bundle_url():
-    return reverse('download') + 'files/' + download_choices('mac').get('bundle-orange3', '')
+    download_folder = reverse('download') + 'files/'
+    orange3_bundle = download_choices('mac').get('bundle-orange3', '')
+    return download_folder + orange3_bundle
 
 
 @register.inclusion_tag('download_addons.html')

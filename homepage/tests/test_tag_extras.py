@@ -1,5 +1,4 @@
 import os
-from unittest import TestCase
 from django.conf import settings
 from django.template import Template, Context
 
@@ -8,9 +7,10 @@ from django.test.utils import override_settings
 from homepage.templatetags.tag_extras import download_choices
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
+TEST_DOWNLOAD_SET_PATTERN = os.path.join(base_dir, 'filenames_%s.set')
 
 
-@override_settings(DOWNLOAD_SET_PATTERN=os.path.join(base_dir, 'filenames_%s.set'))
+@override_settings(DOWNLOAD_SET_PATTERN=TEST_DOWNLOAD_SET_PATTERN)
 class TestDownloadChoices(TestCase):
     def test_download_choices_win(self):
         downloads = download_choices('win')
@@ -22,7 +22,8 @@ class TestDownloadChoices(TestCase):
         self.assertEqual('WIN_PYTHON_SNAPSHOT-py2.7.exe', downloads['winw27'])
 
         self.assertIn('bio27', downloads)
-        self.assertEqual('ADDON_BIOINFORMATICS_SNAPSHOT-py2.7.exe', downloads['bio27'])
+        self.assertEqual('ADDON_BIOINFORMATICS_SNAPSHOT-py2.7.exe',
+                         downloads['bio27'])
 
         self.assertIn('text27', downloads)
         self.assertEqual('ADDON_TEXT_SNAPSHOT-py2.7.exe', downloads['text27'])
@@ -37,14 +38,15 @@ class TestDownloadChoices(TestCase):
         self.assertEqual('MAC_ORANGE3_DAILY', downloads['bundle-orange3'])
 
 
-@override_settings(DOWNLOAD_SET_PATTERN=os.path.join(base_dir, 'filenames_%s.set'))
+@override_settings(DOWNLOAD_SET_PATTERN=TEST_DOWNLOAD_SET_PATTERN)
 class TestDownloadLink(TestCase):
     def test_win(self):
         template = Template("""
 {% load tag_extras %}
 {% download_link 'windows' %}
         """)
-        self.assertEqual('WIN_PYTHON_SNAPSHOT-py2.7.exe', template.render(Context()).strip())
+        self.assertEqual('WIN_PYTHON_SNAPSHOT-py2.7.exe',
+                         template.render(Context()).strip())
 
         settings.DOWNLOAD_SET_PATTERN = ''
         self.assertEqual('', template.render(Context()).strip())
@@ -64,7 +66,8 @@ class TestDownloadLink(TestCase):
 {% load tag_extras %}
 {% download_link 'linux' %}
         """)
-        self.assertEqual('SOURCE_SNAPSHOT', template.render(Context()).strip())
+        self.assertEqual('SOURCE_SNAPSHOT',
+                         template.render(Context()).strip())
 
         settings.DOWNLOAD_SET_PATTERN = ''
         self.assertEqual('', template.render(Context()).strip())
