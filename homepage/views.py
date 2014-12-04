@@ -1,6 +1,8 @@
 import xml.dom.minidom
 import random
 import re
+import requests
+import json
 
 from django.conf import settings
 from django.shortcuts import render
@@ -64,62 +66,64 @@ def license(request):
     return render(request, 'license.html', context)
 
 
+# TODO: Leave secret only in settings_production
+def pass_captcha(request):
+    url = 'https://www.google.com/recaptcha/api/siteverify'
+    params = {
+        'secret': '6Lemwf4SAAAAAGOkKhoiGbMGwoLoYT840IsGjwab',
+        'response': request.POST.get('g-recaptcha-response')
+    }
+    r = requests.get(url, params=params)
+    return json.loads(r.content).get('success')
+
+
 def contribute(request):
-    response = {"post": None}
-    if request.method == 'POST' and request.POST['Signature'] == "I AGREE":
-        message = "This message was sent to you automatically from orange.biolab.si.\n\n" + \
-                  request.POST['Full Name'] + " electronically signed Orange Contributor " \
-                  "License Agreement. Below are his/her contact information:" \
-                  "\n\nFull Name: " + request.POST['Full Name'] + \
-                  "\nE-mail: " + request.POST['E-mail'] + \
-                  "\nMailing Address: \n\n" + request.POST['Address'] + \
-                  "\n\nCountry: " + request.POST['Country'] + \
-                  "\nTelephone Number: " + request.POST['Number'] + \
-                  "\n\nThe user has confirmed this action by typing " \
-                  "\"I AGREE\" in the appropriate Electronic Signature form field." \
-                  "\n\nGood day,\nBiolab Webmaster"
-        send_mail('Orange Contributor License Agreement Receipt', message,
-                  request.POST['E-mail'], admins, fail_silently=False)
-        response = {"post": 1}
-    elif request.method == 'POST' and request.POST['Signature'] != "I AGREE":
-        response = {"post": -1}
+    response = {'post': None}
+    if request.method == 'POST':
+        if not pass_captcha(request):
+            response['post'] = -2
+        elif request.POST['Signature'] != 'I AGREE':
+            response['post'] = -1
+        else:
+            message = ('This message was sent to you automatically from orange.biolab.si.\n\n'
+                       '{0} electronically signed Orange Contributor License Agreement. '
+                       'Below are his/her contact information:\n\n'
+                       'Full Name: {0}\n'
+                       'E-mail: {1}\n'
+                       'Mailing Address: \n\n{2}\n'
+                       'Country: {3}\n'
+                       'Telephone Number: {4}\n\n'
+                       'The user has confirmed this action by typing "I AGREE" in the '
+                       'appropriate Electronic Signature form field.\n\n'
+                       'Good day,\n'
+                       'Biolab Webmaster').format(request.POST['Full Name'],
+                                                  request.POST['E-mail'],
+                                                  request.POST['Address'],
+                                                  request.POST['Country'],
+                                                  request.POST['Number'])
+            send_mail('Orange Contributor License Agreement Receipt', message,
+                      request.POST['E-mail'], admins, fail_silently=True)
+            response['post'] = 1
     return render(request, 'contributing-to-orange.html', response)
 
-
+# TODO: This function
 def contact(request):
+    cap_ok = pass_captcha(request)
+
     response = {"post": False}
     if request.method == 'POST':
-        message = "This message was sent to you automatically from orange.biolab.si.\n\n" + \
-                  "A Contact form was submitted. Below are the details:" \
-                  "\n\nE-mail: " + request.POST['E-mail'] + \
-                  "\nSubject: " + request.POST['Subject'] + \
-                  "\nMessage: \n\n" + request.POST['Message'] + \
-                  "\n\nGood day,\nBiolab Webmaster"
-        send_mail('Orange Contact Request', message,
-                  request.POST['E-mail'], admins, fail_silently=False)
+        # message = "This message was sent to you automatically from orange.biolab.si.\n\n" + \
+        #           "A Contact form was submitted. Below are the details:" \
+        #           "\n\nE-mail: " + request.POST['E-mail'] + \
+        #           "\nSubject: " + request.POST['Subject'] + \
+        #           "\nMessage: \n\n" + request.POST['Message'] + \
+        #           "\n\nGood day,\nBiolab Webmaster"
+        # send_mail('Orange Contact Request', message,
+        #           request.POST['E-mail'], admins, fail_silently=False)
         response = {"post": True}
     return render(request, 'contact.html', response)
 
-# If we ever want to offer 64-bit versions of Orange
-# and wish to discern users by 32/64-bit OS builds.
-# def detect_os(user_agent):
-#     os = {
-#         'type': None,
-#         '64b': True
-#     }
-#     if re.match(r'.*[Ww]in.*', user_agent):
-#         os['type'] = "windows"
-#         if re.match(r'^.*(WOW64|x86_64|Win64).*', user_agent):
-#             os['64b'] = True
-#     elif re.match(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*', user_agent):
-#         os['type'] = "mac-os-x"
-#         if re.match(r'^.*(10_[89]|1[12]_[0-9]).*', user_agent):
-#             os['64b'] = True
-#     elif re.match(r'.*[Ll]inux.*', user_agent):
-#         os['type'] = "linux"
-#     else:
-#         os['type'] = ""
-
+# Regex objects for browser OS detection
 p_win = re.compile(r'.*[Ww]in.*')
 p_mac = re.compile(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*')
 p_linux = re.compile(r'.*[Ll]inux.*')

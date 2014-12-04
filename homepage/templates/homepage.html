@@ -27,7 +27,7 @@
                                                 <a href="{% static screenshot.img %}" title="{{ screenshot.title }}">
                                                     <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
                                                     alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
-                                                <a href="{% static screenshot.img %}" title="{{ screenshot.title }}">
+                                                </a>
                                             </li>
                                         {% endfor %}
                                     </ul><!--//slides-->
@@ -63,7 +63,7 @@
                             <div class="content">
                                 <p style="margin-top:6px">
                                 <a href="{% url 'download' %}">Other Systems</a></p>
-                                <p style="margin-top:0px">Curious? Try <a href="{% url 'orange3' %}">Orange3</a>.</p>
+                                <p style="margin-top:0">Curious? Try <a href="{% url 'orange3' %}">Orange3</a>.</p>
                             </div><!--//content-->
                         </div>
 
