@@ -1,5 +1,5 @@
 """
-Django settings for orange_home project.
+Django settings for orange_web project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 import os
 import socket
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 SCREENSHOTS_DIR = \
@@ -21,7 +23,8 @@ LICENSE_FILE = os.path.join(BASE_DIR, 'LICENSES')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = '@%@g_gj#h+x+x0*b%vcl*gw^rmfmzq5jeb64atjmm&3j^7=!po'
+SECRET_KEY = 'input a random string'
+RECAPTCHA_SECRET = 'get the string from Google'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # FOR TESTING WHEN FALSE: python manage.py runserver --insecure
@@ -67,6 +70,7 @@ WSGI_APPLICATION = 'orange_web.wsgi.application'
 
 ADMINS = (
     ('Miha Stajdohar', 'miha.stajdohar@fri.uni-lj.si'),
+    ('Miha Jenko', 'mjenko@t-2.net'),
 )
 
 # Database
@@ -103,3 +107,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DOWNLOAD_SET_PATTERN = ''
+
+# A custom context processor
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'orange_web.processors.get_current_page',
+)

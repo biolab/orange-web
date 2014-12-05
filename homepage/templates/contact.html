@@ -5,9 +5,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                {% if post %}
+                {% if post > 0 %}
                     <div class="alert alert-success custom-alert text-center fade in">
                         <strong>Success!</strong> Keep in mind that it may take us a while to respond to your inquiry.&nbsp;&nbsp;&nbsp;<button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                {% elif post < 0 %}
+                    <div class="alert alert-danger custom-alert text-center fade in">
+                        <strong>Error!</strong> Wrong captcha. Please try again.
                     </div>
                 {% endif %}
                 <h1 class="title">Contact</h1>
@@ -16,7 +20,8 @@
                     <p>We'd prefer to address support requests and other general questions on <a href="https://stackoverflow.com/questions/tagged/orange">Stack Overflow</a>, tagged appropriately. To report issues with Orange please post on our <a href="http://github.com/biolab/orange" title="GitHub Orange">GitHub repository</a>.</p>
                     <br>
                 </div>
-                <form role="form" class="form-horizontal" action="{% url "contact" %}" method="post" name="license-form">
+
+                <form role="form" class="form-horizontal" action="{% url 'contact' %}" method="post" name="license-form">
                     {% csrf_token %}
                     <div class="form-group">
                         <label class="col-md-1 col-sm-2 col-xs-10" for="email">E-mail:</label>
@@ -36,16 +41,17 @@
                             <textarea class="form-control" id="message" name='Message' rows="7" required></textarea>
                         </div>
                     </div>
-
-                    {#  TODO: Captcha #}
-
                     <div class="form-group">
-                        <div class="col-md-offset-1 col-md-10 col-sm-offset-3 col-sm-9" class="col-sm-4 col-md-4">
+                        <div class="col-md-offset-1 col-md-10 col-sm-offset-3 col-sm-9">
+                            <div class="g-recaptcha" data-sitekey="6Lemwf4SAAAAACdTLL0TYpvYQ9LE91r6r_i7Yg2a"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-1 col-md-10 col-sm-offset-3 col-sm-9">
                             <button type="submit" class="btn btn-theme" value="Submit">Submit</button>
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
