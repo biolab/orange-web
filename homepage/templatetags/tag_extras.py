@@ -41,7 +41,7 @@ def download_set_patterns(os):
     if settings.DOWNLOAD_SET_PATTERN:
         with open(settings.DOWNLOAD_SET_PATTERN % os, 'rt') as f:
             for line in f:
-                key, value = line.split("=", 1)
+                key, value = line.split('=', 1)
                 yield key.strip(), value.strip()
 
 
@@ -126,7 +126,6 @@ def download_addons():
     client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')
     addons = []
     for iid, package in enumerate(client.search({'keywords': 'orange'})):
-        # TODO: Possible threaded URL fetching
         url = 'https://pypi.python.org/pypi/{0}/json'.format(package['name'])
         r = requests.get(url)
         jsonfile = r.json()
@@ -145,9 +144,9 @@ def download_addons():
             'home_page': jsonfile['info']['home_page'],
         }
         dl_url = jsonfile['info']['download_url']
-        if "bitbucket" in dl_url and dl_url.endswith('/downloads'):
+        if 'bitbucket' in dl_url and dl_url.endswith('/downloads'):
             new_json['repo_url'] = dl_url[:-10]
-        elif "github" in dl_url and dl_url.endswith('/releases'):
+        elif 'github' in dl_url and dl_url.endswith('/releases'):
             new_json['repo_url'] = dl_url[:-9]
         addons.append(new_json)
     return {'addons': addons}

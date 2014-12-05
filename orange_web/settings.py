@@ -70,6 +70,7 @@ WSGI_APPLICATION = 'orange_web.wsgi.application'
 
 ADMINS = (
     ('Miha Stajdohar', 'miha.stajdohar@fri.uni-lj.si'),
+    ('Miha Jenko', 'mjenko@t-2.net'),
 )
 
 # Database
@@ -107,7 +108,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DOWNLOAD_SET_PATTERN = ''
 
-# Adding a custom context processor
+# A custom context processor
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'orange_web.processors.get_current_page',
 )

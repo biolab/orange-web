@@ -1,6 +1,4 @@
-"""
-Here we define custom processors for orange_web
-"""
+"""Here we define custom processors for orange_web"""
 
 
 def get_current_page(request):

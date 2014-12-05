@@ -45,7 +45,7 @@ fl.close()
 
 
 def license(request):
-    text = ""
+    text = ''
     in_other = False
     other = []
     for l in license_file:
@@ -66,11 +66,10 @@ def license(request):
     return render(request, 'license.html', context)
 
 
-# TODO: Leave secret only in settings_production
 def pass_captcha(request):
     url = 'https://www.google.com/recaptcha/api/siteverify'
     params = {
-        'secret': '6Lemwf4SAAAAAGOkKhoiGbMGwoLoYT840IsGjwab',
+        'secret': settings.RECAPTCHA_SECRET,
         'response': request.POST.get('g-recaptcha-response')
     }
     r = requests.get(url, params=params)
@@ -78,49 +77,50 @@ def pass_captcha(request):
 
 
 def contribute(request):
-    response = {'post': None}
+    response = {'post': 0}
     if request.method == 'POST':
+        rp = request.POST
         if not pass_captcha(request):
             response['post'] = -2
-        elif request.POST['Signature'] != 'I AGREE':
+        elif rp.get('Signature') != 'I AGREE':
             response['post'] = -1
         else:
-            message = ('This message was sent to you automatically from orange.biolab.si.\n\n'
-                       '{0} electronically signed Orange Contributor License Agreement. '
-                       'Below are his/her contact information:\n\n'
-                       'Full Name: {0}\n'
-                       'E-mail: {1}\n'
-                       'Mailing Address: \n\n{2}\n'
-                       'Country: {3}\n'
-                       'Telephone Number: {4}\n\n'
-                       'The user has confirmed this action by typing "I AGREE" in the '
-                       'appropriate Electronic Signature form field.\n\n'
-                       'Good day,\n'
-                       'Biolab Webmaster').format(request.POST['Full Name'],
-                                                  request.POST['E-mail'],
-                                                  request.POST['Address'],
-                                                  request.POST['Country'],
-                                                  request.POST['Number'])
+            message = ('This message was sent to you automatically from '
+                       'orange.biolab.si.\n\n{0} electronically signed '
+                       'Orange Contributor License Agreement. Below are '
+                       'his/her contact information:\n\nFull Name: {0}\n'
+                       'E-mail: {1}\nMailing Address: \n\n{2}\n\nCountry: {3}'
+                       '\nTelephone Number: {4}\n\nThe user has confirmed '
+                       'this action by typing "I AGREE" in the appropriate '
+                       'Electronic Signature form field.\n\nGood day,\n'
+                       'Biolab Webmaster').format(rp.get('Full Name'),
+                                                  rp.get('E-mail'),
+                                                  rp.get('Address'),
+                                                  rp.get('Country'),
+                                                  rp.get('Number'))
             send_mail('Orange Contributor License Agreement Receipt', message,
-                      request.POST['E-mail'], admins, fail_silently=True)
+                      rp.get('E-mail'), admins, fail_silently=True)
             response['post'] = 1
     return render(request, 'contributing-to-orange.html', response)
 
-# TODO: This function
-def contact(request):
-    cap_ok = pass_captcha(request)
 
-    response = {"post": False}
+def contact(request):
+    response = {'post': 0}
     if request.method == 'POST':
-        # message = "This message was sent to you automatically from orange.biolab.si.\n\n" + \
-        #           "A Contact form was submitted. Below are the details:" \
-        #           "\n\nE-mail: " + request.POST['E-mail'] + \
-        #           "\nSubject: " + request.POST['Subject'] + \
-        #           "\nMessage: \n\n" + request.POST['Message'] + \
-        #           "\n\nGood day,\nBiolab Webmaster"
-        # send_mail('Orange Contact Request', message,
-        #           request.POST['E-mail'], admins, fail_silently=False)
-        response = {"post": True}
+        rp = request.POST
+        if pass_captcha(request):
+            message = ('This message was sent to you automatically from '
+                       'orange.biolab.si.\n\nA visitor submitted the contact '
+                       'form. Below are the details:\n\nE-mail: {0}\nSubject: '
+                       '{1}\nMessage:\n\n{2}\n\nGood day,\n'
+                       'Biolab Webmaster').format(rp.get('E-mail'),
+                                                  rp.get('Subject'),
+                                                  rp.get('Message'))
+            send_mail('Orange Contact Request', message,
+                      rp.get('E-mail'), admins, fail_silently=True)
+            response['post'] = 1
+        else:
+            response['post'] = -1
     return render(request, 'contact.html', response)
 
 # Regex objects for browser OS detection
@@ -131,13 +131,13 @@ p_linux = re.compile(r'.*[Ll]inux.*')
 
 def detect_os(user_agent):
     if re.match(p_win, user_agent):
-        return "windows"
+        return 'windows'
     elif re.match(p_mac, user_agent):
-        return "mac-os-x"
+        return 'mac-os-x'
     elif re.match(p_linux, user_agent):
-        return "linux"
+        return 'linux'
     else:
-        return ""
+        return ''
 
 
 def index(request):
