@@ -69,8 +69,7 @@ ROOT_URLCONF = 'orange_web.urls'
 WSGI_APPLICATION = 'orange_web.wsgi.application'
 
 ADMINS = (
-    ('Miha Stajdohar', 'miha.stajdohar@fri.uni-lj.si'),
-    ('Miha Jenko', 'mjenko@t-2.net'),
+    ('Info', 'info@biolab.si'),
 )
 
 # Database
