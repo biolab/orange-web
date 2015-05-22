@@ -11,26 +11,27 @@ from django.core.mail import send_mail
 # Create a list of admin e-mail addresses.
 admins = [x[1] for x in settings.ADMINS]
 
-f = open(settings.SCREENSHOTS_INDEX)
-doc = xml.dom.minidom.parse(f)
-f.close()
+def discover_screenshots():
+    f = open(settings.SCREENSHOTS_INDEX)
+    doc = xml.dom.minidom.parse(f)
+    f.close()
 
-screenshots = []
-for node in doc.getElementsByTagName('screenshot'):
-    iid = node.getAttribute('id')
-    screenshot = {
-        'id': iid,
-        'title': node.getAttribute('title'),
-        'hide': node.getAttribute('hide'),
-        'img': node.getAttribute('img')
-        or ('homepage/screenshots/snp-%s.png' % iid),
-        'rank': int(node.getAttribute('rank') or 999),
-        'thumb': node.getAttribute('thumb')
-        or ('homepage/screenshots/tbn-%s.png' % iid),
-        'features': node.getAttribute('features'),
-    }
-    if not screenshot['hide'] == 'yes':
+    screenshots = []
+    for node in doc.getElementsByTagName('screenshot'):
+        iid = node.getAttribute('id')
+        screenshot = {
+            'id': iid,
+            'title': node.getAttribute('title'),
+            'hide': node.getAttribute('hide'),
+            'img': 'homepage/screenshots/%s.png' % iid,
+            'rank': int(node.getAttribute('rank') or 999),
+            'thumb': 'homepage/screenshots/thumbs/%s.png' % iid,
+            'features': node.getAttribute('features'),
+        }
         screenshots.append(screenshot)
+    return screenshots
+
+screenshots = [screen for screen in discover_screenshots() if not screen['hide'] == 'yes']
 
 
 def screens(request):
