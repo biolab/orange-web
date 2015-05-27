@@ -2,24 +2,13 @@
 
 <!-- DATA MANAGEMENT --> 
 
-<screenshot id="select-data" title="Data selection" rank="90"></screenshot> 1
 <screenshot id="sampler" title="Data sampling" rank="100"></screenshot>
-<screenshot id="discretization" title="Manual discretization of continuous features" rank="100" features="interaction"></screenshot> 
 
 <!-- SUPERVISED LEARNING --> 
 
 <screenshot id="tree-navigator" title="Classification tree viewer" rank="20">
-<description>Classification tree viewer with a navigator.</description>
-</screenshot> 
-
-<screenshot id="nomogram" title="Naive Bayesian nomogram" rank="30">
-<description>Naive Bayesian Nomogram constructed from the Titanic data
-set. Used for prediction (blue dots) it shows that the probability of
-survival of women travelling in the second class. Nomograms are easy to
-interpret: chances of survival are elevated for children and women in
-the first class, and worst for male passengers travelling in the third
-class or as a crew.</description>
-</screenshot> 
+<description>Classification tree viewer.</description>
+</screenshot>
 
 <screenshot id="tree-exploration" title="Explorative analysis and classification trees" rank="10" features="interaction">
 <description>Clicking on a node of classification tree outputs the associated
@@ -31,23 +20,7 @@ from File widget), and also receives a data subset from Classification
 Tree Viewer. The data subset is marked with filled dots. By clicking on
 different nodes of the tree the selection in scatterplot changes,
 making this schema an interesting interactive exploration tool.</description>
-</screenshot> 
-
-<screenshot id="lr-nbc-nomogram" title="Logistic regression and naive Bayesian nomograms" rank="80">
-<description>Logistic regression and naive Bayesian nomograms show little
-difference when compared on Titanic data sets. For comparison, naive
-Bayesian nomogram was left-aligned (and in such setting denied the
-otherwise it's own ability to treat the missing values).</description>
-</screenshot> 
-
-<screenshot id="tree-manual" title="Manual construction of classification tree" rank="30" features="interaction"></screenshot> 
-
-<screenshot id="cn2-dist" title="CN2 rules" rank="30">
-<description>Visualization of CN2 classification rules allows user to select a
-subset of rules. The visualization widget sends out the data that are
-pertinent to selection rules, and these can be further analyzed (as
-exemplified by Distribution widget).</description>
-</screenshot> 
+</screenshot>
 
 <!-- MODEL SCORING AND EVALUATION -->
 
@@ -65,35 +38,13 @@ exposed through a combination of Test Learners and Confusion Matrix widget.</des
 <screenshot id="dendrogram" title="Hierarchical clustering" rank="5" features="visualization">
 <description>Dendrogram showing the results of a hierarchical clustering on Iris
 data set.</description>
-</screenshot> 
-
-<screenshot id="som-exploration" title="Self-organizing maps" rank="20" features="visualization">
-<description>Data items in cells of Self-Organizing Maps can be identified by
-selecting the cells of interest. SOM Visualizer commits selected data
-to its output channel; in the schema shown we fed this data to a
-Data Table thatis displaying the selected instances.</description>
-</screenshot> 
+</screenshot>
 
 <screenshot id="distance-map" title="Distance map" rank="50"></screenshot> 
-<screenshot id="association-rules-filter" title="Mining of association rules" rank="50"></screenshot> 
-
-<!-- NETWORKS -->
-
-<screenshot id="OWNetExplorer-airlines" title="Airport network" rank="50"></screenshot> 
-<screenshot id="OWNetExplorer-fragviz" title="Visualization of interactions of genetic pathways" rank="50"></screenshot> 
-<screenshot id="OWNetExplorer-last.fm" title="A network of music performers" rank="50"></screenshot> 
 
 <!-- DATA VISUALIZATION (PRIMARILY WIDGETS FROM VISUALIZATION TAB) -->
 
-<screenshot id="freeviz" title="Linear projections (FreeViz)" rank="10" features="visualization">
-<description>Data visualization through linear projection can nicely expose important 
-prediction factors.</description>
-</screenshot> 
-
-<screenshot id="radviz-intelligent" title="Intelligent visualization with radviz" rank="50" features="visualization"></screenshot>
 <screenshot id="sieve" title="Sieve diagram" rank="50"></screenshot> 
-<screenshot id="surveyplot" title="Survey plot" rank="60"></screenshot> 
-<screenshot id="parallel-coordinates" title="Parallel coordinates plot" rank="55"></screenshot> 
 
 <!-- SCREENSHOTS SHOWING SCRIPTS -->
 
@@ -106,8 +57,7 @@ prediction factors.</description>
 
 <screenshot id="canvas-tree-view" title="Tree view of Orange widgets" rank="47" features="vis_prog"></screenshot> 
 <screenshot id="canvas-widget-guess" title="Orange can guess which widget to add to a developing schema" rank="47" features="vis_prog"></screenshot> 
-<screenshot id="schema-selection-evaluation" title="Data exploration by construction of analysis schema" rank="46" features="vis_prog"></screenshot>
- 
+
 <!-- WIDGET ICONS -->
 
 <screenshot id="widgets-data" title="Data management widgets" features="tools" hide="yes"></screenshot> 
