@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme description="" title="sieve" version="2.0">
+	<nodes>
+		<node id="0" name="File" position="(65.0, 57.0)" project_name="Orange" qualified_name="Orange.widgets.data.owfile.OWFile" title="File" version="" />
+		<node id="1" name="Discretize" position="(336.0, 136.0)" project_name="Orange" qualified_name="Orange.widgets.data.owdiscretize.OWDiscretize" title="Discretize" version="" />
+		<node id="2" name="Sieve Diagram" position="(642.0, 51.0)" project_name="Orange" qualified_name="Orange.widgets.visualize.owsieve.OWSieveDiagram" title="Sieve Diagram" version="" />
+	</nodes>
+	<links>
+		<link enabled="true" id="0" sink_channel="Data" sink_node_id="1" source_channel="Data" source_node_id="0" />
+		<link enabled="true" id="1" sink_channel="Data" sink_node_id="2" source_channel="Data" source_node_id="1" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties format="pickle" node_id="0">gAN9cQAoWBMAAABzYXZlZFdpZGdldEdlb21ldHJ5cQFjc2lwCl91bnBpY2tsZV90eXBlCnECWAwA
+AABQeVF0NC5RdENvcmVxA1gKAAAAUUJ5dGVBcnJheXEEQy4B2dDLAAEAAAAAA8AAAAIAAAAGGQAA
+AxcAAAPIAAACHwAABhEAAAMPAAAAAAAAcQWFcQaHcQdScQhYDAAAAHJlY2VudF9maWxlc3EJXXEK
+KFhKAAAAQzovVXNlcnMvQWpkYSBQcmV0bmFyL0RvY3VtZW50cy9PcmFuZ2Uvb3JhbmdlMy9PcmFu
+Z2UvZGF0YXNldHMvdGl0YW5pYy50YWJxC1hHAAAAQzovVXNlcnMvQWpkYSBQcmV0bmFyL0RvY3Vt
+ZW50cy9PcmFuZ2Uvb3JhbmdlMy9PcmFuZ2UvZGF0YXNldHMvaXJpcy50YWJxDFhIAAAAQzovVXNl
+cnMvQWpkYSBQcmV0bmFyL0RvY3VtZW50cy9PcmFuZ2Uvb3JhbmdlMy9PcmFuZ2UvZGF0YXNldHMv
+YWR1bHQudGFicQ1YTwAAAEM6L1VzZXJzL0FqZGEgUHJldG5hci9Eb2N1bWVudHMvT3JhbmdlL29y
+YW5nZTMvT3JhbmdlL2RhdGFzZXRzL2hhaXItZXllLXNleC50YWJxDlhSAAAAQzovVXNlcnMvQWpk
+YSBQcmV0bmFyL0RvY3VtZW50cy9PcmFuZ2Uvb3JhbmdlMy9PcmFuZ2UvZGF0YXNldHMveWVhc3Qt
+Y2xhc3MtUlBSLnRhYnEPWFEAAABDOi9Vc2Vycy9BamRhIFByZXRuYXIvRG9jdW1lbnRzL09yYW5n
+ZS9vcmFuZ2UzL09yYW5nZS9kYXRhc2V0cy9icm93bi1zZWxlY3RlZC50YWJxEFhQAAAAQzovVXNl
+cnMvQWpkYSBQcmV0bmFyL0RvY3VtZW50cy9PcmFuZ2Uvb3JhbmdlMy9PcmFuZ2UvZGF0YXNldHMv
+YnJlYXN0LWNhbmNlci50YWJxEWVYDQAAAG5ld192YXJpYWJsZXNxEol1Lg==
+</properties>
+		<properties format="pickle" node_id="1">gAN9cQAoWAkAAABkZWZhdWx0X2txAUsFWAgAAABhdXRvc2VuZHECiVgQAAAAY29udGV4dF9zZXR0
+aW5nc3EDXXEEKGNPcmFuZ2Uud2lkZ2V0cy5zZXR0aW5ncwpDb250ZXh0CnEFKYFxBn1xByhYDgAA
+AG9yZGVyZWRfZG9tYWlucQhdcQkoWAYAAABzdGF0dXNxCksBhnELWAMAAABhZ2VxDEsBhnENWAMA
+AABzZXhxDksBhnEPWAgAAABzdXJ2aXZlZHEQSwGGcRFlWAoAAABhdHRyaWJ1dGVzcRJ9cRMoaApL
+AWgOSwFoDEsBaBBLAXVYBAAAAHRpbWVxFEdB1VmzqnasP1gGAAAAdmFsdWVzcRV9cRYoaAFLBUr+
+////hnEXWA4AAABkZWZhdWx0X21ldGhvZHEYSwFK/v///4ZxGVgQAAAAc2F2ZWRfdmFyX3N0YXRl
+c3EafXEbSv7///+GcRxoAolK/v///4ZxHVgTAAAAc2F2ZWRXaWRnZXRHZW9tZXRyeXEeY3NpcApf
+dW5waWNrbGVfdHlwZQpxH1gMAAAAUHlRdDQuUXRDb3JlcSBYCgAAAFFCeXRlQXJyYXlxIUMuAdnQ
+ywABAAAAAAKMAAABCQAABOUAAALHAAAClAAAASgAAATdAAACvwAAAAAAAHEihXEjh3EkUnElSv7/
+//+GcSZ1WAUAAABtZXRhc3EnfXEodWJoBSmBcSl9cSooaAhdcSsoWAwAAABzZXBhbCBsZW5ndGhx
+LEsChnEtWAsAAABzZXBhbCB3aWR0aHEuSwKGcS9YDAAAAHBldGFsIGxlbmd0aHEwSwKGcTFYCwAA
+AHBldGFsIHdpZHRocTJLAoZxM1gEAAAAaXJpc3E0SwGGcTVlaBJ9cTYoaC5LAmgySwJoMEsCaCxL
+Amg0SwF1aBRHQdVZs5xg6UJoFX1xNyhoAUsFSv7///+GcThoGEsBSv7///+GcTloGn1xOihLAlgM
+AAAAcGV0YWwgbGVuZ3RocTuGcTxjT3JhbmdlLndpZGdldHMuZGF0YS5vd2Rpc2NyZXRpemUKRFN0
+YXRlCnE9Y09yYW5nZS53aWRnZXRzLmRhdGEub3dkaXNjcmV0aXplCkRlZmF1bHQKcT5jT3Jhbmdl
+LndpZGdldHMuZGF0YS5vd2Rpc2NyZXRpemUKTGVhdmUKcT8pgXFAhXFBgXFCTk6HcUOBcURLAlgL
+AAAAc2VwYWwgd2lkdGhxRYZxRmg9aD5oQIVxR4FxSE5Oh3FJgXFKSwJYDAAAAHNlcGFsIGxlbmd0
+aHFLhnFMaD1oPmhAhXFNgXFOTk6HcU+BcVBLAlgLAAAAcGV0YWwgd2lkdGhxUYZxUmg9aD5oQIVx
+U4FxVE5Oh3FVgXFWdUr+////hnFXaAKJSv7///+GcVhoHmgfaCBYCgAAAFFCeXRlQXJyYXlxWUMu
+AdnQywABAAAAAAKMAAABCQAABOUAAALHAAAClAAAASgAAATdAAACvwAAAAAAAHFahXFbh3FcUnFd
+Sv7///+GcV51aCd9cV91YmVoHmgfaCBYCgAAAFFCeXRlQXJyYXlxYEMuAdnQywABAAAAAAKMAAAB
+CQAABOUAAALHAAAClAAAASgAAATdAAACvwAAAAAAAHFhhXFih3FjUnFkaBhLAWgafXFldS4=
+</properties>
+		<properties format="pickle" node_id="2">gAN9cQBYEwAAAHNhdmVkV2lkZ2V0R2VvbWV0cnlxAWNzaXAKX3VucGlja2xlX3R5cGUKcQJYDAAA
+AFB5UXQ0LlF0Q29yZXEDWAoAAABRQnl0ZUFycmF5cQRDLgHZ0MsAAQAAAAAAwAAAAJIAAAQMAAAC
+7AAAAMgAAACxAAAEBAAAAuQAAAAAAABxBYVxBodxB1JxCHMu
+</properties>
+	</node_properties>
+</scheme>
