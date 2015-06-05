@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme description="" title="" version="2.0">
+	<nodes>
+		<node id="0" name="Paint Data" position="(57.0, 107.0)" project_name="Orange" qualified_name="Orange.widgets.data.owpaintdata.OWPaintData" title="Paint Data" version="" />
+		<node id="1" name="Data Table" position="(286.0, 68.0)" project_name="Orange" qualified_name="Orange.widgets.data.owtable.OWDataTable" title="Data Table" version="" />
+		<node id="2" name="K Means" position="(249.0, 200.0)" project_name="Orange" qualified_name="Orange.widgets.unsupervised.owkmeans.OWKMeans" title="K Means" version="" />
+	</nodes>
+	<links>
+		<link enabled="true" id="0" sink_channel="Data" sink_node_id="1" source_channel="Data" source_node_id="0" />
+		<link enabled="true" id="1" sink_channel="Data" sink_node_id="2" source_channel="Data" source_node_id="0" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties format="pickle" node_id="0">gAN9cQAoWAUAAABhdHRyMnEBWAEAAAB5cQJYEwAAAHNhdmVkV2lkZ2V0R2VvbWV0cnlxA2NzaXAK
+X3VucGlja2xlX3R5cGUKcQRYDAAAAFB5UXQ0LlF0Q29yZXEFWAoAAABRQnl0ZUFycmF5cQZDLgHZ
+0MsAAQAAAAACJwAAAKgAAAVGAAADJwAAAi8AAADHAAAFPgAAAx8AAAAAAABxB4VxCIdxCVJxClgH
+AAAAZGVuc2l0eXELSxNYCwAAAGJydXNoUmFkaXVzcQxLO1gKAAAAYXV0b2NvbW1pdHENiFgFAAAA
+YXR0cjFxDlgBAAAAeHEPdS4=
+</properties>
+		<properties format="pickle" node_id="1">gAN9cQAoWA4AAABjb2xvcl9ieV9jbGFzc3EBiFgSAAAAc2hvd19kaXN0cmlidXRpb25zcQKJWAsA
+AABzZWxlY3Rfcm93c3EDiFgVAAAAc2VsZWN0ZWRfc2NoZW1hX2luZGV4cQRLAFgTAAAAc2F2ZWRX
+aWRnZXRHZW9tZXRyeXEFY3NpcApfdW5waWNrbGVfdHlwZQpxBlgMAAAAUHlRdDQuUXRDb3JlcQdY
+CgAAAFFCeXRlQXJyYXlxCEMuAdnQywABAAAAAADVAAAAwAAAAy8AAAJzAAAA3QAAAN8AAAMnAAAC
+awAAAAAAAHEJhXEKh3ELUnEMWA4AAABjb2xvcl9zZXR0aW5nc3ENTlgVAAAAc2hvd19hdHRyaWJ1
+dGVfbGFiZWxzcQ6IWA4AAABkaXN0X2NvbG9yX1JHQnEPKEvcS9xL3Ev/dHEQWAsAAABhdXRvX2Nv
+bW1pdHERiHUu
+</properties>
+		<properties format="pickle" node_id="2">gAN9cQAoWAYAAABuX2luaXRxAUsKWBMAAABzYXZlZFdpZGdldEdlb21ldHJ5cQJjc2lwCl91bnBp
+Y2tsZV90eXBlCnEDWAwAAABQeVF0NC5RdENvcmVxBFgKAAAAUUJ5dGVBcnJheXEFQy4B2dDLAAEA
+AAAAA8AAAAIAAAAEzQAAA4gAAAPIAAACHwAABMUAAAOAAAAAAAAAcQaFcQeHcQhScQlYBAAAAGtf
+dG9xCksIWAEAAABrcQtLCFgHAAAAc2NvcmluZ3EMSwBYCgAAAG9wdGltaXplX2txDYlYEQAAAHBs
+YWNlX2NsdXN0ZXJfaWRzcQ5LAFgLAAAAb3V0cHV0X25hbWVxD1gHAAAAQ2x1c3RlcnEQWAoAAABz
+bWFydF9pbml0cRFLAFgSAAAAYXBwZW5kX2NsdXN0ZXJfaWRzcRKIWAYAAABrX2Zyb21xE0sCWAgA
+AABhdXRvX3J1bnEUiVgOAAAAbWF4X2l0ZXJhdGlvbnNxFU0sAXUu
+</properties>
+	</node_properties>
+</scheme>
