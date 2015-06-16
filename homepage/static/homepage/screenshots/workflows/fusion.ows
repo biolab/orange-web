@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme description="" title="fusion" version="2.0">
+	<nodes>
+		<node id="0" name="Movie Ratings" position="(150, 150)" project_name="Orange3-Data-Fusion" qualified_name="orangecontrib.datafusion.widgets.owmovieratings.OWMovieRatings" title="Movie Ratings" version="" />
+		<node id="1" name="IMDb Actors" position="(246.0, 38.0)" project_name="Orange3-Data-Fusion" qualified_name="orangecontrib.datafusion.widgets.owimdbactors.OWIMDbActors" title="IMDb Actors" version="" />
+		<node id="2" name="Fusion Graph" position="(265.0, 203.0)" project_name="Orange3-Data-Fusion" qualified_name="orangecontrib.datafusion.widgets.owfusiongraph.OWFusionGraph" title="Fusion Graph" version="" />
+		<node id="3" name="Latent Factors" position="(375.0, 183.0)" project_name="Orange3-Data-Fusion" qualified_name="orangecontrib.datafusion.widgets.owlatentfactors.OWLatentFactors" title="Latent Factors" version="" />
+		<node id="4" name="Data Table" position="(477.0, 177.0)" project_name="Orange" qualified_name="Orange.widgets.data.owtable.OWDataTable" title="Data Table" version="" />
+	</nodes>
+	<links>
+		<link enabled="true" id="0" sink_channel="Filter" sink_node_id="1" source_channel="Ratings" source_node_id="0" />
+		<link enabled="true" id="1" sink_channel="Relation" sink_node_id="2" source_channel="Ratings" source_node_id="0" />
+		<link enabled="true" id="2" sink_channel="Fitted fusion graph" sink_node_id="3" source_channel="Fitted Fusion Graph" source_node_id="2" />
+		<link enabled="true" id="3" sink_channel="Data" sink_node_id="4" source_channel="Relation" source_node_id="3" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties format="pickle" node_id="0">gAN9cQAoWAMAAABlbmRxAU3XB1gGAAAAbWV0aG9kcQJLAFgTAAAAc2F2ZWRXaWRnZXRHZW9tZXRy
+eXEDY3NpcApfdW5waWNrbGVfdHlwZQpxBFgMAAAAUHlRdDQuUXRDb3JlcQVYCgAAAFFCeXRlQXJy
+YXlxBkMuAdnQywABAAAAAALDAAABegAAA8wAAAJhAAACywAAAZkAAAPEAAACWQAAAAAAAHEHhXEI
+h3EJUnEKWAUAAABzdGFydHELTdUHWAcAAABwZXJjZW50cQxLCnUu
+</properties>
+		<properties format="literal" node_id="1">{'savedWidgetGeometry': None, 'percent': 10}</properties>
+		<properties format="pickle" node_id="2">gAN9cQAoWBEAAABwcmVmX25faXRlcmF0aW9uc3EBSwpYEwAAAHByZWZfaW5pdGlhbGl6YXRpb25x
+AksAWAkAAABwcmVmX3JhbmtxA0sKWA4AAABwcmVmX2FsZ29fbmFtZXEEWAAAAABxBVgHAAAAYXV0
+b3J1bnEGiVgTAAAAc2F2ZWRXaWRnZXRHZW9tZXRyeXEHY3NpcApfdW5waWNrbGVfdHlwZQpxCFgM
+AAAAUHlRdDQuUXRDb3JlcQlYCgAAAFFCeXRlQXJyYXlxCkMuAdnQywABAAAAAAGhAAAAjQAABMAA
+AAONAAABqQAAAKwAAAS4AAADhQAAAAAAAHELhXEMh3ENUnEOWA4AAABwcmVmX2FsZ29yaXRobXEP
+SwB1Lg==
+</properties>
+		<properties format="pickle" node_id="3">gAN9cQAoWAkAAABiYWNrYm9uZXNxAV1xAlgUAAAAc2VsZWN0ZWRfY29tcGxldGlvbnNxA11xBFgT
+AAAAc2F2ZWRXaWRnZXRHZW9tZXRyeXEFY3NpcApfdW5waWNrbGVfdHlwZQpxBlgMAAAAUHlRdDQu
+UXRDb3JlcQdYCgAAAFFCeXRlQXJyYXlxCEMuAdnQywABAAAAAAFsAAAAegAABIsAAAOqAAABdAAA
+AJkAAASDAAADogAAAAAAAHEJhXEKh3ELUnEMWAsAAABjb21wbGV0aW9uc3ENXXEOWBAAAABzZWxl
+Y3RlZF9mYWN0b3JzcQ9dcRBYEgAAAHNlbGVjdGVkX2JhY2tib25lc3ERXXESWAcAAABmYWN0b3Jz
+cRNdcRRYBwAAAGF1dG9ydW5xFYh1Lg==
+</properties>
+		<properties format="pickle" node_id="4">gAN9cQAoWAsAAABzZWxlY3Rfcm93c3EBiFgOAAAAZGlzdF9jb2xvcl9SR0JxAihL3EvcS9xL/3Rx
+A1gLAAAAYXV0b19jb21taXRxBIhYEgAAAHNob3dfZGlzdHJpYnV0aW9uc3EFiVgTAAAAc2F2ZWRX
+aWRnZXRHZW9tZXRyeXEGY3NpcApfdW5waWNrbGVfdHlwZQpxB1gMAAAAUHlRdDQuUXRDb3JlcQhY
+CgAAAFFCeXRlQXJyYXlxCUMuAdnQywABAAAAAADVAAAAwAAABLcAAAKWAAAA3QAAAN8AAASvAAAC
+jgAAAAAAAHEKhXELh3EMUnENWBUAAABzaG93X2F0dHJpYnV0ZV9sYWJlbHNxDohYFQAAAHNlbGVj
+dGVkX3NjaGVtYV9pbmRleHEPSwBYDgAAAGNvbG9yX2J5X2NsYXNzcRCIWA4AAABjb2xvcl9zZXR0
+aW5nc3ERTnUu
+</properties>
+	</node_properties>
+</scheme>
