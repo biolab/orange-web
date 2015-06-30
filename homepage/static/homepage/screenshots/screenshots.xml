@@ -2,15 +2,23 @@
 
 <!-- DATA MANAGEMENT --> 
 
-<screenshot id="sampler" title="Data sampling" rank="100"></screenshot>
+<screenshot id="Paint_Data" title="Paint Data" rank="10">
+<description>Manually paint data on a 2-D plane.</description>
+</screenshot>
+
+<screenshot id="Image_Viewer" title="Image Viewer" rank="11">
+<description>View image files in the data set.</description>
+</screenshot>
 
 <!-- SUPERVISED LEARNING --> 
 
-<screenshot id="tree-navigator" title="Classification tree viewer" rank="20">
-<description>Classification tree viewer.</description>
+<screenshot id="Rank" title="Rank" rank="20">
+<description>Rank widget scores attributes by class while
+ModelMap Projection Rank displays attribute pairs by their
+projection quality.</description>
 </screenshot>
 
-<screenshot id="tree-exploration" title="Explorative analysis and classification trees" rank="10" features="interaction">
+<screenshot id="tree-exploration" title="Explorative analysis and classification trees" rank="21" features="interaction">
 <description>Clicking on a node of classification tree outputs the associated
 data, which can be further processed in any other widget. Screenshot
 below shows a schema where we use File widget to read the Iris
@@ -22,29 +30,52 @@ different nodes of the tree the selection in scatterplot changes,
 making this schema an interesting interactive exploration tool.</description>
 </screenshot>
 
+<screenshot id="Linear_Regression" title="Linear Regression" rank="22">
+<description>Data classification with linear regression model.</description>
+</screenshot>
+
+<screenshot id="SVM_Example" title="SVM Classifier" rank="23">
+<description>Data classification with SVM model.</description>
+</screenshot>
+
 <!-- MODEL SCORING AND EVALUATION -->
 
-<screenshot id="eval-class" title="A schema for performance scoring (classification)" rank="45" features="vis_prog">
+<screenshot id="eval-class" title="A schema for performance scoring (classification)" rank="30" features="vis_prog">
 <description>A typical schema for performance evaluation of a set of class predictors.</description>
 </screenshot>
 
-<screenshot id="misclassifications" title="Visualizing misclassifications" rank="20">
+<screenshot id="misclassifications" title="Visualizing misclassifications" rank="31">
 <description>Data instances where a classifier has missed a class can be nicely
 exposed through a combination of Test Learners and Confusion Matrix widget.</description>
-</screenshot> 
+</screenshot>
+
+<screenshot id="Test_Learners" title="Test Learners" rank="32">
+<description>Test Learners scores classifiers by 5 categories
+(namely AUC, CA, F1, Precision, Recall). Useful for selecting the
+best performing classifier.</description>
+</screenshot>
 
 <!-- UNSUPERVISED LEARNING --> 
 
-<screenshot id="dendrogram" title="Hierarchical clustering" rank="5" features="visualization">
+<screenshot id="dendrogram" title="Hierarchical clustering" rank="40" features="visualization">
 <description>Dendrogram showing the results of a hierarchical clustering on Iris
 data set.</description>
 </screenshot>
 
-<screenshot id="distance-map" title="Distance map" rank="50"></screenshot> 
+<screenshot id="Fusion_Graph" title="Fusion Graph" rank="41">
+<description>Performs data fusion on large data sets to 
+create sensible clusters of related data instances.</description>
+</screenshot>
 
 <!-- DATA VISUALIZATION (PRIMARILY WIDGETS FROM VISUALIZATION TAB) -->
 
-<screenshot id="sieve" title="Sieve diagram" rank="50"></screenshot> 
+<screenshot id="sieve" title="Sieve diagram" rank="50"></screenshot>
+
+<screenshot id="Box_Plot" title="Box Plot" rank="51"></screenshot>
+
+<screenshot id="Linear_Projection" title="Linear Projection" rank="52"></screenshot>
+
+<screenshot id="Venn_Diagram" title="Venn Diagram" rank="53"></screenshot> 
 
 <!-- SCREENSHOTS SHOWING SCRIPTS -->
 
@@ -55,8 +86,7 @@ data set.</description>
 
 <!-- VISUAL PROGRAMMING (SCHEMAS) -->
 
-<screenshot id="canvas-tree-view" title="Tree view of Orange widgets" rank="47" features="vis_prog"></screenshot> 
-<screenshot id="canvas-widget-guess" title="Orange can guess which widget to add to a developing schema" rank="47" features="vis_prog"></screenshot> 
+<screenshot id="canvas-widget-guess" title="Orange can guess which widget to add to a developing schema" rank="60" features="vis_prog"></screenshot> 
 
 <!-- WIDGET ICONS -->
 
