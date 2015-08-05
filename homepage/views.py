@@ -144,7 +144,7 @@ def detect_os(user_agent):
 def index(request):
     response = {
         'random_screenshots': random.sample(screenshots, 5),
-        'os': detect_os(request.META['HTTP_USER_AGENT'])
+        'os': detect_os(request.META.get('HTTP_USER_AGENT', ''))
     }
     return render(request, 'homepage.html', response)
 
@@ -152,7 +152,7 @@ def index(request):
 def download(request, os=None):
     os_response = {'os': None}
     if os is None:
-        os_response['os'] = detect_os(request.META['HTTP_USER_AGENT'])
+        os_response['os'] = detect_os(request.META.get('HTTP_USER_AGENT', ''))
     else:
         os_response['os'] = os
     return render(request, 'download.html', os_response)
