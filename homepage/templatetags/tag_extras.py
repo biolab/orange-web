@@ -61,18 +61,12 @@ def download_choices(os='win'):
     if os == 'win':
         for key, value in download_set_patterns(os):
             if key == 'WIN_SNAPSHOT':
-                downloads['win25'] = '{0}-py2.5.exe'.format(value)
-                downloads['win26'] = '{0}-py2.6.exe'.format(value)
                 downloads['win27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'WIN_PYTHON_SNAPSHOT':
-                downloads['winw25'] = '{0}-py2.5.exe'.format(value)
-                downloads['winw26'] = '{0}-py2.6.exe'.format(value)
                 downloads['winw27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
-                downloads['bio26'] = '{0}-py2.6.exe'.format(value)
                 downloads['bio27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_TEXT_SNAPSHOT':
-                downloads['text26'] = '{0}-py2.6.exe'.format(value)
                 downloads['text27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'SOURCE_SNAPSHOT':
                 downloads['source'] = value
