@@ -1,4 +1,6 @@
 """Here we define custom django tags"""
+from os import path
+
 from datetime import datetime as dt
 
 from django import template
@@ -37,9 +39,17 @@ def grab_feed_all():
         return {'bozo': True}
 
 
-def download_set_patterns(os):
-    if settings.DOWNLOAD_SET_PATTERN:
-        with open(settings.DOWNLOAD_SET_PATTERN % os, 'rt') as f:
+def download_set_patterns(os=None):
+    if path.isdir(settings.DOWNLOAD_DIR):
+        if os is None:
+            filename = path.join(settings.DOWNLOAD_DIR, "filenames.set")
+        else:
+            filename = settings.DOWNLOAD_SET_PATTERN % os
+
+        if not path.isfile(filename):
+            return
+
+        with open(filename, 'rt') as f:
             for line in f:
                 key, value = line.split('=', 1)
                 yield key.strip(), value.strip()
@@ -51,21 +61,22 @@ def download_choices(os='win'):
     if os == 'win':
         for key, value in download_set_patterns(os):
             if key == 'WIN_SNAPSHOT':
-                downloads['win25'] = '{0}-py2.5.exe'.format(value)
-                downloads['win26'] = '{0}-py2.6.exe'.format(value)
                 downloads['win27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'WIN_PYTHON_SNAPSHOT':
-                downloads['winw25'] = '{0}-py2.5.exe'.format(value)
-                downloads['winw26'] = '{0}-py2.6.exe'.format(value)
                 downloads['winw27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
-                downloads['bio26'] = '{0}-py2.6.exe'.format(value)
                 downloads['bio27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'ADDON_TEXT_SNAPSHOT':
-                downloads['text26'] = '{0}-py2.6.exe'.format(value)
                 downloads['text27'] = '{0}-py2.7.exe'.format(value)
             elif key == 'SOURCE_SNAPSHOT':
                 downloads['source'] = value
+
+        for key, value in download_set_patterns(None):
+            if key == "WIN32_ORANGE3_DAILY":
+                downloads["orange3-win32-installer"] = value
+            elif key == "WIN32_ORANGE3_STANDALONE_DAILY":
+                downloads["orange3-win32-installer-standallone"] = value
+
     elif os == "mac":
         for key, value in download_set_patterns(os):
             if key == 'MAC_DAILY':
@@ -119,6 +130,13 @@ def orange3_bundle_url():
     download_folder = reverse('download') + 'files/'
     orange3_bundle = download_choices('mac').get('bundle-orange3', '')
     return download_folder + orange3_bundle
+
+
+@register.simple_tag
+def orange3_win32_installer_url():
+    download_folder = reverse('download') + 'files/'
+    filename = download_choices('win').get('orange3-win32-installer', '')
+    return download_folder + filename
 
 
 @register.inclusion_tag('download_addons.html')

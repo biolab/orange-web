@@ -4,7 +4,9 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '193.2.72.56']
-DOWNLOAD_SET_PATTERN = os.path.join('/srv/download', 'filenames_%s.set')
+DOWNLOAD_DIR = '/srv/download'
+
+DOWNLOAD_SET_PATTERN = os.path.join(DOWNLOAD_DIR, 'filenames_%s.set')
 
 # Django, reCaptcha secret keys
 with open('/etc/orange_web.conf', 'r') as f:
