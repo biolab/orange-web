@@ -1,4 +1,5 @@
 """Here we define custom django tags"""
+import logging
 from os import path
 
 from datetime import datetime as dt
@@ -12,6 +13,7 @@ import feedparser
 import requests
 from six.moves import xmlrpc_client as xmlrpclib
 
+logger = logging.getLogger(__name__)
 register = template.Library()
 
 
@@ -143,29 +145,32 @@ def orange3_win32_installer_url():
 def download_addons():
     client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')
     addons = []
-    for iid, package in enumerate(client.search({'keywords': 'orange'})):
-        url = 'https://pypi.python.org/pypi/{0}/json'.format(package['name'])
-        r = requests.get(url)
-        jsonfile = r.json()
-        desc = jsonfile['info']['description'].split('\n')
-        # RST -> HTML conversion
-        desc = publish_parts('\n'.join(desc[3:]), writer_name='html')
-        new_json = {
-            'iid': iid + 1,
-            'name': jsonfile['info']['name'],
-            'version': jsonfile['info']['version'],
-            'description': desc['html_body'],
-            'package_url': jsonfile['info']['package_url'],
-            'download_url': jsonfile['info']['download_url'],
-            'repo_url': None,
-            'docs_url': jsonfile['info']['docs_url'],
-            'home_page': jsonfile['info']['home_page'],
-        }
-        dl_url = jsonfile['info']['download_url']
-        if dl_url:
-            if 'bitbucket' in dl_url and dl_url.endswith('/downloads'):
-                new_json['repo_url'] = dl_url[:-10]
-            elif 'github' in dl_url and dl_url.endswith('/releases'):
-                new_json['repo_url'] = dl_url[:-9]
-        addons.append(new_json)
+    try:
+        for iid, package in enumerate(client.search({'keywords': 'orange'})):
+            url = 'https://pypi.python.org/pypi/{0}/json'.format(package['name'])
+            r = requests.get(url)
+            jsonfile = r.json()
+            desc = jsonfile['info']['description'].split('\n')
+            # RST -> HTML conversion
+            desc = publish_parts('\n'.join(desc[3:]), writer_name='html')
+            new_json = {
+                'iid': iid + 1,
+                'name': jsonfile['info']['name'],
+                'version': jsonfile['info']['version'],
+                'description': desc['html_body'],
+                'package_url': jsonfile['info']['package_url'],
+                'download_url': jsonfile['info']['download_url'],
+                'repo_url': None,
+                'docs_url': jsonfile['info']['docs_url'],
+                'home_page': jsonfile['info']['home_page'],
+            }
+            dl_url = jsonfile['info']['download_url']
+            if dl_url:
+                if 'bitbucket' in dl_url and dl_url.endswith('/downloads'):
+                    new_json['repo_url'] = dl_url[:-10]
+                elif 'github' in dl_url and dl_url.endswith('/releases'):
+                    new_json['repo_url'] = dl_url[:-9]
+            addons.append(new_json)
+    except Exception as ex:
+        logger.exception(ex)
     return {'addons': addons}
