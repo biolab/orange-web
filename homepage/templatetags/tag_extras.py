@@ -162,9 +162,10 @@ def download_addons():
             'home_page': jsonfile['info']['home_page'],
         }
         dl_url = jsonfile['info']['download_url']
-        if 'bitbucket' in dl_url and dl_url.endswith('/downloads'):
-            new_json['repo_url'] = dl_url[:-10]
-        elif 'github' in dl_url and dl_url.endswith('/releases'):
-            new_json['repo_url'] = dl_url[:-9]
+        if dl_url:
+            if 'bitbucket' in dl_url and dl_url.endswith('/downloads'):
+                new_json['repo_url'] = dl_url[:-10]
+            elif 'github' in dl_url and dl_url.endswith('/releases'):
+                new_json['repo_url'] = dl_url[:-9]
         addons.append(new_json)
     return {'addons': addons}
