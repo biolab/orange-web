@@ -96,6 +96,12 @@
     <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-visage/src/jquery.visage.init.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <!-- button tracking -->
+    <script type="text/javascript">
+      $('#main-page-download-button').on('click', function() {
+        ga('send', 'event', 'button', 'click', 'main-page-download-button');
+      });
+    </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script type="text/javascript" src="{% static 'plugins/html5shiv.min.js' %}"></script>
