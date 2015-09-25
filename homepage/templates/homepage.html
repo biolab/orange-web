@@ -40,22 +40,22 @@
                     <div class="download-area col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="download-left">
                             {% if os == "windows" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
+                                <a id="main-page-download-button" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
                                     <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "mac-os-x" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
+                                <a id="main-page-download-button" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
                                     <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
                                 </a>
                             {% elif os == "linux" %}
-                                <a class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
+                                <a id="main-page-download-button" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
                                     <h3 class="download-btn">Download Orange 2.7</h3>
                                     <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
                                 </a>
                             {% else %}
-                                <a class="btn btn-warning" href="{% url 'download' %}">
+                                <a id="main-page-download-button" class="btn btn-warning" href="{% url 'download' %}">
                                     <h3 class="download-btn">Download Orange 2.7</h3>
                                 <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p>
                                 </a>
@@ -89,6 +89,11 @@
         </div><!--//container-->
     </section><!--//promo-->
 
+    <script type="text/javascript">
+      $('#main-page-download-button').on('click', function() {
+        ga('send', 'event', 'button', 'click', 'main-page-download-button');
+      });
+    </script>
 
     <!-- ******FEATURES****** -->
     <section id="features" class="features section">
