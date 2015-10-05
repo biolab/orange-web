@@ -62,8 +62,8 @@
                             {% endif %}
                             <div class="content">
                                 <p style="margin-top:6px">
-                                <a href="{% url 'download' %}">Other Systems</a></p>
-                                <p style="margin-top:0">Curious? Try <a href="{% url 'orange3' %}">Orange3</a>.</p>
+                                <a href="{% url 'download' %}" id="download-other-systems">Other Systems</a></p>
+                                <p style="margin-top:0">Curious? Try <a id="orange3-link" href="{% url 'orange3' %}">Orange3</a>.</p>
                             </div><!--//content-->
                         </div>
 
@@ -103,7 +103,7 @@
                     </a>
                     <div class="content">
                         <a id="landing-getting-started-link" href="{% url 'start' %}"><h2 class="title">Getting Started</h2></a>
-                        <p><a href="{% url 'download' %}">Download Orange</a> and run through our <a href="{% url 'start' %}">tutorial</a> to get a feel for visual programming.</p>
+                        <p><a href="{% url 'download' %}" id="landing-getting-started-download-orange">Download Orange</a> and run through our <a href="{% url 'start' %}" id="landing-getting-started-tutorial">tutorial</a> to get a feel for visual programming.</p>
                     </div><!--//content-->
                 </div><!--//item-->
 
