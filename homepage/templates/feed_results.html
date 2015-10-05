@@ -2,7 +2,7 @@
     <table class="table table-condensed">
     {% for entry in entries %}
         <tr>
-            <td class="custom-td">{{ entry.published }}</td> <td class="custom-td text-left"><a href="{{ entry.link }}">{{ entry.title }}</a></td>
+            <td class="custom-td">{{ entry.published }}</td> <td class="custom-td text-left"><a class="trackClicks_blogpost" href="{{ entry.link }}">{{ entry.title }}</a></td>
         </tr>
     {%  endfor %}
     </table>

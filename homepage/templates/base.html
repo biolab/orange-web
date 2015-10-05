@@ -101,8 +101,20 @@
     <!-- button tracking -->
     <script type="text/javascript">
       $( document ).ready( function () {
+
         $('a').off("click").click( function ( event ) { 
            ga('send', 'event', "a", event.type, $(this).attr("id"), 1 );
+        });
+
+        $('[class *= trackClicks_]').off("click").click( function ( event ) { 
+           var classList = $(this).attr('class').split(/\s+/);
+           var trackname = "";
+           $.each(classList, function(index, item) {
+             if (item.indexOf('trackClicks_') === 0) {
+                trackname = item;
+             }
+           });
+           ga('send', 'event', "a", event.type, trackname, 1 );
         });
       });
     </script>
