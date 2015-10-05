@@ -89,7 +89,7 @@
         </div>
     </footer><!--//footer-->
 
-    <!-- Javascript -->
+    <!-- Javascript --> 
     <script type="text/javascript" src="{% static 'plugins/jquery-1.10.2.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-migrate-1.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/detectmobilebrowser.js' %}"></script>
@@ -101,10 +101,8 @@
     <!-- button tracking -->
     <script type="text/javascript">
       $( document ).ready( function () {
-        $('#main-page-download-button a').each(function() {
-          $(this).click(function ( event ) { 
-            ga('send', 'event', "button", "click", "main-page-download-button", 1 );  
-          });
+        $('a').off("click").click( function ( event ) { 
+           ga('send', 'event', "a", event.type, $(this).attr("id"), 1 );
         });
       });
     </script>
