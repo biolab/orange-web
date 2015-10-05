@@ -100,8 +100,8 @@
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <!-- button tracking -->
     <script type="text/javascript">
-      $('#main-page-download-button').on('click', function() {
-        ga('send', 'event', 'button', 'click', 'main-page-download-button');
+      $( document ).ready( function () {
+        $('*').click( function ( event ) { ga('send', 'event', event.target.nodeName, event.type, event.target.id, 1 ); });
       });
     </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
