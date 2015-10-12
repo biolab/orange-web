@@ -6,14 +6,16 @@
 */
 /* ======= Base ======= */
 html, body {
-    height: 100%;
 }
+
 body {
   font-family: 'Lato', arial, sans-serif;
-  color: #444444;
+  color: #000;
+  #color: #351400;
 }
 a {
   color: #f8a842;
+  font-weight: normal;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -33,6 +35,11 @@ a:hover {
   color: #fff;
   margin-right: 5px;
 }
+
+.bigsummary {
+  font-size: 18px;
+}
+
 .btn-theme {
   background: #f8a842;
   border: 1px solid #f8a842;
@@ -293,7 +300,8 @@ blockquote {
 }
 .header .main-nav .nav .nav-item {
   font-weight: normal;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+  font-size: 18px;
   margin-right: 0;
 }
 .header .main-nav .nav .nav-item.active a {
@@ -327,14 +335,21 @@ blockquote {
 }
 /* ======= Footer ======= */
 .footer {
-  position: relative;
-  margin-top: -50px; /* negative value of footer height */
-  min-height: 50px;
-  clear:both;
   background: #444444;
+  padding-top: 20px;
   color: #fff;
-  padding: 15px 0;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  min-height: 260px;
 }
+
+@media (min-width: 992px) {
+    .footer {
+        position: absolute;
+    }
+}
+
 .docfooter {
   margin-top: 0;
 }
@@ -388,7 +403,6 @@ blockquote {
 /* ======= Promo Section ======= */
 .promo {
   background-color: #fff;
-  color: #444444;
 }
 .promo .container {
   padding-bottom: 15px;
@@ -400,7 +414,6 @@ blockquote {
 .promo .overview h1 {
   font-size: 30px;
   margin-bottom: 35px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .promo .overview .summary {
   margin-bottom: 0;
@@ -516,7 +529,6 @@ blockquote {
 .features h1.title  {
   font-size: 30px;
   margin-bottom: 35px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .features .icon {
   position: relative;
@@ -651,7 +663,6 @@ blockquote {
 .faq h1.title  {
   font-size: 30px;
   margin-bottom: 35px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .faq .item {
@@ -1134,7 +1145,7 @@ blockquote {
     text-align: left;
   }
   .promo .phone {
-    margin: 83px 0 0;
+    margin: 30px 0 0;
     text-align: left;
   }
   .promo .ipad {
@@ -1142,7 +1153,7 @@ blockquote {
   }
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 260px;
+    height: 360px;
     display: block;
     margin: 0 auto;
   }
@@ -1163,7 +1174,7 @@ blockquote {
   }
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 260px;
+    height: 360px;
     display: block;
     margin: 0 auto;
   }
@@ -1184,7 +1195,7 @@ blockquote {
   }
   .flexslider .slides img.custom-slide {
     width: auto;
-    height: 330px;
+    height: 430px;
     display: block;
     margin: 0 auto;
   }

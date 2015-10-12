@@ -5,19 +5,21 @@
 
 {% block content %}
     <!-- ******PROMO****** -->
+
     <section id="promo" class="promo section offset-header has-pattern">
         <div class="container">
             <div class="row">
                 <div class="overview">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <h1 class="title">Data Mining - Fruitful and Fun</h1>
+                    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+                        <h1 class="title firstpagetitle"><span style="white-space:nowrap">Data Mining</span> <span style="white-space:nowrap">Fruitful and Fun</span></h1>
                         <div class="content">
-                            <p class="summary">Open source data visualization and analysis for novice and experts. Data mining through visual programming or Python scripting. Components for machine learning. Add-ons for bioinformatics and text mining. Packed with features for data analytics.</p>
+                            <p class="bigsummary summary">Open source data visualization and data analysis for novice and expert. Interactive workflows with a large toolbox.</p>
                         </div>
                     </div>
 
+
                     <!--// iPhone starts - default/only view -->
-                    <div class="phone iphone col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right">
+                    <div class="phone iphone col-lg-8 col-md-7 col-sm-6 col-xs-12 pull-right">
                         <div class="iphone-holder phone-holder">
                             <div class="iphone-holder-inner">
                                 <div id="visage" class="slider flexslider imgcontent">
@@ -37,77 +39,51 @@
                     </div><!--//iphone-->
                     <!--// iPhone ends -->
 
-                    <div class="download-area col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="download-left">
-                            {% if os == "windows" %}
-                                <a id="main-page-download-button-win" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
-                                    <h3 class="download-btn">Download Orange</h3>
-                                    <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
-                                </a>
-                            {% elif os == "mac-os-x" %}
-                                <a id="main-page-download-button-mac" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
-                                    <h3 class="download-btn">Download Orange</h3>
-                                    <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
-                                </a>
-                            {% elif os == "linux" %}
-                                <a id="main-page-download-button-linux" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
-                                    <h3 class="download-btn">Download Orange</h3>
-                                    <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
-                                </a>
-                            {% else %}
-                                <a id="main-page-download-button-unknown" class="btn btn-warning" href="{% url 'download' %}">
-                                    <h3 class="download-btn">Download Orange</h3>
-                                <p style="margin-top: -9px;">For Windows, Mac OS X, Linux</p>
-                                </a>
-                            {% endif %}
-                            <div class="content">
-                                <p style="margin-top:6px">
-                                <a href="{% url 'download' %}" id="download-other-systems">Other Systems</a></p>
-                                <p style="margin-top:0">Curious? Try <a id="orange3-link" href="{% url 'orange3' %}">Orange3</a>.</p>
+
+                    <div class="download-area col-lg-4 col-md-5 col-sm-6 col-xs-12">
+                            <a id="main-page-download-button" class="btn btn-warning big-button-base" href="{% url 'download' %}">
+                                    Download Orange
+							</a>
+                            <a id="main-page-learnmore" class="btn btn-warning big-button-base big-button-empty" href="#features">
+                                    Learn more
+                            </a>
+
+							<div class="content">
+                                <p style="margin-top:6px">Curious? Try <a id="orange3-link" href="/orange3/">Orange3</a>.</p>
                             </div><!--//content-->
-                        </div>
 
-                        <div class="download-right">
-                            <div class="g-plusone" data-size="tall" data-annotation="inline" data-width="250" ></div>
-                            <div id="fb-root"></div>
-                            <div class="fb-like" data-href="http://www.facebook.com/orangedm" data-width="250"
-                                 data-layout="standard" data-action="recommend" data-show-faces="true"
-                                 data-share="false"></div>
-                        </div>
                     </div>
-
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                        <h2 class="title custom-reduce-padding">Latest Posts</h2>
-                        {% cache 43200 feed_all %}
-                            {% grab_feed_all %}
-                        {% endcache %}
-                    </div>
-
 
                 </div><!--//overview-->
             </div><!--//row-->
+			
         </div><!--//container-->
     </section><!--//promo-->
 
     <!-- ******FEATURES****** -->
     <section id="features" class="features section">
-        <div class="container">
+        <div class="container" style="margin-top:50px; margin-bottom: 50px;">
+
             <div class="row">
+                
+				<a name="features"></a>
                 <h1 class="title text-center sr-only">Features</h1>
 
-                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a id="landing-getting-started-link-icon" href="{% url 'start' %}">
+                <div class="col-lg-offset-1 col-lg-10 col-md-12 col-sm-12 col-xs-12">
+				
+                <div class="icon-item col-md-4 col-sm-6 col-xs-12 text-center">
+                    <a id="landing-visualization-link-icon" href="{% url 'start' %}">
                         <div class="icon">
-                            <i id="special-rotate" class="fa fa-code-fork"></i>
+							<i id="special-rotate" class="fa fa-code-fork"></i>
                         </div><!--//icon-->
                     </a>
                     <div class="content">
-                        <a id="landing-getting-started-link" href="{% url 'start' %}"><h2 class="title">Getting Started</h2></a>
-                        <p><a href="{% url 'download' %}" id="landing-getting-started-download-orange">Download Orange</a> and run through our <a href="{% url 'start' %}" id="landing-getting-started-tutorial">tutorial</a> to get a feel for visual programming.</p>
+                        <a id="landing-getting-started-link" href="{% url 'start' %}"><h2 class="title">Interactive workflows</h2></a>
+                        <p>Create your own interactive workflows to analyse and visualize your data.</p>
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-4 col-sm-6 col-xs-12 text-center">
                     <a id="landing-visualization-link-icon" href="{% url 'screenshots' %}">
                         <div class="icon">
                             <i class="fa fa-bar-chart-o"></i>
@@ -119,7 +95,7 @@
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="icon-item col-md-4 col-sm-6 col-xs-12 text-center">
                     <a id="landing-toolbox-link-icon" href="http://docs.orange.biolab.si/widgets/rst/index.html">
                         <div class="icon">
                             <i class="fa fa-gears"></i>
@@ -131,19 +107,11 @@
                     </div><!--//content-->
                 </div><!--//item-->
 
-                <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
-                    <a id="landing-scripting-link-icon" href="http://docs.orange.biolab.si/tutorial/rst/index.html">
-                        <div class="icon">
-                            <i class="fa fa-code"></i>
-                        </div><!--//icon-->
-                    </a>
-                    <div class="content">
-                        <a id="landing-scripting-link" href="http://docs.orange.biolab.si/tutorial/rst/index.html"><h2 class="title">Scripting Interface</h2></a>
-                        <p>With Python scripting interface and Orange classes, work on new algorithms and complex analysis procedures is pure joy.</p>
-                    </div><!--//content-->
                 </div><!--//item-->
 
             </div><!--//row-->
+
+
         </div><!--//container-->
     </section><!--//features-->
 

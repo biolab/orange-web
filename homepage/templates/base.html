@@ -1,4 +1,7 @@
 {% load staticfiles %}
+{% load cache %}
+{% load tag_extras %}
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -37,6 +40,7 @@
 </head>
 <body data-spy="scroll">
     <!-- ******HEADER****** -->
+
     <header id="top" class="header navbar-fixed-top">
         <div class="container">
             <h1 class="logo pull-left">
@@ -55,39 +59,112 @@
                 </div><!--//navbar-header-->
                 <div class="navbar-collapse collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
+						{% if current_page != '' %}
                         <li class="active nav-item sr-only"><a id="header-home-link2" href="/">Home</a></li>
                         <li class="nav-item"><a id="header-home-link" href="/">Home</a></li>
+						{% endif %}
                         <li class="nav-item"><a id="header-screenshots-link" href="{% url 'screenshots' %}">Screenshots</a></li>
                         <li class="nav-item"><a id="header-download-link" href="{% url 'download' %}">Download</a></li>
                         <li class="nav-item"><a id="header-docs-link" href="http://docs.orange.biolab.si">Docs</a></li>
-                        <li class="nav-item"><a id="header-community-link" href="{% url 'community' %}">Community</a></li>
+                        <li class="nav-item"><a id="header-blog-link" href="http://blog.biolab.si">Blog</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
             </nav><!--//main-nav-->
         </div>
     </header><!--//header-->
 
-    <div class="footer-append-container">
+
         <div id="main" class="container clear-top">
             <!-- ******CONTENT****** -->
             {% block content %}
             {% endblock content %}
             <!--//CONTENT-->
         </div>
-    </div>
+
 
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container">
-            <ul class="links list-inline pull-right">
-                <li><a href="{% url 'contribute' %}">Contribute</a></li>
-                <li><a href="{% url 'license' %}">License</a></li>
-                <li><a href="{% url 'citation' %}">Citation</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-            </ul>
-            <small class="copyright pull-left">Copyright &copy; University of Ljubljana</small>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                
+                <div class="row">
+
+                <div class="col-md-3 col-xs-6 sitemap-group">
+                    <ul class="links list-sitemap">
+                        <li><b><a class="sitemap-cat" href="/">Orange</a></b></li>
+                        <li><a class="sitemap-sub" href="{% url 'screenshots' %}">Screenshots</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'license' %}">License</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'citation' %}">Citation</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-xs-6 sitemap-group">
+                    <ul class="links list-sitemap">
+                        <li><a class="sitemap-cat" href="{% url 'download' %}">Download</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'contribute' %}">Windows</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'license' %}">Mac OS</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'citation' %}">Linux</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-xs-6 sitemap-group">
+
+                    <ul class="links list-sitemap">
+                        <li><b><a class="sitemap-cat" href="{% url 'community' %}">Community</a></b></li>
+                        <li><a class="sitemap-sub" href="https://stackoverflow.com/questions/tagged/orange">Stack Overflow</a></li>
+                        <li><a class="sitemap-sub" href="http://orange.biolab.si/forum/">Forum archive</a></li>
+                        <li><a class="sitemap-sub" href="https://www.facebook.com/orangedm">Facebook</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+
+                <div class="col-12 sitemap-group">
+                    <ul class="links list-sitemap">
+                        <li><a class="sitemap-cat" href="http://docs.orange.biolab.si">Documentation</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'start' %}">Get started</a></li>
+                        <li><a class="sitemap-sub" href="http://docs.orange.biolab.si">Widgets</a></li>
+                        <li><a class="sitemap-sub" href="http://docs.orange.biolab.si">Scripting</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 sitemap-group">
+                    <ul class="links list-sitemap">
+                        <li><b><a class="sitemap-cat" href="https://github.com/biolab/orange">Developers</a></b></li>
+                        <li><a class="sitemap-sub" href="https://github.com/biolab/orange">GitHub</a></li>
+                        <li><a class="sitemap-sub" href="{% url 'contribute' %}">Contribute</a></li>
+                    </ul>
+                </div>
+
+                </div>
+
+                </div> <!--//row-->
+                </div>
+                
+                <div class="col-lg-4 col-lg-offset-1 col-md-offset-1 col-md-4 col-sm-6 col-xs-12 sitemap-group">
+
+                   <ul class="links list-sitemap" style="padding-bottom: 10px">
+                       <li><b><a class="sitemap-cat" href="{% url 'community' %}">Latest blog posts</a></b></li>
+                   </ul>
+
+                    {% cache 43200 feed_all %}
+                        {% grab_feed_all %}
+                    {% endcache %}
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <small class="copyright pull-left">Copyright © University of Ljubljana</small>
+                </div>
+            </div>
         </div>
     </footer><!--//footer-->
+
 
     <!-- Javascript --> 
     <script type="text/javascript" src="{% static 'plugins/jquery-1.10.2.min.js' %}"></script>
