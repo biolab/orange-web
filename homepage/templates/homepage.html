@@ -22,18 +22,10 @@
                     <div class="phone iphone col-lg-8 col-md-7 col-sm-6 col-xs-12 pull-right">
                         <div class="iphone-holder phone-holder">
                             <div class="iphone-holder-inner">
-                                <div id="visage" class="slider flexslider imgcontent">
-                                    <ul class="slides">
-                                        {% for screenshot in random_screenshots %}
-                                            <li>
-                                                <a href="{% static screenshot.img %}" title="{{ screenshot.title }}">
-                                                    <img class="custom-slide" data-toggle="tooltip" data-placement="bottom"  title="{{ screenshot.title }}"
-                                                    alt="{{ screenshot.title }}" src="{% static screenshot.img %}">
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul><!--//slides-->
-                                </div><!--//flexslider-->
+                                    <a href="/static/homepage/screenshots/tree-exploration.png" title="Explorative analysis and classification trees">
+                                        <img style="width: 100%;"
+                                        alt="Explorative analysis and classification trees" src="/static/homepage/screenshots/tree-exploration.png">
+                                    </a>
                             </div><!--//iphone-holder-inner-->
                         </div><!--//iphone-holder-->
                     </div><!--//iphone-->
@@ -62,7 +54,7 @@
 
     <!-- ******FEATURES****** -->
     <section id="features" class="features section">
-        <div class="container" style="margin-top:50px; margin-bottom: 50px;">
+        <div class="container" style="margin-top:100px; margin-bottom: 50px;">
 
             <div class="row">
                 
