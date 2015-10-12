@@ -5,11 +5,8 @@
 {% block content %}
     <!-- ******DOWNLOAD OPTIONS****** -->
     <section id="features" class="features section custom-reduce-padding-2">
-        <div class="container">
+        <div class="container" style="margin-top: 80px">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                      <h1 class="title">Download</h1>
-                </div>
 
                 <div class="icon-item col-md-3 col-sm-6 col-xs-12 text-center">
                     <a href="{% url 'download' %}windows/">
@@ -57,7 +54,38 @@
             </div><!--//row-->
         </div><!--//container-->
 
-        <div class="container">
+
+        <div class="container" style="margin-top: 60px;">
+
+            {% if os == "windows" or os == "mac-os-x" or os == "linux" %}
+
+            <div class="row">
+                <div class="col-sm-6 col-xs-6" style="text-align: right">
+                          <h4 class="title">Recommended download: </h2>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                            {% if os == "windows" %}
+                                <a id="main-page-download-button-win" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_win_link %}{% download_link os %}{% endcache %}">
+                                    <h3 class="download-btn">Orange</h3>
+                                    <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
+                                </a>
+                            {% elif os == "mac-os-x" %}
+                                <a id="main-page-download-button-mac" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_mac_link %}{% download_link os %}{% endcache %}">
+                                    <h3 class="download-btn">Orange</h3>
+                                    <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
+                                </a>
+                            {% elif os == "linux" %}
+                                <a id="main-page-download-button-linux" class="btn btn-warning" href="{% url 'download' %}files/{% cache 43200 dl_source_link %}{% download_link os %}{% endcache %}">
+                                    <h3 class="download-btn">Orange</h3>
+                                    <p style="margin-top: -9px;">Linux Source - {% download_link 'date' %}</p>
+                                </a>
+                            {% endif %}
+                                <p style="margin-top:0">Curious? Try <a id="orange3-link" href="{% url 'orange3' %}">Orange3</a>.</p>
+                </div>
+            </div>
+
+            {% endif %}
+
             <div class="row">
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
                     <div class="content">
