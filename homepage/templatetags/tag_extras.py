@@ -141,6 +141,27 @@ def orange3_win32_installer_url():
     return download_folder + filename
 
 
+@register.simple_tag
+def orange2_bundle_url():
+    download_folder = reverse('download') + 'files/'
+    orange2_bundle = download_choices('mac').get('mac', '')
+    return download_folder + orange2_bundle
+
+
+@register.simple_tag
+def orange2_win32_installer_url():
+    download_folder = reverse('download') + 'files/'
+    filename = download_choices('win').get('winw27', '')
+    return download_folder + filename
+
+
+@register.simple_tag
+def orange2_source_url():
+    download_folder = reverse('download') + 'files/'
+    filename = download_choices('win').get('source', '')
+    return download_folder + filename
+
+
 @register.inclusion_tag('download_addons.html')
 def download_addons():
     client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')

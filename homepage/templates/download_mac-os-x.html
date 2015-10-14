@@ -1,10 +1,7 @@
+{% load tag_extras %}
 <h2>Mac OS X</h2>
 
 <ul class="files">
-    <li><p>Bundle: <a id="download-file-mac-withlib" href="{% url 'download' %}files/{{ mac }}">Orange Snapshot</a><br>
-{#                            <li><p>Bundle: <a href="{% url 'download' %}files/Orange-2.7.3-11906.dmg">Orange Snapshot</a><br>#}
+    <li><p>Bundle: <a id="download-file-mac-withlib" href="{% orange3_bundle_url %}">Orange Snapshot</a><br>
         This is an universal bundle with everything packed in and ready for an unadvanced user.</p></li>
-    <li><p>easy_install/pip:<br>
-        Orange is available as a PyPi package. To install run:</p>
-        <pre>easy_install numpy && easy_install orange</pre></li>
 </ul>

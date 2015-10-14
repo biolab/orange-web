@@ -1,14 +1,15 @@
-<h3>Building from source</h3>
-<ul>
-    <li><a id="download-file-source-nightly" href="{% url 'download' %}files/{{ source }}">Nightly packed sources</a></li>
-    <li><a id="download-file-source-archive" href="{% url 'download' %}files/archive/">Archive of selected packed sources</a></li>
-    <li><a id="download-link-github" href="https://github.com/biolab/orange">Orange 2.7 code repository (GitHub)</a></li>
-</ul>
-
-<h3>setup.py</h3>
-<p>To build and install Orange you can use the setup.py in the root orange directory (requires GCC, Python and numpy development headers). To use it unpack the nightly sources and run:</p>
-<pre>python2 setup.py build<br>sudo python2 setup.py install</pre>
-<p>This will also install orange-canvas script so you can start Orange Canvas from the command line.</p>
-<p>To install orange locally run:</p>
-<pre>python2 setup.py install --user</pre>
-<p>This will install orange in /home/&lt;username&gt;/.local/lib/pythonX.Y/site-packages/orange/.</p>
+<h2>Linux / Source</h2>
+<h3>Automatic setup</h3>
+<p>Setup can be automated by using <a href="http://biolab.github.io/install-orange/setup-ubuntu.sh">
+   Ubuntu 14.04 setup script </a>.
+   Before the installation, move to directory, where you want Orange to be installed.
+   Following command will start installation, which usually takes about 15 minutes. 
+</p>
+<pre><code>source setup-ubuntu.sh </code></pre>
+<p>Install script will also create and enter new virtual environment for you, which
+   you can reenter using following command:
+</p>
+<pre><code>source orange3env/bin/activate </code></pre>
+<p>You open the Orange application by executing the following command from the
+   virtual environment.</p>
+<pre><code>python -m Orange.canvas</code></pre>
