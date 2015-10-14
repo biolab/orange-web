@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load tag_extras %}
+
+{% block content %}
+<section id="features" class="features section custom-reduce-padding-2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1 class="title">Orange 2.7</h1>
+                <div class="content">
+                    <p>Orange 2.7 is a legacy version of Orange. We think you should upgrade to the <a href="/download/">current version</a>. If you still need the version 2.7, please download it below.</p>
+
+                    <p><a href="{% orange2_bundle_url %}">Download Orange 2.7 bundle for OSX.</a></p>
+                    <p><a href="{% orange2_win32_installer_url %}">Download Orange 2.7 installer for Windows.</a></p>
+                    <p><a href="{% orange2_source_url %}">Download Orange 2.7 source.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

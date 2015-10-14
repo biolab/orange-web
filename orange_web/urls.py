@@ -26,4 +26,7 @@ urlpatterns = \
              url(r'^orange3/$',
                  TemplateView.as_view(template_name='orange3.html'),
                  name='orange3'),
+             url(r'^orange2/$',
+                 TemplateView.as_view(template_name='orange2.html'),
+                 name='orange2'),
              )
