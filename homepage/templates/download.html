@@ -58,15 +58,14 @@
                             {% if os == "windows" %}
                                 <a id="main-page-download-button-win" class="btn btn-warning" href="{% orange3_win32_installer_url %}">
                                     <h3 class="download-btn">Orange</h3>
-                                    <p style="margin-top: -9px;">Windows Build - {% download_link 'date' %}</p>
                                 </a>
+                                <p style="margin-top: 0px;">Windows Build - {% download_link 'date' %}</p>
                             {% elif os == "mac-os-x" %}
                                 <a id="main-page-download-button-mac" class="btn btn-warning" href="{% orange3_bundle_url %}">
                                     <h3 class="download-btn">Orange</h3>
-                                    <p style="margin-top: -9px;">Mac OS X Build - {% download_link 'date' %}</p>
                                 </a>
+                                <p style="margin-top:0px;">Mac OS X Build - {% download_link 'date' %}</p>
                             {% endif %}
-                                <p style="margin-top:0"><a id="orange3-link" href="{% url 'orange2' %}">Orange 2.7</a> is still available.</p>
                 </div>
             </div>
 
@@ -90,6 +89,17 @@
         </div>
 
         <div class="container">
+            <div class="row content">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h2>Previous version</h2>
+                    <p><a id="orange2-link-downloads" href="{% url 'orange2' %}">Orange 2.7</a> is still available.</p>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     {% cache 43200 dl_addons_html %}{% download_addons %}{% endcache %}
@@ -101,14 +111,13 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="content">
-                        <h2>Working with Add-ons</h2>
+                        <h2>Installing add-ons</h2>
 
                         {% if os == "windows" %}
                             {% cache 43200 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
                         {% else %}
                             <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>
                             <pre>pip install &lt;add-on name&gt;</pre>
-                            <p>For instructions, how to add your add-on to the list, please refer to <a href="http://orange.biolab.si/trac/trac/wiki/AddOns">our Trac wiki</a>.</p>
                         {% endif %}
                     </div>
                 </div>
