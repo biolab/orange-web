@@ -50,22 +50,23 @@
 
             {% if os == "windows" or os == "mac-os-x" %}
 
-            <div class="row">
-                <div class="col-sm-6 col-xs-6" style="text-align: right">
-                          <h4 class="title">Recommended download: </h2>
-                </div>
-                <div class="col-sm-6 col-xs-6">
+            <div class="row content">
+                <div class="faq-col col-md-12 col-sm-12 col-xs-12">
+                          <h2>Recommended download</h2>
+
+                           <div style="width: 300px; text-align:center; padding-top:10px">
                             {% if os == "windows" %}
-                                <a id="main-page-download-button-win" class="btn btn-warning" href="{% orange3_win32_installer_url %}">
-                                    <h3 class="download-btn">Download Orange</h3>
+                                <a id="main-page-download-button-win" class="btn btn-warning big-button-base" href="{% orange3_win32_installer_url %}">
+                                    Download Orange
                                 </a>
                                 <p style="margin-top: 0px;">Windows Build - {% download_link 'date' %}</p>
                             {% elif os == "mac-os-x" %}
-                                <a id="main-page-download-button-mac" class="btn btn-warning" href="{% orange3_bundle_url %}">
-                                    <h3 class="download-btn">Download Orange</h3>
+                                <a id="main-page-download-button-mac" class="btn btn-warning big-button-base" href="{% orange3_bundle_url %}">
+                                    Download Orange
                                 </a>
                                 <p style="margin-top:0px;">Mac OS X Build - {% download_link 'date' %}</p>
                             {% endif %}
+                           </div>
                 </div>
             </div>
 
