@@ -113,13 +113,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="content">
                         <h2>Installing add-ons</h2>
-
-                        {% if os == "windows" %}
-                            {% cache 43200 dl_win_addons_html %}{% download_addons_win %}{% endcache %}
-                        {% else %}
-                            <p>To install a listed add-on through <a href="http://pypi.python.org/pypi">PyPi</a> run:</p>
-                            <pre>pip install &lt;add-on name&gt;</pre>
-                        {% endif %}
+                        <p>Add-ons should be installed in Orange canvas (menu Options, Add-ons...).</p>
                     </div>
                 </div>
             </div>
