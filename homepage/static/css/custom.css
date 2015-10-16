@@ -336,3 +336,15 @@ h3.custom-accordion-title {
     padding-left: 5px;
     padding-right: 5px;
 }
+
+.modal-dialog{
+  margin-top: 130px;
+}
+
+.modal-header {
+    height: 40px;
+}
+
+.carousel-inner .item {
+    padding: 20px 140px;
+}

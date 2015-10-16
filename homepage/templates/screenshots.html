@@ -12,8 +12,8 @@
                 {% for screenshot in screenshots %}
                     <div class="item col-md-3 col-sm-6 col-xs-12 screenshot-container">
                         <div class="content">
-                            <div class="screenshot">
-                                <a href="{% static screenshot.img %}" title="{{ screenshot.title }}">
+                            <div class="screenshot pop">
+                                <a href="" title="{{ screenshot.title }}" data-toggle="modal" data-target="#imagemodal">
                                     <img class="hovertitle" alt="{{ screenshot.title }}" src="{% static screenshot.thumb %}">
                                 </a>
                             </div>
@@ -21,6 +21,32 @@
                         </div>
                     </div>
                 {% endfor %}
+                    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                       <div class="carousel-inner">
+                                          {% for screenshot in screenshots %}
+                                          <div class="item">
+                                             <img src="{% static screenshot.img %}">
+                                          </div>
+                                          {% endfor %}
+                                       </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
