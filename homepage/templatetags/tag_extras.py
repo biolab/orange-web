@@ -162,39 +162,46 @@ def orange2_source_url():
     return download_folder + filename
 
 
+def addonsget(searchtag):
+    addons = []
+    client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')
+    try:
+        for iid, package in enumerate(client.search({'keywords': searchtag})):
+            print(iid)
+            url = 'https://pypi.python.org/pypi/{0}/json'.format(package['name'])
+            r = requests.get(url)
+            jsonfile = r.json()
+            desc = jsonfile['info']['description'].split('\n')
+            # RST -> HTML conversion
+            desc = publish_parts('\n'.join(desc[3:]), writer_name='html')
+            new_json = {
+                'iid': iid + 1,
+                'name': jsonfile['info']['name'],
+                'version': jsonfile['info']['version'],
+                'description': desc['html_body'],
+                'package_url': jsonfile['info']['package_url'],
+                'download_url': jsonfile['info']['download_url'],
+                'repo_url': None,
+                'docs_url': jsonfile['info']['docs_url'],
+                'home_page': jsonfile['info']['home_page'],
+            }
+            dl_url = jsonfile['info']['download_url']
+            if dl_url:
+                if 'bitbucket' in dl_url and dl_url.endswith('/downloads'):
+                    new_json['repo_url'] = dl_url[:-10]
+                elif 'github' in dl_url and dl_url.endswith('/releases'):
+                    new_json['repo_url'] = dl_url[:-9]
+            addons.append(new_json)
+        return addons
+    except Exception as ex:
+        logger.exception(ex)
+
+
 @register.inclusion_tag('download_addons.html')
 def download_addons():
-    client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')
-    def a(searchtag):
-        addons = []
-        try:
-            for iid, package in enumerate(client.search({'keywords': searchtag})):
-                print(iid)
-                url = 'https://pypi.python.org/pypi/{0}/json'.format(package['name'])
-                r = requests.get(url)
-                jsonfile = r.json()
-                desc = jsonfile['info']['description'].split('\n')
-                # RST -> HTML conversion
-                desc = publish_parts('\n'.join(desc[3:]), writer_name='html')
-                new_json = {
-                    'iid': iid + 1,
-                    'name': jsonfile['info']['name'],
-                    'version': jsonfile['info']['version'],
-                    'description': desc['html_body'],
-                    'package_url': jsonfile['info']['package_url'],
-                    'download_url': jsonfile['info']['download_url'],
-                    'repo_url': None,
-                    'docs_url': jsonfile['info']['docs_url'],
-                    'home_page': jsonfile['info']['home_page'],
-                }
-                dl_url = jsonfile['info']['download_url']
-                if dl_url:
-                    if 'bitbucket' in dl_url and dl_url.endswith('/downloads'):
-                        new_json['repo_url'] = dl_url[:-10]
-                    elif 'github' in dl_url and dl_url.endswith('/releases'):
-                        new_json['repo_url'] = dl_url[:-9]
-                addons.append(new_json)
-            return addons
-        except Exception as ex:
-            logger.exception(ex)
-    return {'addons': a("orange add-on"), 'addons3': a("orange3 add-on") }
+    return { "addons": addonsget("orange3 add-on") }
+
+
+@register.inclusion_tag('download_addons2.html')
+def download_addons2():
+    return { "addons": addonsget("orange add-on") }

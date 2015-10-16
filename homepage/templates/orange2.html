@@ -17,15 +17,19 @@
                     <p>Mac OS: <a href="{% orange2_bundle_url %}">Orange 2.7 bundle for OSX.</a></p>
                     <p>Other systems: <a href="{% orange2_source_url %}">Orange 2.7 source.</a></p>
 
-                    {% comment %}
-                    <h2>Add-ons for Orange 2.7</h2>
-
-                    {% cache 43200 dl_addons_html %}{% download_addons 'orange' %}{% endcache %}
-                    {% endcomment %}
-
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {% cache 43200 dl_addons2_html %}{% download_addons2 %}{% endcache %}
+            </div>
+        </div>
+    </div>
+
 </section>
 {% endblock content %}
