@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
     $(window).resize(resizeImages);
 });
 
-$(function() {
+jQuery(document).ready(function() {
     $('.pop').on('click', function() {
         var img_src = $(this).find('img').attr('src').replace("thumbs/", "");
         var carousel_element = document.getElementsByClassName("carousel-inner")[0];
@@ -65,8 +65,9 @@ $(function() {
         }
         $('#imagemodal').modal('show');
     });
+    $('.carousel').carousel({
+      interval: 0
+    });
 });
 
-$('.carousel').carousel({
-  interval: 0
-})
+
