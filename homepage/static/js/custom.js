@@ -51,23 +51,4 @@ jQuery(document).ready(function ($) {
     $(window).resize(resizeImages);
 });
 
-jQuery(document).ready(function() {
-    $('.pop').on('click', function() {
-        var img_src = $(this).find('img').attr('src').replace("thumbs/", "");
-        var carousel_element = document.getElementsByClassName("carousel-inner")[0];
-        var carousel_images = carousel_element.getElementsByTagName("img");
-        for (i = 0; i < carousel_images.length; i++) {
-            var image = carousel_images[i]
-            $(image).parent().removeClass('active');
-            if (image.getAttribute("src") == img_src) {
-                $(image).parent().addClass('active');
-            }
-        }
-        $('#imagemodal').modal('show');
-    });
-    $('.carousel').carousel({
-      interval: 0
-    });
-});
-
 
