@@ -13,114 +13,109 @@
                     <div class="content">
                         <h3 class="custom-reduce-padding">Download and Install</h3>
                         <p>
-                            Download the Orange distribution package from the <a href="{% url 'download' %}">Download page</a> and run the
-                            installation file on your local computer.
+                            <a href="{% url 'download' %}">Download</a> Orange distribution package and run the
+                            installation file on your local computer. <a href="http://biolab.github.io/datafusion-installation-guide/">
+                            Here</a> is a step-by-step installation guide, that we recommend you to follow.
                         </p>
-
                         <h3>Run</h3>
                         <p>
-                            Locate the Orange program icon. It is probably on your desktop (Win, Linux) or in the Applications folder (Mac).
+                            Locate Orange program icon. It is probably on your desktop (Win, Linux) or in the Applications folder (Mac).
                             Double click on the icon to run Orange.
                         </p>
-                        <p><img alt="Orange Icon" src="{% static screens_root %}/orange-icon.png__56x64_q95_crop_upscale.jpg" title="Orange Icon"/></p>
+                        <p><img alt="Orange Icon" src="{% static screens_root %}/orange-icon.png__210x10000_q95.jpg" title="Orange Icon"/></p>
 
                         <h3>Welcome to Orange</h3>
                         <p>
-                            Running Orange opens a welcome screen. From here you may create new data mining workflows or browse through the ones
+                            At the start, Orange opens a welcome screen. From here you can create new data mining workflows or browse through the ones
                             you have already created. If you are running Orange for the first time, start by clicking on the Tutorial icon to
                             browse through tutorial workflows.
                         </p>
-                        <p><img alt="welcome.png" src="{% static screens_root %}/welcome.png__602x417_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="welcome.png" src="{% static screens_root %}/welcome-screen.png"/ width="450"></p>
 
                         <h3>Tutorials</h3>
                         <p>
                             From the tutorials window, select any of the preloaded data mining workflows. Here, we will choose the one with
                             hierarchical clustering.
                         </p>
-                        <p><img alt="tutorials.png" src="{% static screens_root %}/tutorials.png__487x403_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="tutorials.png" src="{% static screens_root %}/hierarchical-clustering.png"/ width="600"></p>
                         <p>
-                            Choosing a tutorial opens its workflow in Orange canvas. In Orange, data mining workflows consist of computational
+                            Selected tutorial will open in Orange canvas. In Orange, data mining workflows consist of computational
                             components called widgets. Widgets do all the work and exchange information. They can communicate through channels.
-                            In the workflow below, the File widget sends its data to Data Table and the Distance widget, which, in turn,
+                            In the workflow below, the File widget sends its data to the Data Table widget and Distance widget, which, in turn,
                             communicates the computed distances to two other widgets in the workflow.
                         </p>
-                        <p><img alt="hierarhical-clustering-workflow.png" src="{% static screens_root %}/hierarhical-clustering-workflow.png__713x444_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="hierarhical-clustering-workflow.png" src="{% static screens_root %}/hierarchical-clustering-tutorial.png"/ width="600"></p>
                         <p>
-                            Any data mining starts with data. In our hierarchical clustering schema, the File widget reads the data from the
-                            file on your computer and send the data to other widgets.
+                            Any data mining starts with the data. In our hierarchical clustering schema, the File widget reads the data from the
+                            file on your computer and sends the data to other widgets.
                         </p>
-                        <p><img alt="file-widget-icon.png" src="{% static screens_root %}/file-widget-icon.png__46x60_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="file-widget-icon.png" src="{% static screens_root %}/file-widget.png"/></p>
                         <p>
                             Double click on the File widget icon to open it. Select "Browse documentation data sets..." and from the list of
-                            data files chose iris.tab.
+                            pre-installed data files chose <em>iris.tab</em>.
                         </p>
-                        <p><img alt="file-widget.png" src="{% static screens_root %}/file-widget.png__324x200_q95_crop_upscale.png"/></p>
+                        <p><img alt="file-widget.png" src="{% static screens_root %}/browse-documentiation-data-sets.png"/ width="450"></p>
                         <p>
                             The File widget will now read the <a href="http://en.wikipedia.org/wiki/Iris_flower_data_set">the famous data set on
-                            150 Iris flowers</a>, and send them to the workflow. The changes will propagate through the workflow updating its
-                            widgets. Close the window of the File widget, and double click on the Data Table widget to open it. This displays
+                            150 Iris flowers</a>, and send it to the workflow. The changes will propagate through the workflow updating its
+                            widgets. Close the window of the File widget and double click on the Data Table widget to open it. This displays
                             the data that we have just read.
                         </p>
-                        <p><img alt="data-table.png" src="{% static screens_root %}/data-table.png__599x406_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="data-table.png" src="{% static screens_root %}/data-table-iris.png"/ width="600"></p>
                         <p>
                             Open and close other widgets to see what they do. In this workflow, the most interesting widget is Hierarchical
-                            Clustering that displays the clustering results. Scroll through the dendrogram - the tree-based rendering of the
-                            clustering results - to check if the hierarchical clustering correctly identified the three species of Iris.
+                            Clustering that displays clustering results. Scroll through the dendrogram - the tree-based rendering of the
+                            clustering - to check if the algorithm correctly identified the three species of Iris.
                         </p>
-                        <p><img alt="hierarhical-clustering.png" src="{% static screens_root %}/hierarhical-clustering.png__719x579_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="hierarhical-clustering.png" src="{% static screens_root %}/hierarchical-clustering-dendrogram.png"/ width="600"></p>
                         <p>
-                            You may now open other tutorials (from Help menu choose the Welcome tab to open Orange's welcome screen) and play
-                            with other workflows and widgets. Or create a workflow of your own.
+                            You may now open other tutorials (from the Help menu choose Tutorials). Or create a workflow of your own.
                         </p>
-
                         <h3>Your Own Workflow</h3>
                         <p>
-                            We first need to start with an empty canvas. Click on New on the Orange's welcome screen, or, if Orange is already
+                            We first need to start with an empty canvas. Click on New in Orange's welcome screen, or, if Orange is already
                             running, choose New from the File menu.
                         </p>
                         <p>
                             We will explore the data on passengers of the HMS Titanic and develop a model to predict the probability of survival
-                            based on the passenger's traveling class, gender and age. Let us start by placing the File and Data widgets on the
+                            based on the passenger's traveling class, gender and age. Let us start by placing the File and Data Table widgets on the
                             canvas.
                         </p>
-                        <p><img alt="canvas-titanic.png" src="{% static screens_root %}/canvas-titanic.png__712x444_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="canvas-titanic.png" src="{% static screens_root %}/linking-widgets.png"/ width="600"></p>
                         <p>
                             We would like the File widget to read the data and send it to the Data Table for inspection. We need to connect
-                            these two widgets to establish the communication between them. Double click on the dashed line besides the File
-                            widget and drag the emerging connection onto the Data Table.
+                            these two widgets to establish a communication between them. Click on the dashed line besides the File
+                            widget and drag the line to the Data Table.
                         </p>
-                        <p><img alt="file-data-table-connection.png" src="{% static screens_root %}/file-data-table-connection.png__161x68_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="file-data-table-connection.png" src="{% static screens_root %}/linking-widgets2.png"/></p>
                         <p>
                             To load the data, open the File widget (double click on its icon), select "Browse documentation data sets" from the
                             Data File box and choose titanic.tab.
                         </p>
-                        <p><img alt="titanic-file.png" src="{% static screens_root %}/titanic-file.png__323x201_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="titanic-file.png" src="{% static screens_root %}/loading-data.png"/ width="450"></p>
                         <p>
-                            The data has loaded and automatically transferred to all the connected widgets. Check this out by opening the Data
+                            The widget automatically transferred the loaded data to all the connected widgets. Check this by opening the Data
                             Table widget.
                         </p>
-                        <p><img alt="titanic-data-table.png" src="{% static screens_root %}/titanic-data-table.png__500x385_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="titanic-data-table.png" src="{% static screens_root %}/data-table-titanic.png"/ width="600"></p>
                         <p>
-                            Our aim is to develop a predictive model that can estimate the probability of survival from passengers' data. Place
-                            the Naive Bayes and the Nomogram widget on the canvas and connect them as shown in the workflow below.
+                            Our aim is to inspect survival probabilities for the passengers of Titanic by age, sex and status. Place Sieve
+                            Diagram on the canvas and connect it to the File widget.
                         </p>
-                        <p><img alt="titanic-nbc-workflow.png" src="{% static screens_root %}/titanic-nbc-workflow.png__564x422_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="titanic-nbc-workflow.png" src="{% static screens_root %}/titanic-workflow.png"/ width="600"></p>
                         <p>
-                            The workflow reads the data, builds a naive Bayesian classifier and renders it in a nomogram. Double click on the
-                            Nomogram widget to visualize the classifier, and choose the settings according to the following screenshot.
+                            Double click on the Sieve Diagram widget to visualize actual survival probabilites against expected ones. Play with attribute
+                            combinations to get the best visualization. Here's a hint: sex and status will give you the most interesting results.
                         </p>
-                        <p><img alt="titanic-nomogram.png" src="{% static screens_root %}/titanic-nomogram.png__581x417_q95_crop_upscale.jpg"/></p>
+                        <p><img alt="titanic-nomogram.png" src="{% static screens_root %}/titanic-workflow-sievediagram.png"/ width="600"></p>
                         <p>
-                            Change the values of the input features (status, age, sex) by moving the blue points on the horizontal lines to the
-                            middle section in the nomogram and observe the change in survival probabilities. The lowest survival probability is
-                            estimated for adult males traveling in the third class. How about the crew? Who had the highest probability of
-                            survival? The Naive Bayesian classifier is one of the simplest classification algorithms, yet its rendering may
-                            already reveal interesting patterns in the data.
+                            The lowest survival probability is estimated for adult males traveling in the third class and the highest for females from
+                            the first class. How about the crew? Who had the higest probability of survival? Hover over the diagram to see the information.
                         </p>
                         <p>
-                            You have now learned how to place widgets on the canvas, connect them to make workflows, read data, build a simple
-                            model and visualize it. You may now consider exploring other widgets and their combinations, or load some data of
-                            your own and see how Orange can help in the analysis.
+                            You have now learned how to place widgets on the canvas, connect them to make workflows, read the data and visualize it. 
+                            Consider exploring other widgets and their combinations, or load some data of
+                            your own and see how Orange can help you in the analysis.
                         </p>
                     </div>
                 </div>
