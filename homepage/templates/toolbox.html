@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load tag_extras %}
+
+{% block content %}
+    <section id="features" class="features section custom-reduce-padding-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12 content">
+                    <h1 class="title">Large Toolbox</h1>
+                    <p>Orange widgets are building blocks of data analysis workflows that are assembled in Orange’s visual programming environment.</p>
+                    <p><img src="/static/images/simple-workflow.png"</p>
+                    <p>Widgets are grouped into classes according to their function. A typical workflow may mix widgets for data input and filtering, visualization, and predictive data mining.</p>
+                </div>
+                <div class="col-md-8 col-sm-12 col-xs-12 content">
+                    {% toolbox_widgets %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

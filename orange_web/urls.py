@@ -14,6 +14,7 @@ urlpatterns = \
              url(r'^contributing/$', views.contribute, name='contribute'),
              url(r'^contact/$', views.contact, name='contact'),
              url(r'^download/$', views.download, name='download'),
+             url(r'^toolbox/$', views.toolbox, name='toolbox'),
              url(r'^download/(windows|mac-os-x|linux|for-developers)/$',
                  views.download,
                  name='download'),

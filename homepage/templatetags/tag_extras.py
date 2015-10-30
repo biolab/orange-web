@@ -201,6 +201,14 @@ def addonsget(searchtag):
 def download_addons():
     return { "addons": addonsget("orange3 add-on") }
 
+@register.inclusion_tag('toolbox_widgets.html')
+def toolbox_widgets():
+    import json
+    import os
+    #FIXME as soon as orange documentation updates json
+    thispath = os.path.abspath(os.path.dirname(__file__))
+    js = json.load(open(os.path.join(thispath, "..", "static", "widgets.json"), "rt"))
+    return { "toolbox": js }
 
 @register.inclusion_tag('download_addons2.html')
 def download_addons2():

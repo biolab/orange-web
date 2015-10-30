@@ -39,6 +39,8 @@ def screens(request):
     screenshots.sort(key=lambda x: x['rank'])
     return render(request, 'screenshots.html', {'screenshots': screenshots})
 
+def toolbox(request):
+    return render(request, 'toolbox.html', {})
 
 fl = open(settings.LICENSE_FILE)
 license_file = fl.readlines()
