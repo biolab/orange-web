@@ -166,9 +166,10 @@ def addonsget(searchtag):
     addons = []
     client = xmlrpclib.ServerProxy('http://pypi.python.org/pypi')
     try:
-        for iid, package in enumerate(client.search({'keywords': searchtag})):
-            print(iid)
-            url = 'https://pypi.python.org/pypi/{0}/json'.format(package['name'])
+        slist = client.search({'keywords': searchtag})
+        packages = sorted(set(a["name"] for a in slist))
+        for iid, package in enumerate(packages):
+            url = 'https://pypi.python.org/pypi/{0}/json'.format(package)
             r = requests.get(url)
             jsonfile = r.json()
             desc = jsonfile['info']['description'].split('\n')
