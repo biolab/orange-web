@@ -3,7 +3,7 @@
     {% for addon in addons %}
         <div class="panel panel-default">
             <div class="panel-heading">
-                <a class="custom-accordion-title" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ addon.iid }}">
+                <a class="custom-accordion-title trackClicks_addon_{{ addon.name }}" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ addon.iid }}">
                     <div class="custom-accordion-container">
                         <h3 class="panel-title custom-accordion-title">{{ addon.name }}</h3><span>&nbsp; (version {{ addon.version }})</span>
                     </div>
@@ -12,13 +12,17 @@
             <div id="collapse{{ addon.iid }}" class="panel-collapse collapsing">
                 <div class="custom-panel-body">
                     <div class="icon-addons">
-                        <a href="{{ addon.home_page }}" title="Home page"><i id="icon-i-hover" class="fa fa-home"></i></a>
+                        {% if addon.home_page %}
+                            <a href="{{ addon.home_page }}" title="Home page"><i id="icon-i-hover" class="fa fa-home"></i></a>
+                        {% endif %}
                         <!-- <a href="{{ addon.download_url }}" title="Download"><i id="icon-i-hover" class="fa fa-download"></i></a> -->
                         <a href="{{ addon.package_url }}" title="PyPi"><i id="icon-i-hover" class="fa fa-archive"></i></a>
                         {% if addon.repo_url %}
                             <a href="{{ addon.repo_url }}" title="Repository"><i id="icon-i-hover" class="fa fa-code-fork"></i></a>
                         {% endif %}
-                        <a href="{{ addon.docs_url }}" title="Documentation"><i id="icon-i-hover" class="fa fa-book"></i></a>
+                        {% if addon.docs_url %}
+                            <a href="{{ addon.docs_url }}" title="Documentation"><i id="icon-i-hover" class="fa fa-book"></i></a>
+                        {% endif %}
                     </div><!--//icons-->
                     <div class="content">
                         {{ addon.description|removetags:"div h1 h2 h3"|safe }}
