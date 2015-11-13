@@ -112,7 +112,7 @@ def contact(request):
     if request.method == 'POST':
         rp = request.POST
         if pass_captcha(request):
-            message = ('This message was sent to you automatically from '
+            message = (u'This message was sent to you automatically from '
                        'orange.biolab.si.\n\nA visitor submitted the contact '
                        'form. Below are the details:\n\nE-mail: {0}\nSubject: '
                        '{1}\nMessage:\n\n{2}\n\nGood day,\n'
