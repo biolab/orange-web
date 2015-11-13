@@ -5,6 +5,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '193.2.72.56']
 DOWNLOAD_DIR = '/srv/download'
+WIDGET_CATALOG = '/srv/chroot_rsync/orange3doc/widgets.json'
 
 DOWNLOAD_SET_PATTERN = os.path.join(DOWNLOAD_DIR, 'filenames_%s.set')
 

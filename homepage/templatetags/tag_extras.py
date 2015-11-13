@@ -205,10 +205,7 @@ def download_addons():
 @register.inclusion_tag('toolbox_widgets.html')
 def toolbox_widgets():
     import json
-    import os
-    #FIXME as soon as orange documentation updates json
-    thispath = os.path.abspath(os.path.dirname(__file__))
-    js = json.load(open(os.path.join(thispath, "..", "static", "widgets.json"), "rt"))
+    js = json.load(open(settings.WIDGET_CATALOG, "rt"))
     return { "toolbox": js }
 
 @register.inclusion_tag('download_addons2.html')
