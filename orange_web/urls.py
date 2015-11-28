@@ -30,4 +30,8 @@ urlpatterns = \
              url(r'^orange2/$',
                  TemplateView.as_view(template_name='orange2.html'),
                  name='orange2'),
+             url(r'^docs/$',
+                 TemplateView.as_view(template_name='docs.html'),
+                 name='docs'),
              )
+
