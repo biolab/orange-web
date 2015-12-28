@@ -3,6 +3,7 @@ import random
 import re
 import requests
 import json
+import os.path
 
 from django.conf import settings
 from django.shortcuts import render
@@ -11,33 +12,36 @@ from django.core.mail import send_mail
 # Create a list of admin e-mail addresses.
 admins = [x[1] for x in settings.ADMINS]
 
+
 def discover_screenshots():
     f = open(settings.SCREENSHOTS_INDEX)
     doc = xml.dom.minidom.parse(f)
     f.close()
 
-    screenshots = []
+    s_shots = []
     for node in doc.getElementsByTagName('screenshot'):
         iid = node.getAttribute('id')
-        screenshot = {
+        s_shot = {
             'id': iid,
             'title': node.getAttribute('title'),
             'hide': node.getAttribute('hide'),
-            'img': 'homepage/screenshots/%s.png' % iid,
+            'img': 'homepage/screenshots/images/%s.png' % iid,
             'rank': int(node.getAttribute('rank') or 999),
-            'thumb': 'homepage/screenshots/thumbs/%s.png' % iid,
+            'thumb': 'homepage/screenshots/images/%s-thumb.png' % iid,
             'features': node.getAttribute('features'),
         }
-        screenshots.append(screenshot)
-    return screenshots
+        s_shots.append(s_shot)
+    return s_shots
 
-screenshots = [screen for screen in discover_screenshots() if not screen['hide'] == 'yes']
+screenshots = [screen for screen in discover_screenshots()
+               if not screen['hide'] == 'yes']
 
 
 def screens(request):
     """Sort screenshots by their rank"""
     screenshots.sort(key=lambda x: x['rank'])
     return render(request, 'screenshots.html', {'screenshots': screenshots})
+
 
 def toolbox(request):
     return render(request, 'toolbox.html', {})
