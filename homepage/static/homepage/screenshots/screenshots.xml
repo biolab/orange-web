@@ -1,97 +1,109 @@
+<!--
+When constructing images, use lowercase only for file names.
+Separate words in file names with "-".
+To prepare the image files with transparency and a thumbnail image,
+use trip.py from orange-tools.
+-->
+
 <screenshots>
+    <screenshot id="paint-data" title="Paint a two-dimensional data set"
+                rank="110">
+        <description>Construction of a two-dimensional data
+            set by data painting.</description>
+    </screenshot>
 
-<!-- DATA MANAGEMENT --> 
+    <screenshot id="scatterplot-selection"
+                title="Data selection in scatter plot is visualised
+                in a box plot"
+                rank="210">
+    </screenshot>
 
-<screenshot id="Paint_Data" title="Paint Data" rank="10">
-<description>Manually paint data on a 2-D plane.</description>
-</screenshot>
+    <screenshot id="heatmap" title="Heatmap visualisation"
+                rank="220">
+    </screenshot>
 
-<screenshot id="Image_Viewer" title="Image Viewer" rank="11">
-<description>View image files in the data set.</description>
-</screenshot>
+    <screenshot id="sieve" title="Sieve diagram on a titanic data set"
+                rank="230">
+    </screenshot>
 
-<!-- SUPERVISED LEARNING --> 
+    <screenshot id="box-plot" title="Box plot and class-based grouping"
+                rank="250">
+    </screenshot>
 
-<screenshot id="Rank" title="Rank" rank="20">
-<description>Rank widget scores attributes by class while
-ModelMap Projection Rank displays attribute pairs by their
-projection quality.</description>
-</screenshot>
+    <screenshot id="tree-exploration"
+                title="Explorative analysis and classification trees"
+                rank="310">
+    </screenshot>
 
-<screenshot id="tree-exploration" title="Explorative analysis and classification trees" rank="21" features="interaction">
-<description>Clicking on a node of classification tree outputs the associated
-data, which can be further processed in any other widget. Screenshot
-below shows a schema where we use File widget to read the Iris
-data set, construct a decision tree, and visualize it. Schema also
-includes a scatterplot that displays the original data (the channel
-from File widget), and also receives a data subset from Classification
-Tree Viewer. The data subset is marked with filled dots. By clicking on
-different nodes of the tree the selection in scatterplot changes,
-making this schema an interesting interactive exploration tool.</description>
-</screenshot>
+    <screenshot id="image-viewer" title="Data can contain references to images"
+                rank="320">
+        <description>View image files in the data set.</description>
+    </screenshot>
 
-<screenshot id="Linear_Regression" title="Linear Regression" rank="22">
-<description>Data classification with linear regression model.</description>
-</screenshot>
 
-<screenshot id="SVM_Example" title="SVM Classifier" rank="23">
-<description>Data classification with SVM model.</description>
-</screenshot>
+    <screenshot id="pca" title="Principal component analysis"
+                rank="410">
+    </screenshot>
 
-<!-- MODEL SCORING AND EVALUATION -->
+    <screenshot id="dendrogram" title="Hierarchical clustering"
+                rank="420">
+    </screenshot>
 
-<screenshot id="eval-class" title="A schema for performance scoring (classification)" rank="30" features="vis_prog">
-<description>A typical schema for performance evaluation of a set of class predictors.</description>
-</screenshot>
+    <screenshot id="kmeans-paint" title="Playing with a paint data and
+                    automatic selection of clusters in k-means"
+                rank="420">
+    </screenshot>
 
-<screenshot id="misclassifications" title="Visualizing misclassifications" rank="31">
-<description>Data instances where a classifier has missed a class can be nicely
-exposed through a combination of Test Learners and Confusion Matrix widget.</description>
-</screenshot>
+    <screenshot id="feature-scoring" title="Feature scoring and ranking"
+                rank="510">
+    </screenshot>
 
-<screenshot id="Test_Learners" title="Test Learners" rank="32">
-<description>Test Learners scores classifiers by 5 categories
-(namely AUC, CA, F1, Precision, Recall). Useful for selecting the
-best performing classifier.</description>
-</screenshot>
+    <screenshot id="model-based-feature-scoring"
+                title="Model-based feature scoring"
+                rank="520">
+    </screenshot>
 
-<!-- UNSUPERVISED LEARNING --> 
+    <screenshot id="polynomial-regression" title="Polynomial regression"
+                rank="610">
+    </screenshot>
 
-<screenshot id="dendrogram" title="Hierarchical clustering" rank="40" features="visualization">
-<description>Dendrogram showing the results of a hierarchical clustering on Iris
-data set.</description>
-</screenshot>
+    <screenshot id="predictions-test"
+                title="Predictions of a linear regression model on a test set"
+                rank="620">
+    </screenshot>
 
-<screenshot id="Fusion_Graph" title="Fusion Graph" rank="41">
-<description>Performs data fusion on large data sets to 
-create sensible clusters of related data instances.</description>
-</screenshot>
+    <screenshot id="preprocess-learner"
+                title="Data preprocessing turned into component of
+                a learning algorithm"
+                rank="630">
+    </screenshot>
 
-<!-- DATA VISUALIZATION (PRIMARILY WIDGETS FROM VISUALIZATION TAB) -->
+    <screenshot id="scoring-classifiers"
+                title="Cross-validation and scoring of classifiers"
+                rank="640">
+    </screenshot>
 
-<screenshot id="sieve" title="Sieve diagram" rank="50"></screenshot>
+    <screenshot id="misclassifications" title="Visualizing misclassifications"
+                rank="650">
+    </screenshot>
 
-<screenshot id="Box_Plot" title="Box Plot" rank="51"></screenshot>
+    <screenshot id="roc" title="Receiver operating characteristics
+                                (ROC) analysis"
+                rank="660">
+    </screenshot>
 
-<screenshot id="Linear_Projection" title="Linear Projection" rank="52"></screenshot>
+    <screenshot id="calibration-plot" title="Cross-validated calibration plot"
+                rank="670"></screenshot>
 
-<screenshot id="Venn_Diagram" title="Venn Diagram" rank="53"></screenshot> 
+    <screenshot id="Venn_Diagram"
+                title="Venn diagram identifies a missclassification"
+                rank="680">
+    </screenshot>
 
-<!-- SCREENSHOTS SHOWING SCRIPTS -->
+    <screenshot id="canvas-widget-guess"
+                title="Orange can guess which widget to add to a developing schema"
+                rank="800">
+    </screenshot>
 
-<screenshot id="script-evaluate" title="Scoring of machine learning techniques" rank="110" features="scripting" hide="yes"></screenshot> 
-<screenshot id="script-kmeans" title="k-means with verbose print" rank="112" features="scripting" hide="yes"></screenshot> 
-<screenshot id="script-loaddata" title="Data load and exploration" rank="109" features="scripting" hide="yes"></screenshot> 
-<screenshot id="script-mds" title="Construction of distance matrix and MDS" rank="113" features="scripting" hide="yes"></screenshot> 
 
-<!-- VISUAL PROGRAMMING (SCHEMAS) -->
-
-<screenshot id="canvas-widget-guess" title="Orange can guess which widget to add to a developing schema" rank="60" features="vis_prog"></screenshot> 
-
-<!-- WIDGET ICONS -->
-
-<screenshot id="widgets-data" title="Data management widgets" features="tools" hide="yes"></screenshot> 
-<screenshot id="widgets-classification" title="Classification (supervised learning)" features="tools" hide="yes"></screenshot> 
-<screenshot id="widgets-unsupervised" title="Unsupervised learning (clustering, interaction discovery, SOM, ...)" features="tools" hide="yes"></screenshot> 
-<screenshot id="widgets-visualization" title="Data visualization widgets" features="tools" hide="yes"></screenshot> 
 </screenshots>
