@@ -128,11 +128,15 @@ div.screenshot-container div.content {
     -ms-transition: -ms-transform ease-out 0.2s, background 0.3s;
     -o-transition: -o-transform ease-out 0.2s, background 0.3s;
     max-width: 220px;
-    float: left;
+    float: center;
+}
+.screenshot-image {
+    position: relative;
+    bottom: 0;
 }
 .features .content .screenshot-container p.screenshot-title {
     float: left;
-    max-width: 220px;
+    max-width: 180px;
     position: absolute;
     bottom: 0;
     color: #444;
