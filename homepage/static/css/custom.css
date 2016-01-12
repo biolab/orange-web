@@ -207,8 +207,8 @@ a.custom-accordion-title {
     text-decoration: none;
 }
 h3.custom-accordion-title {
-    float: left;
     padding-top: 0;
+    display: inline;
 }
 .custom-accordion-container {
     color: #333;
