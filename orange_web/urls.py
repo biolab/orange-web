@@ -11,6 +11,7 @@ urlpatterns = \
              url(r'^screenshots/$', views.screens, name='screenshots'),
              url(r'^getting-started/$', views.start, name='start'),
              url(r'^license/$', views.license, name='license'),
+             url(r'^privacy/$', views.privacy, name='privacy'),
              url(r'^contributing/$', views.contribute, name='contribute'),
              url(r'^contact/$', views.contact, name='contact'),
              url(r'^download/$', views.download, name='download'),
