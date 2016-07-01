@@ -4,6 +4,7 @@ from os import path
 
 from datetime import datetime as dt
 
+import re
 from django import template
 from django.core.urlresolvers import reverse
 from docutils.core import publish_parts
@@ -85,6 +86,10 @@ def download_choices(os='win'):
                 downloads['mac'] = value
             if key == 'MAC_ORANGE3_DAILY':
                 downloads['bundle-orange3'] = value
+                try:
+                    downloads['version'] = re.findall("Orange3-(.*)\.dmg", value)[0]
+                except:
+                    downloads['version'] = 'unknown'
     else:
         for key, value in download_set_patterns('win'):
             if key == 'WIN_SNAPSHOT':
