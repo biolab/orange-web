@@ -6,8 +6,11 @@ import json
 import os.path
 
 from django.conf import settings
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
+
+from homepage.templatetags.tag_extras import download_choices
 
 # Create a list of admin e-mail addresses.
 admins = [x[1] for x in settings.ADMINS]
@@ -168,5 +171,11 @@ def start(request):
     return render(request, 'start.html',
                   {'screens_root': 'homepage/getting_started'})
 
+
 def privacy(request):
     return render(request, 'privacy_policy.html', {})
+
+
+def latest_version(request):
+    version = download_choices('mac').get('version', '')
+    return HttpResponse(version, content_type="text/plain")
