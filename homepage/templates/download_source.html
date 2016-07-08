@@ -1,15 +1,26 @@
 <h2>Linux / Source</h2>
-<h3>Automatic setup</h3>
-<p>Setup can be automated by using <a id="linux-download-script" href="http://biolab.github.io/install-orange/setup-ubuntu.sh">
-   Ubuntu 14.04 setup script </a>.
-   Before the installation, move to directory, where you want Orange to be installed.
-   Following command will start installation, which usually takes about 15 minutes. 
+
+<h3>Installing with Anaconda</h3>
+<p>If you are using python provided by <a href="https://www.continuum.io/downloads">Anaconda</a>
+    distribution, you are almost ready to go. Just run:</p>
+<pre><code>conda install orange3
+pip install -U orange3
+</code></pre>
+<p>The second line is needed because anaconda does not (yet) have the latest version of Orange3.</p>
+
+<h3>Installing with pip</h3>
+<p>
+The pip package depends on a PyQt4 system installation. Use your linux distribution's package manager to install it first.
+Then, Orange can be installed with:
+<pre><code>pip install orange3</code></pre>
 </p>
-<pre><code>source setup-ubuntu.sh </code></pre>
-<p>Install script will also create and enter new virtual environment for you, which
-   you can reenter using following command:
+
+<h3>Installing from source</h3>
+<p>Clone our repository from <a href="https://github.com/biolab/orange3">GitHub</a> or download
+    the <a href="https://github.com/biolab/orange3/archive/stable.tar.gz">source code tarball</a>.
+    Then follow the instructions in <a href="https://github.com/biolab/orange3/blob/stable/README.md">README.md</a>
 </p>
-<pre><code>source orange3env/bin/activate </code></pre>
-<p>You open the Orange application by executing the following command from the
-   virtual environment.</p>
+
+<h3>Running Orange from command line</h3>
+<p>To run Orange Canvas run</p>
 <pre><code>python -m Orange.canvas</code></pre>
