@@ -1,1 +1,398 @@
-[["Data", [{"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/file.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/file.png", "keywords": [], "text": "File"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/save.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/save.png", "keywords": [], "text": "Save"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/datainfo.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/data-info.png", "keywords": [], "text": "Data Info"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/datatable.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/data-table.png", "keywords": [], "text": "Data Table"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/selectcolumns.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/select-columns.png", "keywords": ["Select Attributes"], "text": "Select Columns"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/selectrows.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/select-rows.png", "keywords": [], "text": "Select Rows"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/datasampler.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/data-sampler.png", "keywords": [], "text": "Data Sampler"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/discretize.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/discretize.png", "keywords": [], "text": "Discretize"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/continuize.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/continuize.png", "keywords": [], "text": "Continuize"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/concatenate.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/concatenate.png", "keywords": [], "text": "Concatenate"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/paintdata.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/paint-data.png", "keywords": [], "text": "Paint Data"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/pythonscript.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/python-script.png", "keywords": [], "text": "Python Script"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/featureconstructor.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/feature-constructor.png", "keywords": [], "text": "Feature Constructor"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/editdomain.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/edit-domain.png", "keywords": [], "text": "Edit Domain"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/imageviewer.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/image-viewer.png", "keywords": [], "text": "Image Viewer"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/impute.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/impute.png", "keywords": [], "text": "Impute"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/mergedata.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/merge-data.png", "keywords": [], "text": "Merge Data"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/outliers.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/outliers.png", "keywords": [], "text": "Outliers"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/preprocess.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/preprocess.png", "keywords": [], "text": "Preprocess"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/purgedomain.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/purge-domain.png", "keywords": [], "text": "Purge Domain"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/rank.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/rank.png", "keywords": [], "text": "Rank"}]], ["Visualize", [{"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/boxplot.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/box-plot.png", "keywords": [], "text": "Box Plot"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/distributions.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/distributions.png", "keywords": [], "text": "Distributions"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/heatmap.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/heat-map.png", "keywords": [], "text": "Heat Map"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/scatterplot.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/scatter-plot.png", "keywords": [], "text": "Scatter Plot"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/venn-diagram.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/venn-diagram.png", "keywords": [], "text": "Venn Diagram"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/linearprojection.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/linear-projection.png", "keywords": [], "text": "Linear Projection"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/modelmapprojectionrank.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/modelmap-projection.png", "keywords": [], "text": "ModelMap Projection Rank"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/scattermap.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/scatter-map.png", "keywords": [], "text": "Scatter Map"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/sievediagram.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/sieve-diagram.png", "keywords": [], "text": "Sieve Diagram"}]], ["Classify", [{"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/naivebayes.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/naive-bayes.png", "keywords": [], "text": "Naive Bayes"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/logisticregression.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/logistic-regression.png", "keywords": [], "text": "Logistic Regression"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/classificationtree.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/classification-tree.png", "keywords": [], "text": "Classification Tree"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/classificationtreeviewer.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/classification-tree-viewer.png", "keywords": [], "text": "Classification Tree Viewer"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/knearestneighbours.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/k-nearest-neighbors.png", "keywords": ["kNN", "k Nearest Neighbors"], "text": "Nearest Neighbors"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/loadclassifier.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/load-classifier.png", "keywords": [], "text": "Load Classifier"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/majority.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/majority.png", "keywords": [], "text": "Majority"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/randomforest.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/random-forest.png", "keywords": [], "text": "Random Forest"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/saveclassifier.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/save-classifier.png", "keywords": [], "text": "Save Classifier"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/svm.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/svm-classification.png", "keywords": ["Support Vector Machine"], "text": "SVM"}]], ["Regression", [{"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/linear.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/linear-regression.png", "keywords": [], "text": "Linear Regression"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/mean.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/mean-learner.png", "keywords": [], "text": "Mean Learner"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/nearestneighbors.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/k-nearest-neighbors-regression.png", "keywords": ["kNN", "k Nearest Neighbors"], "text": "Nearest Neighbors"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/stochasticgradient.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/stochastic-gradient-descent.png", "keywords": [], "text": "Stochastic Gradient Descent"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/svmregression.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/svm-regression.png", "keywords": ["Support Vector Machine"], "text": "SVM Regression"}]], ["Unsupervised", [{"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/PCA.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/pca.png", "keywords": ["Principal Component Analysis"], "text": "PCA"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/correspondenceanalysis.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/correspondence-analysis.png", "keywords": [], "text": "Correspondence Analysis"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/distancemap.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/distance-map.png", "keywords": [], "text": "Distance Map"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/distances.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/distances.png", "keywords": [], "text": "Distances"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/hierarchicalclustering.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/hierarchical-clustering.png", "keywords": [], "text": "Hierarchical Clustering"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/kmeansclustering.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/k-means.png", "keywords": [], "text": "k-Means"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/mds.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/mds.png", "keywords": ["Multidimensional Scaling"], "text": "MDS"}]], ["Evaluation", [{"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/calibrationplot.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/calibration-plot.png", "keywords": [], "text": "Calibration Plot"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/confusionmatrix.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/confusion-matrix.png", "keywords": [], "text": "Confusion Matrix"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/liftcurve.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/lift-curve.png", "keywords": [], "text": "Lift Curve"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/predictions.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/predictions.png", "keywords": [], "text": "Predictions"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/rocanalysis.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/roc-analysis.png", "keywords": ["Receiver Under Operating Characteristics"], "text": "ROC Analysis"}, {"doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/testlearners.html", "img": "http://docs.orange.biolab.si/3/visual-programming/_images/test-learners.png", "keywords": [], "text": "Test & Score"}]]]
+[
+  [
+    "Data",
+    [
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/file.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/file.png",
+        "keywords": [],
+        "text": "File"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/save.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/save.png",
+        "keywords": [],
+        "text": "Save"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/datainfo.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/data-info.png",
+        "keywords": [],
+        "text": "Data Info"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/datatable.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/data-table.png",
+        "keywords": [],
+        "text": "Data Table"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/selectcolumns.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/select-columns.png",
+        "keywords": [
+          "Select Attributes"
+        ],
+        "text": "Select Columns"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/selectrows.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/select-rows.png",
+        "keywords": [],
+        "text": "Select Rows"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/datasampler.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/data-sampler.png",
+        "keywords": [],
+        "text": "Data Sampler"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/discretize.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/discretize.png",
+        "keywords": [],
+        "text": "Discretize"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/continuize.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/continuize.png",
+        "keywords": [],
+        "text": "Continuize"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/concatenate.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/concatenate.png",
+        "keywords": [],
+        "text": "Concatenate"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/paintdata.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/paint-data.png",
+        "keywords": [],
+        "text": "Paint Data"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/pythonscript.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/python-script.png",
+        "keywords": [],
+        "text": "Python Script"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/featureconstructor.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/feature-constructor.png",
+        "keywords": [],
+        "text": "Feature Constructor"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/editdomain.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/edit-domain.png",
+        "keywords": [],
+        "text": "Edit Domain"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/imageviewer.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/image-viewer.png",
+        "keywords": [],
+        "text": "Image Viewer"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/impute.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/impute.png",
+        "keywords": [],
+        "text": "Impute"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/mergedata.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/merge-data.png",
+        "keywords": [],
+        "text": "Merge Data"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/outliers.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/outliers.png",
+        "keywords": [],
+        "text": "Outliers"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/preprocess.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/preprocess.png",
+        "keywords": [],
+        "text": "Preprocess"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/purgedomain.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/purge-domain.png",
+        "keywords": [],
+        "text": "Purge Domain"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/data/rank.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/rank.png",
+        "keywords": [],
+        "text": "Rank"
+      }
+    ]
+  ],
+  [
+    "Visualize",
+    [
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/boxplot.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/box-plot.png",
+        "keywords": [],
+        "text": "Box Plot"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/distributions.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/distributions.png",
+        "keywords": [],
+        "text": "Distributions"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/heatmap.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/heat-map.png",
+        "keywords": [],
+        "text": "Heat Map"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/scatterplot.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/scatter-plot.png",
+        "keywords": [],
+        "text": "Scatter Plot"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/venn-diagram.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/venn-diagram.png",
+        "keywords": [],
+        "text": "Venn Diagram"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/linearprojection.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/linear-projection.png",
+        "keywords": [],
+        "text": "Linear Projection"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/modelmapprojectionrank.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/modelmap-projection.png",
+        "keywords": [],
+        "text": "ModelMap Projection Rank"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/scattermap.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/scatter-map.png",
+        "keywords": [],
+        "text": "Scatter Map"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/visualize/sievediagram.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/sieve-diagram.png",
+        "keywords": [],
+        "text": "Sieve Diagram"
+      }
+    ]
+  ],
+  [
+    "Classify",
+    [
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/naivebayes.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/naive-bayes.png",
+        "keywords": [],
+        "text": "Naive Bayes"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/logisticregression.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/logistic-regression.png",
+        "keywords": [],
+        "text": "Logistic Regression"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/classificationtree.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/classification-tree.png",
+        "keywords": [],
+        "text": "Classification Tree"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/classificationtreeviewer.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/classification-tree-viewer.png",
+        "keywords": [],
+        "text": "Classification Tree Viewer"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/knearestneighbours.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/k-nearest-neighbors.png",
+        "keywords": [
+          "kNN",
+          "k Nearest Neighbors"
+        ],
+        "text": "Nearest Neighbors"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/loadclassifier.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/load-classifier.png",
+        "keywords": [],
+        "text": "Load Classifier"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/majority.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/majority.png",
+        "keywords": [],
+        "text": "Majority"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/randomforest.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/random-forest.png",
+        "keywords": [],
+        "text": "Random Forest"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/saveclassifier.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/save-classifier.png",
+        "keywords": [],
+        "text": "Save Classifier"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/classify/svm.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/svm-classification.png",
+        "keywords": [
+          "Support Vector Machine"
+        ],
+        "text": "SVM"
+      }
+    ]
+  ],
+  [
+    "Regression",
+    [
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/linear.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/linear-regression.png",
+        "keywords": [],
+        "text": "Linear Regression"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/mean.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/mean-learner.png",
+        "keywords": [],
+        "text": "Mean Learner"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/nearestneighbors.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/k-nearest-neighbors-regression.png",
+        "keywords": [
+          "kNN",
+          "k Nearest Neighbors"
+        ],
+        "text": "Nearest Neighbors"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/stochasticgradient.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/stochastic-gradient-descent.png",
+        "keywords": [],
+        "text": "Stochastic Gradient Descent"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/regression/svmregression.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/svm-regression.png",
+        "keywords": [
+          "Support Vector Machine"
+        ],
+        "text": "SVM Regression"
+      }
+    ]
+  ],
+  [
+    "Unsupervised",
+    [
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/PCA.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/pca.png",
+        "keywords": [
+          "Principal Component Analysis"
+        ],
+        "text": "PCA"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/correspondenceanalysis.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/correspondence-analysis.png",
+        "keywords": [],
+        "text": "Correspondence Analysis"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/distancemap.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/distance-map.png",
+        "keywords": [],
+        "text": "Distance Map"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/distances.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/distances.png",
+        "keywords": [],
+        "text": "Distances"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/hierarchicalclustering.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/hierarchical-clustering.png",
+        "keywords": [],
+        "text": "Hierarchical Clustering"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/kmeansclustering.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/k-means.png",
+        "keywords": [],
+        "text": "k-Means"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/unsupervised/mds.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/mds.png",
+        "keywords": [
+          "Multidimensional Scaling"
+        ],
+        "text": "MDS"
+      }
+    ]
+  ],
+  [
+    "Evaluation",
+    [
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/calibrationplot.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/calibration-plot.png",
+        "keywords": [],
+        "text": "Calibration Plot"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/confusionmatrix.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/confusion-matrix.png",
+        "keywords": [],
+        "text": "Confusion Matrix"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/liftcurve.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/lift-curve.png",
+        "keywords": [],
+        "text": "Lift Curve"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/predictions.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/predictions.png",
+        "keywords": [],
+        "text": "Predictions"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/rocanalysis.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/roc-analysis.png",
+        "keywords": [
+          "Receiver Under Operating Characteristics"
+        ],
+        "text": "ROC Analysis"
+      },
+      {
+        "doc": "http://docs.orange.biolab.si/3/visual-programming/widgets/evaluation/testlearners.html",
+        "img": "http://docs.orange.biolab.si/3/visual-programming/_images/test-learners.png",
+        "keywords": [],
+        "text": "Test & Score"
+      }
+    ]
+  ]
+]
