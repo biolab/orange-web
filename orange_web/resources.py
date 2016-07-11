@@ -62,7 +62,7 @@ for field_key, field_val in WIDGET_JS:
         # Widget name
         WIDG_JS[widget['text']] = widget_idx
         # Widget keywords
-        for keyword in widget['keywords']:
+        for keyword in widget.get('keywords', ()):
             WIDG_JS[keyword] = widget_idx
         widget_idx += 1
 
