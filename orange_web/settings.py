@@ -108,6 +108,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DOWNLOAD_DIR = os.path.abspath("./download")
 DOWNLOAD_SET_PATTERN = os.path.join(DOWNLOAD_DIR, "filenames_%s.set")
 WIDGET_CATALOG = os.path.abspath("./homepage/static/widgets.json")
+FEATURES_CATALOG = os.path.abspath("./homepage/static/features.json")
+TESTIMONIALS_CATALOG = os.path.abspath("./homepage/static/testimonials.json")
 
 # A custom context processor
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (

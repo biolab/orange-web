@@ -1,0 +1,26 @@
+{% block feature_panel %}
+
+    <div class="feature-panel row">
+        <div class="content col-sm-6 col-xs-12 feature-description panel-left pull-{% if not index|divisibleby:2 %}left{% else %}right{% endif %}">
+            <h2 class="feature-title">{{ feature.title }}</h2>
+            <p class="feature-text">{{ feature.description }}</p>
+            <div class="more">
+                <a href="{{ feature.more_link }}">
+                    <div class="learn-more feature-block">
+                        <div class="feature-block fa fa-arrow-circle-o-right jsonly"></div>
+                        <div class="feature-block feature-link">Learn More</div>
+                    </div>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="youtube-video watch-video colorbox-load" href="https://www.youtube.com/embed/{{ feature.video_link_tag }}?autoplay=1">
+                    <div class="feature-block fa fa-play-circle-o jsonly"></div>
+                    <div class="feature-block feature-link">Watch Video</div>
+                </a>
+            </div>
+        </div>
+        <div class="content col-sm-6 col-xs-12 feature-image panel-{% if not index|divisibleby:2 %}right{% else %}left{% endif %}">
+            <img class="image {% if not index|divisibleby:2 %}right{% else %}left{% endif %}" src="{{ feature.image_link }}">
+        </div>
+    </div>
+
+{% endblock %}

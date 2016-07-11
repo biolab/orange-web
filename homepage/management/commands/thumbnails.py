@@ -1,9 +1,14 @@
 from PIL import Image
-import glob, os
+import glob
+import os
 
 from django.core.management.base import BaseCommand
 
 from homepage.views import discover_screenshots
+
+
+SCREENSHOT_ELEM = '<screenshot id="{0}" title="TODO" rank="999"></screenshot>'
+
 
 class Command(BaseCommand):
     help = 'Generates thumbnails for screenshots'
@@ -22,10 +27,10 @@ class Command(BaseCommand):
             snp_dir = os.path.dirname(f)
             tbn_dir = os.path.join(snp_dir, "./thumbs")
             fname = os.path.basename(f)
-            id, ext = os.path.splitext(fname)
+            _id, ext = os.path.splitext(fname)
 
-            if id not in screen_ids:
-                index.append('<screenshot id="%s" title="TODO" rank="999"></screenshot>' % id)
+            if _id not in screen_ids:
+                index.append(SCREENSHOT_ELEM.format(_id))
 
             im = Image.open(f)
             im = im.convert("RGBA")
@@ -36,6 +41,6 @@ class Command(BaseCommand):
             if not os.path.isfile(os.path.join(static, screenshot['img'])):
                 print("Missing screenshot image %s" % screenshot['img'])
 
-        if len(index)>0:
+        if len(index) > 0:
             print("Consider adding the following screenshots to the index:")
             print('\n'.join(index))

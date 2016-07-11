@@ -6,16 +6,43 @@
     <section id="features" class="features section custom-reduce-padding-2">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-sm-12 col-xs-12 content">
+                <div class="col-xs-12 content">
                     <h1 class="title">Large Toolbox</h1>
                     <p>Orange widgets are building blocks of data analysis workflows that are assembled in Orange’s visual programming environment.</p>
-                    <p><img src="/static/images/simple-workflow.png"</p>
+                    <p><img src="/static/images/simple-workflow.png"></p>
                     <p>Widgets are grouped into classes according to their function. A typical workflow may mix widgets for data input and filtering, visualization, and predictive data mining.</p>
+
+                    <input type="text" class="form-control jsonly" id="search-box" placeholder="Quick Search" tabindex="1" />
                 </div>
-                <div class="col-md-8 col-sm-12 col-xs-12 content">
-                    {% toolbox_widgets %}
+                <div class="col-xs-12 content">
+                    {% toolbox_widgets toolbox %}
                 </div>
             </div>
         </div>
     </section>
+
+    <script type="text/javascript" src="{% static 'plugins/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/trieSearchWeb.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            'use strict';
+            var data_for_trie = JSON.parse("{{ toolbox_strings|escapejs }}");
+            var options = {
+                // Minimum search key length
+                min: 1,
+                ignoreCase: true,
+                indexField: 'index',
+                // Split words by space, -, _, and capital letters
+                splitOnRegEx: /([ \-:_]+|(?![a-z])(?=[A-Z]))/g
+            };
+
+            // make trie and populate with objects objects
+            var trie = new window.TrieSearch('name', options);
+            trie.addFromObject(data_for_trie);
+            // save trie structure to window
+            window.trie = trie;
+        });
+    </script>
+    <script type="text/javascript" src="{% static 'js/trieUtil.js' %}" ></script>
+
 {% endblock content %}

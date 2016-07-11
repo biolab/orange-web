@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <section id="features" class="features section custom-reduce-padding-2">
+        <div class="container">
+            <div class="row">
+                {% comment %}
+                 START EDITING HERE!
+
+                 INSTRUCTIONS FOR USING THIS TEMPLATE
+
+                 1. Write your own HTML, but do try to use Django's
+                    'static' and 'url' tags. See start.html template
+                    to see how to do that.
+                 2. URL stub for this webpage is predefined in urls.py
+                 3. As soon as you change content in this template, it
+                    will be enabled on Django's restart.
+                {% endcomment %}
+                <div class="col-xs-12">
+                    <div class="content">
+
+                        <h1 class="title">Wide Applicability</h1>
+
+                        <p>Orange is a powerful free and open source component-based data mining and machine learning software suite suitable for many data mining tasks. Its simple and user-friendly interface is great for data mining beginners who wish to work through a graphical user interface as well as for expert data scientists who prefer developing statistical data analysis procedures through Python scripting.</p>
+
+                        <h3 class="custom-reduce-padding">Business Intelligence and Predictive Analytics</h3>
+                        <p>
+                            Extensive toolbox enables you to understand and extrapolate data and information for a great variety of tasks. Turn Orange into your business intelligence tool for adjusting risk management strategies, monitoring business change, improving customer satisfaction by making informed product recommendation, doing market basket analysis, optimizing store or web page layout through mining of response data, and modelling probable business outcomes. Use the power of predictive analytics to monitor your sales and segment customers, adjust your marketing strategies, discover bottlenecks and optimize investment strategies. Predictive analytics in marketing research is a great way to improve your service, please your clients, and boost profits.
+                            {% comment %}Content goes here. Don't forget to include the \<a href="{% url 'download' %}"\>Download\</a\> link.{% endcomment %}
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Scientific Research and Bioinformatics</h3>
+                        <p>
+                            Orange has always been intricately involved with scientific research since it started as a resident laboratory research tool. In its long career, this software has helped scientists to <a href="http://link.springer.com/article/10.1007/s10791-015-9265-z">examine radiation dosage data</a>, <a href="https://peerj.com/articles/cs-10/">identify potentially illegal ivory sales</a>, <a href="http://bioinformatics.oxfordjournals.org/content/21/3/396">mine genomic data</a>, and <a href="http://www.ewra.net/wuj/pdf/WUJ_2014_07_01.pdf">discover interesting patterns in development of water biofilm</a>. A powerful Bioinformatics add-on was developed particularly for researchers in biomedicine, and the Data Fusion add-on helped scientists find new <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1004552">bacterial response candidate genes</a>.
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Teaching Statistics and Machine Learning</h3>
+                        <p>
+                            Our data mining suite is also built for university lecturers looking for a tool to teach statistics concepts and machine learning algorithms. Several widgets support clever visualizations of complex data mining topics, such as visual univariate regression for overfitting and the effect of regularization, understanding classification and regression with model data sets, and model evaluation with Test&amp;Score and Confusion Matrix.
+                        </p>
+
+                        <div class="feature-page video-content">
+                            {% comment %} VIDEO HERE {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} END EDITING HERE! {% endcomment %}
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-->
+{% endblock content %}

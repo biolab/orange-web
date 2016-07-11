@@ -1,20 +1,19 @@
 <div id="widgets">
 {% for topic, widgets in toolbox %}
-    <h2>{{ topic }}</h2>
+    <h2 class="widget-topic">{{ topic }}</h2>
     <div class="toctree-wrapper compound">
-    <ul>
-    {% for widget in widgets %}
-        <li class="toctree-l1">
-        <a href="{{ widget.doc }}">
-        <img alt="{{ widget.text }}" src="{{ widget.img }}"/>
-        </a>
-        <a class="reference internal" href="{{ widget.doc }}">
-        {{ widget.text }}
-        </a>
-        </li>
-    {% endfor %}
-    </ul>
+        <ul>
+        {% for widget in widgets %}
+            <li class="toctree-l1">
+            <a href="{{ widget.doc }}">
+            <img alt="{{ widget.text }}" src="{{ widget.img }}"/>
+            </a>
+            <a class="reference internal" href="{{ widget.doc }}">
+            {{ widget.text }}
+            </a>
+            </li>
+        {% endfor %}
+        </ul>
     </div>
 {% endfor %}
 </div>
-

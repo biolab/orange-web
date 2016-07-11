@@ -12,6 +12,7 @@ from django.conf import settings
 
 import feedparser
 import requests
+# noinspection PyUnresolvedReferences
 from six.moves import xmlrpc_client as xmlrpclib
 
 logger = logging.getLogger(__name__)
@@ -87,8 +88,9 @@ def download_choices(os='win'):
             if key == 'MAC_ORANGE3_DAILY':
                 downloads['bundle-orange3'] = value
                 try:
-                    downloads['version'] = re.findall("Orange3-(.*)\.dmg", value)[0]
-                except:
+                    downloads['version'] = \
+                        re.findall("Orange3-(.*)\.dmg", value)[0]
+                except IndexError:  
                     downloads['version'] = 'unknown'
     else:
         for key, value in download_set_patterns('win'):
@@ -205,14 +207,19 @@ def addonsget(searchtag):
 
 @register.inclusion_tag('download_addons.html')
 def download_addons():
-    return { "addons": addonsget("orange3 add-on") }
+    return {'addons': addonsget("orange3 add-on")}
+
 
 @register.inclusion_tag('toolbox_widgets.html')
-def toolbox_widgets():
-    import json
-    js = json.load(open(settings.WIDGET_CATALOG, "rt"))
-    return { "toolbox": js }
+def toolbox_widgets(widget_js):
+    return {'toolbox': widget_js}
+
 
 @register.inclusion_tag('download_addons2.html')
 def download_addons2():
-    return { "addons": addonsget("orange add-on") }
+    return {'addons': addonsget("orange add-on")}
+
+
+@register.inclusion_tag('testimonials.html')
+def testimonials_tag(data):
+    return {'testimonials': data}

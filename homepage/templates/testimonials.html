@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="feature-panel row">
+        <h2 class="feature-title col-xs-12">Our esteemed Partners on Orange</h2>
+    </div>
+    <div class="row testimonial-list">
+        {% for testimonial in testimonials %}
+            <div class="content col-sm-4 col-xs-12 item">
+                <div class="img-container">
+                    <img src="{{ testimonial.img }}">
+                </div>
+                <h3 class="item-title">
+                    <i>{{ testimonial.title }}</i><br>
+                    <i class="extra">{{ testimonial.position }}</i><br>
+                    <i class="extra">{{ testimonial.institution }}</i>
+                </h3>
+                <p class="feature-text"><i>"{{ testimonial.text }}"</i></p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

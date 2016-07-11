@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <section id="features" class="features section custom-reduce-padding-2">
+        <div class="container">
+            <div class="row">
+                {% comment %}
+                 START EDITING HERE!
+
+                 INSTRUCTIONS FOR USING THIS TEMPLATE
+
+                 1. Write your own HTML, but do try to use Django's
+                    'static' and 'url' tags. See start.html template
+                    to see how to do that.
+                 2. URL stub for this webpage is predefined in urls.py
+                 3. As soon as you change content in this template, it
+                    will be enabled on Django's restart.
+                {% endcomment %}
+                <div class="col-xs-12">
+                    <div class="content">
+                        <h1 class="title">Advanced Data Mining and Machine Learning Features</h1>
+                        <p>
+                            Orange is a state-of-the-art open-source data mining software. It comes with a user-friendly UI, while at its core is a scripting, Python-based library for fast prototyping of new machine learning algorithms. The program is packed with a large variety of standard and not-so-standard tools that can be supplemented with specialized add-ons adapted for data analysis in different domains.
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Powerful Machine Learning Library</h3>
+                        <p> 
+                            We rely on powerful Python libraries such as NumPy, SciPy, and scikit-learn, which allow for a quick and easy integration with other advanced data mining tools. Regardless of whether you are using Orange through scripting or GUI, you will find it contains all common supervised machine learning algorithms, such as classification trees, support vector machines, linear and logistic regression, random forest, na&iuml;ve bayes, nearest neighbors, CN2; and unsupervised machine learning algorithms, such as k-means and hierarchical clustering tools for feature subset selection and rapid cross-validation of trained models, confusion matrix, model scoring, and much, much more!
+                            {% comment %}Content goes here. Don't forget to include the \<a href="{% url 'download' %}"\>Download\</a\> link.{% endcomment %}
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Big Data</h3>
+                        <p>
+                            Load data from large databases using SQL widget. Even if you have a database the size of several gigabytes, Orange will use sampling to quickly deliver results. Queries can be easily passed to other widgets for visualization, prediction and scoring. Install <a href="http://2ndquadrant.com/en/resources/2uda/">2UDA suite</a> to access all the great functionalities for big data analytics.
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Specialized Add-Ons</h3>
+                        <p>
+                            Add-ons provide domain-specific techniques that can be used on top of the core Orange distribution. Dive into text analysis with Text Mining, uncover and explore graphs with Networks, merge different data sets with Data Fusion, discover new gene candidates with Bioinformatics, and infer association rules with Associate add-on.
+                        </p>
+
+                        <p>
+                        <a href="{% url 'download' %}">Download</a> Orange and add-ons.    
+                        </p>
+
+                        <div class="feature-page video-content">
+                            {% comment %} VIDEO HERE {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} END EDITING HERE! {% endcomment %}
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-->
+{% endblock content %}

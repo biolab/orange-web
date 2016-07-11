@@ -1,0 +1,23 @@
+[
+  {
+    "img": "/static/images/Shaulsky_Gad_small.jpg",
+    "title": "Dr. Shaulsky Gad",
+    "position": "Molecular biologist",
+    "institution": "Baylor College of Medicine, US",
+    "text": "My laboratory produces large amounts of data from RNA-seq, ChIP-seq and genome resequencing experiments.  Orange allows me to analyze my data even though I don’t know how to program.  It also allows me to communicate with my collaborators, who are experts in data mining, and with my colleagues and trainees."
+  },
+  {
+    "img": "/static/images/Bellazzi_Riccardo_small.jpg",
+    "title": "Riccardo Bellazzi",
+    "position": "Chair of Centre for Health Technologies",
+    "institution": "University of Pavia, Italy",
+    "text": "Orange is a great teaching tool, and students love it, because it is easy to use and it allows devoting attention to the high-level conceptual aspects of data mining. The program successfully helps to introduce data analytics to users with no programming experience."
+  },
+  {
+    "img": "/static/images/Bellazzi_Riccardo_small.jpg",
+    "title": "Random Grad Student",
+    "position": "Esteemed Customer",
+    "institution": "Somewhere",
+    "text": "It's awesome."
+  }
+]

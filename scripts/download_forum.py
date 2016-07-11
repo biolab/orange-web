@@ -12,8 +12,10 @@ sid = re.compile('[\?\&]sid=[a-zA-Z0-9]+')
 skip_urls = re.compile(
     '^search.php|^ucp.php|^posting.php|^mailto:|^/|^memberlist.php')
 
+
 def escape_question_marks(s):
     return s.replace('?', '_qm_')
+
 
 def extract_links(soup):
     for link in soup.find_all('a'):

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <section id="features" class="features section custom-reduce-padding-2">
+        <div class="container">
+            <div class="row">
+                {% comment %}
+                 START EDITING HERE!
+
+                 INSTRUCTIONS FOR USING THIS TEMPLATE
+
+                 1. Write your own HTML, but do try to use Django's
+                    'static' and 'url' tags. See start.html template
+                    to see how to do that.
+                 2. URL stub for this webpage is predefined in urls.py
+                 3. As soon as you change content in this template, it
+                    will be enabled on Django's restart.
+                {% endcomment %}
+                <div class="col-xs-12">
+                    <div class="content">
+                        <h1 class="title">Visual Programming</h1>
+                        <p>
+                            Orange is a great data mining tool for complete beginners as well as for expert data scientists. Its graphic user interface allows the users to focus on data analysis instead on laborious coding, making a construction of complex data analytics workflows extremely simple. Most of Orange's visualisations are interactive and support data selection and filtering.
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Component Based Software</h3>
+                        <p>
+                        You can easily perform data analysis by stacking components into schematic workflows. Each component embeds some data retrieval, preprocessing, visualisation, modelling or evaluation step in your data research. Combining different components (widgets) in a workflow enables you to build comprehensive data analysis schemas as you go. With a large library of preloaded widgets you won't be short for choice. Additional widgets are available through add-ons and allow for a more focused and topic-oriented research.
+                        </p>
+
+                        <p>
+                        <img src="/static/images/workflow_screenshot.png">
+                            {% comment %}Content goes here. Don't forget to include the \<a href="{% url 'download' %}"\>Download\</a\> link.{% endcomment %}
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Interactive Data Exploration</h3>
+                        <p>
+                            Orange widgets communicate with each other. They receive data on the input and send out filtered or processed data, models, or anything the widget does on the output. Connect the output to another widget and you have a functioning workflow. Alter the settings or select a data subset in one widget and instantaneously see how the changes affect other widgets. Through the choice of the right widgets and their connections, it is easy to construct complex workflows for a broad variety of data analysis tasks.
+                        </p>
+
+                        <p>
+                        <img src="/static/images/interactive-viz1.png">
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Clever Design Interface</h3>
+                        <p>
+                            Orange is easy to use even for complete novices. Start with the File widget and Orange will automatically suggest the next widgets that can be connected to it. For example, Orange knows you are likely to want Hierarchical Clustering after you've set up your Distances widget. All other defaults in the widgets are also set in a way that enables a simple analysis even without knowing a whole lot about statistics, machine learning, or exploratory data mining in general.
+                        </p>
+
+                        <p>
+                        <img src="/static/images/collage-visualizations.png">
+                        </p>
+
+                        <div class="feature-page video-content">
+                            {% comment %} VIDEO HERE {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} END EDITING HERE! {% endcomment %}
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-->
+{% endblock content %}

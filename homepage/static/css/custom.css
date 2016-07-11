@@ -55,18 +55,20 @@ h6, .h6 {
 .big-button-base {
     font-size: 18px;
     margin-right: 15px;
+    background-color: #E19C14;
+    border-color: #E19C14;
 }
 
 .btn-warning {
     color: #fff;
-    background-color: #f8a842;
+    background-color: #E19C14;
     border: solid 2px;
-    border-color: #eea236;
+    border-color: #d99614;
 }
 
 .big-button-empty {
     background-color: #ffffff;
-    color: #f8a842;
+    color: #E19C14;
 }
 
 .flex-control-paging li a {
@@ -193,7 +195,7 @@ ul.files li {
     color: #212121;
 }
 .icon-addons #icon-i-hover:hover {
-    color: #f8a842;
+    color: #E19C14;
 }
 .custom-panel-body {
     padding: 0 15px 15px;
@@ -215,15 +217,15 @@ h3.custom-accordion-title {
     background-color: #f5f5f5
 }
 .custom-accordion-container:hover {
-    color: #f8a842;
+    color: #E19C14;
 }
 .features .icon-selected {
-    background: #f8a842;
-    color: #f8a842;
+    background: #E19C14;
+    color: #E19C14;
     position: relative;
     width: 90px;
     height: 90px;
-    border: 4px solid #f8a842;
+    border: 4px solid #E19C14;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -271,7 +273,21 @@ h3.custom-accordion-title {
         padding: 25px 20px 10px 0;
         margin: 0;
     }
+
 }
+
+@media (max-width: 768px) {
+    .features .feature-panel img.image {
+        padding-top: 20px;
+    }
+    .landing-image {
+        display: block;
+        float: left;
+        width: 100%;
+        max-width: 550px;
+    }
+}
+
 @media (min-width: 488px) {
     .download-area {
         text-align: center;
@@ -335,8 +351,62 @@ h3.custom-accordion-title {
     margin-left: -5px;
 }
 
-
 .list-sitemap>li {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+.docs-image {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#testimonials h2 {
+    text-align: center;
+}
+
+.testimonial-list {
+    padding-bottom:20px;
+}
+
+.testimonial-list .item {
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+.testimonial-list .img-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-list img {
+    width: 160px;
+}
+
+.testimonial-list .item {
+    padding-right: 20px;
+}
+
+.testimonial-list .item .item-title {
+    text-align: center;
+    padding-top:0;
+}
+
+.testimonial-list .item .feature-text {
+    text-align: center;
+}
+
+.testimonial-list .item i.extra {
+    font-size: 13px;
+    color: #3c3c3c;
+    font-weight: normal;
+}
+
+.landing-image {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 550px;
 }

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <section id="features" class="features section custom-reduce-padding-2">
+        <div class="container">
+            <div class="row">
+                {% comment %}
+                 START EDITING HERE!
+
+                 INSTRUCTIONS FOR USING THIS TEMPLATE
+
+                 1. Write your own HTML, but do try to use Django's
+                    'static' and 'url' tags. See start.html template
+                    to see how to do that.
+                 2. URL stub for this webpage is predefined in urls.py
+                 3. As soon as you change content in this template, it
+                    will be enabled on Django's restart.
+                {% endcomment %}
+                <div class="col-xs-12">
+                    <div class="content">
+                        <h1 class="title">Interactive Data Visualization</h1>
+
+                        <p>
+                            Orange is all about interactive data visualization that helps you to uncover hidden data patterns, provides intuition behind data analysis or supports any communication with data scientists and domain experts. Visualization widgets include scatter plot, box plot, histogram, hierarchical clustering (dendrogram), MDS and Venn diagram, just to mention a few. Users can, however, extend on this selection with specialized add-ons, that include visualizations of networks, word clouds, geographical maps, and more.
+                        </p>
+
+
+                        <h3 class="custom-reduce-padding">Great Visualizations</h3>
+                        <p>
+                        Plot your data to uncover underlying patterns or relationships between attributes. Scatter plot is great for visualizing correlations between attributes, box plot for displaying basic statistics, hierarchical clustering and k-means for discovery of groups, MDS for plotting the multinomial data in 2D, silhouette plot for revealing the quality of clusters, classification trees for visualizing relevant features, nomograms for representation of linear models and ROC analysis for model evaluation.
+                            {% comment %}Content goes here. Don't forget to include the \<a href="{% url 'download' %}"\>Download\</a\> link.{% endcomment %}
+                        </p>
+
+                        <p>
+                        <img src="/static/images/collage-visualizations.png">
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Exploratory Data Analysis</h3>
+                        <p>
+                            Explore your data even further by selecting interesting data subsets directly from plots, graphs and data tables and mine them in them downstream widgets. Select a cluster from the dendrogram of hierarchical clustering and map it to a 2D data presentation in the MDS plot. Or check the values in the data table. Or observe the spread of its feature values in a box plot. Open all these windows at once and see how the changes in your selection affect other widgets. It is easy to turn Orange into a tool where domain experts can explore their data even if they lack insights in underlying statistics or machine learning.
+                        </p>
+
+                        <p>
+                        <img src="/static/images/misclass-exploratory.png">
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Reporting</h3>
+                        <p>
+                            Finally, include the most important visualizations, statistics and information about the models you've trained into the report with a single click. Orange includes clever reporting where you can access workflow history for every widget and visualization directly from the report.
+                        </p>
+
+                        <p>
+                        <img src="/static/images/report.png">
+                        </p>
+
+                        <div class="feature-page video-content">
+                            {% comment %} VIDEO HERE {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} END EDITING HERE! {% endcomment %}
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-->
+{% endblock content %}
