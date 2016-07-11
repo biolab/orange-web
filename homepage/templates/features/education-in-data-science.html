@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <section id="features" class="features section custom-reduce-padding-2">
+        <div class="container">
+            <div class="row">
+                {% comment %}
+                 START EDITING HERE!
+
+                 INSTRUCTIONS FOR USING THIS TEMPLATE
+
+                 1. Write your own HTML, but do try to use Django's
+                    'static' and 'url' tags. See start.html template
+                    to see how to do that.
+                 2. URL stub for this webpage is predefined in urls.py
+                 3. As soon as you change content in this template, it
+                    will be enabled on Django's restart.
+                {% endcomment %}
+                <div class="col-xs-12">
+                    <div class="content">
+                        <h1 class="title">Teachers and Students Love It</h1>
+
+                        <h3 class="custom-reduce-padding">Subtitle 1</h3>
+                        <p>
+                            Content goes here. Don't forget to include the <a href="{% url 'download' %}">Download</a> link.
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Subtitle 2</h3>
+                        <p>
+                            Content goes here.
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Subtitle 3</h3>
+                        <p>
+                            Content goes here.
+                        </p>
+
+                        <div class="feature-page video-content">
+                            {% comment %} VIDEO HERE {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} END EDITING HERE! {% endcomment %}
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-->
+{% endblock content %}

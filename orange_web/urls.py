@@ -39,13 +39,13 @@ urlpatterns = [
         name='docs'),
 ]
 
-# Check the feature_templates folder. Add every template that it finds in it.
+# Check the features folder. Add every template that it finds in it.
 feature_templates_dir = os.path.join(settings.BASE_DIR, 'homepage',
-                                     'templates', 'feature_templates')
+                                     'templates', 'features')
 for fp in os.listdir(feature_templates_dir):
     # Template's file path
     tp = os.path.join(feature_templates_dir, fp)
     # Create stub from filename by removing '.html'
-    stub = r'^{0}/$'.format(fp[:-5])
+    stub = r'^features/{0}/$'.format(fp[:-5])
     # Add to urlpatterns list
     urlpatterns.append(url(stub, TemplateView.as_view(template_name=tp),))

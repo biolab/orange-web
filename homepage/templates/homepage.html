@@ -54,7 +54,7 @@
     <section id="features" class="features section">
         <div class="container">
             {% for feat in features %}
-                {% include "feature_panel.html" with index=forloop.counter feature=feat %}
+                {% include "feature_panel.html" with index=forloop.counter0 feature=feat %}
             {% endfor %}
         </div>
     </section><!--//features-->

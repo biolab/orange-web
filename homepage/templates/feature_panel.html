@@ -5,17 +5,23 @@
             <h2 class="feature-title">{{ feature.title }}</h2>
             <p class="feature-text">{{ feature.description }}</p>
             <div class="more">
+                {% if feature.more_link %}
                 <a href="{{ feature.more_link }}">
                     <div class="learn-more feature-block">
                         <div class="feature-block fa fa-arrow-circle-o-right jsonly"></div>
                         <div class="feature-block feature-link">Learn More</div>
                     </div>
                 </a>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="youtube-video watch-video colorbox-load" href="https://www.youtube.com/embed/{{ feature.video_link_tag }}?autoplay=1">
+                {% endif %}
+                {% if feature.video_link_tag %}
+                    {% if feature.more_link %}
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    {% endif %}
+                <a class="youtube-video watch-video colorbox-load" href="https://www.youtube.com/embed/{{ feature.video_link_tag }}&autoplay=1">
                     <div class="feature-block fa fa-play-circle-o jsonly"></div>
                     <div class="feature-block feature-link">Watch Video</div>
                 </a>
+                {% endif %}
             </div>
         </div>
         <div class="content col-sm-6 col-xs-12 feature-image panel-{% if not index|divisibleby:2 %}right{% else %}left{% endif %}">
