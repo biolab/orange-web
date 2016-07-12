@@ -244,6 +244,11 @@ h3.custom-accordion-title {
     text-align: center;
     vertical-align: middle;
 }
+.features img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
 .promo ul {
     padding-left: 0;
 }
