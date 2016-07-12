@@ -60,18 +60,6 @@ jQuery(document).ready(function ($) {
             .colorbox({transition: "none", iframe: true, innerWidth: width, innerHeight: height});
     }
 
-    function resizeImages() {
-        var pImgs = $('.features .content p img');
-        pImgs.removeAttr('style');
-        var pWidth = $('.features .content p').width();
-        pImgs.each(function(i, el) {
-            if ( pWidth < $(this, el).width() ) {
-                $(this, el).css('width', pWidth);
-            }
-        });
-    }
-    resizeImages();
-
     function disableDownloadButton() {
         $( "#main-page-download-button" ).parent().hide(0);
     }
