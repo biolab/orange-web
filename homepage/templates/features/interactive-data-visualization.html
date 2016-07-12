@@ -22,36 +22,60 @@
                         <h1 class="title">Interactive Data Visualization</h1>
 
                         <p>
-                            Orange is all about interactive data visualization that helps you to uncover hidden data patterns, provides intuition behind data analysis or supports any communication with data scientists and domain experts. Visualization widgets include scatter plot, box plot, histogram, hierarchical clustering (dendrogram), MDS and Venn diagram, just to mention a few. Users can, however, extend on this selection with specialized add-ons, that include visualizations of networks, word clouds, geographical maps, and more.
+                            Orange is all about data visualizations that help to uncover hidden data patterns, provide intuition behind data analysis procedures or support communication between data scientists and domain experts. Visualization widgets include scatter plot, box plot and histogram, and model-specific visualizations like dendrogram, silhouette plot, and tree visualizations, just to mention a few. Many other visualizations are available in add-ons and include visualizations of networks, word clouds, geographical maps, and more.
+                        </p>
+                        <p>
+                            We take care to make Orange visualizations interactive: you can select data points from a scatter plot, a node in the tree, a branch in the dendrogram. Any such interaction will instruct visualization to send out a data subset that corresponds to the selected part of visualization. Consider the combination of a scatter plot and classification tree below. Scatter plot shows all the data, but highlights the data subset that corresponds to the selected node in the classification tree.
+                        </p>
+
+                        <p>
+                        <img src="/static/images/vis-tree-selection-scatterplot.png" style="max-width: 100%">
                         </p>
 
 
                         <h3 class="custom-reduce-padding">Great Visualizations</h3>
                         <p>
-                        Plot your data to uncover underlying patterns or relationships between attributes. Scatter plot is great for visualizing correlations between attributes, box plot for displaying basic statistics, hierarchical clustering and k-means for discovery of groups, MDS for plotting the multinomial data in 2D, silhouette plot for revealing the quality of clusters, classification trees for visualizing relevant features, nomograms for representation of linear models and ROC analysis for model evaluation.
+                            Orange includes many standard visualizations. Scatter plot is great for visualizing correlations between pair of attributes, box plot for displaying basic statistics, heat map to provide an overview across entire data set, and projection plots like MDS for plotting the multinomial data in two dimensions.
                             {% comment %}Content goes here. Don't forget to include the \<a href="{% url 'download' %}"\>Download\</a\> link.{% endcomment %}
                         </p>
 
                         <p>
-                        <img src="/static/images/collage-visualizations.png">
+                        <img src="/static/images/vis-collage-visualizations.png" style="max-width: 100%">
+                        </p>
+
+                        <p>
+                            Besides visualizations one would expect in a data mining suite, Orange includes some great extras that you may not find in other packages. These include widgets for silhouette plot to analyze the results of clustering, mosaic and Sieve diagram to discover feature interactions, and Pythagorean tree visualization for classification trees and forests. 
+                        </p>
+
+                        <p>
+                        <img src="/static/images/vis-advanced-visualizations.png" style="max-width: 100%">
                         </p>
 
                         <h3 class="custom-reduce-padding">Exploratory Data Analysis</h3>
                         <p>
-                            Explore your data even further by selecting interesting data subsets directly from plots, graphs and data tables and mine them in them downstream widgets. Select a cluster from the dendrogram of hierarchical clustering and map it to a 2D data presentation in the MDS plot. Or check the values in the data table. Or observe the spread of its feature values in a box plot. Open all these windows at once and see how the changes in your selection affect other widgets. It is easy to turn Orange into a tool where domain experts can explore their data even if they lack insights in underlying statistics or machine learning.
+                            Interactive visualizations enable exploratory data analysis. One can select interesting data subsets directly from plots, graphs and data tables and mine them in them downstream widgets. For example, select a cluster from the dendrogram of hierarchical clustering and map it to a 2D data presentation in the MDS plot. Or check their values of in the data table. Or observe the spread of its feature values in a box plot. Open all these windows at once and see how the changes in your selection affect other widgets. Or, for another example, cross-validate logistic regression on a data set and map some of the misclassifications to the two-dimensional projection. It is easy to turn Orange into a tool where domain experts can explore their data even if they lack insights in underlying statistics or machine learning.
                         </p>
 
                         <p>
-                        <img src="/static/images/misclass-exploratory.png">
+                        <img src="/static/images/vis-misclass-exploratory.png" style="max-width: 100%">
+                        </p>
+
+                        <h3 class="custom-reduce-padding">Intelligent Visualizations</h3>
+                        <p>
+                            Sometimes there are just too many choices. Say, when data has many features, which feature pair should we visualize in a scatter plot to provide most information? Intelligent visualization comes to the rescue! In Orange's scatter plot, this is called Score Plots. When class information is provided, Score Plots finds projections with best class separation. Consider brown-selected data set (comes with Orange) and its 79 features. There are 3,081 (79*78/2) different features pairs, way too many to check them manually, but there are only a few feature combinations that yield a great scatter plot. Score Plots finds them all, and allows us to browse through them. 
+                        </p>
+
+                        <p>
+                        <img src="/static/images/vis-projection-ranking.png" style="max-width: 100%">
                         </p>
 
                         <h3 class="custom-reduce-padding">Reporting</h3>
                         <p>
-                            Finally, include the most important visualizations, statistics and information about the models you've trained into the report with a single click. Orange includes clever reporting where you can access workflow history for every widget and visualization directly from the report.
+                            Finally, we can include the most important visualizations, statistics and information about the models into the report with a single click. Orange includes clever reporting where you can access workflow history for every widget and visualization directly from the report.
                         </p>
 
                         <p>
-                        <img src="/static/images/report.png">
+                        <img src="/static/images/vis-report.png" style="max-width: 100%">
                         </p>
 
                         <div class="feature-page video-content">
