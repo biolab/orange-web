@@ -4,41 +4,38 @@
 {% load cache %}
 
 {% block content %}
-<section id="features" class="features section custom-reduce-padding-2">
+<section id="documentation" class="features section custom-reduce-padding-2">
     <div class="container">
         <div class="row">
 
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <h1 class="title">Orange Documentation</h1>
+                <h1 class="title">Documentation</h1>
                 <div class="content">
-                    <div class="col-md-4 col-xs-12">
-                        <h2>Orange Visual Programming</h2>
-                        <!-- image comes here -->
-                        <ul>
-                            <li><a href="{% url 'start' %}">Getting started</a></li>
-                            <li><a href="https://www.youtube.com/channel/UClKKWBe2SCAEyv7ZNGhIe4g">YouTube tutorials</a></li>
-                            <li><a href="http://orange-visual-programming.readthedocs.org/loading-your-data/index.html">Loading your data</a></li>
-                            <li><a href="{% url 'toolbox' %}">Widget catalog</a></li>
-                        </ul>
+                    <div class="col-md-4 col-xs-12 doc-section">
+                        <img class="docs-image" src="/static/images/orange_docs_01_small.png">
+                        <h2>Visual Programming</h2>
+
+                        <a href="{% url 'start' %}">Getting started</a>
+                        <a href="https://www.youtube.com/channel/UClKKWBe2SCAEyv7ZNGhIe4g">YouTube tutorials</a>
+                        <a href="http://orange-visual-programming.readthedocs.org/loading-your-data/index.html">Loading your data</a>
+                        <a href="{% url 'toolbox' %}">Widget catalog</a>
                     </div>
 
-                    <div class="col-md-4 col-xs-12">
-                        <h2>Orange Development</h2>
-                        <!-- image comes here -->
-                        <ul>
-                            <li><a href="http://orange-development.readthedocs.org">Widget development</a></li>
-                            <li><a href="https://github.com/biolab/orange3-example-addon">Example addon</a></li>
-                        </ul>
+                    <div class="col-md-4 col-xs-12 doc-section">
+                        <img class="docs-image" src="/static/images/orange_docs_02_small.png">
+                        <h2>Development</h2>
+
+                        <a href="http://orange-development.readthedocs.org">Widget development</a>
+                        <a href="https://github.com/biolab/orange3-example-addon">Example addon</a>
                     </div>
 
-                    <div class="col-md-4 col-xs-12">
-                        <h2>Orange Data Mining Library</h2>
-                        <!-- image comes here -->
-                        <ul>
-                            <li><a href="http://docs.orange.biolab.si/3/data-mining-library/#tutorial">Tutorial</a></li>
-                            <li><a href="http://docs.orange.biolab.si/3/data-mining-library/#reference">Reference</a></li>
-                            <li><a href="http://docs.orange.biolab.si/2">Orange 2.7 documentation</a></li>
-                        </ul>
+                    <div class="col-md-4 col-xs-12 doc-section">
+                        <img class="docs-image" src="/static/images/orange_docs_03_small.png">
+                        <h2>Data Mining Library</h2>
+
+                        <a href="http://docs.orange.biolab.si/3/data-mining-library/#tutorial">Tutorial</a>
+                        <a href="http://docs.orange.biolab.si/3/data-mining-library/#reference">Reference</a>
+                        <a href="http://docs.orange.biolab.si/2">Orange 2.7 documentation</a>
                     </div>
                 </div>
             </div>

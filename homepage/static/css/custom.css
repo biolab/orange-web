@@ -357,12 +357,6 @@ h3.custom-accordion-title {
     padding-right: 5px;
 }
 
-.docs-image {
-    width: 100%;
-    padding: 20px;
-    margin: 0 auto;
-}
-
 #testimonials h2 {
     text-align: center;
 }
@@ -444,4 +438,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .description h2 {
     margin-top: 50px;
+}
+
+#documentation h1 {
+    text-align: center;
+}
+
+.doc-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.doc-section img {
+    margin: 0 auto;
+}
+
+.doc-section a {
+    display: block;
+    line-height: 1.5em;
 }
