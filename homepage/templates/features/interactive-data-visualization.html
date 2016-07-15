@@ -17,7 +17,8 @@
                  3. As soon as you change content in this template, it
                     will be enabled on Django's restart.
                 {% endcomment %}
-                <div class="col-xs-12">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6 col-xs-12">
                     <div class="content">
                         <h1 class="title">Interactive Data Visualization</h1>
 
@@ -33,7 +34,7 @@
                         </p>
 
 
-                        <h3 class="custom-reduce-padding">Great Visualizations</h3>
+                        <h2 class="custom-reduce-padding">Great Visualizations</h2>
                         <p>
                             Orange includes many standard visualizations. Scatter plot is great for visualizing correlations between pair of attributes, box plot for displaying basic statistics, heat map to provide an overview across entire data set, and projection plots like MDS for plotting the multinomial data in two dimensions.
                             {% comment %}Content goes here. Don't forget to include the \<a href="{% url 'download' %}"\>Download\</a\> link.{% endcomment %}
@@ -51,7 +52,7 @@
                         <img src="/static/images/vis-advanced-visualizations.png">
                         </p>
 
-                        <h3 class="custom-reduce-padding">Exploratory Data Analysis</h3>
+                        <h2 class="custom-reduce-padding">Exploratory Data Analysis</h2>
                         <p>
                             Interactive visualizations enable exploratory data analysis. One can select interesting data subsets directly from plots, graphs and data tables and mine them in them downstream widgets. For example, select a cluster from the dendrogram of hierarchical clustering and map it to a 2D data presentation in the MDS plot. Or check their values of in the data table. Or observe the spread of its feature values in a box plot. Open all these windows at once and see how the changes in your selection affect other widgets. Or, for another example, cross-validate logistic regression on a data set and map some of the misclassifications to the two-dimensional projection. It is easy to turn Orange into a tool where domain experts can explore their data even if they lack insights in underlying statistics or machine learning.
                         </p>
@@ -60,7 +61,7 @@
                         <img src="/static/images/vis-misclass-exploratory.png">
                         </p>
 
-                        <h3 class="custom-reduce-padding">Intelligent Visualizations</h3>
+                        <h2 class="custom-reduce-padding">Intelligent Visualizations</h2>
                         <p>
                             Sometimes there are just too many choices. Say, when data has many features, which feature pair should we visualize in a scatter plot to provide most information? Intelligent visualization comes to the rescue! In Orange's scatter plot, this is called Score Plots. When class information is provided, Score Plots finds projections with best class separation. Consider brown-selected data set (comes with Orange) and its 79 features. There are 3,081 (79*78/2) different features pairs, way too many to check them manually, but there are only a few feature combinations that yield a great scatter plot. Score Plots finds them all, and allows us to browse through them. 
                         </p>
@@ -69,7 +70,7 @@
                         <img src="/static/images/vis-projection-ranking.png">
                         </p>
 
-                        <h3 class="custom-reduce-padding">Reporting</h3>
+                        <h2 class="custom-reduce-padding">Reporting</h2>
                         <p>
                             Finally, we can include the most important visualizations, statistics and information about the models into the report with a single click. Orange includes clever reporting where you can access workflow history for every widget and visualization directly from the report.
                         </p>

@@ -244,11 +244,7 @@ h3.custom-accordion-title {
     text-align: center;
     vertical-align: middle;
 }
-.description img {
-    max-width: 100%;
-    display: block;
-    margin: auto;
-}
+
 .promo ul {
     padding-left: 0;
 }
@@ -414,4 +410,38 @@ h3.custom-accordion-title {
     width: 100%;
     margin: 0 auto;
     max-width: 550px;
+}
+
+.features .feature-panel {
+    margin: 20px 0 30px 0;
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: lighter;
+}
+
+.features .feature-image,
+.features .feature-description,
+.titlebox,
+.titleimage,
+.download-area
+{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.offset-header {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+.description img {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+
+.description h2 {
+    margin-top: 50px;
 }
