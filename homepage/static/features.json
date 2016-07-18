@@ -15,7 +15,8 @@
   {
     "title": "Teachers and Students Love It",
     "image_link": "/static/images/iadv_data_mining_02_scaled.png",
-    "description": "When teaching data mining, we like to illustrate rather than only explain. And Orange is great at that. Used at schools, universities and in professional training courses across the world, Orange supports hands-on training and visual illustrations of concepts from data science. There are even widgets that were especially designed for teaching."
+    "description": "When teaching data mining, we like to illustrate rather than only explain. And Orange is great at that. Used at schools, universities and in professional training courses across the world, Orange supports hands-on training and visual illustrations of concepts from data science. There are even widgets that were especially designed for teaching.",
+    "more_link": "/features/education-in-data-science/"
   },
   {
     "title": "Add-ons Extend Functionality",
