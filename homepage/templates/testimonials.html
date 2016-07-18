@@ -7,11 +7,11 @@
                     <img src="{{ testimonial.img }}">
                 </div>
                 <h3 class="item-title">
-                    <i>{{ testimonial.title }}</i><br>
-                    <i class="extra">{{ testimonial.position }}</i><br>
-                    <i class="extra">{{ testimonial.institution }}</i>
+                    {{ testimonial.title }}<br>
+                    <span class="extra">{{ testimonial.position }}</span><br>
+                    <span class="extra">{{ testimonial.institution }}</span>
                 </h3>
-                <p class="feature-text"><i>"{{ testimonial.text }}"</i></p>
+                <p class="feature-text">"{{ testimonial.text }}"</p>
             </div>
         {% endfor %}
     </div>

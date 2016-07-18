@@ -391,9 +391,10 @@ h3.custom-accordion-title {
 
 .testimonial-list .item .feature-text {
     text-align: center;
+    padding: 0 40px;
 }
 
-.testimonial-list .item i.extra {
+.testimonial-list .item span.extra {
     font-size: 13px;
     color: #3c3c3c;
     font-weight: normal;
