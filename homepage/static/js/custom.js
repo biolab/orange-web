@@ -55,9 +55,6 @@ jQuery(document).ready(function ($) {
             width = maxWidth;
             height = maxHeight;
         }
-
-        $( "a.youtube-video")
-            .colorbox({transition: "none", iframe: true, innerWidth: width, innerHeight: height});
     }
 
     function disableDownloadButton() {
@@ -70,7 +67,6 @@ jQuery(document).ready(function ($) {
         setYouTubeDimensions();
 
         $(window).on('resize', function () {
-            resizeImages();
             setYouTubeDimensions();
         });
     }

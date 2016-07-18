@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %}">
-    <link rel="stylesheet" href="{% static 'plugins/colorbox/colorbox.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/lightgallery/css/lightgallery.css' %}">
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{% static 'css/styles.css' %}">
     <!-- Custom CSS -->
@@ -181,7 +181,10 @@
     <script type="text/javascript" src="{% static 'plugins/jquery-migrate-1.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/detectmobilebrowser.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/colorbox/jquery.colorbox-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/lightgallery/js/lightgallery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/lightgallery/js/lg-thumbnail.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/lightgallery/js/lg-video.js' %}"></script>
+
     <!-- button tracking -->
     <script type="text/javascript">
       $( document ).ready( function () {
@@ -200,6 +203,12 @@
            });
            ga('send', 'event', "a", event.type, trackname, 1 );
         });
+        $('#features').lightGallery({
+            thumbnail: {% if current_page == 'screenshots' %}true{% else %}false{% endif %},
+                youtubePlayerParams: {start: 6},
+                selector: 'a:has(img), .lightbox'
+        });
+
       });
     </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
