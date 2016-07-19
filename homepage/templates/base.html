@@ -203,12 +203,7 @@
            });
            ga('send', 'event', "a", event.type, trackname, 1 );
         });
-        $('#features').lightGallery({
-            thumbnail: {% if current_page == 'screenshots' %}true{% else %}false{% endif %},
-                youtubePlayerParams: {start: 6},
-                selector: 'a:has(img), .lightbox'
-        });
-
+        {% block readyjavascript %}{% endblock %}
       });
     </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

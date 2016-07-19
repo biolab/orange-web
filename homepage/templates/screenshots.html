@@ -26,3 +26,10 @@
         </div>
     </section>
 {% endblock content %}
+
+{% block readyjavascript %}
+    $('#features').lightGallery({
+        thumbnail: true,
+        selector: 'a:has(img)'
+    });
+{% endblock readyjavascript %}
