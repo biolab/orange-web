@@ -5,17 +5,17 @@
     <h1 class="title">Teachers and Students Love It</h1>
 
     <p>
-        Orange is a perfect tool for hands-on training. Teachers enjoy clear program design and visual explorations of data and models. Students benefit from flexibility of the tool, and the power to invent new combinations of data mining methods. The educational strength of Orange comes from combination of visual programming and interactive visualizations. And we have also designed some educational widgets that were explicitly creating to support teaching.
+        Orange is the perfect tool for hands-on training. Teachers enjoy the clear program design and the visual explorations of data and models. Students benefit from the flexibility of the tool and the power to invent new combinations of data mining methods. The educational strength of Orange comes from the combination of visual programming and interactive visualizations. We have also designed some educational widgets that have been explicitly created to support teaching.
     </p>
 
     <p>
-        Here are few example workflows that we have used recently in training of data mining (yes, we not only develop Orange, we teach with it as well).
+        Here are a few example workflows that we have used recently in data mining training (yes, we do not only develop Orange, we teach with it as well).
     </p>
 
     <h2 class="custom-reduce-padding">Linear Regression</h2>
 
     <p>
-        Wouldn't be great if we could just paint the data and with each new data point observe how linear regression fits the line? In Orange, there's a widget for data painting and a polynomial regression widget (from educational add-on) to display the fitted model.
+        Wouldn't be great if we could just paint data and with each new data point observe how linear regression fits the line? In Orange, there's a widget for data painting and a polynomial regression widget (from the educational add-on) to display the fitted model.
     </p>
 
     <p>
@@ -28,7 +28,7 @@
 
     <h2 class="custom-reduce-padding">Overfitting</h2>
     <p>
-        Not everything is a line. We can use linear regression on augmented data input where we add columns for powers of input features. This is called polynomial regression. It is guaranteed to surprise students. Using linear model you can now discover non-linear functions. But you can also heavily overfit the training data. For say two, three, ... or ten input data points, what is the degree of polynomial expansion for the linear model to perfectly fit the data? When linear models overfit, model coefficients become very high. It is so easy to play with this in Orange: add some data here, raise or lower the degree of polynomial there...
+        Not everything is a line. We can use linear regression on augmented data input with added columns for powers of input features. This is called polynomial regression. It is guaranteed to surprise students. Using a linear model you can now discover non-linear functions. But you can also heavily overfit the training data. For say two, three ... or ten input data points, what is the degree of polynomial expansion for the linear model to perfectly fit the data? When linear models overfit, model coefficients become very high. It is so easy to play with this in Orange: add some data here, raise or lower the degree of polynomial there...
     </p>
 
     <p>
@@ -41,7 +41,7 @@
 
     <h2 class="custom-reduce-padding">Regularization</h2>
     <p>
-        If overfitting results to explosion of the values of coefficients, it could easily be prevented by requesting the optimization to keep these low. That is exactly the idea behind regularization. In the workflow below, Polynomial Regression was given a regularized model. No more overfitting! It is also great to explore how the strength of regularization smooths the resulting model and reduces the values of coefficients.
+        If overfitting leads to the explosion of the values of the coefficients, it could easily be prevented by requesting the optimization to keep these low. That is exactly the idea behind regularization. In the workflow below, Polynomial Regression was given a regularized model. No more overfitting! It is also great to explore how the strength of regularization smooths the resulting model and reduces the values of coefficients.
     </p>
 
     <p>
@@ -54,7 +54,7 @@
 
     <h2 class="custom-reduce-padding">Always Evaluate Models on the Test Data</h2>
     <p>
-        The following workflow is a bit more complex. We split the painted data to training and test set. This time, as we use standard Orange widgets for learning, we need to declare that y is a class attribute. We do this in Select Columns widget. We then evaluate linear regression model with polynomial expansion on the training data and on and separate test data.
+        The following workflow is a bit more complex. We split the painted data to a training and test set. This time, as we use standard Orange widgets for learning, we need to declare that y is a class attribute. We do this in the Select Columns widget. We then evaluate the linear regression model with polynomial expansion on the training data and on the separate test data.
     </p>
 
     <p>
@@ -65,7 +65,7 @@
     </p>
 
     <p>
-        Overfitted models have small errors on training data, but large errors on test data. To escape this, regularization helps. With it, the error on test data is lower, while the error on the training data increases. Huh! The error on training data set is thus not a good indicator on predictive power of the model. While this looks simple, everything in machine learning is about how to design models that will work well on the data they have not seen in training.
+        Overfitted models have small errors on training data, but large errors on test data. To escape this, regularization helps. With it, the error on the test data is lower, while the error on the training data increases. Huh! The error on training data set is thus not a good indicator of the predictive power of the model. While this looks simple, everything in machine learning is about how to design models that will work well on the data they have not seen in training.
     </p>
 
     <p>
@@ -76,7 +76,7 @@
     </p>
 
     <p>
-        When teaching, the workflow presented here needs quite some thought and time. It should come after we explain linear regression, polynomial expansion, overfitting and regularization. But it gives so much freedom for students to explore: consider the interplay of different complexity of (painted) data set, degrees of polynomial expansion, and the effects of regularization. Plus, it provides us (teachers and trainers) the opportunity to talk about regression scoring and nicely leads to introduction of cross-validation. Oh, the richness and art of data mining...
+        When teaching, the workflow presented here needs quite some thought and time. It should come after we explain linear regression, polynomial expansion, overfitting and regularization. But it gives so much freedom for students to explore: consider the interplay of different complexity of (painted) data set, degrees of polynomial expansion, and the effects of regularization. Plus, it provides us (teachers and trainers) the opportunity to talk about regression scoring and nicely leads to the introduction of cross-validation. Oh, the richness and art of data mining...
     </p>
 
 
@@ -95,7 +95,7 @@
 
     <h2 class="custom-reduce-padding">Scoring of Clustering Models</h2>
     <p>
-        We did mention the clustering silhouette, right? It is the easiest approach to score the clustering. Silhouettes are estimated on data instances, and silhouette of a clustering is the mean across data instance silhouettes. High silhouette means that data instance is surrounded by instances from the same cluster, while low silhouette score indicates that data instances is close to another cluster. Orange has a widget that can plot the silhouette scores. And because Orange is all about interactive visualization, you can select silhouettes and check where are their data instances. Like in the workflow below, where we showcase that low silhouettes are assigned to borderline data instances. Silhouette Plot is great when explaining pros and cons of different clustering methods (yes, it works with any method, not just k-means).
+        We did mention the clustering silhouette, right? It is the easiest approach to score the clustering. Silhouettes are estimated on data instances, and the silhouette of a clustering is the mean across data instance silhouettes. A high silhouette means that a data instance is surrounded by instances from the same cluster, while a low silhouette score indicates that data instances are close to another cluster. Orange has a widget that can plot the silhouette scores. And because Orange is all about interactive visualization, you can select silhouettes and check where their data instances are. Like in the workflow below, where we showcase that low silhouettes are assigned to borderline data instances. Silhouette Plot is great when explaining pros and cons of different clustering methods (yes, it works with any method, not just k-means).
     </p>
 
     <p>
