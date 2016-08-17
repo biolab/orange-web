@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <section id="features" class="features section custom-reduce-padding-2 description">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="content">
+                        {% block featuredescription %}{% endblock featuredescription %}
+                    </div>
+                </div>
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//features-->
+{% endblock content %}
+
+{% block readyjavascript %}
+    $('#features').lightGallery({
+        thumbnail: false,
+        selector: 'a:has(img), .lightbox'
+    });
+{% endblock readyjavascript %}

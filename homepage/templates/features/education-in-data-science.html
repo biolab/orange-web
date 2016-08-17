@@ -1,49 +1,107 @@
-{% extends "base.html" %}
+{% extends "features/base.html" %}
 {% load staticfiles %}
 
-{% block content %}
-    <section id="features" class="features section custom-reduce-padding-2">
-        <div class="container">
-            <div class="row">
-                {% comment %}
-                 START EDITING HERE!
+{% block featuredescription %}
+    <h1 class="title">Teachers and Students Love It</h1>
 
-                 INSTRUCTIONS FOR USING THIS TEMPLATE
+    <p>
+        Orange is the perfect tool for hands-on training. Teachers enjoy the clear program design and the visual explorations of data and models. Students benefit from the flexibility of the tool and the power to invent new combinations of data mining methods. The educational strength of Orange comes from the combination of visual programming and interactive visualizations. We have also designed some educational widgets that have been explicitly created to support teaching.
+    </p>
 
-                 1. Write your own HTML, but do try to use Django's
-                    'static' and 'url' tags. See start.html template
-                    to see how to do that.
-                 2. URL stub for this webpage is predefined in urls.py
-                 3. As soon as you change content in this template, it
-                    will be enabled on Django's restart.
-                {% endcomment %}
-                <div class="col-xs-12">
-                    <div class="content">
-                        <h1 class="title">Teachers and Students Love It</h1>
+    <p>
+        Here are a few example workflows that we have used recently in data mining training (yes, we do not only develop Orange, we teach with it as well).
+    </p>
 
-                        <h3 class="custom-reduce-padding">Subtitle 1</h3>
-                        <p>
-                            Content goes here. Don't forget to include the <a href="{% url 'download' %}">Download</a> link.
-                        </p>
+    <h2 class="custom-reduce-padding">Linear Regression</h2>
 
-                        <h3 class="custom-reduce-padding">Subtitle 2</h3>
-                        <p>
-                            Content goes here.
-                        </p>
+    <p>
+        Wouldn't be great if we could just paint data and with each new data point observe how linear regression fits the line? In Orange, there's a widget for data painting and a polynomial regression widget (from the educational add-on) to display the fitted model.
+    </p>
 
-                        <h3 class="custom-reduce-padding">Subtitle 3</h3>
-                        <p>
-                            Content goes here.
-                        </p>
+    <p>
+        <a href="/static/images/features/edu/linear-regression.png">
+            <img src="/static/images/features/edu/linear-regression.thumb.png"
+                 alt="Paint the data, fit the model, check out the model coefficients">
+        </a>
+    </p>
 
-                        <div class="feature-page video-content">
-                            {% comment %} VIDEO HERE {% endcomment %}
-                        </div>
-                    </div>
-                </div>
 
-                {% comment %} END EDITING HERE! {% endcomment %}
-            </div><!--//row-->
-        </div><!--//container-->
-    </section><!--//features-->
-{% endblock content %}
+    <h2 class="custom-reduce-padding">Overfitting</h2>
+    <p>
+        Not everything is a line. We can use linear regression on augmented data input with added columns for powers of input features. This is called polynomial regression. It is guaranteed to surprise students. Using a linear model you can now discover non-linear functions. But you can also heavily overfit the training data. For say two, three ... or ten input data points, what is the degree of polynomial expansion for the linear model to perfectly fit the data? When linear models overfit, model coefficients become very high. It is so easy to play with this in Orange: add some data here, raise or lower the degree of polynomial there...
+    </p>
+
+    <p>
+        <a href="/static/images/features/edu/overfitting-poly.png">
+            <img src="/static/images/features/edu/overfitting-poly.thumb.png"
+                 alt="Polynomial expansion of input data can lead to interesting data fits, but also to overfitting">
+        </a>
+    </p>
+
+
+    <h2 class="custom-reduce-padding">Regularization</h2>
+    <p>
+        If overfitting leads to the explosion of the values of the coefficients, it could easily be prevented by requesting the optimization to keep these low. That is exactly the idea behind regularization. In the workflow below, Polynomial Regression was given a regularized model. No more overfitting! It is also great to explore how the strength of regularization smooths the resulting model and reduces the values of coefficients.
+    </p>
+
+    <p>
+        <a href="/static/images/features/edu/regularization.png">
+            <img src="/static/images/features/edu/regularization.thumb.png"
+                 alt="Regularization smooths the model and reduces the value of model coefficients">
+        </a>
+    </p>
+
+
+    <h2 class="custom-reduce-padding">Always Evaluate Models on the Test Data</h2>
+    <p>
+        The following workflow is a bit more complex. We split the painted data to a training and test set. This time, as we use standard Orange widgets for learning, we need to declare that y is a class attribute. We do this in the Select Columns widget. We then evaluate the linear regression model with polynomial expansion on the training data and on the separate test data.
+    </p>
+
+    <p>
+        <a href="/static/images/features/edu/test-on-test-workflow.png">
+            <img src="/static/images/features/edu/test-on-test-workflow.thumb.png"
+                 alt="A workflow to experiment with model scoring on train and test data sets">
+        </a>
+    </p>
+
+    <p>
+        Overfitted models have small errors on training data, but large errors on test data. To escape this, regularization helps. With it, the error on the test data is lower, while the error on the training data increases. Huh! The error on training data set is thus not a good indicator of the predictive power of the model. While this looks simple, everything in machine learning is about how to design models that will work well on the data they have not seen in training.
+    </p>
+
+    <p>
+        <a href="/static/images/features/edu/test-scores.png">
+            <img src="/static/images/features/edu/test-scores.thumb.png"
+                 alt="Model scoring on training and test data set">
+        </a>
+    </p>
+
+    <p>
+        When teaching, the workflow presented here needs quite some thought and time. It should come after we explain linear regression, polynomial expansion, overfitting and regularization. But it gives so much freedom for students to explore: consider the interplay of different complexity of (painted) data set, degrees of polynomial expansion, and the effects of regularization. Plus, it provides us (teachers and trainers) the opportunity to talk about regression scoring and nicely leads to the introduction of cross-validation. Oh, the richness and art of data mining...
+    </p>
+
+
+    <h2 class="custom-reduce-padding">Experimenting with k-Means Clustering</h2>
+    <p>
+        After the intro on k-means clustering algorithms (there is a widget from educational add on to support this), a great exercise for students is to check when the algorithm works and where it fails. Painting the data helps again! Say, for the smiley data set, k-means guided by silhouette scoring finds four clusters instead of three. Orange widgets can be set to automatic commit (Send Automatically) so that every time we change the input data, the signals propagate through the workflow for the users to immediately see the consequences of the changes. Can you paint a smiley data set where even clustering with k=3 would fail?
+    </p>
+
+    <p>
+        <a href="/static/images/features/edu/play-with-k-means.png">
+            <img src="/static/images/features/edu/play-with-k-means.thumb.png"
+                 alt="Clustering, silhouette scoring and visualization of results">
+        </a>
+    </p>
+
+
+    <h2 class="custom-reduce-padding">Scoring of Clustering Models</h2>
+    <p>
+        We did mention the clustering silhouette, right? It is the easiest approach to score the clustering. Silhouettes are estimated on data instances, and the silhouette of a clustering is the mean across data instance silhouettes. A high silhouette means that a data instance is surrounded by instances from the same cluster, while a low silhouette score indicates that data instances are close to another cluster. Orange has a widget that can plot the silhouette scores. And because Orange is all about interactive visualization, you can select silhouettes and check where their data instances are. Like in the workflow below, where we showcase that low silhouettes are assigned to borderline data instances. Silhouette Plot is great when explaining pros and cons of different clustering methods (yes, it works with any method, not just k-means).
+    </p>
+
+    <p>
+        <a href="/static/images/features/edu/silhouette.png">
+            <img src="/static/images/features/edu/silhouette.thumb.png"
+                 alt="Like most of visualizations in Orange, Silhouette Plot is interactive as well">
+        </a>
+    </p>
+{% endblock featuredescription %}
