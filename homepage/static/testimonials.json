@@ -7,11 +7,11 @@
     "text": "My laboratory produces large amounts of data from RNA-seq, ChIP-seq and genome resequencing experiments.  Orange allows me to analyze my data even though I don’t know how to program.  It also allows me to communicate with my collaborators, who are experts in data mining, and with my colleagues and trainees."
   },
   {
-    "img": "/static/images/jasna_plantan_small.jpg",
-    "title": "Jasna Plantan",
-    "position": "Data scientist and CEO",
-    "institution": "Revelo, Ljubljana, Slovenia",
-    "text": "Widget development is fun. Orange comes with all the tools for state persistency, reporting and reproducibilty. And then it is so rewarding to see your own widget working in concert with all the others."
+    "img": "/static/images/Borondics_Ferenc_small.png",
+    "title": "Ferenc Borondics, Ph.D.",
+    "position": "Principal beamline scientist at SMIS",
+    "institution": "SOLEIL synchrotron, France",
+    "text": "The hyperspectral imaging and spectroscopy community is in need of tools that allow easy workflows and are capable of analyzing large amounts of data. Orange is a powerful platform to perform data analysis, see data flow and become more productive. It provides a clean, open source platform and the possibility to add further functionality."
   },
   {
     "img": "/static/images/Bellazzi_Riccardo_small.jpg",
