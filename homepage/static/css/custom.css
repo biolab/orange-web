@@ -120,26 +120,20 @@ div.screenshot-container div.content {
 #features div.screenshot-container {
     margin: 0 auto 50px auto;
 }
-#features div.screenshot-container div.content {
-    height: 205px;
-    margin: 0;
-}
 .screenshot {
     -webkit-transition: -webkit-transform ease-out 0.2s, background 0.3s;
     -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
     -ms-transition: -ms-transform ease-out 0.2s, background 0.3s;
     -o-transition: -o-transform ease-out 0.2s, background 0.3s;
-    max-width: 220px;
     float: center;
 }
 .screenshot-image {
     position: relative;
     bottom: 0;
+    width: 100%;
 }
 .features .content .screenshot-container p.screenshot-title {
     float: left;
-    max-width: 180px;
-    position: absolute;
     bottom: 0;
     color: #444;
     font-size: 14px;
@@ -276,7 +270,6 @@ h3.custom-accordion-title {
     }
 
 }
-
 @media (max-width: 768px) {
     .features .feature-panel img.image {
         padding-top: 20px;
@@ -287,8 +280,40 @@ h3.custom-accordion-title {
         width: 100%;
         max-width: 550px;
     }
+    #features div.screenshot-container div.content {
+        margin: 0;
+    }
+    .features .content .screenshot-container p.screenshot-title {
+        margin-top: 20px;
+    }
 }
-
+@media (min-width: 768px) and (max-width: 992px) {
+    #features div.screenshot-container div.content {
+        height: 265px;
+        margin: 0;
+    }
+    .features .content .screenshot-container p.screenshot-title {
+        position: absolute;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    #features div.screenshot-container div.content {
+        height: 230px;
+        margin: 0;
+    }
+    .features .content .screenshot-container p.screenshot-title {
+        position: absolute;
+    }
+}
+@media (min-width: 1200px) {
+    #features div.screenshot-container div.content {
+        height: 275px;
+        margin: 0;
+    }
+    .features .content .screenshot-container p.screenshot-title {
+        position: absolute;
+    }
+}
 @media (min-width: 488px) {
     .download-area {
         text-align: center;
