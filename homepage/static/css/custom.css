@@ -341,7 +341,7 @@ h3.custom-accordion-title {
     overflow: auto;
     padding-bottom: 50px;
 }
-#main.container {
+#main > div.container {
     padding-right: 0;
     padding-left: 0;
 }
@@ -456,4 +456,29 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .doc-section a {
     display: block;
     line-height: 1.5em;
+}
+
+/* homepage blog-feed */
+#blog-feed {
+    background-color: #EDEDED;
+}
+#blog-feed .feed-box {
+    margin-top: 40px;
+}
+#blog-feed .date {
+    color: #888888;
+    font-size: 18px;
+    font-weight: 300;
+}
+#blog-feed .title {
+    color: #df9d00;
+    font-size: 18px;
+}
+#blog-feed .text {
+    color: #8c8c8c;
+    font-size: 16px;
+    font-weight: 300;
+}
+#blog-feed .feeds-row {
+    padding-bottom: 40px;
 }

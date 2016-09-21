@@ -15,7 +15,7 @@
     <meta name="google-site-verification" content="DS7GH5M7ABi78pIC2rMcTBFx-UeBFObXOeLvR7Ow3EQ" />
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     <!-- External fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
@@ -78,13 +78,22 @@
         </div>
     </header><!--//header-->
 
-
-        <div id="main" class="container clear-top">
+    <div id="main">
+        <div class="container clear-top">
             <!-- ******CONTENT****** -->
             {% block content %}
             {% endblock content %}
             <!--//CONTENT-->
         </div>
+
+        <div>
+            <!-- **CONTENT** -->
+            <!-- for pages where full width is required -->
+            {% block content-full-width %}
+            {% endblock content-full-width %}
+            <!-- //CONTENT -->
+        </div>
+    </div>
 
 
     <!-- ******FOOTER****** -->
@@ -159,7 +168,7 @@
                         </ul>
 
                         {% cache 43200 feed_all %}
-                            {% grab_feed_all %}
+                            {% blog_feed_small %}
                         {% endcache %}
                     </div>
                 </div>

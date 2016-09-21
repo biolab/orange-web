@@ -1,0 +1,16 @@
+{% if not bozo %}
+<div class="row blog-mark">
+    <div class="col-xs-12">
+        <img alt="Blog mark" src="/static/images/blog-mark.svg">
+    </div>
+</div>
+<div class="row feeds-row">
+    {% for entry in entries %}
+        <div class="col-xs-12 col-sm-4 feed-box">
+            <p class="date">{{entry.published}}</p>
+            <a class="title" href="{{entry.link}}">{{entry.title}} </a>
+            <p class="text">{{entry.description}} <a href="{{entry.link}}">Read more &gt;</a> </p>            
+        </div>
+    {% endfor %}
+</div>
+{% endif %}

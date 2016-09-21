@@ -18,8 +18,9 @@ from six.moves import xmlrpc_client as xmlrpclib
 logger = logging.getLogger(__name__)
 register = template.Library()
 
+string_max_length = 300
 
-@register.inclusion_tag('feed_results.html')
+
 def grab_feed_all():
     """Grabs an RSS/Atom feed. Django will cache the content."""
     url = 'http://{0}/?feed=rss2'.format(settings.BLOG_HOST)
@@ -30,9 +31,12 @@ def grab_feed_all():
         for i in range(3):
             pub_date = feed['entries'][i]['published'][:-6]
             df = '%a, %d %b %Y %H:%M:%S'
+            description = feed['entries'][i]['description']
+            description = cut_string(description.replace("&#160;", "").replace("[&#8230;]", ""))
             entry = {
                 'title': feed['entries'][i]['title'],
                 'link': feed['entries'][i]['link'],
+                'description': description,
                 'published': dt.strptime(pub_date, df).strftime('%d %b'),
             }
             entries.append(entry)
@@ -41,6 +45,27 @@ def grab_feed_all():
                 }
     else:
         return {'bozo': True}
+
+
+def cut_string(string):
+    if len(string) < string_max_length:
+        return string
+    else:
+        # find fist space before limit
+        for i in range(string_max_length, 0, -1):
+            if string[i] == ' ':
+                break
+        return string[:i]
+
+
+@register.inclusion_tag('feed_results.html')
+def blog_feed_small():
+    return grab_feed_all()
+
+
+@register.inclusion_tag('feed_bar.html')
+def blog_feed_bar():
+    return grab_feed_all()
 
 
 def download_set_patterns(os=None):
