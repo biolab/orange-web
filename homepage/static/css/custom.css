@@ -469,6 +469,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #888888;
     font-size: 18px;
     font-weight: 300;
+    margin-bottom: 8px;
 }
 #blog-feed .title {
     color: #df9d00;
@@ -478,6 +479,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #8c8c8c;
     font-size: 16px;
     font-weight: 300;
+    margin-top: 8px;
 }
 #blog-feed .feeds-row {
     padding-bottom: 40px;
