@@ -2,7 +2,7 @@
 import os
 
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.views.generic import TemplateView
 
 from homepage import views
@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^docs/$',
         TemplateView.as_view(template_name='docs.html'),
         name='docs'),
+    url(r'^error_report/', include('error_report.urls'))
 ]
 
 # Check the features folder. Add every template that it finds in it.

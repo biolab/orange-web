@@ -52,7 +52,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homepage'
+    'homepage',
+    'error_report',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -110,6 +111,7 @@ DOWNLOAD_SET_PATTERN = os.path.join(DOWNLOAD_DIR, "filenames_%s.set")
 WIDGET_CATALOG = os.path.abspath("./homepage/static/widgets.json")
 FEATURES_CATALOG = os.path.abspath("./homepage/static/features.json")
 TESTIMONIALS_CATALOG = os.path.abspath("./homepage/static/testimonials.json")
+ERROR_REPORT_DIR = os.path.abspath("./error_report/")
 
 # A custom context processor
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
