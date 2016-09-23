@@ -18,7 +18,8 @@ from six.moves import xmlrpc_client as xmlrpclib
 logger = logging.getLogger(__name__)
 register = template.Library()
 
-string_max_length = 300
+post_max_length = 400  # max length of post excerpt lengt
+post_with_image_length = 180  # length of post that contains image
 
 
 def grab_feed_all():
@@ -32,12 +33,24 @@ def grab_feed_all():
             pub_date = feed['entries'][i]['published'][:-6]
             df = '%a, %d %b %Y %H:%M:%S'
             description = feed['entries'][i]['description']
-            description = cut_string(description.replace("&#160;", "").replace("[&#8230;]", ""))
+            image = None
+            # take image from description if exist
+            if '<img' in description:
+                image_from, image_to = description.index('<img'), description.index('/>')
+                image = description[image_from:image_to+2]
+                description = description[image_to + 2:]
+                image = image[image.index('src') + 5:]
+                image = image[:image.index('"')]
+            # shorten a description
+            description = cut_string(
+                description.replace("&#160;", "").replace("[&#8230;]", ""),
+                post_length=post_max_length if image is None else post_with_image_length)
             entry = {
                 'title': feed['entries'][i]['title'],
                 'link': feed['entries'][i]['link'],
                 'description': description,
                 'published': dt.strptime(pub_date, df).strftime('%d %b'),
+                'image': image
             }
             entries.append(entry)
         return {'entries': entries,
@@ -47,12 +60,12 @@ def grab_feed_all():
         return {'bozo': True}
 
 
-def cut_string(string):
-    if len(string) < string_max_length:
+def cut_string(string, post_length):
+    if len(string) < post_length:
         return string
     else:
         # find fist space before limit
-        for i in range(string_max_length, 0, -1):
+        for i in range(post_length, 0, -1):
             if string[i] == ' ':
                 break
         return string[:i]
