@@ -490,3 +490,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border: solid 0.2px;
     border-color: #a7a7a7;
 }
+@media (min-width: 768px) {
+    #blog-feed .feed-box:not(:first-child):not(:last-child) {
+      padding-right:25px;
+      padding-left:25px;
+    }
+    #blog-feed .feed-box:first-child {
+      padding-right:35px;
+    }
+    #blog-feed .feed-box:last-child {
+      padding-left:35px;
+    }
+}

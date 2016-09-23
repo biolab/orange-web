@@ -18,7 +18,7 @@ from six.moves import xmlrpc_client as xmlrpclib
 logger = logging.getLogger(__name__)
 register = template.Library()
 
-post_max_length = 400  # max length of post excerpt lengt
+post_max_length = 450  # max length of post excerpt lengt
 post_with_image_length = 180  # length of post that contains image
 
 
