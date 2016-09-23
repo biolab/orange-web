@@ -58,7 +58,9 @@
     <!-- ******BLOGS****** -->
     <section id="blog-feed" class="container-fluid">
         <div class="container">
-            {% blog_feed_bar %}
+            {% cache 3600 feed_bar %}
+                {% blog_feed_bar %}
+            {% endcache %}
         </div>
     </section>
 
