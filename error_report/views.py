@@ -36,7 +36,7 @@ def v1(request):
 
     report = dict(request.POST)
     report.pop("Widget Scheme", None)
-    report["Stack Trace"] = request.POST.get("Stack Trace").split('\n')
+    report["Stack Trace"] = request.POST.get("Stack Trace", "").split('\n')
     report_file = "{}.txt".format(timestamp)
     with open(os.path.join(path, report_file), 'w') as f:
         json.dump(report, f, sort_keys=True, indent=4)
