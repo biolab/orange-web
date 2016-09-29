@@ -3,7 +3,7 @@ from orange_web.settings import *
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '193.2.72.56']
+ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '193.2.72.56', 'qa.orange.biolab.si']
 DOWNLOAD_DIR = '/srv/download'
 WIDGET_CATALOG = '/srv/chroot_rsync/orange3doc/visual-programming/widgets.json'
 ERROR_REPORT_DIR = '/srv/error_report/'
