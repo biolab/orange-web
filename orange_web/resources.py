@@ -23,7 +23,7 @@ def discover_screenshots():
             'hide': node.getAttribute('hide'),
             'img': 'homepage/screenshots/images/%s.png' % iid,
             'rank': int(node.getAttribute('rank') or 999),
-            'thumb': 'homepage/screenshots/images/%s-thumb.png' % iid,
+            'thumb': 'homepage/screenshots/images/%s.thumb.png' % iid,
             'features': node.getAttribute('features'),
         }
         s_shots.append(s_shot)
