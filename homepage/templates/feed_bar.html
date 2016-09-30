@@ -11,7 +11,7 @@
             <a class="title" href="{{entry.link}}">{{entry.title}} </a>
             <p class="text">{% autoescape off %}{{entry.description}}{% endautoescape %} <a href="{{entry.link}}">Read more &gt;</a> </p>
             {% if entry.image %}
-                <img src="{{ entry.image }}" class="image" />         
+                <a href="{{entry.link}}"><img src="{{ entry.image }}" class="image" /></a>         
             {% endif %}
         </div>
     {% endfor %}
