@@ -51,6 +51,19 @@
         </div><!--//container-->
     </section><!--//promo-->
 
+{% endblock content %}
+
+{% block content-full-width %}
+    
+    <!-- ******BLOGS****** -->
+    <section id="blog-feed" class="container-fluid">
+        <div class="container">
+            {% cache 3600 feed_bar %}
+                {% blog_feed_bar %}
+            {% endcache %}
+        </div>
+    </section>
+
     <!-- ******FEATURES****** -->
     <section id="features" class="features section">
         <div class="container">
@@ -65,4 +78,4 @@
         {% testimonials_tag testimonials %}
     </section><!--//testimonials-->
 
-{% endblock content %}
+{% endblock content-full-width %}

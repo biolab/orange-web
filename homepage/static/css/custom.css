@@ -366,7 +366,7 @@ h3.custom-accordion-title {
     overflow: auto;
     padding-bottom: 50px;
 }
-#main.container {
+#main > div.container {
     padding-right: 0;
     padding-left: 0;
 }
@@ -433,7 +433,10 @@ h3.custom-accordion-title {
 }
 
 .features .feature-panel {
-    margin: 20px 0 30px 0;
+    margin-bottom: 30px;
+}
+.features .feature-panel:not(:first-child) {
+    margin-top: 20px;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -481,4 +484,48 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .doc-section a {
     display: block;
     line-height: 1.5em;
+}
+
+/* homepage blog-feed */
+#blog-feed {
+    background-color: #EDEDED;
+}
+#blog-feed .feed-box {
+    margin-top: 40px;
+}
+#blog-feed .date {
+    color: #888888;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+#blog-feed .title {
+    color: #df9d00;
+    font-size: 18px;
+}
+#blog-feed .text {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+#blog-feed .feeds-row {
+    padding-bottom: 40px;
+}
+#blog-feed .image {
+    width: 100%;
+    border: solid 0.2px;
+    border-color: #a7a7a7;
+}
+@media (min-width: 768px) {
+    #blog-feed .feed-box:not(:first-child):not(:last-child) {
+      padding-right:25px;
+      padding-left:25px;
+    }
+    #blog-feed .feed-box:first-child {
+      padding-right:35px;
+    }
+    #blog-feed .feed-box:last-child {
+      padding-left:35px;
+    }
 }
