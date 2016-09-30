@@ -9,7 +9,7 @@
         <div class="col-xs-12 col-sm-4 feed-box">
             <p class="date">{{entry.published}}</p>
             <a class="title" href="{{entry.link}}">{{entry.title}} </a>
-            <p class="text">{% autoescape off %}{{entry.description}}{% endautoescape %} <a href="{{entry.link}}">Read more &gt;</a> </p>
+            <p class="text">{% autoescape off %}{{entry.description}}{% endautoescape %} <a href="{{entry.link}}">Read&nbsp;more&nbsp;&gt;</a> </p>
             {% if entry.image %}
                 <a href="{{entry.link}}"><img src="{{ entry.image }}" class="image" /></a>         
             {% endif %}
