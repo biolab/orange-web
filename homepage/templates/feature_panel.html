@@ -1,9 +1,9 @@
 {% block feature_panel %}
 
     <div class="feature-panel row">
-        <div class="content col-sm-1 pull-left"></div>
-        <div class="content col-sm-1 pull-right"></div>
-        <div class="content col-sm-5 col-xs-12 feature-description panel-left pull-{% if not index|divisibleby:2 %}left{% else %}right{% endif %}">
+        <div class="content col-md-1 pull-left nopadding"></div>
+        <div class="content col-md-1 pull-right nopadding"></div>
+        <div class="content col-md-5 col-sm-6 col-xs-12 feature-description panel-left pull-{% if not index|divisibleby:2 %}left{% else %}right{% endif %}">
             <h2 class="feature-title">{{ feature.title }}</h2>
             <p class="feature-text">{{ feature.description }}</p>
             <div class="more">
@@ -26,7 +26,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="content col-sm-5 col-xs-12 feature-image {% if not index|divisibleby:2 %}{% else %}panel-left{% endif %}">
+        <div class="content col-md-5 col-sm-6 col-xs-12 feature-image {% if not index|divisibleby:2 %}{% else %}panel-left{% endif %}">
             <img class="image {% if not index|divisibleby:2 %}right{% else %}left{% endif %}" src="{{ feature.image_link }}">
         </div>
 
