@@ -1,0 +1,19 @@
+{% if not bozo %}
+<div class="row blog-mark">
+    <div class="col-xs-12">
+        <img alt="Blog mark" src="/static/images/blog-mark.svg">
+    </div>
+</div>
+<div class="row feeds-row">
+    {% for entry in entries %}
+        <div class="col-xs-12 col-sm-4 feed-box">
+            <p class="date">{{entry.published}}</p>
+            <a class="title" href="{{entry.link}}">{{entry.title}} </a>
+            <p class="text">{% autoescape off %}{{entry.description}}{% endautoescape %} <a href="{{entry.link}}">Read more &gt;</a> </p>
+            {% if entry.image %}
+                <a href="{{entry.link}}"><img src="{{ entry.image }}" class="image" /></a>         
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}

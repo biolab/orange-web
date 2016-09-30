@@ -521,10 +521,6 @@ blockquote {
 }
 
 /* ======= Features Section ======= */
-.features {
-  padding: 30px 0;
-}
-
 .features h1.title  {
   margin: 40px 0 10px;
 }
@@ -537,6 +533,9 @@ blockquote {
 .features .feature-panel {
   padding: 20px 0;
   margin: auto;
+}
+
+.features .feature-panel:not(:first-child) {
   border-top: 1px solid #efeff7;
 }
 
