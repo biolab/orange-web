@@ -2,108 +2,114 @@
 When constructing images, use lowercase only for file names.
 Separate words in file names with "-".
 To prepare the image files with transparency and a thumbnail image,
-use trip.py from orange-tools.
+use trim.py from orange-tools.
 -->
 
 <screenshots>
-    <screenshot id="paint-data" title="Paint a two-dimensional data set"
-                rank="110">
-        <description>Construction of a two-dimensional data
-            set by data painting.</description>
+    <screenshot id="file" title="Load and edit your data in the File widget."
+                rank="10">
     </screenshot>
-
-    <screenshot id="scatterplot-selection"
-                title="Data selection in scatter plot is visualised
-                in a box plot"
+    <screenshot id="paint-data" title="Paint a two-dimensional data set."
+                rank="20">
+    </screenshot>
+    <screenshot id="explorative-analysis" title="Data selection in Scatter Plot 
+                is visualised in a Box Plot."
+                rank="30">
+    </screenshot>
+    <screenshot id="suggestion" title="Orange can suggest which widget to add 
+                to the workflow."
+                rank="40">
+    </screenshot>
+    <screenshot id="concatenate" title="Join two data sets."
+                rank="50">
+    </screenshot>
+    <screenshot id="box-plot" title="Box plot displays basic statistics of 
+                attributes."
+                rank="100">
+    </screenshot>
+    <screenshot id="sieve-diagram" title="Sieve diagram on titanic data set."
+                rank="110">
+    </screenshot>
+    <screenshot id="heat-map" title="Heatmap visualisation"
+                rank="120">
+    </screenshot>
+    <screenshot id="tree-explorative" title="Explorative analysis of 
+                Pythagorean classification trees."
+                rank="130">
+    </screenshot>
+    <screenshot id="image-viewer" title="View image files in the data set."
+                rank="140">
+    </screenshot>
+    <screenshot id="hierarchical-clustering" title="Hierarchial clustering of 
+                data instances."
+                rank="200">
+    </screenshot>
+    <screenshot id="k-means" title="Playing with Paint Data and an automatic 
+                selection of clusters in k-Means."
                 rank="210">
     </screenshot>
-
-    <screenshot id="heatmap" title="Heatmap visualisation"
+    <screenshot id="mds" title="Multidimensional scaling plots data with many 
+                features into a 2D space."
                 rank="220">
     </screenshot>
-
-    <screenshot id="sieve" title="Sieve diagram on a titanic data set"
+    <screenshot id="pca" title="Principal component analysis."
                 rank="230">
     </screenshot>
-
-    <screenshot id="box-plot" title="Box plot and class-based grouping"
+    <screenshot id="roc" title="Receiver operating characteristics 
+                (ROC) analysis."
+                rank="240">
+    </screenshot>
+    <screenshot id="calibration-plot" title="Cross-validated calibration plot"
                 rank="250">
     </screenshot>
-
-    <screenshot id="tree-exploration"
-                title="Explorative analysis and classification trees"
+    <screenshot id="pca-evaluation" title="Data preprocessing turned into 
+                component of a learning algorithm"
+                rank="260">
+    </screenshot>
+    <screenshot id="rank" title="Feature scoring for finding interesting 
+                visualizations."
+                rank="300">
+    </screenshot>
+    <screenshot id="model-based-scoring" title="Model-based feature scoring."
                 rank="310">
     </screenshot>
-
-    <screenshot id="image-viewer" title="Data can contain references to images"
+    <screenshot id="evaluation" title="Cross-validation and scoring of 
+                classifiers."
                 rank="320">
-        <description>View image files in the data set.</description>
     </screenshot>
-
-
-    <screenshot id="pca" title="Principal component analysis"
+    <screenshot id="misclassifications" title="Visualizing misclassifications."
+                rank="330">
+    </screenshot>
+    <screenshot id="venn-misclassified" title="Finding joint 
+                misclassifications of three models."
+                rank="340">
+    </screenshot>
+    <screenshot id="test-train" title="Construct a model on train data and 
+                test with test data."
+                rank="350">
+    </screenshot>
+    <screenshot id="silhouette" title="Comparing low silhouette scores and 
+                misclassifications."
+                rank="360">
+    </screenshot>
+    <screenshot id="cn2" title="CN2 rule induction."
+                rank="370">
+    </screenshot>
+    <screenshot id="polynomial-regression" title="Visualizing Polynomial 
+                Regression."
+                rank="400">
+    </screenshot>
+    <screenshot id="gradient-descent" title="Interactive gradient descent."
                 rank="410">
     </screenshot>
-
-    <screenshot id="dendrogram" title="Hierarchical clustering"
-                rank="420">
+    <screenshot id="text-predictions" title="Predicting text categories."
+                rank="500">
     </screenshot>
-
-    <screenshot id="kmeans-paint" title="Playing with a paint data and
-                    automatic selection of clusters in k-means"
-                rank="420">
-    </screenshot>
-
-    <screenshot id="feature-scoring" title="Feature scoring and ranking"
+    <screenshot id="text-topics" title="Topic modelling of recent tweets."
                 rank="510">
     </screenshot>
-
-    <screenshot id="model-based-feature-scoring"
-                title="Model-based feature scoring"
-                rank="520">
+    <screenshot id="image-analytics" title="Image embedding with ImageNet 
+                neural network."
+                rank="600">
     </screenshot>
-
-    <screenshot id="polynomial-regression" title="Polynomial regression"
-                rank="610">
-    </screenshot>
-
-    <screenshot id="predictions-test"
-                title="Predictions of a linear regression model on a test set"
-                rank="620">
-    </screenshot>
-
-    <screenshot id="preprocess-learner"
-                title="Data preprocessing turned into component of
-                a learning algorithm"
-                rank="630">
-    </screenshot>
-
-    <screenshot id="scoring-classifiers"
-                title="Cross-validation and scoring of classifiers"
-                rank="640">
-    </screenshot>
-
-    <screenshot id="misclassifications" title="Visualizing misclassifications"
-                rank="650">
-    </screenshot>
-
-    <screenshot id="roc" title="Receiver operating characteristics
-                                (ROC) analysis"
-                rank="660">
-    </screenshot>
-
-    <screenshot id="calibration-plot" title="Cross-validated calibration plot"
-                rank="670"></screenshot>
-
-    <screenshot id="Venn_Diagram"
-                title="Venn diagram identifies a missclassification"
-                rank="680">
-    </screenshot>
-
-    <screenshot id="canvas-widget-guess"
-                title="Orange can guess which widget to add to a developing schema"
-                rank="800">
-    </screenshot>
-
-
 </screenshots>
