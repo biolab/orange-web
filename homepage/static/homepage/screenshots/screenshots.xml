@@ -27,47 +27,47 @@ use trim.py from orange-tools.
                 attributes."
                 rank="100">
     </screenshot>
-    <screenshot id="sieve-diagram" title="Sieve diagram on titanic data set."
+    <screenshot id="sieve-diagram" title="Sieve diagram on Titanic data set."
                 rank="110">
     </screenshot>
-    <screenshot id="heat-map" title="Heatmap visualisation"
+    <screenshot id="heat-map" title="Heatmap visualisation."
                 rank="120">
     </screenshot>
-    <screenshot id="tree-explorative" title="Explorative analysis of 
-                Pythagorean classification trees."
+    <screenshot id="tree-explorative" title="Explorative analysis with
+                classification trees."
                 rank="130">
     </screenshot>
-    <screenshot id="image-viewer" title="View image files in the data set."
+    <screenshot id="image-viewer" title="Data can contain references to images."
                 rank="140">
     </screenshot>
-    <screenshot id="hierarchical-clustering" title="Hierarchial clustering of 
-                data instances."
+    <screenshot id="hierarchical-clustering" title="Hierarchial clustering
+                supports interactive cluster selection."
                 rank="200">
     </screenshot>
-    <screenshot id="k-means" title="Playing with Paint Data and an automatic 
+    <screenshot id="k-means" title="Playing with Paint Data and an automatic
                 selection of clusters in k-Means."
                 rank="210">
     </screenshot>
-    <screenshot id="mds" title="Multidimensional scaling plots data with many 
-                features into a 2D space."
+    <screenshot id="mds" title="Multidimensional scaling of Zoo data set
+                reveals phylogeny groups."
                 rank="220">
     </screenshot>
-    <screenshot id="pca" title="Principal component analysis."
+    <screenshot id="pca" title="Principal component analysis with scree diagram."
                 rank="230">
     </screenshot>
     <screenshot id="roc" title="Receiver operating characteristics 
                 (ROC) analysis."
                 rank="240">
     </screenshot>
-    <screenshot id="calibration-plot" title="Cross-validated calibration plot"
+    <screenshot id="calibration-plot" title="Cross-validated calibration plot."
                 rank="250">
     </screenshot>
-    <screenshot id="pca-evaluation" title="Data preprocessing turned into 
-                component of a learning algorithm"
+    <screenshot id="pca-evaluation" title="Data preprocessing embedded within
+                a learning algorithm."
                 rank="260">
     </screenshot>
     <screenshot id="rank" title="Feature scoring for finding interesting 
-                visualizations."
+                data projections."
                 rank="300">
     </screenshot>
     <screenshot id="model-based-scoring" title="Model-based feature scoring."
@@ -80,23 +80,23 @@ use trim.py from orange-tools.
     <screenshot id="misclassifications" title="Visualizing misclassifications."
                 rank="330">
     </screenshot>
-    <screenshot id="venn-misclassified" title="Finding joint 
-                misclassifications of three models."
+    <screenshot id="venn-misclassified" title="Finding common
+                misclassifications of three predictive models."
                 rank="340">
     </screenshot>
-    <screenshot id="test-train" title="Construct a model on train data and 
-                test with test data."
+    <screenshot id="test-train" title="Model testing and scoring on a
+                separate test data set."
                 rank="350">
     </screenshot>
-    <screenshot id="silhouette" title="Comparing low silhouette scores and 
-                misclassifications."
+    <screenshot id="silhouette" title="Intersection of misclassified data
+                and data with low silhouette score."
                 rank="360">
     </screenshot>
     <screenshot id="cn2" title="CN2 rule induction."
                 rank="370">
     </screenshot>
-    <screenshot id="polynomial-regression" title="Visualizing Polynomial 
-                Regression."
+    <screenshot id="polynomial-regression" title="Showcase for approximation by
+                regression tree."
                 rank="400">
     </screenshot>
     <screenshot id="gradient-descent" title="Interactive gradient descent."
@@ -108,8 +108,8 @@ use trim.py from orange-tools.
     <screenshot id="text-topics" title="Topic modelling of recent tweets."
                 rank="510">
     </screenshot>
-    <screenshot id="image-analytics" title="Image embedding with ImageNet 
-                neural network."
+    <screenshot id="image-analytics" title="Image analytics with
+                deep-network embedding."
                 rank="600">
     </screenshot>
 </screenshots>
