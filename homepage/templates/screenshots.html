@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block content %}
-    <section id="features" class="features section custom-reduce-padding-2">
+{% block content-full-width %}
+    <section id="features" class="features section custom-reduce-padding-2 screenshots">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 title">
                     <h1 class="title">Screenshots</h1>
                 </div>
                 <div id="visage" class="content imgcontent">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </section>
-{% endblock content %}
+{% endblock content-full-width %}
 
 {% block readyjavascript %}
     $('#features').lightGallery({

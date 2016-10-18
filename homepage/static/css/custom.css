@@ -112,32 +112,44 @@ h6, .h6 {
     list-style-type: none;
 }
 div.screenshot-container div.content {
-    padding: 0 40px;
+    padding: 20px;
+    border: 0.2px solid #a7a7a7;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+section.screenshots .title {
+    text-align: center;
 }
 #how div.screenshot-container div.content {
     height: 250px;
 }
 #features div.screenshot-container {
-    margin: 0 auto 50px auto;
+    margin: 0 auto 60px auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+section.screenshots {
+    background-color: #efefef;
 }
 .screenshot {
     -webkit-transition: -webkit-transform ease-out 0.2s, background 0.3s;
     -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
     -ms-transition: -ms-transform ease-out 0.2s, background 0.3s;
     -o-transition: -o-transform ease-out 0.2s, background 0.3s;
-    float: center;
 }
 .screenshot-image {
-    position: relative;
     bottom: 0;
-    width: 100%;
+    width: 100%;   
 }
 .features .content .screenshot-container p.screenshot-title {
-    float: left;
-    bottom: 0;
+    bottom: 20px;
+    left: 0%;
+    width: 100%;
     color: #444;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 0;
+    padding: 0 50px 0 50px;
 }
 .custom-reduce-padding {
     padding-top: 0;
@@ -295,23 +307,47 @@ h3.custom-accordion-title {
     .features .content .screenshot-container p.screenshot-title {
         position: absolute;
     }
+    .screenshot-image {
+        max-height: 170px; 
+        max-width: 273px;
+        width: 273px;
+    }
+    .screenshot {
+        height: 170px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
     #features div.screenshot-container div.content {
-        height: 230px;
+        height: 270px;
         margin: 0;
     }
     .features .content .screenshot-container p.screenshot-title {
         position: absolute;
+    }
+    .screenshot-image {
+        max-height: 140px; 
+        max-width: 221px;
+        width: 221px;
+    }
+    .screenshot {
+        height: 160px;
     }
 }
 @media (min-width: 1200px) {
     #features div.screenshot-container div.content {
-        height: 275px;
+        height: 320px;
         margin: 0;
     }
     .features .content .screenshot-container p.screenshot-title {
         position: absolute;
+    }
+    .screenshot-image {
+        max-height: 226px; 
+        max-width: 280px;
+        width: 280px;
+    }
+    .screenshot {
+        height: 226px;
     }
 }
 @media (min-width: 488px) {
@@ -336,6 +372,11 @@ h3.custom-accordion-title {
     }
     .download-area .download-right {
         padding: 25px 20px 10px 1px;
+    }
+    .screenshot {
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center;
     }
 }
 @media (min-width: 992px) {
@@ -364,7 +405,6 @@ h3.custom-accordion-title {
 
 #main {
     overflow: auto;
-    padding-bottom: 50px;
 }
 #main > div.container {
     padding-right: 0;
@@ -533,4 +573,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     #blog-feed .feed-box:last-child {
       padding-left:35px;
     }
+}
+section.downloads {
+    padding-bottom: 50px;
 }
