@@ -15,6 +15,7 @@ with open('/etc/orange_web.conf', 'r') as f:
     lines = f.readlines()
     SECRET_KEY = lines[0].split('=', 1)[1]
     RECAPTCHA_SECRET = lines[1].split('=', 1)[1]
+    ERROR_REPORT_SENTRY_DSN = lines[2].split("=", 1)[1]
 
 # SMTP settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
