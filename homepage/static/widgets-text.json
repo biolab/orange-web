@@ -1,0 +1,79 @@
+[
+  [
+    "Text",
+    [
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/corpus.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/corpus.png",
+        "keywords": [],
+        "text": "Corpus"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/nytimes.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/nytimes.png",
+        "keywords": ["NYTimes", "New York Times"],
+        "text": "NY Times"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/twitter.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/twitter.png",
+        "keywords": [],
+        "text": "Twitter"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/wikipedia.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/wikipedia.png",
+        "keywords": [],
+        "text": "Wikipedia"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/pubmed.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/pubmed.png",
+        "keywords": [],
+        "text": "PubMed"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/corpusviewer.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/corpusviewer.png",
+        "keywords": [],
+        "text": "Corpus Viewer"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/preprocesstext.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/preprocesstext.png",
+        "keywords": [],
+        "text": "Preprocess Text"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/bagofwords.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/bagofwords.png",
+        "keywords": ["BoW"],
+        "text": "Bag of Words"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/topicmodelling.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/topicmodelling.png",
+        "keywords": [],
+        "text": "Topic Modelling"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/wordenrichment.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/wordenrichment.png",
+        "keywords": [],
+        "text": "Word Enrichment"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/wordcloud.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/wordcloud.png",
+        "keywords": [],
+        "text": "Word Cloud"
+      },
+      {
+        "doc": "http://orange3-text.readthedocs.io/en/latest/widgets/geomap.html",
+        "img": "http://orange3-text.readthedocs.io/en/latest/_images/geomap.png",
+        "keywords": [],
+        "text": "GeoMap"
+      }
+    ]
+  ]
+]

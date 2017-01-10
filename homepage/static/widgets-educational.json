@@ -1,0 +1,32 @@
+[
+  [
+    "Educational",
+    [
+      {
+        "doc": "http://orange3-educational.readthedocs.io/en/latest/widgets/kmeans.html",
+        "img": "http://orange3-educational.readthedocs.io/en/latest/_images/interactive-kmeans.png",
+        "keywords": ["Interactive KNN", "Edu KNN"],
+        "text": "Interactive k-Means"
+      },
+      {
+        "doc": "http://orange3-educational.readthedocs.io/en/latest/widgets/univariatepolynomialregression.html",
+        "img": "http://orange3-educational.readthedocs.io/en/latest/_images/polynomialregression.png",
+        "keywords": ["Univariate Polynomial Regression", "PolyReg"],
+        "text": "Polynomial Regression"
+      },
+      {
+        "doc": "http://orange3-educational.readthedocs.io/en/latest/widgets/gradientdescent.html",
+        "img": "http://orange3-educational.readthedocs.io/en/latest/_images/gradient-descent.png",
+        "keywords": [],
+        "text": "Gradient Descent"
+      },
+      {
+        "doc": "http://orange3-educational.readthedocs.io/en/latest/widgets/polynomialclassification.html",
+        "img": "http://orange3-educational.readthedocs.io/en/latest/_images/polynomial_classification.png",
+        "keywords": [],
+        "text": "Polynomial Classification"
+      }
+    ]
+  ]
+]
+

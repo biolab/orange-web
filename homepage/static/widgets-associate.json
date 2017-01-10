@@ -1,0 +1,20 @@
+[
+  [
+    "Associate",
+    [
+      {
+        "doc": "http://orange3-associate.readthedocs.io/en/latest/widgets/associationrules.html",
+        "img": "http://orange3-associate.readthedocs.io/en/latest/_images/association-rules.png",
+        "keywords": [],
+        "text": "Association Rules"
+      },
+      {
+        "doc": "http://orange3-associate.readthedocs.io/en/latest/widgets/frequentitemsets.html",
+        "img": "http://orange3-associate.readthedocs.io/en/latest/_images/frequent-itemsets.png",
+        "keywords": [],
+        "text": "Frequent Itemsets"
+      }
+    ]
+  ]
+]
+

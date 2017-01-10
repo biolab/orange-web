@@ -1,0 +1,68 @@
+[
+  [
+    "Data Fusion",
+    [
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/IMDbactors.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/imdb-actors.png",
+        "keywords": [],
+        "text": "IMDb Actors"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/chaining.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/chaining.png",
+        "keywords": [],
+        "text": "Chaining"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/completionscoring.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/completion-scoring.png",
+        "keywords": [],
+        "text": "Completion Scoring"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/fusiongraph.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/fusion-graph.png",
+        "keywords": [],
+        "text": "Fusion Graph"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/latentfactors.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/latent-factors.png",
+        "keywords": [],
+        "text": "Latent Factors"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/matrixsampler.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/matrix-sampler.png",
+        "keywords": [],
+        "text": "Matrix Sampler"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/meanfuser.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/mean-fuser.png",
+        "keywords": [],
+        "text": "Mean Fuser"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/moviegenres.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/movie-genres.png",
+        "keywords": [],
+        "text": "Movie Genres"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/movieratings.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/movie-ratings.png",
+        "keywords": [],
+        "text": "Movie Ratings"
+      },
+      {
+        "doc": "http://orange3-datafusion.readthedocs.io/en/latest/widgets/tabletorelation.html",
+        "img": "http://orange3-datafusion.readthedocs.io/en/latest/_images/table-to-relation.png",
+        "keywords": [],
+        "text": "Table to Relation"
+      }
+    ]
+  ]
+]
+

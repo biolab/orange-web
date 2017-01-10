@@ -1,0 +1,109 @@
+[
+  [
+    "Bioinformatics",
+    [
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/biomart.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/biomart.png",
+        "keywords": [],
+        "text": "BioMart"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/databasesupdate.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/databases-update.png",
+        "keywords": [],
+        "text": "Databases Update"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/dataprofiles.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/data-profiles.png",
+        "keywords": [],
+        "text": "Data Profiles"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/dictyExpress.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/dictyexpress.png",
+        "keywords": [],
+        "text": "Dicty Express"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/differentialexpression.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/differential-expression.png",
+        "keywords": [],
+        "text": "Differential Expression"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/expressionprofiledistances.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/expression-profile-distances.png",
+        "keywords": [],
+        "text": "Expression Profile Distances"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/geneinfo.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/gene-info.png",
+        "keywords": [],
+        "text": "Gene Info"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/genexpress.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/genexpress.png",
+        "keywords": [],
+        "text": "GenExpress"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/geodatasets.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/geo-data-sets.png",
+        "keywords": [],
+        "text": "GEO Data Sets"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/gobrowser.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/go-browser.png",
+        "keywords": [],
+        "text": "GO Browser"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/keggpathways.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/kegg-pathways.png",
+        "keywords": [],
+        "text": "KEGG Pathways"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/maplot.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/ma-plot.png",
+        "keywords": [],
+        "text": "MA Plot"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/PIPAx.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/pipax.png",
+        "keywords": [],
+        "text": "PIPAx"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/qualitycontrol.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/quality-control.png",
+        "keywords": [],
+        "text": "Quality Control"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/selectgenes.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/select-genes.png",
+        "keywords": [],
+        "text": "Select Genes"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/setenrichment.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/set-enrichment.png",
+        "keywords": [],
+        "text": "Set Enrichment"
+      },
+      {
+        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/volcanoplot.html",
+        "img": "http://orange-bioinformatics.readthedocs.io/en/latest/_images/volcano-plot.png",
+        "keywords": [],
+        "text": "Volcano Plot"
+      }
+    ]
+  ]
+]

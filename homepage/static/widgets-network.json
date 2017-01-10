@@ -1,0 +1,43 @@
+[
+  [
+    "Network",
+    [
+      {
+        "doc": "http://orange3-network.readthedocs.io/en/latest/widgets/networkfile.html",
+        "img": "http://orange3-network.readthedocs.io/en/latest/_images/network-file.png",
+        "keywords": [],
+        "text": "Network File"
+      },
+      {
+        "doc": "http://orange3-network.readthedocs.io/en/latest/widgets/networkexplorer.html",
+        "img": "http://orange3-network.readthedocs.io/en/latest/_images/network-explorer.png",
+        "keywords": [],
+        "text": "Network Explorer"
+      },
+      {
+        "doc": "http://orange3-network.readthedocs.io/en/latest/widgets/networkgenerator.html",
+        "img": "http://orange3-network.readthedocs.io/en/latest/_images/network-generator.png",
+        "keywords": [],
+        "text": "Network Generator"
+      },
+      {
+        "doc": "http://orange3-network.readthedocs.io/en/latest/widgets/networkanalysis.html",
+        "img": "http://orange3-network.readthedocs.io/en/latest/_images/network-analysis.png",
+        "keywords": [],
+        "text": "Network Analysis"
+      },
+      {
+        "doc": "http://orange3-network.readthedocs.io/en/latest/widgets/networkclustering.html",
+        "img": "http://orange3-network.readthedocs.io/en/latest/_images/network-clustering.png",
+        "keywords": [],
+        "text": "Network Clustering"
+      },
+      {
+        "doc": "http://orange3-network.readthedocs.io/en/latest/widgets/networkfromdistances.html",
+        "img": "http://orange3-network.readthedocs.io/en/latest/_images/network-from-distances.png",
+        "keywords": [],
+        "text": "Network from Distances"
+      }
+    ]
+  ]
+]
