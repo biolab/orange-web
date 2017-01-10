@@ -301,7 +301,6 @@ blockquote {
   margin-right: 0;
 }
 .header .main-nav .nav .nav-item.active a {
-  color: #E19C14;
   background: none;
 }
 .header .main-nav .nav .nav-item a {
@@ -324,7 +323,6 @@ blockquote {
   background: none;
 }
 .header .main-nav .nav .nav-item.active {
-  color: #E19C14;
 }
 .header .main-nav .nav .nav-item.last {
   margin-right: 0;
