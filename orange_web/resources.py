@@ -1,8 +1,12 @@
 import json
+import logging
+import os
+import re
 import xml.dom.minidom
 
 from django.conf import settings
 
+log = logging.getLogger(__name__)
 
 # Create a list of admin e-mail addresses.
 ADMINS = [x[1] for x in settings.ADMINS]
@@ -49,11 +53,23 @@ except IOError:
     TESTIMONIALS = []
 
 # Load widgets catalog, pass it to toolbox.html template
+WIDGET_JS = []
 try:
     with open(settings.WIDGET_CATALOG, "rt") as fp:
         WIDGET_JS = json.load(fp)
-except IOError:
-    WIDGET_JS = []
+
+    for addon in os.listdir(settings.ADDON_WIDGET_CATALOG):
+        if not re.match("widgets-.*\.json", addon):
+            continue
+        with open(os.path.join(settings.ADDON_WIDGET_CATALOG, addon)) as fp:
+            try:
+                addon_widgets = json.load(fp)
+                WIDGET_JS.extend(addon_widgets)
+            except ValueError:
+                log.exception("Could not parse addon widget catalog %s", addon)
+except IOError as err:
+    log.exception("Could not load widget catalog")
+
 # For use with TrieSearch in Widgets Catalog (convenience, performance util)
 WIDG_JS = {}
 widget_idx = 0

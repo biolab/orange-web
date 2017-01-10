@@ -109,6 +109,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DOWNLOAD_DIR = os.path.abspath("./download")
 DOWNLOAD_SET_PATTERN = os.path.join(DOWNLOAD_DIR, "filenames_%s.set")
 WIDGET_CATALOG = os.path.abspath("./homepage/static/widgets.json")
+ADDON_WIDGET_CATALOG = os.path.abspath("./homepage/static/")
 FEATURES_CATALOG = os.path.abspath("./homepage/static/features.json")
 TESTIMONIALS_CATALOG = os.path.abspath("./homepage/static/testimonials.json")
 
@@ -120,3 +121,20 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
 # Error report settings
 ERROR_REPORT_DIR = os.path.abspath("./error_report/")
 ERROR_REPORT_SENTRY_DSN = ''
+
+# Log errors in dev to console only
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'orange_web': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
