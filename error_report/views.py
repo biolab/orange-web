@@ -44,8 +44,7 @@ def v1(request):
     with open(os.path.join(path, report_file), 'w') as f:
         json.dump(report, f, sort_keys=True, indent=4)
 
-    if settings.ERROR_REPORT_SENTRY_DSN_ORANGE:
-        send_to_sentry(report, settings.ERROR_REPORT_SENTRY_DSN_ORANGE)
+    send_to_sentry(report)
 
     return HttpResponse(json.dumps(dict(status='ok')),
                         content_type="application/json")

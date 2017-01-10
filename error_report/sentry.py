@@ -1,7 +1,9 @@
+import copy
 import logging
 import re
 import uuid
 
+from django.conf import settings
 from raven import Client
 
 logger = logging.getLogger(__name__)
@@ -12,7 +14,8 @@ PYTHON_FOLDERS = [
     "Python34.lib",
     "anaconda3.lib",
     "lib.python3.4",
-    "orange3"
+    "orange3",
+    "orangecontrib",
 ]
 FRAMES_RE = re.compile('File "([^"]+)", line (\d+), in ([^ ]+) (.*)')
 DEVICE_RE = re.compile('Python ([\d\.]+) on ([^ ]+) ([^ ]+) (.+) ([^ ]+)$')
@@ -25,6 +28,10 @@ def guess_module(filename):
         base, prefixed, module = file_module.partition(f + ".")
         if not prefixed:
             continue
+
+        # fix for addons in dev mode; `orangecontrib.` is part of module
+        if f == 'orangecontrib':
+            module = prefixed + module
 
         for ext in [".py", ".__init__"]:
             if module.endswith(ext):
@@ -79,6 +86,62 @@ def get_version(v):
     return v.partition("0+")[0]
 
 
+def get_dsn(name):
+    dsn = "ERROR_REPORT_SENTRY_DSN_{}".format(name.upper())
+    return getattr(settings, dsn, None)
+
+
+def prep_addon_data(addon, data, duplicated):
+    # make a copy so we can have different tags
+    addon_data = copy.deepcopy(data)
+
+    # flag duplication status
+    data["tags"]["addon"] = addon
+    data["tags"]["duplicated_in_addon"] = duplicated
+    addon_data["tags"]["duplicated_in_core"] = duplicated
+
+    # replace release with addon version
+    addon_data["tags"]["orange_version"] = data['release']
+    addon_data["release"] = "unknown"
+    for package, version in addon_data['modules'].items():
+        package = package.lower()
+        if 'orange' in package and addon in package:
+            addon_data['release'] = get_version(version)
+    return addon_data
+
+
+def get_dsn_report_pairs(sentry_report):
+    frames = sentry_report['exception']['values'][0]['stacktrace']['frames']
+    modules = [f['module'] for f in frames if f.get('module') not in
+               (None, '', 'Orange.canvas.scheme.widgetsscheme')]
+
+    def _filter_modules(names):
+        return [m for m in modules
+                if m and any(m.startswith(n) for n in names)]
+
+    core_calls = _filter_modules(['Orange.'])
+    addon_calls = _filter_modules(['orangecontrib.'])
+    last_in_addon = _filter_modules(['Orange.', 'orangecontrib.'])
+    last_in_addon = last_in_addon and last_in_addon[-1] in addon_calls
+
+    addon, addon_dsn = None, None
+    if any(addon_calls):
+        addon = addon_calls[0].split('.')[1]
+        addon_dsn = get_dsn(addon)
+
+    if any(addon_calls) and addon_dsn:
+        # errors whose stacktrace contains call from addon & core and the
+        # last call does not come from addon are sent to both issue trackers
+        duplicated = any(core_calls) and not last_in_addon
+
+        yield addon_dsn, prep_addon_data(addon, sentry_report, duplicated)
+        if duplicated:
+            yield get_dsn('ORANGE'), sentry_report
+    else:
+        sentry_report["tags"]["duplicated_in_addon"] = 'False'
+        yield get_dsn('ORANGE'), sentry_report
+
+
 def create_sentry_report(report):
     if "Exception" not in report:
         return {}
@@ -101,20 +164,18 @@ def create_sentry_report(report):
         tags=dict(),
         modules=packages,
     )
-    if module.startswith("orangecontrib"):
-        m = module.split(".")
-        data["tags"]["addon"] = m[1]
     return data
 
 
-def send_to_sentry(report, dsn):
+def send_to_sentry(report):
     sentry_report = create_sentry_report(report)
     if not sentry_report:
         return
 
-    try:
-        client = Client(dsn)
-        client.send(**sentry_report)
-    except Exception as ex:
-        # There is nothing we can do if sentry is not available
-        logger.exception(ex)
+    for dsn, report in get_dsn_report_pairs(sentry_report):
+        try:
+            client = Client(dsn)
+            client.send(**report)
+        except Exception as ex:
+            # There is nothing we can do if sentry is not available
+            logger.exception(ex)
