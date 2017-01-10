@@ -2,6 +2,20 @@
 {% load cache %}
 {% load tag_extras %}
 
+{% block title %}
+    {% if generic_download_page %}
+        Download
+    {% elif os == "windows" %}
+        Download for Windows
+    {% elif os == "mac-os-x" %}
+        Download for Mac OS X
+    {% elif os == "linux" %}
+        Download for GNU/Linux
+    {% else %}
+        Download
+    {% endif %}
+{% endblock title %}
+
 {% block content %}
     <!-- ******DOWNLOAD OPTIONS****** -->
     <section id="features" class="features section custom-reduce-padding-2 downloads">

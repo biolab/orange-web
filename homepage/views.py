@@ -144,6 +144,7 @@ def download(request, os=None):
         os_response['os'] = detect_os(request.META.get('HTTP_USER_AGENT', ''))
     else:
         os_response['os'] = os
+    os_response['generic_download_page'] = request.path.endswith('download/')
     return render(request, 'download.html', os_response)
 
 
