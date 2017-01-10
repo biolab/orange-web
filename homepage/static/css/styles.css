@@ -533,7 +533,9 @@ blockquote {
   margin: auto;
 }
 
-.features .feature-panel:not(:first-child) {
+.features .feature-panel:not(:first-child),
+#testimonials .container
+{
   border-top: 1px solid #efeff7;
 }
 
