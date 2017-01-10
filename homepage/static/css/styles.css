@@ -566,6 +566,11 @@ blockquote {
   padding-right: 0;
 }
 
+.features h2 a {
+  font-weight: lighter;
+  color: black;
+}
+
 .features .more a {
   padding: 24px 0;
   font-size: 20px;
