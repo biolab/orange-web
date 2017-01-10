@@ -19,10 +19,10 @@ DEVICE_RE = re.compile('Python ([\d\.]+) on ([^ ]+) ([^ ]+) (.+) ([^ ]+)$')
 
 
 def guess_module(filename):
-    module = filename.replace("\\\\", "\\").replace("/", ".").replace("\\", ".")
+    file_module = filename.replace("\\\\", "\\").replace("/", ".").replace("\\", ".")
 
     for f in PYTHON_FOLDERS:
-        base, prefixed, module = module.partition(f + ".")
+        base, prefixed, module = file_module.partition(f + ".")
         if not prefixed:
             continue
 
