@@ -8,6 +8,8 @@ from raven import Client
 
 logger = logging.getLogger(__name__)
 
+REPORTS_BASE_URL = 'http://butler.fri.uni-lj.si/errors/{}'
+
 PYTHON_FOLDERS = [
     "site-packages",
     "dist-packages",
@@ -163,6 +165,7 @@ def create_sentry_report(report):
         contexts=get_device_info(report["Environment"][0]),
         tags=dict(),
         modules=packages,
+        extra={'Schema Url': schema_url, }
     )
     return data
 
