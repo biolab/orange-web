@@ -7,6 +7,7 @@ ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '193.2.72.56', 'qa.
 DOWNLOAD_DIR = '/srv/download'
 WIDGET_CATALOG = '/srv/chroot_rsync/orange3doc/visual-programming/widgets.json'
 ERROR_REPORT_DIR = '/srv/error_report/'
+LOGGING_DIR = '/var/log/'
 
 DOWNLOAD_SET_PATTERN = os.path.join(DOWNLOAD_DIR, 'filenames_%s.set')
 
@@ -25,3 +26,31 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(asctime)s %(levelname)s %(name)s %(filename)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': LOGGING_DIR + 'django-info.log',
+            'formatter': 'verbose',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+        }
+    },
+    'root': {
+        'handlers': ['file', 'mail_admins'],
+        'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+    },
+}

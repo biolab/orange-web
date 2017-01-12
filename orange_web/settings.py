@@ -132,10 +132,8 @@ LOGGING = {
             'class': 'logging.StreamHandler',
         },
     },
-    'loggers': {
-        'orange_web': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
-        },
+    'root': {
+        'handlers': ['console'],
+        'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
     },
 }
