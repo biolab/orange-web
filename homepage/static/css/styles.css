@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-  font-family: 'Lato', arial, sans-serif;
+  font-family: 'Lato-Light', arial, sans-serif;
   color: #000;
   #color: #351400;
 }
@@ -49,6 +49,10 @@ a:hover {
   background: #f69111;
   border: 1px solid #f69111;
   color: #fff;
+}
+figcaption {
+  font-size: 14px;
+  font-style: italic;
 }
 .form-control {
   -webkit-box-shadow: none;
