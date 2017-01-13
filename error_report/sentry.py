@@ -22,6 +22,13 @@ PYTHON_FOLDERS = [
 FRAMES_RE = re.compile('File "([^"]+)", line (\d+), in ([^ ]+) (.*)')
 DEVICE_RE = re.compile('Python ([\d\.]+) on ([^ ]+) ([^ ]+) (.+) ([^ ]+)$')
 
+# Modules that should not be grouped by
+GENERAL_MODULES = [
+    "Orange.data.domain:232",        # domain.index(attr_name)
+    "sklearn.utils.validation:424",  # check_array
+    "Orange.util:141",               # attrgetter(attr)(obj)
+]
+
 
 def guess_module(filename):
     file_module = filename.replace("\\\\", "\\").replace("/", ".").replace("\\", ".")
@@ -165,12 +172,15 @@ def create_sentry_report(report):
         culprit=culprit,
         release=get_version(report["Version"]),
         user=dict(id=machine_id),
-        fingerprint=[module],
         contexts=get_device_info(report["Environment"][0]),
         tags=dict(),
         modules=packages,
         extra={'Schema Url': schema_url, }
     )
+    if module not in GENERAL_MODULES:
+        # group issues by the module of the last frame
+        # (unless the last frame is too general)
+        data["fingerprint"] = [module]
     return data
 
 
