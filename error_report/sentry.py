@@ -152,8 +152,10 @@ def create_sentry_report(report):
     widget_module = report.get("Widget Module", [""])[0]
     culprit = widget_module or module
     machine_id = report["Machine ID"][0]
-    packages = dict(p.split('==')
-                    for p in report.get("Installed Packages", [""])[0].split(', ') if p)
+    packages = report.get("Installed Packages", "")
+    if isinstance(packages, list):
+        packages = ' '.join(packages)
+    packages = dict(p.split('==') for p in packages.split(', ') if p)
     schema_url = report.get("Widget Scheme", "")
     schema_url = REPORTS_BASE_URL.format(schema_url) if schema_url else '<not-provided>'
     data = dict(
