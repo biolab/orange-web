@@ -154,6 +154,8 @@ def create_sentry_report(report):
     machine_id = report["Machine ID"][0]
     packages = dict(p.split('==')
                     for p in report.get("Installed Packages", [""])[0].split(', ') if p)
+    schema_url = report.get("Widget Scheme", "")
+    schema_url = REPORTS_BASE_URL.format(schema_url) if schema_url else '<not-provided>'
     data = dict(
         event_id=uuid.uuid4().hex,
         platform="python",
