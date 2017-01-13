@@ -87,6 +87,8 @@ def create_sentry_report(report):
     widget_module = report.get("Widget Module", [""])[0]
     culprit = widget_module or module
     machine_id = report["Machine ID"][0]
+    packages = dict(p.split('==')
+                    for p in report.get("Installed Packages", [""])[0].split(', ') if p)
     data = dict(
         event_id=uuid.uuid4().hex,
         platform="python",
@@ -96,7 +98,8 @@ def create_sentry_report(report):
         user=dict(id=machine_id),
         fingerprint=[module],
         contexts=get_device_info(report["Environment"][0]),
-        tags=dict()
+        tags=dict(),
+        modules=packages,
     )
     if module.startswith("orangecontrib"):
         m = module.split(".")
