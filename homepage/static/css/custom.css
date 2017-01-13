@@ -472,6 +472,13 @@ h3.custom-accordion-title {
     max-width: 550px;
 }
 
+.features .features-anchor {
+    display:block;
+    position:relative;
+    top:-80px;
+    visibility:hidden;
+}
+
 .features .feature-panel {
     margin-bottom: 30px;
 }

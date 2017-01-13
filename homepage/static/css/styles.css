@@ -301,7 +301,6 @@ blockquote {
   margin-right: 0;
 }
 .header .main-nav .nav .nav-item.active a {
-  color: #E19C14;
   background: none;
 }
 .header .main-nav .nav .nav-item a {
@@ -324,7 +323,6 @@ blockquote {
   background: none;
 }
 .header .main-nav .nav .nav-item.active {
-  color: #E19C14;
 }
 .header .main-nav .nav .nav-item.last {
   margin-right: 0;
@@ -535,7 +533,9 @@ blockquote {
   margin: auto;
 }
 
-.features .feature-panel:not(:first-child) {
+.features .feature-panel:not(:first-child),
+#testimonials .container
+{
   border-top: 1px solid #efeff7;
 }
 
@@ -564,6 +564,11 @@ blockquote {
 
 .features .panel-right {
   padding-right: 0;
+}
+
+.features h2 a {
+  font-weight: lighter;
+  color: black;
 }
 
 .features .more a {

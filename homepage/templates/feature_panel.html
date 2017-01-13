@@ -4,7 +4,7 @@
         <div class="content col-md-1 pull-left nopadding"></div>
         <div class="content col-md-1 pull-right nopadding"></div>
         <div class="content col-md-5 col-sm-6 col-xs-12 feature-description panel-left pull-{% if not index|divisibleby:2 %}left{% else %}right{% endif %}">
-            <h2 class="feature-title">{{ feature.title }}</h2>
+            <h2 class="feature-title">{% if feature.more_link %}<a href="{{ feature.more_link }}">{{ feature.title }}</a>{% else %}{{ feature.title }}{% endif%}</h2>
             <p class="feature-text">{{ feature.description }}</p>
             <div class="more">
                 {% if feature.more_link %}
@@ -27,7 +27,9 @@
             </div>
         </div>
         <div class="content col-md-5 col-sm-6 col-xs-12 feature-image {% if not index|divisibleby:2 %}{% else %}panel-left{% endif %}">
-            <img class="image {% if not index|divisibleby:2 %}right{% else %}left{% endif %}" src="{{ feature.image_link }}">
+            {% if feature.more_link %}<a href="{{ feature.more_link }}">{% endif %}
+                <img class="image {% if not index|divisibleby:2 %}right{% else %}left{% endif %}" src="{{ feature.image_link }}">
+            {% if feature.more_link %}</a>{% endif %}
         </div>
 
     </div>

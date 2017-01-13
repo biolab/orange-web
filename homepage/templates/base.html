@@ -7,7 +7,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <title>{% block title %}Orange Data Mining{% endblock title %}</title>
+    <title>Orange – {% block title %}Data Mining Fruitful &amp; Fun{% endblock title %}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Orange Data Mining Toolbox">
@@ -68,6 +68,9 @@
                         <li class="active nav-item sr-only"><a id="header-home-link2" href="/">Home</a></li>
                         <li class="nav-item"><a id="header-home-link" href="/">Home</a></li>
 						{% endif %}
+                        {% if current_page == '' %}
+                        <li class="nav-item"><a id="" href="/#Orange-Features">Features</a></li>
+                        {% endif %}
                         <li class="nav-item"><a id="header-screenshots-link" href="{% url 'screenshots' %}">Screenshots</a></li>
                         <li class="nav-item"><a id="header-download-link" href="{% url 'download' %}">Download</a></li>
                         <li class="nav-item"><a id="header-docs-link" href="{% url 'docs' %}">Docs</a></li>
