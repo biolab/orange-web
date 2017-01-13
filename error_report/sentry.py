@@ -8,7 +8,7 @@ from raven import Client
 
 logger = logging.getLogger(__name__)
 
-REPORTS_BASE_URL = 'http://butler.fri.uni-lj.si/errors/{}'
+REPORTS_BASE_URL = 'http://qa.orange.biolab.si/errors/{}'
 
 PYTHON_FOLDERS = [
     "site-packages",
