@@ -120,7 +120,8 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
 
 # Error report settings
 ERROR_REPORT_DIR = os.path.abspath("./error_report/")
-ERROR_REPORT_SENTRY_DSN = ''
+# Biolab's testing Sentry project
+ERROR_REPORT_SENTRY_DSN_ORANGE = 'https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442'
 
 # Log errors in dev to console only
 LOGGING = {
@@ -131,10 +132,8 @@ LOGGING = {
             'class': 'logging.StreamHandler',
         },
     },
-    'loggers': {
-        'orange_web': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
-        },
+    'root': {
+        'handlers': ['console'],
+        'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
     },
 }
