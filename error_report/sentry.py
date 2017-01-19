@@ -27,6 +27,7 @@ GENERAL_MODULES = [
     "Orange.data.domain:232",        # domain.index(attr_name)
     "sklearn.utils.validation:424",  # check_array
     "Orange.util:141",               # attrgetter(attr)(obj)
+    "Orange.statistics.util:52",     # bincount
 ]
 
 
