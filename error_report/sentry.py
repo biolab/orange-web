@@ -165,6 +165,9 @@ def create_sentry_report(report):
     packages = dict(p.split('==') for p in packages.split(', ') if p)
     schema_url = report.get("Widget Scheme", "")
     schema_url = REPORTS_BASE_URL.format(schema_url) if schema_url else '<not-provided>'
+    local_vars = report.get('Local Variables', '<not-provided>')
+    if isinstance(local_vars, list):
+        local_vars = ' '.join(local_vars)
     data = dict(
         event_id=uuid.uuid4().hex,
         platform="python",
@@ -175,7 +178,10 @@ def create_sentry_report(report):
         contexts=get_device_info(report["Environment"][0]),
         tags=dict(),
         modules=packages,
-        extra={'Schema Url': schema_url, }
+        extra={
+            'Schema Url': schema_url,
+            'Local Variables': local_vars,
+        }
     )
     if module not in GENERAL_MODULES:
         # group issues by the module of the last frame
