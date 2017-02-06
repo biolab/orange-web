@@ -30,6 +30,21 @@ GENERAL_MODULES = [
     "Orange.statistics.util:52",     # bincount
 ]
 
+# For addons with separate DSNs mapping from namespace to addon name
+# must be provided for reporting addon version as release.
+NAMESPACE_TO_ADDON = {
+    'associate':        'Orange3-Associate',
+    'bio':              'Orange-Bioinformatics',
+    'datafusion':       'Orange3-DataFusion',
+    'educational':      'Orange3-Educational',
+    'imageanalytics':   'Orange3-ImageAnalytics',
+    'network':          'Orange3-Network',
+    'prototypes':       'Orange3-Prototypes',
+    'recommendation':   'Orange3-Recommendation',
+    'text':             'Orange3-Text',
+    'timeseries':       'Orange3-Timeseries',
+}
+
 
 def guess_module(filename):
     file_module = filename.replace("\\\\", "\\").replace("/", ".").replace("\\", ".")
@@ -113,10 +128,12 @@ def prep_addon_data(addon, data, duplicated):
     # replace release with addon version
     addon_data["tags"]["orange_version"] = data['release']
     addon_data["release"] = "unknown"
-    for package, version in addon_data['modules'].items():
-        package = package.lower()
-        if 'orange' in package and addon in package:
-            addon_data['release'] = get_version(version)
+    if addon in NAMESPACE_TO_ADDON:
+        addon = NAMESPACE_TO_ADDON[addon]
+        for package, version in addon_data['modules'].items():
+            if addon == package:
+                addon_data['release'] = get_version(version)
+                break
     return addon_data
 
 
