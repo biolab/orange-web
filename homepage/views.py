@@ -139,13 +139,17 @@ def index(request):
 
 
 def download(request, os=None):
-    os_response = {'os': None}
     if os is None:
-        os_response['os'] = detect_os(request.META.get('HTTP_USER_AGENT', ''))
-    else:
-        os_response['os'] = os
-    os_response['generic_download_page'] = request.path.endswith('download/')
-    return render(request, 'download.html', os_response)
+        os = detect_os(request.META.get('HTTP_USER_AGENT', ''))
+
+    return render(request, 'download.html', dict(
+        os=os,
+        tabs=[
+            dict(icon="windows", title="Windows", os="windows"),
+            dict(icon="apple", title="macOS", os="mac-os-x"),
+            dict(icon="linux", title="Linux / Source", os="linux"),
+        ],
+    ))
 
 
 def start(request):

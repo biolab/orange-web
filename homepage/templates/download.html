@@ -3,9 +3,7 @@
 {% load tag_extras %}
 
 {% block title %}
-    {% if generic_download_page %}
-        Download
-    {% elif os == "windows" %}
+    {% if os == "windows" %}
         Download for Windows
     {% elif os == "mac-os-x" %}
         Download for Mac OS X
@@ -23,42 +21,17 @@
             <div class="row">
 
                 <div class="col-lg-offset-1 col-lg-10 col-md-12 col-sm-12 col-xs-12">
-
-                <div class="icon-item col-md-4 col-sm-4 col-xs-12 text-center">
-                    <a href="{% url 'download' %}windows/">
-                        <div class="icon{% if os == "windows" %}-selected{% endif %}">
-                            <i class="fa fa-windows jsonly"></i>
-                        </div><!--//icon-->
-                    </a>
-                    <div class="content">
-                        <a href="{% url 'download' %}windows/"><h2 class="title">Windows</h2></a>
-                    </div><!--//content-->
-                </div><!--//item-->
-
-                <div class="icon-item col-md-4 col-sm-4 col-xs-12 text-center">
-                    <a href="{% url 'download' %}mac-os-x/">
-                        <div class="icon{% if os == "mac-os-x" %}-selected{% endif %}">
-                            <i class="fa fa-apple jsonly"></i>
-                        </div><!--//icon-->
-                    </a>
-                    <div class="content">
-                        <a href="{% url 'download' %}mac-os-x/"><h2 class="title">Mac OS X</h2></a>
-                    </div><!--//content-->
-                </div><!--//item-->
-
-                <div class="icon-item col-md-4 col-sm-4 col-xs-12 text-center">
-                    <a href="{% url 'download' %}linux/">
-                        <div class="icon{% if os == "linux" %}-selected{% endif %}">
-                            <i class="fa fa-linux jsonly"></i>
-                        </div><!--//icon-->
-                    </a>
-                    <div class="content">
-                        <a href="{% url 'download' %}linux/"><h2 class="title">Linux / Source</h2></a>
-                    </div><!--//content-->
-                </div><!--//item-->
-
+                {% for tab in tabs %}
+                    <div class="icon-item col-md-4 col-sm-4 col-xs-12 text-center">
+                        <a href="{% url 'download' %}{{ tab.os }}/">
+                            <div class="icon{% if os == tab.os %}-selected{% endif %}">
+                                <i class="fa fa-{{ tab.icon }} jsonly"></i>
+                            </div><!--//icon-->
+                            <h2 class="content title">{{ tab.title }}</h2>
+                        </a>
+                    </div><!--//item-->
+                {% endfor %}
                 </div>
-
             </div><!--//row-->
         </div><!--//container-->
 
