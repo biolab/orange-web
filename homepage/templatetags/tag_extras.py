@@ -97,43 +97,38 @@ def download_set_patterns(os=None):
                 yield key.strip(), value.strip()
 
 
-def download_choices(os='win'):
+def download_choices(os=None):
     downloads = {}
 
-    if os == 'win':
-        for key, value in download_set_patterns(os):
-            if key == 'WIN_SNAPSHOT':
-                downloads['win27'] = '{0}-py2.7.exe'.format(value)
-            elif key == 'WIN_PYTHON_SNAPSHOT':
-                downloads['winw27'] = '{0}-py2.7.exe'.format(value)
-            elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
-                downloads['bio27'] = '{0}-py2.7.exe'.format(value)
-            elif key == 'ADDON_TEXT_SNAPSHOT':
-                downloads['text27'] = '{0}-py2.7.exe'.format(value)
-            elif key == 'SOURCE_SNAPSHOT':
-                downloads['source'] = value
+    for key, value in download_set_patterns("win"):
+        if key == 'WIN_SNAPSHOT':
+            downloads['win27'] = '{0}-py2.7.exe'.format(value)
+            downloads['date'] = value[-10:]
+        elif key == 'WIN_PYTHON_SNAPSHOT':
+            downloads['winw27'] = '{0}-py2.7.exe'.format(value)
+        elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
+            downloads['bio27'] = '{0}-py2.7.exe'.format(value)
+        elif key == 'ADDON_TEXT_SNAPSHOT':
+            downloads['text27'] = '{0}-py2.7.exe'.format(value)
+        elif key == 'SOURCE_SNAPSHOT':
+            downloads['source'] = value
 
-        for key, value in download_set_patterns(None):
-            if key == "WIN32_ORANGE3_DAILY":
-                downloads["orange3-win32-installer"] = value
-            elif key == "WIN32_ORANGE3_STANDALONE_DAILY":
-                downloads["orange3-win32-installer-standallone"] = value
+    for key, value in download_set_patterns(None):
+        if key == "WIN32_ORANGE3_DAILY":
+            downloads["orange3-win32-installer"] = value
+        elif key == "WIN32_ORANGE3_STANDALONE_DAILY":
+            downloads["orange3-win32-installer-standallone"] = value
 
-    elif os == "mac":
-        for key, value in download_set_patterns(os):
-            if key == 'MAC_DAILY':
-                downloads['mac'] = value
-            if key == 'MAC_ORANGE3_DAILY':
-                downloads['bundle-orange3'] = value
-                try:
-                    downloads['version'] = \
-                        re.findall("Orange3-(.*)\.dmg", value)[0]
-                except IndexError:  
-                    downloads['version'] = 'unknown'
-    else:
-        for key, value in download_set_patterns('win'):
-            if key == 'WIN_SNAPSHOT':
-                downloads['date'] = value[-10:]
+    for key, value in download_set_patterns("mac"):
+        if key == 'MAC_DAILY':
+            downloads['mac'] = value
+        if key == 'MAC_ORANGE3_DAILY':
+            downloads['bundle-orange3'] = value
+            try:
+                downloads['version'] = \
+                    re.findall("Orange3-(.*)\.dmg", value)[0]
+            except IndexError:
+                downloads['version'] = 'unknown'
 
     return downloads
 
