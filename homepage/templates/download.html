@@ -3,7 +3,10 @@
 {% load tag_extras %}
 
 {% block title %}
-    {% if os == "windows" %}
+    {% if landing_page %}
+        {# SEO #}
+        Download
+    {% elif os == "windows" %}
         Download for Windows
     {% elif os == "mac-os-x" %}
         Download for Mac OS X

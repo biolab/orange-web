@@ -141,9 +141,13 @@ def index(request):
 
 def download(request, os=None):
     if os is None:
+        landing_page = True
         os = detect_os(request.META.get('HTTP_USER_AGENT', ''))
+    else:
+        landing_page = False
 
     return render(request, 'download.html', dict(
+        landing_page=landing_page,
         os=os,
         tabs=[
             dict(icon="windows", title="Windows", os="windows"),
