@@ -1,9 +1,13 @@
+{% extends "download/base.html" %}
 {% load tag_extras %}
-<h2>Windows</h2>
 
-<p>This page contains nightly builds of Orange from the code repository. These are typically stable and we recommend using them.</p>
-<ul class="files">
-    <li><p>Full package: <a id="download-file-windows-withlib" href="{% orange3_win32_installer_url %}">Snapshot of Orange with Python 3 and required libraries</a><br>
-        This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.
-</p></li>
-</ul>
+{% block download_choices %}
+    <h2>Windows</h2>
+
+    <p>This page contains nightly builds of Orange from the code repository. These are typically stable and we recommend using them.</p>
+    <ul class="files">
+        <li><p>Full package: <a id="download-file-windows-withlib" href="{% orange3_win32_installer_url %}">Snapshot of Orange with Python 3 and required libraries</a><br>
+            This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.
+    </p></li>
+    </ul>
+{% endblock %}

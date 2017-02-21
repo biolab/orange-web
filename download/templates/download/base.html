@@ -60,15 +60,7 @@
             <div class="row">
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
                     <div class="content">
-                        {% if os == "windows" %}
-                            {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
-                        {% elif os == "mac-os-x" %}
-                            {% cache 43200 dl_mac_html %}{% download_mac %}{% endcache %}
-                        {% elif os == "linux" %}
-                            {% cache 43200 dl_source_html %}{% download_source %}{% endcache %}
-                        {% else %}
-                            {% cache 43200 dl_win_html %}{% download_win %}{% endcache %}
-                        {% endif %}
+                        {% block download_choices %}{% endblock %}
                     </div>
                 </div>
             </div>

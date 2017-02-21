@@ -30,7 +30,14 @@ def download(request, os=None):
     else:
         landing_page = False
 
-    return render(request, 'download/base.html', dict(
+    if os == "mac-os-x":
+        template = "download/macos.html"
+    elif os == "linux":
+        template = "download/linux.html"
+    else:
+        template = "download/windows.html"
+
+    return render(request, template, dict(
         landing_page=landing_page,
         os=os,
         tabs=[
