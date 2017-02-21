@@ -133,17 +133,17 @@ def download_choices(os=None):
     return downloads
 
 
-@register.inclusion_tag('download_windows.html')
+@register.inclusion_tag('download/windows.html')
 def download_win():
     return download_choices('win')
 
 
-@register.inclusion_tag('download_mac-os-x.html')
+@register.inclusion_tag('download/macos.html')
 def download_mac():
     return download_choices('mac')
 
 
-@register.inclusion_tag('download_source.html')
+@register.inclusion_tag('download/linux.html')
 def download_source():
     """Source data is in 'filenames_win.set'"""
     return download_choices('win')

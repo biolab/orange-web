@@ -30,7 +30,7 @@ def download(request, os=None):
     else:
         landing_page = False
 
-    return render(request, 'download.html', dict(
+    return render(request, 'download/base.html', dict(
         landing_page=landing_page,
         os=os,
         tabs=[
