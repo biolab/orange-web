@@ -4,6 +4,7 @@ import requests
 import json
 
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
@@ -139,13 +140,53 @@ def index(request):
 
 
 def download(request, os=None):
-    os_response = {'os': None}
     if os is None:
-        os_response['os'] = detect_os(request.META.get('HTTP_USER_AGENT', ''))
+        landing_page = True
+        os = detect_os(request.META.get('HTTP_USER_AGENT', ''))
     else:
-        os_response['os'] = os
-    os_response['generic_download_page'] = request.path.endswith('download/')
-    return render(request, 'download.html', os_response)
+        landing_page = False
+
+    return render(request, 'download.html', dict(
+        landing_page=landing_page,
+        os=os,
+        tabs=[
+            dict(icon="windows", title="Windows", os="windows"),
+            dict(icon="apple", title="macOS", os="mac-os-x"),
+            dict(icon="linux", title="Linux / Source", os="linux"),
+        ],
+        recommended=recommended_download(os)
+    ))
+
+
+VERSION_RE = re.compile(r"Orange3-([\d\.]+)\.")
+
+
+def recommended_download(os):
+    downloads = download_choices()
+
+    def get_version(filename):
+        try:
+            return VERSION_RE.findall(filename)[0]
+        except IndexError:
+            return "unknown"
+
+    filename = title = ""
+    if os == "windows":
+        title = "Windows Installer"
+        filename = downloads["orange3-win32-installer"]
+    elif os == "mac-os-x":
+        title = "macOS bundle"
+        filename = downloads["bundle-orange3"]
+
+    if filename:
+        return dict(
+            filename=filename,
+            url=reverse('download') + 'files/' + filename,
+            version=get_version(filename),
+            title=title
+        )
+    else:
+        return None
 
 
 def start(request):
