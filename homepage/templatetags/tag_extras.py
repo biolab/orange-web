@@ -149,12 +149,6 @@ def download_source():
     return download_choices('win')
 
 
-@register.inclusion_tag('download_addons_win.html')
-def download_addons_win():
-    """Source data is in 'filenames_win.set'"""
-    return download_choices('win')
-
-
 @register.simple_tag
 def download_link(os):
     if os == 'windows':
@@ -238,19 +232,9 @@ def addonsget(searchtag):
         logger.exception(ex)
 
 
-@register.inclusion_tag('download_addons.html')
-def download_addons():
-    return {'addons': addonsget("orange3 add-on")}
-
-
 @register.inclusion_tag('toolbox_widgets.html')
 def toolbox_widgets(widget_js):
     return {'toolbox': widget_js}
-
-
-@register.inclusion_tag('download_addons2.html')
-def download_addons2():
-    return {'addons': addonsget("orange add-on")}
 
 
 @register.inclusion_tag('testimonials.html')
