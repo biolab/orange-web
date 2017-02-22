@@ -1,11 +1,11 @@
 # Regex objects for browser OS detection
 import re
 
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import render
-
-from homepage.templatetags.tag_extras import download_choices
+from os import path
 
 p_win = re.compile(r'.*[Ww]in.*')
 p_mac = re.compile(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*')
@@ -93,7 +93,7 @@ def _get_version(filename):
 
 
 def _get_download(key):
-    downloads = download_choices()
+    downloads = _download_choices()
     filename = downloads[key]
     return dict(
         filename=filename,
@@ -101,6 +101,59 @@ def _get_download(key):
         version=_get_version(filename)
     )
 
+
+def _download_choices(os=None):
+    downloads = {}
+
+    for key, value in _download_set_patterns("win"):
+        if key == 'WIN_SNAPSHOT':
+            downloads['win27'] = '{0}-py2.7.exe'.format(value)
+            downloads['date'] = value[-10:]
+        elif key == 'WIN_PYTHON_SNAPSHOT':
+            downloads['winw27'] = '{0}-py2.7.exe'.format(value)
+        elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
+            downloads['bio27'] = '{0}-py2.7.exe'.format(value)
+        elif key == 'ADDON_TEXT_SNAPSHOT':
+            downloads['text27'] = '{0}-py2.7.exe'.format(value)
+        elif key == 'SOURCE_SNAPSHOT':
+            downloads['source'] = value
+
+    for key, value in _download_set_patterns(None):
+        if key == "WIN32_ORANGE3_DAILY":
+            downloads["orange3-win32-installer"] = value
+        elif key == "WIN32_ORANGE3_STANDALONE_DAILY":
+            downloads["orange3-win32-installer-standallone"] = value
+
+    for key, value in _download_set_patterns("mac"):
+        if key == 'MAC_DAILY':
+            downloads['mac'] = value
+        if key == 'MAC_ORANGE3_DAILY':
+            downloads['bundle-orange3'] = value
+            try:
+                downloads['version'] = \
+                    re.findall("Orange3-(.*)\.dmg", value)[0]
+            except IndexError:
+                downloads['version'] = 'unknown'
+
+    return downloads
+
+
+def _download_set_patterns(os=None):
+    if path.isdir(settings.DOWNLOAD_DIR):
+        if os is None:
+            filename = path.join(settings.DOWNLOAD_DIR, "filenames.set")
+        else:
+            filename = settings.DOWNLOAD_SET_PATTERN % os
+
+        if not path.isfile(filename):
+            return
+
+        with open(filename, 'rt') as f:
+            for line in f:
+                key, value = line.split('=', 1)
+                yield key.strip(), value.strip()
+
+
 def latest_version(request):
-    version = download_choices('mac').get('version', '')
+    version = _download_choices('mac').get('version', '')
     return HttpResponse(version, content_type="text/plain")
