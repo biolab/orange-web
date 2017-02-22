@@ -4,9 +4,10 @@ from download import views
 
 
 urlpatterns = [
-    url(r'^(windows|mac-os-x|linux|for-developers)/$',
-        views.download,
-        name='download'),
+    url(r'^$', views.download, name='download'),
+    url(r'^windows/$', views.download_windows, name='download/windows'),
+    url(r'^macos/$', views.download_macos, name='download'),
+    url(r'^linux/$', views.download_linux, name='download'),
     url(r'^$', views.download, name='download'),
 
 ]

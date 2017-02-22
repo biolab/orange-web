@@ -3,18 +3,7 @@
 {% load tag_extras %}
 
 {% block title %}
-    {% if landing_page %}
-        {# SEO #}
-        Download
-    {% elif os == "windows" %}
-        Download for Windows
-    {% elif os == "mac-os-x" %}
-        Download for Mac OS X
-    {% elif os == "linux" %}
-        Download for GNU/Linux
-    {% else %}
-        Download
-    {% endif %}
+    {{ title }}
 {% endblock title %}
 
 {% block content %}
@@ -41,23 +30,10 @@
 
         <div class="container" style="margin-top: 60px;">
 
-            {% if recommended %}
-            <div class="row content">
-                <div class="faq-col col-md-12 col-sm-12 col-xs-12">
-                      <h2>Recommended download</h2>
-
-                       <div style="width: 300px; text-align:center; padding-top:10px">
-                            <a id="recommended-download" class="btn btn-warning big-button-base"
-                               href="{{ recommended.url }}">
-                                Download Orange {{ recommended.version }}
-                            </a>
-                            <p style="margin-top: 0;">{{ recommended.title }}</p>
-                       </div>
-                </div>
-            </div>
-            {% endif %}
 
             <div class="row">
+
+
                 <div class="faq-col col-md-12 col-sm-12 col-xs-12">
                     <div class="content">
                         {% block download_choices %}{% endblock %}

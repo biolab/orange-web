@@ -2,10 +2,19 @@
 {% load tag_extras %}
 
 {% block download_choices %}
-    <h2>Mac OS X</h2>
+    <h2>Download the latest version for macOS</h2>
+    <a id="recommended-download" style="margin-top: 10px" class="btn btn-warning big-button-base" href="{{ bundle.url }}">
+        Download Orange {{ bundle.version }}
+    </a>
 
-    <ul class="files">
-        <li><p>Bundle: <a id="download-file-mac-withlib" href="{% orange3_bundle_url %}">Orange Snapshot</a><br>
-            This is an universal bundle with everything packed in and ready for an unadvanced user.</p></li>
-    </ul>
+    <h3>Bundle (Default)</h3>
+    <a href="{{ bundle.url }}">{{ bundle.filename }}</a>
+    <p>A universal bundle with everything packed in and ready to use. Use right-click, Open when using for the first time.</p>
+
+    {% include "download/common.html" %}
+
+    <h3>Pre-release</h3>
+    <p>A nighly build with the latest version of Orange. Probably contains bugs and should not be used for production purposes.</p>
+
+
 {% endblock %}

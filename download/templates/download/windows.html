@@ -2,12 +2,22 @@
 {% load tag_extras %}
 
 {% block download_choices %}
-    <h2>Windows</h2>
+    <h2>Download the latest version for Windows</h2>
 
-    <p>This page contains nightly builds of Orange from the code repository. These are typically stable and we recommend using them.</p>
-    <ul class="files">
-        <li><p>Full package: <a id="download-file-windows-withlib" href="{% orange3_win32_installer_url %}">Snapshot of Orange with Python 3 and required libraries</a><br>
-            This package is recommended to those installing Orange for the first time. It includes all required libraries (Python, PythonWin, NumPy, PyQt, PyQwt ...), though it will not change any libraries you might already have.
-    </p></li>
-    </ul>
+    <a id="recommended-download" style="margin-top: 10px" class="btn btn-warning big-button-base" href="{{ classic.url }}">
+        Download Orange {{ classic.version }}
+    </a>
+
+    <h3>Classic installer (Default)</h3>
+    <a href="{{ classic.url }}">{{ classic.filename }}</a>
+    <p>Installs Orange along with Python and all required libraries (Python, NumPy, SciPy, Scikit Learn, PyQt, ...)</p>
+
+    <h3>Standalone installer</h3>
+    <a href="{{ standalone.url }}">{{ standalone.filename }}</a>
+    <p>Installs Orange to home folder. Can be used without administrator privileges.</p>
+
+    {% include "download/common.html" %}
+
+    <h3>Pre-release</h3>
+    <p>A nighly build with the latest version of Orange. Probably contains bugs and should not be used for production purposes.</p>
 {% endblock %}
