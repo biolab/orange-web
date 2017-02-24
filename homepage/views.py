@@ -1,15 +1,10 @@
 import random
-import re
 import requests
 import json
 
 from django.conf import settings
-from django.core.urlresolvers import reverse
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
-
-from homepage.templatetags.tag_extras import download_choices
 
 from orange_web.resources import FEATURE_DESCRIPTIONS
 from orange_web.resources import SCREENSHOTS
@@ -112,81 +107,14 @@ def contact(request):
             response['post'] = -1
     return render(request, 'contact.html', response)
 
-# Regex objects for browser OS detection
-p_win = re.compile(r'.*[Ww]in.*')
-p_mac = re.compile(r'^(?!.*(iPhone|iPad)).*[Mm]ac.*')
-p_linux = re.compile(r'.*[Ll]inux.*')
-
-
-def detect_os(user_agent):
-    if re.match(p_win, user_agent):
-        return 'windows'
-    elif re.match(p_mac, user_agent):
-        return 'mac-os-x'
-    elif re.match(p_linux, user_agent):
-        return 'linux'
-    else:
-        return ''
-
 
 def index(request):
     response = {
         'random_screenshots': random.sample(SCREENSHOTS, 5),
-        'os': detect_os(request.META.get('HTTP_USER_AGENT', '')),
         'features': FEATURE_DESCRIPTIONS,
         'testimonials': TESTIMONIALS[:3],
     }
     return render(request, 'homepage.html', response)
-
-
-def download(request, os=None):
-    if os is None:
-        landing_page = True
-        os = detect_os(request.META.get('HTTP_USER_AGENT', ''))
-    else:
-        landing_page = False
-
-    return render(request, 'download.html', dict(
-        landing_page=landing_page,
-        os=os,
-        tabs=[
-            dict(icon="windows", title="Windows", os="windows"),
-            dict(icon="apple", title="macOS", os="mac-os-x"),
-            dict(icon="linux", title="Linux / Source", os="linux"),
-        ],
-        recommended=recommended_download(os)
-    ))
-
-
-VERSION_RE = re.compile(r"Orange3-([\d\.]+)\.")
-
-
-def recommended_download(os):
-    downloads = download_choices()
-
-    def get_version(filename):
-        try:
-            return VERSION_RE.findall(filename)[0]
-        except IndexError:
-            return "unknown"
-
-    filename = title = ""
-    if os == "windows":
-        title = "Windows Installer"
-        filename = downloads["orange3-win32-installer"]
-    elif os == "mac-os-x":
-        title = "macOS bundle"
-        filename = downloads["bundle-orange3"]
-
-    if filename:
-        return dict(
-            filename=filename,
-            url=reverse('download') + 'files/' + filename,
-            version=get_version(filename),
-            title=title
-        )
-    else:
-        return None
 
 
 def start(request):
@@ -198,6 +126,3 @@ def privacy(request):
     return render(request, 'privacy_policy.html', {})
 
 
-def latest_version(request):
-    version = download_choices('mac').get('version', '')
-    return HttpResponse(version, content_type="text/plain")

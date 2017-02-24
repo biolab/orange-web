@@ -1,0 +1,20 @@
+{% extends "download/base.html" %}
+{% load tag_extras %}
+
+{% block download_choices %}
+    <h2>Download the latest version for Windows</h2>
+
+    <a id="recommended-download" style="margin-top: 10px" class="btn btn-warning big-button-base" href="{{ classic.url }}">
+        Download Orange {{ classic.version }}
+    </a>
+
+    <h3>Classic installer (Default)</h3>
+    <a href="{{ classic.url }}">{{ classic.filename }}</a>
+    <p>Installs Orange along with Python and all required libraries (Python, NumPy, SciPy, Scikit Learn, PyQt, ...)</p>
+
+    <h3>Standalone installer</h3>
+    <a href="{{ standalone.url }}">{{ standalone.filename }}</a>
+    <p>Installs Orange to home folder. Can be used without administrator privileges.</p>
+
+    {% include "download/common.html" %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "download/base.html" %}
+{% load tag_extras %}
+
+{% block download_choices %}
+    <h2>Download the latest version for macOS</h2>
+    <a id="recommended-download" style="margin-top: 10px" class="btn btn-warning big-button-base" href="{{ bundle.url }}">
+        Download Orange {{ bundle.version }}
+    </a>
+
+    <h3>Bundle (Default)</h3>
+    <a href="{{ bundle.url }}">{{ bundle.filename }}</a>
+    <p>A universal bundle with everything packed in and ready to use. Use right-click, Open when using for the first time.</p>
+
+    {% include "download/common.html" %}
+
+{% endblock %}

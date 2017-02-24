@@ -16,15 +16,10 @@ urlpatterns = [
     url(r'^privacy/$', views.privacy, name='privacy'),
     url(r'^contributing/$', views.contribute, name='contribute'),
     url(r'^contact/$', views.contact, name='contact'),
-    url(r'^download/$', views.download, name='download'),
     url(r'^toolbox/$', views.toolbox, name='toolbox'),
-    url(r'^download/(windows|mac-os-x|linux|for-developers)/$',
-        views.download,
-        name='download'),
     url(r'^community/$',
         TemplateView.as_view(template_name='community.html'),
         name='community'),
-    url(r'^version/$', views.latest_version, name='version'),
     url(r'^citation/$',
         TemplateView.as_view(template_name='citation.html'),
         name='citation'),
@@ -37,6 +32,8 @@ urlpatterns = [
     url(r'^docs/$',
         TemplateView.as_view(template_name='docs.html'),
         name='docs'),
+    url(r'^download/', include('download.urls')),
+    url(r'^version/$', "download.views.latest_version", name='version'),
     url(r'^error_report/', include('error_report.urls'))
 ]
 
