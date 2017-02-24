@@ -27,7 +27,7 @@ urlpatterns = [
         TemplateView.as_view(template_name='orange3.html'),
         name='orange3'),
     url(r'^orange2/$',
-        TemplateView.as_view(template_name='orange2.html'),
+        TemplateView.as_view(template_name='download/orange2.html'),
         name='orange2'),
     url(r'^docs/$',
         TemplateView.as_view(template_name='docs.html'),
