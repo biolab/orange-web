@@ -3,7 +3,17 @@
 {% block download_choices %}
     <h2>Linux / Source</h2>
 
-    {% include "download/common.html" %}
+    <h3>Anaconda</h3>
+    <p>If you are using python provided by <a href="https://www.continuum.io/downloads">Anaconda</a>
+        distribution, you are almost ready to go. Add conda-forge to the list of channels you can install packages from</p>
+    <pre><code>conda config --add channels conda-forge</code></pre>
+    <p>and run</p>
+    <pre><code>conda install orange3</code></pre>
+
+    <h3>Pip</h3>
+    <p>Orange can also be installed from the Python Package Index. You may need additional system packages provided by your distribution.</p>
+    <pre><code>pip install orange3</code></pre>
+
 
     <h3>Installing from source</h3>
     <p>Clone our repository from <a href="https://github.com/biolab/orange3">GitHub</a> or download

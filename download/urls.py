@@ -9,5 +9,4 @@ urlpatterns = [
     url(r'^macos/$', views.download_macos, name='download'),
     url(r'^linux/$', views.download_linux, name='download'),
     url(r'^$', views.download, name='download'),
-
 ]
