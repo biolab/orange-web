@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage',
+    'courses',
     'download',
     'error_report',
 )

@@ -33,6 +33,7 @@ urlpatterns = [
         TemplateView.as_view(template_name='docs.html'),
         name='docs'),
     url(r'^download/', include('download.urls')),
+    url(r'^courses/', include('courses.urls')),
     url(r'^version/$', "download.views.latest_version", name='version'),
     url(r'^error_report/', include('error_report.urls'))
 ]
