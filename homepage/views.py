@@ -56,7 +56,7 @@ def pass_captcha(request):
         'secret': settings.RECAPTCHA_SECRET,
         'response': request.POST.get('g-recaptcha-response')
     }
-    r = requests.get(url, params=params)
+    r = requests.get(url, params=params, timeout=10)
     return json.loads(r.content).get('success')
 
 
