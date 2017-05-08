@@ -5,7 +5,8 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!--> <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#"> <!--<![endif]-->
 <head>
     <title>Orange – {% block title %}Data Mining Fruitful &amp; Fun{% endblock title %}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +28,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'css/widgetcat.css' %}">
+    {% block opengraph-social-image %}{% endblock %}
     <noscript>
         <style>
             .jsonly { display: none !important; }
