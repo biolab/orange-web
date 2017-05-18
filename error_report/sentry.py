@@ -30,19 +30,24 @@ GENERAL_MODULES = [
     "Orange.statistics.util:52",     # bincount
 ]
 
+DSN_ORANGE = "https://6f0311046ad2438598ae121cdabd878f:df101b5249ea4c89a82fc1f5da73886d@sentry.io/124497"
 # For addons with separate DSNs mapping from namespace to addon name
 # must be provided for reporting addon version as release.
 NAMESPACE_TO_ADDON = {
-    'associate':        'Orange3-Associate',
-    'bio':              'Orange-Bioinformatics',
-    'datafusion':       'Orange3-DataFusion',
-    'educational':      'Orange3-Educational',
-    'imageanalytics':   'Orange3-ImageAnalytics',
-    'network':          'Orange3-Network',
-    'prototypes':       'Orange3-Prototypes',
-    'recommendation':   'Orange3-Recommendation',
-    'text':             'Orange3-Text',
-    'timeseries':       'Orange3-Timeseries',
+    'associate':        ('Orange3-Associate', "https: // cde61b47c74c4f98931264c1112b1bc2:10cfb3b76a16466fb6583a7952c660a8@sentry.io/167541"),
+    'bio':              ('Orange-Bioinformatics', "https://ddadbc7a4cdd4b32a6f7f15eb2ca991e:8858577a9d214f56a0a9e3c571b2ec5d@sentry.io/167549"),
+    'conformal':        ('Orange3-Conformal-Prediction', "https://3cf0bca1e5ed4b6a811c9980f27ed8ee:94015ed538b04bdcb4da2c35f0d792f8@sentry.io/167539"),
+    'datafusion':       ('Orange3-DataFusion', "https://894bd2e1f47a4271834b8fbc019fc90b:e9d52ebb81354ca0b84fa64624f3882a@sentry.io/167542"),
+    'wbd':              ('Orange3-DataSets', "https://2cb16c369f474e799ae384045dbf489e:b35f4e39d8b1417190aeb475e8c3df0a@sentry.io/167538"),
+    'educational':      ('Orange3-Educational', "https://93323bc17a094974a830b25abbae01b5:4fd5e7c529e34afd97ceca08ed4f059d@sentry.io/167545"),
+    'geo':              ('Orange3-Geo', "https://f3b7d23593d14247808b70ff964b3956:ff25c1d23d3a4eca849429c731c874d9@sentry.io/167528"),
+    'imageanalytics':   ('Orange3-ImageAnalytics', "https://cc2ef6171aad4b6ba344e2851169db7d:cd21ed3e80ae4f4385b31a24e0d036cf@sentry.io/161064"),
+    'network':          ('Orange3-Network', "https://14706c0ff3e047d999cff64e6100eb25:1dd7b84d0afc449abba1757e3520b0c2@sentry.io/167534"),
+    'prototypes':       ('Orange3-Prototypes', "https://d7440097e7f64e4cbff90dd31fc8876e:dde09f7ba917431884b7eb04c814b824@sentry.io/167530"),
+    'recommendation':   ('Orange3-Recommendation', "https://e447ddb4e80149289bca679121359c03:e4b9a0f1a1414f7d906e56b8e28be9cc@sentry.io/167543"),
+    'text':             ('Orange3-Text', "https://38ffabded40c46b9952b2acebc726866:147d6a5becfa40499b6d79e858fb6ef1@sentry.io/128443"),
+    'timeseries':       ('Orange3-Timeseries', "https://e8f30f9dbaf74635bb10e37abe0b5354:2478a41e2f95463db8ceebfeb060cc99@sentry.io/161065"),
+    'testing:':         ('', "https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442")
 }
 
 
@@ -112,8 +117,12 @@ def get_version(v):
 
 
 def get_dsn(name):
-    dsn = "ERROR_REPORT_SENTRY_DSN_{}".format(name.upper())
-    return getattr(settings, dsn, None)
+    if name.upper() == "ORANGE":
+        return DSN_ORANGE
+    elif name in NAMESPACE_TO_ADDON:
+        return NAMESPACE_TO_ADDON[name][1]
+    elif name not in NAMESPACE_TO_ADDON:
+        return NAMESPACE_TO_ADDON["testing"][1]
 
 
 def prep_addon_data(addon, data, duplicated):
@@ -129,7 +138,7 @@ def prep_addon_data(addon, data, duplicated):
     addon_data["tags"]["orange_version"] = data['release']
     addon_data["release"] = "unknown"
     if addon in NAMESPACE_TO_ADDON:
-        addon = NAMESPACE_TO_ADDON[addon]
+        addon = NAMESPACE_TO_ADDON[addon][0]
         for package, version in addon_data['modules'].items():
             if addon == package:
                 addon_data['release'] = get_version(version)
