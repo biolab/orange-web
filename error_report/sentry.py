@@ -47,7 +47,8 @@ NAMESPACE_TO_ADDON = {
     'recommendation':   ('Orange3-Recommendation', "https://e447ddb4e80149289bca679121359c03:e4b9a0f1a1414f7d906e56b8e28be9cc@sentry.io/167543"),
     'text':             ('Orange3-Text', "https://38ffabded40c46b9952b2acebc726866:147d6a5becfa40499b6d79e858fb6ef1@sentry.io/128443"),
     'timeseries':       ('Orange3-Timeseries', "https://e8f30f9dbaf74635bb10e37abe0b5354:2478a41e2f95463db8ceebfeb060cc99@sentry.io/161065"),
-    'testing:':         ('', "https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442")
+    'testing':          ('', "https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442"),
+    'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357")
 }
 
 
