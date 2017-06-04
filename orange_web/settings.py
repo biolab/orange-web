@@ -114,6 +114,7 @@ WIDGET_CATALOG = os.path.abspath("./homepage/static/widgets.json")
 ADDON_WIDGET_CATALOG = os.path.abspath("./homepage/static/")
 FEATURES_CATALOG = os.path.abspath("./homepage/static/features.json")
 TESTIMONIALS_CATALOG = os.path.abspath("./homepage/static/testimonials.json")
+DELAVNICE = os.path.abspath("./delavnice")
 
 # A custom context processor
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
