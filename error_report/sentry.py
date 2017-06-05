@@ -30,6 +30,15 @@ GENERAL_MODULES = [
     "Orange.statistics.util:52",     # bincount
 ]
 
+ORANGE_ADDONS = [
+    'orangecontrib.',
+    'lekbf.',
+    '_textable.',
+    'orangebiodepot.'
+]
+
+DSN_3RDPARTY = "https://d077c44bbab1407595c9838ace02aea5:f3f434118ea44e0a9e61c580ca156505@sentry.io/176069"
+
 DSN_ORANGE = "https://6f0311046ad2438598ae121cdabd878f:df101b5249ea4c89a82fc1f5da73886d@sentry.io/124497"
 # For addons with separate DSNs mapping from namespace to addon name
 # must be provided for reporting addon version as release.
@@ -48,7 +57,12 @@ NAMESPACE_TO_ADDON = {
     'text':             ('Orange3-Text', "https://38ffabded40c46b9952b2acebc726866:147d6a5becfa40499b6d79e858fb6ef1@sentry.io/128443"),
     'timeseries':       ('Orange3-Timeseries', "https://e8f30f9dbaf74635bb10e37abe0b5354:2478a41e2f95463db8ceebfeb060cc99@sentry.io/161065"),
     'testing':          ('', "https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442"),
-    'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357")
+    'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357"),
+    'infrared':         ('orange-infrared', "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"),
+    'spark':            ('spark', DSN_3RDPARTY),
+    'textable_prototypes': ('textable_prototypes', DSN_3RDPARTY),
+    'orangebiodepot':   ('orangebiodepot', DSN_3RDPARTY),
+    '_textable':        ('textable', DSN_3RDPARTY)
 }
 
 
@@ -117,12 +131,14 @@ def get_version(v):
     return v.partition("0+")[0]
 
 
-def get_dsn(name):
+def get_dsn(name, prefix=None):
     if name.upper() == "ORANGE":
         return DSN_ORANGE
     elif name in NAMESPACE_TO_ADDON:
         return NAMESPACE_TO_ADDON[name][1]
-    elif name not in NAMESPACE_TO_ADDON:
+    elif prefix in NAMESPACE_TO_ADDON:
+        return NAMESPACE_TO_ADDON[prefix][1]
+    else:
         return NAMESPACE_TO_ADDON["testing"][1]
 
 
@@ -157,14 +173,14 @@ def get_dsn_report_pairs(sentry_report):
                 if m and any(m.startswith(n) for n in names)]
 
     core_calls = _filter_modules(['Orange.'])
-    addon_calls = _filter_modules(['orangecontrib.'])
-    last_in_addon = _filter_modules(['Orange.', 'orangecontrib.'])
+    addon_calls = _filter_modules(ORANGE_ADDONS)
+    last_in_addon = _filter_modules(['Orange.'] + ORANGE_ADDONS)
     last_in_addon = last_in_addon and last_in_addon[-1] in addon_calls
 
-    addon, addon_dsn = None, None
+    addon, prefix, addon_dsn = None, None, None
     if any(addon_calls):
-        addon = addon_calls[0].split('.')[1]
-        addon_dsn = get_dsn(addon)
+        prefix, addon = addon_calls[0].split('.')[:2]
+        addon_dsn = get_dsn(addon, prefix)
 
     if any(addon_calls) and addon_dsn:
         # errors whose stacktrace contains call from addon & core and the
