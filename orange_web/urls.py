@@ -35,7 +35,8 @@ urlpatterns = [
     url(r'^download/', include('download.urls')),
     url(r'^courses/', include('courses.urls')),
     url(r'^version/$', "download.views.latest_version", name='version'),
-    url(r'^error_report/', include('error_report.urls'))
+    url(r'^error_report/', include('error_report.urls')),
+    url(r'^telemetry/', include('telemetry.urls'))
 ]
 
 # Check the features folder. Add every template that it finds in it.
