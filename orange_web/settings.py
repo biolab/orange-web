@@ -120,6 +120,9 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'orange_web.processors.get_current_page',
 )
 
+# Telemetry settings
+TELEMETRY_DIR = os.path.abspath("./telemetry/")
+
 # Error report settings
 ERROR_REPORT_DIR = os.path.abspath("./error_report/")
 # Biolab's testing Sentry project
