@@ -36,7 +36,7 @@ ORANGE_ADDONS = [
     '_textable.',
     'orangebiodepot.'
 ]
-
+ORANGE3_DATASETS = ('Orange3-Datasets', "https://2cb16c369f474e799ae384045dbf489e:b35f4e39d8b1417190aeb475e8c3df0a@sentry.io/167538")
 DSN_3RDPARTY = "https://d077c44bbab1407595c9838ace02aea5:f3f434118ea44e0a9e61c580ca156505@sentry.io/176069"
 
 DSN_ORANGE = "https://6f0311046ad2438598ae121cdabd878f:df101b5249ea4c89a82fc1f5da73886d@sentry.io/124497"
@@ -47,7 +47,8 @@ NAMESPACE_TO_ADDON = {
     'bio':              ('Orange-Bioinformatics', "https://ddadbc7a4cdd4b32a6f7f15eb2ca991e:8858577a9d214f56a0a9e3c571b2ec5d@sentry.io/167549"),
     'conformal':        ('Orange3-Conformal-Prediction', "https://3cf0bca1e5ed4b6a811c9980f27ed8ee:94015ed538b04bdcb4da2c35f0d792f8@sentry.io/167539"),
     'datafusion':       ('Orange3-DataFusion', "https://894bd2e1f47a4271834b8fbc019fc90b:e9d52ebb81354ca0b84fa64624f3882a@sentry.io/167542"),
-    'wbd':              ('Orange3-DataSets', "https://2cb16c369f474e799ae384045dbf489e:b35f4e39d8b1417190aeb475e8c3df0a@sentry.io/167538"),
+    'wbd':              ORANGE3_DATASETS,
+    'datasets':         ORANGE3_DATASETS,
     'educational':      ('Orange3-Educational', "https://93323bc17a094974a830b25abbae01b5:4fd5e7c529e34afd97ceca08ed4f059d@sentry.io/167545"),
     'geo':              ('Orange3-Geo', "https://f3b7d23593d14247808b70ff964b3956:ff25c1d23d3a4eca849429c731c874d9@sentry.io/167528"),
     'imageanalytics':   ('Orange3-ImageAnalytics', "https://cc2ef6171aad4b6ba344e2851169db7d:cd21ed3e80ae4f4385b31a24e0d036cf@sentry.io/161064"),
