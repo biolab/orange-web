@@ -17,8 +17,15 @@ PYTHON_FOLDERS = [
     "anaconda3.lib",
     "lib.python3.4",
     "orange3",
-    "orangecontrib",
 ]
+
+ORANGE_ADDONS = [
+    'orangecontrib',
+    'lekbf',
+    '_textable',
+    'orangebiodepot',
+]
+
 FRAMES_RE = re.compile('File "([^"]+)", line (\d+), in ([^ ]+) (.*)')
 DEVICE_RE = re.compile('Python ([\d\.]+) on ([^ ]+) ([^ ]+) (.+) ([^ ]+)$')
 
@@ -30,12 +37,6 @@ GENERAL_MODULES = [
     "Orange.statistics.util:52",     # bincount
 ]
 
-ORANGE_ADDONS = [
-    'orangecontrib.',
-    'lekbf.',
-    '_textable.',
-    'orangebiodepot.'
-]
 ORANGE3_DATASETS = ('Orange3-Datasets', "https://2cb16c369f474e799ae384045dbf489e:b35f4e39d8b1417190aeb475e8c3df0a@sentry.io/167538")
 DSN_3RDPARTY = "https://d077c44bbab1407595c9838ace02aea5:f3f434118ea44e0a9e61c580ca156505@sentry.io/176069"
 
@@ -70,13 +71,13 @@ NAMESPACE_TO_ADDON = {
 def guess_module(filename):
     file_module = filename.replace("\\\\", "\\").replace("/", ".").replace("\\", ".")
 
-    for f in PYTHON_FOLDERS:
+    for f in PYTHON_FOLDERS + ORANGE_ADDONS:
         base, prefixed, module = file_module.partition(f + ".")
         if not prefixed:
             continue
 
-        # fix for addons in dev mode; `orangecontrib.` is part of module
-        if f == 'orangecontrib':
+        # fix for addons in dev mode; e.g `orangecontrib.` belongs to module
+        if f in ORANGE_ADDONS:
             module = prefixed + module
 
         for ext in [".py", ".__init__"]:
@@ -171,11 +172,11 @@ def get_dsn_report_pairs(sentry_report):
 
     def _filter_modules(names):
         return [m for m in modules
-                if m and any(m.startswith(n) for n in names)]
+                if m and any(m.startswith(n + '.') for n in names)]
 
-    core_calls = _filter_modules(['Orange.'])
+    core_calls = _filter_modules(['Orange'])
     addon_calls = _filter_modules(ORANGE_ADDONS)
-    last_in_addon = _filter_modules(['Orange.'] + ORANGE_ADDONS)
+    last_in_addon = _filter_modules(['Orange'] + ORANGE_ADDONS)
     last_in_addon = last_in_addon and last_in_addon[-1] in addon_calls
 
     addon, prefix, addon_dsn = None, None, None
