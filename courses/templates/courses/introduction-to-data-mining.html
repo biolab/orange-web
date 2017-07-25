@@ -1,0 +1,148 @@
+{% extends "courses/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+Introduction to Data Mining
+{% endblock title %}
+
+{% block opengraph-social-image %}
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://orange.biolab.si/static/courses/new-header.jpg"/>
+<meta property="og:image:width" content="750"/>
+<meta property="og:image:height" content="303"/>
+<meta property="og:title" content="Workshop - Introduction to Data mining"/>
+<meta property="og:description"
+      content=""/>
+<meta property="article:publisher" content="https://www.facebook.com/orangedm/"/>
+<meta property="article:author" content="https://www.facebook.com/orangedm/"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock opengraph-social-image %}
+
+{% block text %}
+<img style="width:100%" src="{% static 'courses/dm-course-baylor2.jpg' %}" alt="hero shot"/>
+<h1>Introduction to Data Mining</h1>
+<p>Data science is an interdisciplinary field that deals with scientific methods, processes,
+    and systems to extract knowledge or insights from data. The course will introduce machine learning and
+    data visualization techniques to uncover hidden patterns in data. </p>
+
+<h2>Why should I attend?</h2>
+<ul style="margin-bottom: 2em;">
+    <li>You will learn essential approaches in data science that include data exploration, visualization,
+        unsupervised machine learning, classification and regression.
+    </li>
+    <li>After completing the course, you will be able to analyze your own data and use them to develop predictive
+        models.
+    </li>
+    <li>The course will be hands-on and will introduce data science concepts and methods through the analysis of
+        real-life data from biomedicine.
+    </li>
+</ul>
+
+<h2>What will I learn?</h2>
+<ul style="margin-bottom: 2em;">
+    <li>Explorative data analysis</li>
+    <li>Data visualization</li>
+    <li>Predictive models (classification and regression)</li>
+    <li>Clustering and segmentation</li>
+    <li>Data projection</li>
+</ul>
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+    <b>Students from our past courses said</b>
+    </div>
+    <div class="panel-body">
+        <div class="wrapper" style="padding-top:1em">
+            <div class="one">
+                <img style="float:left;" src="{% static 'courses/savannah_bw2.png' %}" alt="Savannah" />
+            </div>
+            <div class="two">
+                <blockquote style="overflow:hidden;">
+                    <p>"Introduction to Data Mining is an excellent course that uses Orange to teach students of all levels the fundamentals of data mining and machine learning. Through the fantastic visualization tools for viewing data and models, Orange made complex mathematical ideas much more intuitive and accessible. This course has allowed me to approach my research (neuroimaging analysis of psychiatric patients) in an entirely novel way! I would definitely recommend this course to anyone working with large data sets."
+                    </p>
+                    <footer>Savannah Gosnell</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Lecture outline and schedule</h2>
+<div class="schedule">
+    <h5>September 11, 2017. 10:00-12:00. N315</h5>
+    <p style="padding-left:30px;"><b>Data exploration</b>. Data preparation for machine learning, introduction to
+        data analysis workflows,
+        visual programming as a means of design of data analysis workflows,
+        basic data exploration and visualization, rigor and reproducibility in data mining.</p>
+
+    <h5>September 12, 2017. 10:00-12:00. N315</h5>
+    <p style="padding-left:30px;"><b>Introduction to classification</b>. Classification trees. Confusion matrix.
+        Estimation of prediction error.
+        Overfitting. Cross-validation.</p>
+
+    <h5>September 13, 2017. 10:00-12:00. N315</h5>
+    <p style="padding-left:30px;"><b>Classification models</b>. Classification trees, forests, logistic regression,
+        nearest neighbors classification.
+        Data painting. Area under ROC curve. Analysis of results of classifications. Nomograms.
+    </p>
+
+    <h5>September 15, 2017. 10:00-12:00. N315</h5>
+    <p style="padding-left:30px;"><b>Regression</b>. Linear regression, polynomial regression and overfitting.
+        Regularization.
+        Effects of regularization on training and test sets.
+        Random forests for regression.</p>
+
+    <h5>September 19, 2015. 10:00-12:00. N315</h5>
+    <p style="padding-left:30px;"><b>Partitional clustering</b>. Introduction to k-means clustering.
+        Differences with hierarchical clustering. Silhouette scoring of clustering results. Outlier detection.</p>
+
+    <h5>September 20, 2017. 10:00-12:00. N315</h5>
+    <p style="padding-left:30px;"><b>Data projections</b>. Principal component analysis. Multi-dimensional scaling
+        and t-SNE.</p>
+
+    <h5>September 22, 2017. 10:00-12:00. N315</h5>
+    <p style="padding-left:30px;"><b>Gentle introduction to deep learning</b>. Image embedding. Image data analysis
+        – examples with clustering,
+        classification and outlier detection with images. Course wrap-up.</p>
+</div>
+<br>
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        Lecturers
+    </div>
+
+    <div class="panel-body">
+        <div class="wrapper">
+            <div class="one" style="padding-top:1em">
+                <img style="float: left;"  src="{% static 'courses/janez_demsar_bw3.png' %}" alt="" />
+            </div>
+            <div class="two">
+                <blockquote style="overflow:hidden;">
+                    <p>»Playing with data is fun. It's like a detective story, where data gives you clues and you dig ever deeper into the mystery until finding the hidden treasure, the cunning murderer, or the mischievous gene.«</p>
+                    <footer>Janez Demšar</footer>
+                </blockquote>
+            </div>
+        </div>
+
+
+        <div class=wrapper" style="padding-top:1em">
+            <div class="one">
+                <img style="float: left;"  src="{% static 'courses/blaz_zupan_bw_light2.png' %}" alt="" />
+            </div>
+            <div class="two">
+                <blockquote style="overflow:hidden;"><p>"Lately, I am fascinated by how easy it is to explain machine learning to anybody. In just a few hours. To the point where a course attendee would go home and use machine learning on her own data. Or on any data from the web. And she would understand how artificial intelligence helps Google, Amazon, and Netflix. For such training, you need the right tools. And it is here where Orange shines. " </p>
+                    <footer>Blaž Zupan</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h2>Materials required</h2>
+<p><b>Hardware:</b> Each student must bring a laptop computer to each lecture.</p>
+<p><b>Software:</b><a href="http://orange.biolab.si"> <u>Orange</u></a>. Please install the software before the first lecture.
+</p>
+<br>
+{% endblock text %}

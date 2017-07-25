@@ -584,6 +584,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 section.downloads {
     padding-bottom: 50px;
 }
+
 .donate {
     font-size: 18px;
     border: 2px solid #e8e8e8;
@@ -645,4 +646,30 @@ a.donate:visited, a.donate:focus, a.donate:hover, a.donate:active {
     .donate {
         float: left;
     }
+}
+
+.schedule h5 {
+    margin-top: 20px;
+}
+img, embed,
+object, video {
+    max-width: 100%;
+}
+@media handheld and (max-width: 500px),
+screen and (max-device-width: 500px),
+screen and (max-width: 500px) {
+    .one {
+        display: flex;
+        justify-content: center;
+        float: none;
+        width: 100%;
+        overflow: hidden;
+    }
+    .panel-heading, .two p, footer{
+        text-align: center;
+    }
+}
+.wrapper {
+    display: inline-block;
+    overflow: auto;
 }
