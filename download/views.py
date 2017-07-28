@@ -59,6 +59,7 @@ def download_windows(request, title=None):
         os=OS.windows,
         classic=_get_download("orange3-win32-installer"),
         standalone=_get_download("orange3-win32-installer-standallone"),
+        miniconda=_get_download("orange3-win64-installer-miniconda")
     ))
 
 
@@ -123,6 +124,8 @@ def _download_choices(os=None):
             downloads["orange3-win32-installer"] = value
         elif key == "WIN32_ORANGE3_STANDALONE_DAILY":
             downloads["orange3-win32-installer-standallone"] = value
+        elif key == "WIN64_ORANGE3_MINICONDA":
+            downloads["orange3-win64-installer-miniconda"] = value
 
     for key, value in _download_set_patterns("mac"):
         if key == 'MAC_DAILY':
