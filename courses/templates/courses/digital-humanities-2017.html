@@ -1,0 +1,40 @@
+{% extends "courses/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    Hands-on Text Analytics with Orange (DH 2017)
+{% endblock title %}
+
+{% block opengraph-social-image %}
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://orange.biolab.si/static/courses/new-header.jpg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="303" />
+    <meta property="og:title" content="Hands-on Text Analytics with Orange" />
+    <meta property="og:description" content="A text minig course for digital humanities researchers. Learn about modern methods for data and text mining without any programming." />
+    <meta property="article:publisher"  content="https://www.facebook.com/orangedm/" />
+    <meta property="article:author"  content="https://www.facebook.com/orangedm/" />
+{% endblock opengraph-social-image %}
+
+{% block text %}
+    <h1>Hands-on Text Analytics with Orange</h1>
+
+    <p>Dear workshop participants,</p>
+
+    <p>Welcome to the Hands-on Text Analytics with Orange! To save us precious time, we kindly ask you to install Orange software before the workshop.</p>
+
+    <h2>Installation Instructions</h2>
+
+    <p>Please visit <a href="https://orange.biolab.si/download">our website</a> and download the installation package for your operating system. If you are a Linux user or wish to install the software via command line, we warmly suggest you use the Anaconda framework. Installation instructions are described on our <a href="https://orange.biolab.si/download/linux/">website</a> and on our <a href="https://github.com/biolab/orange3">Github page</a>.</p>
+
+    <p>Please, open the software and check that everything works before the workshop. To get you started, here are some introductory <a href="https://www.youtube.com/playlist?list=PLmNPvQr9Tf-ZSDLwOzxpvY-HrE0yv-8Fy&disable_polymer=true">YouTube tutorials</a>.</p>
+
+    <p>You must also install two add-ons for the workshop: <b>Text</b> and <b>Image Analytics</b>. In Orange go to Options → Add-ons and select Text and Image Analytics. Once the installation is complete, restart Orange. Alternatively, follow <a href="https://www.youtube.com/watch?v=OANsA6fMJKg&index=8&list=PLmNPvQr9Tf-ZSDLwOzxpvY-HrE0yv-8Fy&t=7s">video tutorial</a> for instructions.</p>
+
+    <p>Should you experience any problems with your installation, we will be available an hour before the workshop. You can catch us in the lobby and we’ll help you out.</p>
+
+    <p>We're looking forwards to seeing you at the workshop!</p>
+    <br>
+    <p>Ajda, Niko and Lan</p>
+
+{% endblock text %}
