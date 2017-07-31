@@ -1,2 +1,3 @@
 WIN32_ORANGE3_DAILY=Orange3-3.3.11.win32-py3.4-install.exe
 WIN32_ORANGE3_STANDALONE_DAILY=Orange3-3.3.11.win32-py3.4-install-standalone.exe
+WIN64_ORANGE3_MINICONDA=Orange3-3.3.11-Miniconda-x86_64.exe
