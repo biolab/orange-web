@@ -78,12 +78,7 @@
                         <li class="nav-item"><a id="header-docs-link" href="{% url 'docs' %}">Docs</a></li>
                         <li class="nav-item"><a id="header-blog-link" href="https://blog.biolab.si">Blog</a></li>
                         <li class="nav-item">
-                            <form onclick="ga('send', 'event', 'Donate', 'click', 'paypal');" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="HCTE45LJ7YDJA">
-                                <input type="submit" value="Donate" name="submit" title="Support Orange team with ice cream! :)" class="btn btn-lg navbar" id="donate">
-                            <input type="hidden" name="cpp_header_image" src="{% static 'images/orange_logo_new.png' %}">
-                            </form>
+                            <a class="btn donate" id="header-donate-link" role="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HCTE45LJ7YDJA">Donate</a>
                         </li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->

@@ -31,7 +31,12 @@ function orange_web_theme_primary_menu() {
 		foreach ((array) $menu_items as $key => $menu_item) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
-			$menu_list .= '        <li class="nav-item"><a href="'. $url .'">'. $title .'</a></li>' ."\n";
+			$classes = empty( $menu_item->classes ) ? array() : (array) $menu_item->classes;
+
+			$class_names = join( ' ', $classes );
+            $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+			$menu_list .= '        <li class="active nav-item sr-only"><a href="' . $GLOBALS['web_home_url'] .'" ' . $class_names . '>Home</a></li>' ."\n";
 		}
 		$menu_list .= '    </ul>' ."\n";
 		$menu_list .= '</div>' ."\n";
