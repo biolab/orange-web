@@ -181,7 +181,6 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
 }
-
 /* Theme customization starts here
 -------------------------------------------------------------- */
 ul li {
@@ -256,3 +255,17 @@ div.widget-area ul li {
 .entry-content p a img {
 	margin: 2px;
 }
+.donate {
+    font-size: 18px;
+    border: 2px solid #e8e8e8;
+    background-color: #efefef;
+    margin-left: 15px;
+    padding: 6px 12px !important;
+    margin-top: 7px !important;
+}
+a.donate:visited, a.donate:focus, a.donate:hover, a.donate:active {
+    border: 2px solid #e8e8e8 !important;
+    background-color: #efefef !important;
+    color: #444444 !important;
+}
+
