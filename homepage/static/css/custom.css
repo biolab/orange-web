@@ -584,17 +584,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 section.downloads {
     padding-bottom: 50px;
 }
-#donate {
-    font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    vertical align: middle;
+.donate {
     font-size: 18px;
-    text-size-adjust: 100%;
     border: 2px solid #e8e8e8;
     background-color: #efefef;
-    color: #444444 !important;
-    margin-bottom: 0;
     margin-left: 15px;
-    padding: 0px 12px;
+    padding: 6px 12px !important;
+    margin-top: 7px !important;
+}
+a.donate:visited, a.donate:focus, a.donate:hover, a.donate:active {
+    border: 2px solid #e8e8e8 !important;
+    background-color: #efefef !important;
+    color: #444444 !important;
 }
 @media (max-width: 990px) {
     .navbar-header {
@@ -615,10 +616,10 @@ section.downloads {
         border-width: 0 0 1px;
     }
     .navbar-collapse.collapse {
-        display: none!important;
+        display: none !important;
     }
     .navbar-nav {
-        float: none!important;
+        float: none !important;
         margin-top: 7.5px;
     }
     .navbar-nav>li {
@@ -641,7 +642,4 @@ section.downloads {
        -webkit-box-shadow: none;
        box-shadow: none;
     }
-}
-input#donate:focus {
-    outline:0;
 }
