@@ -629,7 +629,7 @@ a.donate:visited, a.donate:focus, a.donate:hover, a.donate:active {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .collapse.in{
+    .collapse.in {
         display:block !important;
     }
     .navbar-nav .open .dropdown-menu {
@@ -641,5 +641,8 @@ a.donate:visited, a.donate:focus, a.donate:hover, a.donate:active {
        border: 0;
        -webkit-box-shadow: none;
        box-shadow: none;
+    }
+    .donate {
+        float: left;
     }
 }
