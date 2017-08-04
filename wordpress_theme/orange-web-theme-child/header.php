@@ -15,7 +15,7 @@
 <meta name="description" content="Orange Data Mining Toolbox">
 <meta name="author" content="Bioinformatics Laboratory, University of Ljubljana">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11">
+<!-- <link rel="profile" href="http://gmpg.org/xfn/11">*/ -->
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php orange_web_home_url(); ?>/static/images/favicon.ico">
 <link rel="stylesheet" href="<?php orange_web_home_url(); ?>/static/plugins/bootstrap/css/bootstrap.min.css">
@@ -25,8 +25,8 @@
 <link rel="stylesheet" href="<?php orange_web_home_url(); ?>/static/css/styles.css">
 <link rel="stylesheet" href="<?php orange_web_home_url(); ?>/static/css/custom.css">
 <!-- External fonts -->
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
 <!-- Global CSS -->
 </head>
 
@@ -37,7 +37,7 @@
 	<header id="top" class="header navbar-fixed-top" role="banner">
 		<div class="container">
 			<h1 class="logo pull-left">
-	            <a href="<?php bloginfo( 'wpurl' ); ?>">
+	            <a href="https://orange.biolab.si/">
 	                <img id="logo-image" class="logo-image" src="<?php orange_web_home_url(); ?>/static/images/orange-logo-w.png" alt="Logo">
 	            </a>
 	        </h1><!--//logo-->

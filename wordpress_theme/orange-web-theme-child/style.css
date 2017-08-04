@@ -255,6 +255,16 @@ div.widget-area ul li {
 .entry-content p a img {
 	margin: 2px;
 }
+figure {
+	max-width: 100%;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+wp-caption {
+	font-size: 14px;
+}
 .donate {
     font-size: 18px;
     border: 2px solid #e8e8e8;
