@@ -651,6 +651,12 @@ a.donate:visited, a.donate:focus, a.donate:hover, a.donate:active {
 .schedule h5 {
     margin-top: 20px;
 }
+.schedule p {
+    padding-left: 30px !important;
+}
+.schedule {
+    margin-bottom: 2em;
+}
 img, embed,
 object, video {
     max-width: 100%;
@@ -658,18 +664,31 @@ object, video {
 @media handheld and (max-width: 500px),
 screen and (max-device-width: 500px),
 screen and (max-width: 500px) {
-    .one {
+    .panel-body-image {
         display: flex;
         justify-content: center;
         float: none;
         width: 100%;
         overflow: hidden;
     }
-    .panel-heading, .two p, footer{
+    .panel-heading, .panel-body-quote p, footer{
         text-align: center;
     }
 }
-.wrapper {
+.panel-body-quote {
+    overflow: hidden;
+}
+.panel-body-image img {
+    float: left;
+}
+.panel-body-wrapper {
     display: inline-block;
     overflow: auto;
+    padding-top: 1em;
+}
+.bottom-margin {
+    margin-bottom: 2em;
+}
+.h2-margin {
+    margin-top: 1.5em;
 }
