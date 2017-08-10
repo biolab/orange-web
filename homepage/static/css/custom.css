@@ -593,10 +593,16 @@ section.downloads {
     padding: 6px 12px !important;
     margin-top: 7px !important;
 }
-a.donate:visited, a.donate:focus, a.donate:hover, a.donate:active {
+a.donate:visited, a.donate:focus, a.donate:active {
     border: 2px solid #e8e8e8 !important;
     background-color: #efefef !important;
     color: #444444 !important;
+}
+a.donate:hover {
+    color: #fff !important;
+    background-color: #E19C14 !important;
+    border: solid 2px !important;
+    border-color: #d99614 !important;
 }
 @media (max-width: 990px) {
     .navbar-header {
