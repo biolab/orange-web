@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 import socket
 
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 SCREENSHOTS_DIR = \
@@ -114,11 +113,6 @@ WIDGET_CATALOG = os.path.abspath("./homepage/static/widgets.json")
 ADDON_WIDGET_CATALOG = os.path.abspath("./homepage/static/")
 FEATURES_CATALOG = os.path.abspath("./homepage/static/features.json")
 TESTIMONIALS_CATALOG = os.path.abspath("./homepage/static/testimonials.json")
-
-# A custom context processor
-TEMPLATE_CONTEXT_PROCESSORS = TCP + (
-    'orange_web.processors.get_current_page',
-)
 
 # Error report settings
 ERROR_REPORT_DIR = os.path.abspath("./error_report/")
