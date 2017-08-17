@@ -1,6 +1,6 @@
 astroid==1.4.9
 contextlib2==0.5.4
-Django==1.11.4
+Django==1.8.18
 docutils==0.11
 feedparser==5.1.3
 lazy-object-proxy==1.2.2
