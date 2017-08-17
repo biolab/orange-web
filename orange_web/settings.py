@@ -32,7 +32,7 @@ RECAPTCHA_SECRET = 'get the string from Google'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si']
+ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '127.0.0.1']
 
 BLOG_HOST = 'blog.biolab.si'
 
