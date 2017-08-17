@@ -25,6 +25,16 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 
+# Database settings
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'orange_website',
+        'USER': 'orange_website',
+    }
+}
+
+
 # Logging
 LOGGING = {
     'version': 1,
