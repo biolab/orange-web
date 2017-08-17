@@ -10,7 +10,7 @@
 /**
 * Main homepage
 */
-$web_home_url = 'http://orange.biolab.si';
+$web_home_url = 'https://orange.biolab.si';
 
 function orange_web_home_url() {
 	echo esc_url( $GLOBALS['web_home_url'] );
@@ -32,11 +32,9 @@ function orange_web_theme_primary_menu() {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
 			$classes = empty( $menu_item->classes ) ? array() : (array) $menu_item->classes;
-
 			$class_names = join( ' ', $classes );
             $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-
-			$menu_list .= '        <li class="active nav-item sr-only"><a href="' . $GLOBALS['web_home_url'] .'" ' . $class_names . '>Home</a></li>' ."\n";
+			$menu_list .= '        <li class="nav-item"><a ' . $class_names . ' href="'. $url .'">'. $title .'</a></li>' ."\n";
 		}
 		$menu_list .= '    </ul>' ."\n";
 		$menu_list .= '</div>' ."\n";
