@@ -8,11 +8,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 import os
-import socket
 
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 SCREENSHOTS_DIR = \
     os.path.join(BASE_DIR, 'homepage', 'static', 'homepage', 'screenshots')
 SCREENSHOTS_INDEX = os.path.join(SCREENSHOTS_DIR, 'screenshots.xml')
@@ -30,9 +29,8 @@ RECAPTCHA_SECRET = 'get the string from Google'
 # FOR TESTING WHEN FALSE: python manage.py runserver --insecure
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si']
+ALLOWED_HOSTS = []
 
 BLOG_HOST = 'blog.biolab.si'
 
@@ -58,16 +56,34 @@ INSTALLED_APPS = (
     'error_report',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
 
 ROOT_URLCONF = 'orange_web.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+            'debug': True,
+        },
+    },
+]
 
 WSGI_APPLICATION = 'orange_web.wsgi.application'
 
@@ -81,19 +97,9 @@ ADMINS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'local.db'),
     }
 }
-
-if socket.gethostname() == 'biolab':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'orange_website',
-            'USER': 'orange_website',
-        }
-    }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -114,11 +120,6 @@ WIDGET_CATALOG = os.path.abspath("./homepage/static/widgets.json")
 ADDON_WIDGET_CATALOG = os.path.abspath("./homepage/static/")
 FEATURES_CATALOG = os.path.abspath("./homepage/static/features.json")
 TESTIMONIALS_CATALOG = os.path.abspath("./homepage/static/testimonials.json")
-
-# A custom context processor
-TEMPLATE_CONTEXT_PROCESSORS = TCP + (
-    'orange_web.processors.get_current_page',
-)
 
 # Error report settings
 ERROR_REPORT_DIR = os.path.abspath("./error_report/")

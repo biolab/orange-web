@@ -61,7 +61,10 @@ def pass_captcha(request):
 
 
 def contribute(request):
-    response = {'post': 0}
+    response = {
+        'post': 0,
+        'recaptcha': True,
+    }
     if request.method == 'POST':
         rp = request.POST
         if not pass_captcha(request):
@@ -89,7 +92,10 @@ def contribute(request):
 
 
 def contact(request):
-    response = {'post': 0}
+    response = {
+        'post': 0,
+        'recaptcha': True,
+    }
     if request.method == 'POST':
         rp = request.POST
         if pass_captcha(request):
@@ -113,6 +119,10 @@ def index(request):
         'random_screenshots': random.sample(SCREENSHOTS, 5),
         'features': FEATURE_DESCRIPTIONS,
         'testimonials': TESTIMONIALS[:3],
+        'override_home': {
+            'name': 'Features',
+            'url': '#Orange-Features',
+        },
     }
     return render(request, 'homepage.html', response)
 

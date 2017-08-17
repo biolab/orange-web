@@ -5,18 +5,19 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
 
-from homepage import views
+from homepage import views as homepage_views
+from download import views as download_views
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^screenshots/$', views.screens, name='screenshots'),
-    url(r'^getting-started/$', views.start, name='start'),
-    url(r'^license/$', views.license_page, name='license'),
-    url(r'^privacy/$', views.privacy, name='privacy'),
-    url(r'^contributing/$', views.contribute, name='contribute'),
-    url(r'^contact/$', views.contact, name='contact'),
-    url(r'^toolbox/$', views.toolbox, name='toolbox'),
+    url(r'^$', homepage_views.index, name='index'),
+    url(r'^screenshots/$', homepage_views.screens, name='screenshots'),
+    url(r'^getting-started/$', homepage_views.start, name='start'),
+    url(r'^license/$', homepage_views.license_page, name='license'),
+    url(r'^privacy/$', homepage_views.privacy, name='privacy'),
+    url(r'^contributing/$', homepage_views.contribute, name='contribute'),
+    url(r'^contact/$', homepage_views.contact, name='contact'),
+    url(r'^toolbox/$', homepage_views.toolbox, name='toolbox'),
     url(r'^community/$',
         TemplateView.as_view(template_name='community.html'),
         name='community'),
@@ -34,7 +35,7 @@ urlpatterns = [
         name='docs'),
     url(r'^download/', include('download.urls')),
     url(r'^courses/', include('courses.urls')),
-    url(r'^version/$', "download.views.latest_version", name='version'),
+    url(r'^version/$', download_views.latest_version, name='version'),
     url(r'^error_report/', include('error_report.urls'))
 ]
 

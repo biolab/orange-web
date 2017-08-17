@@ -1,7 +1,7 @@
 from orange_web.settings import *
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
+TEMPLATES[0]['OPTIONS']['debug'] = False
 
 ALLOWED_HOSTS = ['orange.biolab.si', 'new.orange.biolab.si', '193.2.72.56', 'qa.orange.biolab.si']
 DOWNLOAD_DIR = '/srv/download'
@@ -24,6 +24,16 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
+
+# Database settings
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'orange_website',
+        'USER': 'orange_website',
+    }
+}
+
 
 # Logging
 LOGGING = {
