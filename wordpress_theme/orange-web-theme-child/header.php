@@ -38,7 +38,7 @@
 		<div class="container">
 			<h1 class="logo pull-left">
 	            <a href="https://orange.biolab.si/">
-	                <img id="logo-image" class="logo-image" src="<?php orange_web_home_url(); ?>/static/images/orange-logo-w.png" alt="Logo">
+	                <img id="logo-image" class="logo-image" src="<?php orange_web_home_url(); ?>/static/images/orange_logo_new.png" alt="Logo">
 	            </a>
 	        </h1><!--//logo-->
 
