@@ -39,6 +39,7 @@ GENERAL_MODULES = [
 
 ORANGE3_DATASETS = ('Orange3-Datasets', "https://2cb16c369f474e799ae384045dbf489e:b35f4e39d8b1417190aeb475e8c3df0a@sentry.io/167538")
 DSN_3RDPARTY = "https://d077c44bbab1407595c9838ace02aea5:f3f434118ea44e0a9e61c580ca156505@sentry.io/176069"
+DSN_TEXTABLE = "https://489e53f2068441f48d0d7bb3f5f066d5:299379ad47a140dfaee2042a6bb4204f@sentry.io/207453"
 
 DSN_ORANGE = "https://6f0311046ad2438598ae121cdabd878f:df101b5249ea4c89a82fc1f5da73886d@sentry.io/124497"
 # For addons with separate DSNs mapping from namespace to addon name
@@ -62,9 +63,9 @@ NAMESPACE_TO_ADDON = {
     'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357"),
     'infrared':         ('orange-infrared', "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"),
     'spark':            ('spark', DSN_3RDPARTY),
-    'textable_prototypes': ('textable_prototypes', DSN_3RDPARTY),
+    'textable_prototypes': ('textable_prototypes', DSN_TEXTABLE),
     'orangebiodepot':   ('orangebiodepot', DSN_3RDPARTY),
-    '_textable':        ('textable', DSN_3RDPARTY)
+    '_textable':        ('textable', DSN_TEXTABLE)
 }
 
 
