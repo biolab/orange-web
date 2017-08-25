@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cache %}
+{% load tag_extras %}
+
+{% block title %}Thank you{% endblock title %}
+
+<!-- ******CONTENT****** -->
+{% block content %}
+<section id="promo" class="promo section offset-header has-pattern">
+    <div class="container">
+        <div class="row">
+            <div class="overview">
+                    <div class="col-sm-1 col-xs-12"></div>
+                    <div id="margin" class="col-sm-5 col-xs-12 titlebox margin">
+                        <h1 class="title firstpagetitle"><span>Thank you</br>for supporting Orange!</span></h1>
+                        <div class="content">
+                            <p class="bigsummary summary">You support:</p>
+                            <ul class="no-bullet">
+                                <li class="no-bullet"><span class="glyphicon glyphicon-ok"></span> Orange</li>
+                                <li class="no-bullet"><span class="glyphicon glyphicon-ok"></span> Open Source</li>
+                                <li class="no-bullet"><span class="glyphicon glyphicon-ok"></span> Our bellies &#x1F366</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--// iPhone starts - default/only view -->
+                    <div class="phone iphone col-sm-6 col-xs-12 titleimage pull-right">
+                        <div class="iphone-holder phone-holder">
+                            <div class="iphone-holder-inner">
+                                <img id="landing-img-small" class="landing-img-small" alt="Orange Data Mining" src="../static/images/iadv_data_mining_01_scaled_thank_you_05.png">
+                            </div><!--//iphone-holder-inner-->
+                        </div><!--//iphone-holder-->
+                    </div><!--//iphone-->
+                    <!--// iPhone ends -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+<!--//CONTENT-->
+
+
