@@ -61,11 +61,12 @@ NAMESPACE_TO_ADDON = {
     'timeseries':       ('Orange3-Timeseries', "https://e8f30f9dbaf74635bb10e37abe0b5354:2478a41e2f95463db8ceebfeb060cc99@sentry.io/161065"),
     'testing':          ('', "https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442"),
     'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357"),
-    'infrared':         ('orange-infrared', "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"),
-    'spark':            ('spark', DSN_3RDPARTY),
-    'textable_prototypes': ('textable_prototypes', DSN_TEXTABLE),
+    'infrared':         ('Orange-Infrared', "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"),
+    'spark':            ('Orange3-spark', DSN_3RDPARTY),
+    'textable_prototypes': ('Orange3-Textable-Prototypes', DSN_TEXTABLE),
     'orangebiodepot':   ('orangebiodepot', DSN_3RDPARTY),
-    '_textable':        ('textable', DSN_TEXTABLE)
+    '_textable':        ('Orange3-Textable', DSN_TEXTABLE),
+    'variants':         ('Orange3-Variants', "https://3acf738fd9a3458ab76cabcfaa072dcf:6b24664b8a67412382986cd388de965b@sentry.io/209789"),
 }
 
 
