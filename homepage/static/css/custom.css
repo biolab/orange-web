@@ -701,3 +701,23 @@ screen and (max-width: 500px) {
 .h2-margin {
     margin-top: 1.5em;
 }
+.landing-img-small {
+    display: block;
+    margin: 0 auto;
+    max-width: 550px;
+}
+@media (max-width: 710px) {
+    #margin {
+        margin-top: 0px;
+    }
+    #landing-img-small {width: 60%;}
+}
+ul li.no-bullet {
+    list-style-type: none;
+    font-weight: lighter;
+    padding-top: 5px;
+}
+.margin {
+    margin-top: 60px;
+}
+
