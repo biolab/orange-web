@@ -1081,6 +1081,10 @@ pre {
     word-wrap: normal;
 }
 
+p.indent {
+    margin-left: 50px;
+}
+
 input#search-box {
     margin: 60px 0 20px 0;
 }

@@ -135,4 +135,3 @@ def start(request):
 def privacy(request):
     return render(request, 'privacy_policy.html', {})
 
-
