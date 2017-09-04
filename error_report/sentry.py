@@ -168,6 +168,7 @@ def prep_addon_data(addon, data, duplicated):
 
 
 def get_dsn_report_pairs(sentry_report):
+    logger.info("Getting DNS report pairs.")
     frames = sentry_report['exception']['values'][0]['stacktrace']['frames']
     modules = [f['module'] for f in frames if f.get('module') not in
                (None, '', 'Orange.canvas.scheme.widgetsscheme')]
@@ -229,6 +230,10 @@ def create_sentry_report(report):
         # group issues by the module of the last frame
         # (unless the last frame is too general)
         data["fingerprint"] = [module]
+    info_msg = "Sentry report created."
+    if "Exception" in report:
+        info_msg += " Exception: {}".format(report["Exception"])
+    logger.info(info_msg)
     return data
 
 
@@ -244,3 +249,5 @@ def send_to_sentry(report):
         except Exception as ex:
             # There is nothing we can do if sentry is not available
             logger.exception(ex)
+        else:
+            logger.info("Report has been sent to sentry.")
