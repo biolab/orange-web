@@ -3,7 +3,7 @@
 {% block download_choices %}
     <h2>Linux / Source</h2>
 
-    <h3>Anaconda</h3>
+    <h3><a id="anaconda"></a>Anaconda</h3>
     <p>If you are using python provided by <a href="https://www.continuum.io/downloads">Anaconda</a>
         distribution, you are almost ready to go. Add conda-forge to the list of channels you can install packages from</p>
     <pre><code>conda config --add channels conda-forge</code></pre>
@@ -13,7 +13,7 @@ conda install -c defaults pyqt=5 qt</code></pre>
     <p>(the second commands installs qt and pyqt from the defaults channel,
         as those provided by the conda-forge do not include webkit)</p>
 
-    <h3>Pip</h3>
+    <h3><a id="pip"></a>Pip</h3>
     <p>Orange can also be installed from the Python Package Index. You may need additional system packages provided by your distribution.</p>
     <pre><code>pip install orange3</code></pre>
 
