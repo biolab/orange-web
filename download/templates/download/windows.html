@@ -8,19 +8,16 @@
         Download Orange {{ classic.version }}
     </a>
 
-    <h3>Classic installer (Default)</h3>
+    <h3><a id="classic"></a>Classic installer (Default)</h3>
     <a href="{{ classic.url }}">{{ classic.filename }}</a>
     <p>Installs Orange along with Python and all required libraries (Python, NumPy, SciPy, Scikit Learn, PyQt, ...)</p>
 
-    <h3>Standalone installer</h3>
-    <a href="{{ standalone.url }}">{{ standalone.filename }}</a>
-    <p>Installs Orange to home folder. Can be used without administrator privileges.</p>
-
-    <h3>Miniconda installer (beta)</h3>
+    <h3><a id="standalone"></a>Standalone installer (Miniconda)</h3>
     <a href="{{ miniconda.url }}">{{ miniconda.filename }}</a>
     <p>
-        Installs Miniconda and Orange.<br />
-        <br />
+        Installs Miniconda and Orange. Can be used without administrator privileges.
+    </p>
+    <p>
         Please report any problems to our <a href="https://github.com/biolab/orange3/issues/new?title=Problem%20with%20miniconda%20installer">Issue Tracker</a>.
     </p>
 
