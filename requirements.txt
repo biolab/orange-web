@@ -10,7 +10,7 @@ pep8==1.5.5
 Pillow==4.0.0
 pylint==1.2.0
 pytz==2017.2
-raven==5.32.0
+raven==6.1.0
 requests==2.2.1
 six==1.6.1
 wrapt==1.10.8
