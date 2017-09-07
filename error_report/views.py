@@ -1,3 +1,4 @@
+import io
 import json
 import logging
 import os
@@ -50,9 +51,14 @@ def v1(request):
     workflow = request.POST.get("Widget Scheme", None)
     if workflow:
         workflow_file = "{}.ows".format(timestamp)
-        with open(os.path.join(path, workflow_file), 'w') as f:
-            f.write(workflow)
-
+        try:
+            with io.open(os.path.join(path, workflow_file), 'w', encoding='utf-8') as f:
+                f.write(workflow)
+        except Exception as e:
+            log.exception("Saving workflow failed.", exc_info=e)
+            workflow = None
+        else:
+            log.info("Saving workflow succeeded.")
     report = dict(request.POST)
     report.pop("Widget Scheme", None)
     if workflow:

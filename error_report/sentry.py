@@ -243,11 +243,12 @@ def send_to_sentry(report):
         return
 
     for dsn, report in get_dsn_report_pairs(sentry_report):
+        logger.info("Sending to {}.".format(dsn))
         try:
             client = Client(dsn, raise_send_errors=True)
             client.send(**report)
         except Exception as ex:
             # There is nothing we can do if sentry is not available
-            logger.exception(ex)
+            logger.exception("Sending report failed: {}.".format(ex))
         else:
             logger.info("Report has been sent to sentry.")
