@@ -128,10 +128,6 @@
                                 <li><a class="sitemap-sub" href="{% url 'download' %}mac-os-x/">Mac OS</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'download' %}linux/">Linux</a></li>
                             </ul>
-                            <br>
-                            <ul class="links list-sitemap">
-                                <li><a class="sitemap-cat" href="{% url 'faq' %}">FAQ</a></li>
-                            </ul>
                         </div>
 
                         <div class="col-sm-4 sitemap-group">
@@ -154,6 +150,7 @@
 
                         <div class="col-sm-6 sitemap-group docs-devs">
                             <ul class="links list-sitemap">
+                                <li><a class="sitemap-cat" href="{% url 'faq' %}">FAQ</a></li>
                                 <li><a class="sitemap-cat" href="{% url 'docs' %}">Documentation</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'start' %}">Get started</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'toolbox' %}">Widgets</a></li>
@@ -204,6 +201,16 @@
     <script type="text/javascript" src="{% static 'plugins/lightgallery/js/lg-thumbnail.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/lightgallery/js/lg-video.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/lightgallery/js/lg-zoom.js' %}"></script>
+
+    <!-- Offset for FAQ -->
+    <script type="text/javascript">
+    $(window).ready(function() {
+        if (document.location.hash){
+            $(window).scrollTop($(window).scrollTop() - 105);
+        }
+    });
+    </script>
+    <!-- End offset function -->
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
