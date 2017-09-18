@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ{% endblock title %}
+
+{% block content %}
+<section id="features" class="features section custom-reduce-padding-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1 class="title">FAQ</h1>
+                <div class="content">
+                    <h2 id="q-trouble-installing-Orange">I am having trouble installing Orange.</h2>
+                    <p class="indent">Make sure you are downloading the latest version. You can also try to download a standalone installer or Anaconda distribution.</p>
+                    <p class="indent">Still no luck? Check our <a href="https://github.com/biolab/orange3/issues">issue tracker</a> for similar issues or report a new one.</p>
+
+                    <h2 id="q-trouble-installing-addon">I am having trouble installing an add-on.</h2>
+                    <p class="indent">Make sure you are using the latest version of Orange. Encountering issues, please raise them on the relevant <a href="https://github.com/biolab?q=orange3-">add-on's issue tracker</a>. Alternatively, you can try with Anaconda distribution and install the add-on in the terminal. You can use pip or conda to install a package directly. E.g.:
+                    <pre style="margin-left: 50px">pip install orange3-text<br>conda install orange3-timeseries</pre></p>
+
+                    <h2 id="q-error-using-Orange">I get an error when using Orange.</h2>
+                    <p class="indent">First, make sure you are using the latest version of Orange. If this doesn’t fix the issue, you should be able to see an error window pop up, prompting you to submit the issue to the developers. Please use this option as it allows us to recreate the issue and fix it. If this is not possible, please report the issue to our <a href="https://github.com/biolab/orange3/issues">issue tracker</a>.</p>
+
+                    <h2 id="q-bug-in-Orange">I believe there’s a bug in Orange.</h2>
+                    <p class="indent">First, make sure you are using the latest version of Orange. If the bug is still present, please submit an issue to our <a href="https://github.com/biolab/orange3/issues">issue tracker</a>. Follow the template and describe the issue as well as possible.</p>
+
+                    <p class="indent">Before submitting a new issue, check if someone has already reported the same problem. Upvote the issue with a +1 and/or add your comment. Only consider opening a new issue if you cannot find a corresponding existing open or closed issue.</p>
+
+                    <h2 id="q-want-feature">There’s a feature I wish to see in Orange.</h2>
+
+                    <p class="indent">Please submit a pull request with the feature. We welcome all contributions! Once you've made a PR, developer(s) will leave comments and when everything is fixed and tested, the pull request will be merged into Orange. See our <a href="https://orange.biolab.si/contributing/">Contribute guide</a> for more information.</p>
+
+                    <p class="indent">If you are not a developer, you can submit a feature request to our <a href="https://github.com/biolab/orange3/issues">issue tracker</a>. Describe what you wish to see in Orange and, if possible, provide a visual example.</p>
+
+                    <p class="indent">Before submitting a new feature request, check if someone has already requested the same feature. Upvote the request with a +1 and/or add your comment. Only consider opening a new request if you cannot find a corresponding existing request.</p>
+
+                    <h2 id="q-learn-Orange">I would like to learn how to use Orange. Where can I find the resources?</h2>
+                    <p class="indent">Widget documentation is available on our <a href="https://orange.biolab.si/toolbox/">website</a>. You can also access the same documentation directly from Orange by selecting the widget and pressing F1.</p>
+
+                    <p class="indent">We also provide an e-mail course (<a href="https://biolab.us15.list-manage.com/subscribe?u=2cad1f1cbf3a532a77efe4354&amp;id=6f257f15ff">subscribe here</a>), beginner-level <a href="https://www.youtube.com/playlist?list=PLmNPvQr9Tf-ZSDLwOzxpvY-HrE0yv-8Fy">YouTube tutorials</a> and a regularly updated <a href="https://blog.biolab.si/">blog</a>.</p>
+
+                    <h2 id="q-question-dm-ml-stats">I have a question concerning data mining, statistics and machine learning algorithms.</h2>
+                    <p class="indent">Visit <a href="https://datascience.stackexchange.com/questions/tagged/orange">Data Science StackExchange</a> and ask the community!</p>
+
+                    <h2 id="q-data-format">What data does Orange support?</h2>
+                    <p class="indent">Core Orange supports Excel, comma- and tab-delimited files (.xlsx, .csv, .tab). It also reads online data, such as Google Spreadsheets. Orange3-ImageAnalytics add-on can import images (.jpg, .tiff, .png). Orange3-Corpus add-on can import text files (.txt, .docx, .odt). SQL widget supports PostgreSQL and MSSQL databases.</p>
+
+                    <h2 id="q-Orange-big-data">I want to use Orange on big data.</h2>
+                    <p class="indent">Orange provides the SQL widget, which samples data instances and enables exploratory data analysis on large datasets. You need <a href="http://initd.org/psycopg/">psycopg2</a> module installed to be able to see the widget. Install it directly in Python with <code>pip install psycopg2</code> command. You can also use <a href="https://www.2ndquadrant.com/en/resources/2uda/">2UDA package</a> for easier installation. Please note that Orange supports only PostgreSQL and MSSQL databases for now.</p>
+
+                    <h2 id="q-export-as-Python-script">Can I export Orange workflow as a Python script?</h2>
+                    <p class="indent">Unfortunately, no. We've <a href="https://github.com/biolab/orange3/issues/1341">debated this long and hard</a>. A (limited) functionality of this type would probably be possible, but would be a very big project to do well and would cost more than the expected benefits.</p>
+
+                    <h2 id="q-collaboration">I wish to propose a collaboration and/or a project with the Orange team.</h2>
+                    <p class="indent">Please submit a contact request and we will respond as soon as we can.</p>
+
+                    <h2 id="q-widget-development">I wish to develop a widget / an add-on for Orange.</h2>
+                    <p class="indent">We are always happy to receive contributions! Development documentation for <a href="http://orange-development.readthedocs.io/">widgets</a> and <a href="https://github.com/biolab/orange3-example-addon">add-ons</a> is available on the web. Next, submit a pull request and our team will review it. If you have specific questions, use <a href="https://gitter.im/biolab/orange3">Gitter</a> for direct communication with the developers.</p>
+
+                    <h2 id="q-custom-widget-addon">I wish to commission a custom module and/or an add-on for Orange.</h2>
+                    <p class="indent">Please submit a contact request to discuss the idea and rates.</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
