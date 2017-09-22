@@ -3,7 +3,7 @@ import requests
 import json
 
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 
 from orange_web.resources import FEATURE_DESCRIPTIONS
@@ -134,4 +134,5 @@ def start(request):
 
 def privacy(request):
     return render(request, 'privacy_policy.html', {})
+
 
