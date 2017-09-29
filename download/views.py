@@ -72,7 +72,7 @@ def download_macos(request, title=None):
         title=title,
         tabs=TABS,
         os=OS.macos,
-        bundle=_get_download("bundle-orange3")
+        bundle=_get_download("orange3-macos-bundle")
     ))
 
 
@@ -104,23 +104,9 @@ def _get_download(key):
     )
 
 
-def _download_choices(os=None):
+def _download_choices():
     downloads = {}
-
-    for key, value in _download_set_patterns("win"):
-        if key == 'WIN_SNAPSHOT':
-            downloads['win27'] = '{0}-py2.7.exe'.format(value)
-            downloads['date'] = value[-10:]
-        elif key == 'WIN_PYTHON_SNAPSHOT':
-            downloads['winw27'] = '{0}-py2.7.exe'.format(value)
-        elif key == 'ADDON_BIOINFORMATICS_SNAPSHOT':
-            downloads['bio27'] = '{0}-py2.7.exe'.format(value)
-        elif key == 'ADDON_TEXT_SNAPSHOT':
-            downloads['text27'] = '{0}-py2.7.exe'.format(value)
-        elif key == 'SOURCE_SNAPSHOT':
-            downloads['source'] = value
-
-    for key, value in _download_set_patterns(None):
+    for key, value in _download_set_patterns():
         if key == "WIN32_ORANGE3_DAILY":
             downloads["orange3-win32-installer"] = value
         elif key == "WIN32_ORANGE3_STANDALONE_DAILY":
@@ -129,28 +115,19 @@ def _download_choices(os=None):
             downloads["orange3-win64-installer-miniconda"] = value
         elif key == "WIN32_ORANGE3_MINICONDA":
             downloads["orange3-win32-installer-miniconda"] = value
-
-    for key, value in _download_set_patterns("mac"):
-        if key == 'MAC_DAILY':
-            downloads['mac'] = value
-        if key == 'MAC_ORANGE3_DAILY':
-            downloads['bundle-orange3'] = value
+        elif key == "MACOS_ORANGE3_BUNDLE":
+            downloads["orange3-macos-bundle"] = value
             try:
                 downloads['version'] = \
                     re.findall("Orange3-(.*)\.dmg", value)[0]
             except IndexError:
                 downloads['version'] = 'unknown'
-
     return downloads
 
 
-def _download_set_patterns(os=None):
+def _download_set_patterns():
     if path.isdir(settings.DOWNLOAD_DIR):
-        if os is None:
-            filename = path.join(settings.DOWNLOAD_DIR, "filenames.set")
-        else:
-            filename = settings.DOWNLOAD_SET_PATTERN % os
-
+        filename = path.join(settings.DOWNLOAD_DIR, "filenames.set")
         if not path.isfile(filename):
             return
 
@@ -161,5 +138,5 @@ def _download_set_patterns(os=None):
 
 
 def latest_version(request):
-    version = _download_choices('mac').get('version', '')
+    version = _download_choices().get('version', '')
     return HttpResponse(version, content_type="text/plain")
