@@ -14,3 +14,4 @@ raven==6.1.0
 requests==2.2.1
 six==1.6.1
 wrapt==1.10.8
+certifi==2017.7.27.1
