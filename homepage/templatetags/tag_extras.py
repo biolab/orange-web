@@ -1,5 +1,6 @@
 """Here we define custom django tags"""
 import logging
+from io import BytesIO
 from os import path
 
 from datetime import datetime as dt
@@ -24,8 +25,18 @@ post_with_image_length = 180  # length of post that contains image
 
 def grab_feed_all():
     """Grabs an RSS/Atom feed. Django will cache the content."""
-    url = 'http://{0}/?feed=rss2'.format(settings.BLOG_HOST)
-    feed = feedparser.parse(url)
+    rss_feed = 'https://blog.biolab.si/feed/'
+    try:
+      resp = requests.get(rss_feed, timeout=3.0)
+    except requests.ReadTimeout:
+      logger.warn("Timeout when reading RSS %s", rss_feed)
+      return
+
+    # Put it to memory stream object universal feedparser
+    content = BytesIO(resp.content)
+
+    # Parse content
+    feed = feedparser.parse(content)
     if feed.bozo == 0:
         # Parses first 3 entries from remote blog feed.
         entries = []
