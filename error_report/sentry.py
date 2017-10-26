@@ -40,6 +40,7 @@ GENERAL_MODULES = [
 ORANGE3_DATASETS = ('Orange3-Datasets', "https://2cb16c369f474e799ae384045dbf489e:b35f4e39d8b1417190aeb475e8c3df0a@sentry.io/167538")
 DSN_3RDPARTY = "https://d077c44bbab1407595c9838ace02aea5:f3f434118ea44e0a9e61c580ca156505@sentry.io/176069"
 DSN_TEXTABLE = "https://489e53f2068441f48d0d7bb3f5f066d5:299379ad47a140dfaee2042a6bb4204f@sentry.io/207453"
+SINGLE_CELL = "https://3acf738fd9a3458ab76cabcfaa072dcf:6b24664b8a67412382986cd388de965b@sentry.io/209789"
 
 DSN_ORANGE = "https://6f0311046ad2438598ae121cdabd878f:df101b5249ea4c89a82fc1f5da73886d@sentry.io/124497"
 # For addons with separate DSNs mapping from namespace to addon name
@@ -66,7 +67,8 @@ NAMESPACE_TO_ADDON = {
     'textable_prototypes': ('Orange3-Textable-Prototypes', DSN_TEXTABLE),
     'orangebiodepot':   ('orangebiodepot', DSN_3RDPARTY),
     '_textable':        ('Orange3-Textable', DSN_TEXTABLE),
-    'variants':         ('Orange3-Variants', "https://3acf738fd9a3458ab76cabcfaa072dcf:6b24664b8a67412382986cd388de965b@sentry.io/209789"),
+    'variants':         ('Orange3-Variants', SINGLE_CELL),
+    'single_cell':      ('Orange3-SingleCell', SINGLE_CELL),
 }
 
 
