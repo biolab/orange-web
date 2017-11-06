@@ -64,6 +64,7 @@ NAMESPACE_TO_ADDON = {
     'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357"),
     'infrared':         ('Orange-Infrared', "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"),
     'spark':            ('Orange3-spark', DSN_3RDPARTY),
+    'tomwer':           ('tomwer', DSN_3RDPARTY),
     'textable_prototypes': ('Orange3-Textable-Prototypes', DSN_TEXTABLE),
     'orangebiodepot':   ('orangebiodepot', DSN_3RDPARTY),
     '_textable':        ('Orange3-Textable', DSN_TEXTABLE),
