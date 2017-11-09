@@ -63,6 +63,7 @@ NAMESPACE_TO_ADDON = {
     'testing':          ('', "https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442"),
     'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357"),
     'infrared':         ('Orange-Infrared', "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"),
+    'monroe_anal':      ('monroe-anal', "https://26940ac80e9f4cf095dd6c90e7e7e674:37d903fdd6364d52be6e50614d5cfccf@sentry.io/242335"),
     'spark':            ('Orange3-spark', DSN_3RDPARTY),
     'tomwer':           ('tomwer', DSN_3RDPARTY),
     'textable_prototypes': ('Orange3-Textable-Prototypes', DSN_TEXTABLE),
