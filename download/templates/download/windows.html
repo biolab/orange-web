@@ -4,13 +4,9 @@
 {% block download_choices %}
     <h2>Download the latest version for Windows</h2>
 
-    <a id="recommended-download" style="margin-top: 10px" class="btn btn-warning big-button-base" href="{{ classic.url }}">
-        Download Orange {{ classic.version }}
+    <a id="recommended-download" style="margin-top: 10px" class="btn btn-warning big-button-base" href="{{ miniconda.url }}">
+        Download Orange {{ miniconda.version }}
     </a>
-
-    <h3><a id="classic"></a>Classic installer (Default)</h3>
-    <a href="{{ classic.url }}">{{ classic.filename }}</a>
-    <p>Installs Orange along with Python and all required libraries (Python, NumPy, SciPy, Scikit Learn, PyQt, ...)</p>
 
     <h3><a id="standalone"></a>Standalone installer (Miniconda)</h3>
     <a href="{{ miniconda.url }}">{{ miniconda.filename }} (64 bit)</a><br />
@@ -21,6 +17,11 @@
     <p>
         Please report any problems to our <a href="https://github.com/biolab/orange3/issues/new?title=Problem%20with%20miniconda%20installer">Issue Tracker</a>.
     </p>
+
+    <h3><a id="classic"></a>Classic installer</h3>
+    <a href="{{ classic.url }}">{{ classic.filename }}</a>
+    <p>Installs Orange along with Python and all required libraries (Python, NumPy, SciPy, Scikit Learn, PyQt, ...)</p>
+
 
     {% include "download/common.html" %}
 {% endblock %}
