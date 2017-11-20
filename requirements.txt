@@ -10,7 +10,7 @@ pep8
 Pillow==4.0.0
 pylint
 pytz==2017.2
-raven
+raven>=6.3.0
 requests
 six
 wrapt==1.10.8
