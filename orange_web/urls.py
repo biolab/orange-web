@@ -3,7 +3,7 @@ import os
 
 from django.conf import settings
 from django.conf.urls import url, include
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 from homepage import views as homepage_views
 from download import views as download_views
@@ -36,6 +36,18 @@ urlpatterns = [
     url(r'^docs/$',
         TemplateView.as_view(template_name='docs.html'),
         name='docs'),
+    url(r'^training/introduction-to-data-mining/$',
+            TemplateView.as_view(template_name='introduction-to-data-mining.html'),
+            ),
+    url(r'^training/text-mining-for-social-sciences/$',
+            TemplateView.as_view(template_name='text-mining-for-social-sciences.html'),
+            ),
+    url(r'^training/data-mining-for-business/$',
+            TemplateView.as_view(template_name='data-mining-for-business.html'),
+            ),
+    url(r'^training/$',
+            RedirectView.as_view(url='/training/introduction-to-data-mining/'),
+            ),
     url(r'^thank-you/$',
             TemplateView.as_view(template_name='thank-you.html'),
             name='thank-you'),

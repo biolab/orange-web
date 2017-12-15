@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load cache %}
+{% load tag_extras %}
+
+{% block content %}
+    <section id="promo" class="promo section offset-header has-pattern">
+        <div class="container intro">
+            <div class="row">
+                <div class="overview">
+                    <div class="col-sm-5 col-xs-12 titlebox intro-text">
+                        <h1 class="title firstpagetitle">Classroom Training</h1>
+                        <div class="content">
+                            <p class="bigsummary summary">Anyone can do data science! After only a few hours of in-class training you will understand key machine learning algorithms and be able to apply them to a wide range of problems. No coding, no math - just visualizations and interactive data exploration!</p>
+                        </div>
+                    </div>
+
+                    <!--// iPhone starts - default/only view -->
+                    <div class="phone iphone col-sm-6 col-xs-12 titleimage pull-right">
+                        <div class="iphone-holder phone-holder">
+                            <div class="iphone-holder-inner">
+                                <img class="landing-image" alt="Orange Data Mining" src="/static/images/orange_education.png">
+                            </div><!--//iphone-holder-inner-->
+                        </div><!--//iphone-holder-->
+                    </div><!--//iphone-->
+                    <!--// iPhone ends -->
+
+                </div><!--//overview-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//promo-->
+{% endblock content %}
+
+{% block content-full-width %}
+    <section class="container-fluid" style="position:relative; top: -110px;" id="first-section">
+        <a name="list-courses">&nbsp;</a>
+<br /><br /><br /><br /><br />
+        <div class="container">
+            <div class="row">
+                <h1 class="title firstpagetitle sectiontitle">Pick the right course for you</h1>
+                <p class="title firstpagetitle sectiontitle">or <a href="https://orange.biolab.si/contact/">contact us</a> for a custom-designed course.</p>
+                <div class="section-heading" id="section-heading">
+                    <a href="../introduction-to-data-mining/#list-courses" style="color: #000;" class="left-heading">Introduction to Data Mining</a>
+                    <a href="../text-mining-for-social-sciences/#list-courses" class="center-heading">Text Mining for Social Sciences</a>
+                    <a href="../data-mining-for-business/#list-courses" style="color: #000;" class="right-heading">Data Mining for Business</a>
+                </div>
+            </div>
+        </div>
+        <div class="container container-left">
+            <div class="row">
+                <div class="col-sm-6 upper-left">
+                    <h3>Why should you attend?</h3>
+                    <ul class="bottom-margin">
+                        <li>You will learn about essential approaches in text mining for text preprocessing, visualization, and explorative analysis.
+                        </li>
+                        <li>After completing the course, you will be able to mine your own text data and identify most suitable methods for your text analysis problems.
+                        </li>
+                        <li>The course will be hands-on and will introduce data science concepts and methods through the analysis of real-life data.
+                        </li>
+                    </ul>
+
+                    <h3>Course content</h3>
+                    <ul class="bottom-margin">
+                        <li>Loading the data, corpus-retrieval techniques.
+                        </li>
+                        <li>Text preprocessing and automatic syntactic annotation.
+                        </li>
+                        <li>Text clustering and segmentation.
+                        </li>
+                        <li>Machine learning and text mining techniques for social sciences.
+                        </li>
+                        <li>Case studies.
+                        </li>
+                    </ul>
+
+                    <h3>Included:</h3>
+                    <ul class="bottom-margin">
+                        <li>One-day 5-hour hands-on course on key approaches of data science.</li>
+                        <li>Lecture notes (~40 pages) with extra explanations, illustrations and examples.</li>
+                        <li>Free software and data sets used during the course.</li>
+                        <li>Certificate of attendance.</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <img class="edu-image" src="/static/images/Text_Mining.jpg">
+
+                    <h3>Price</h3>
+                    <ul class="bottom-margin">
+                        <li>800 EUR / 900 USD per attendee.</li>
+                        <li><a href="https://orange.biolab.si/contact/">Contact us</a> for group discounts or off-site courses.</li>
+                    </ul>
+
+                    <h3>Requirements</h3>
+                    <ul class="bottom-margin">
+                        <li>No prior knowledge on data science, machine learning, or statistics is required.</li>
+                        <li>Bring your own laptop.</li>
+                    </ul>
+
+                    <br>
+                    <a class="btn btn-warning" href="https://orange.biolab.si/contact/">Get in Touch</a>
+                </div>
+            </div>
+            <br>
+            <div class="row panel-body-wrapper">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2 panel-body-image">
+                    <img src="/static/images/emaface.jpg">
+                </div>
+                <div class="col-sm-7 panel-body-quote panel-quote">
+                    <p class="quote-text">»Text mining has been indispensable in writing my MA thesis. I've been able to visualize my data, perform MDS analysis and connect different works of literature varying in genre, type and subject matter.«</p>
+                    <p>Ema Karo, literary comparatist and editor</p>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </section>
+
+{% endblock content-full-width %}

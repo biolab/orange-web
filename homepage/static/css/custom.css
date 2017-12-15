@@ -720,4 +720,60 @@ ul li.no-bullet {
 .margin {
     margin-top: 60px;
 }
-
+#section-heading> a:hover {
+    color: #E19C14 !important;
+    -webkit-transition: none;
+}
+.intro {
+    margin-top: 20px;
+}
+.intro-text {
+    margin-top: 50px;
+}
+.sectiontitle {
+    text-align: center;
+}
+.section-heading {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+.left-heading {
+    font-size: 20px;
+    width: 33%;
+    float: left;
+    text-align: left;
+    font-weight: 500;
+}
+.center-heading {
+    font-size: 20px;
+    width: 33%;
+    float: left;
+    text-align: center;
+    font-weight: 500;
+}
+.right-heading {
+    font-size: 20px;
+    width: 33%;
+    float: left;
+    text-align: right;
+    font-weight: 500;
+}
+.container-left {
+    font-weight: 300;
+}
+.upper-left {
+    padding-left: 0px;
+    padding-right: 150px;
+}
+.edu-image {
+    margin-top: 40px;
+    height: 260px;
+    width: 100%;
+}
+.panel-quote {
+    padding-top:30px;
+}
+.quote-text {
+    font-size: 20px;
+}
