@@ -38,6 +38,7 @@ GENERAL_MODULES = [
 ]
 
 ORANGE3_DATASETS = ('Orange3-Datasets', "https://2cb16c369f474e799ae384045dbf489e:b35f4e39d8b1417190aeb475e8c3df0a@sentry.io/167538")
+ORANGE_SPECTROSCOPY = "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"
 DSN_3RDPARTY = "https://d077c44bbab1407595c9838ace02aea5:f3f434118ea44e0a9e61c580ca156505@sentry.io/176069"
 DSN_TEXTABLE = "https://489e53f2068441f48d0d7bb3f5f066d5:299379ad47a140dfaee2042a6bb4204f@sentry.io/207453"
 SINGLE_CELL = "https://3acf738fd9a3458ab76cabcfaa072dcf:6b24664b8a67412382986cd388de965b@sentry.io/209789"
@@ -62,7 +63,8 @@ NAMESPACE_TO_ADDON = {
     'timeseries':       ('Orange3-Timeseries', "https://e8f30f9dbaf74635bb10e37abe0b5354:2478a41e2f95463db8ceebfeb060cc99@sentry.io/161065"),
     'testing':          ('', "https://261797e8fa4544ffb931bc495157d2e3:44e30b93f9f1463a975725f82ca18039@sentry.io/128442"),
     'lekbf':            ('lekbf', "https://7da121cc693045c688d5ffd2d320e65b:1e2b3e613c85437ba8f005035572b3b7@sentry.io/174357"),
-    'infrared':         ('Orange-Infrared', "https://1cb3697dbfc04f748bae548865f1b1a8:eb0b726e492b44358a277c97c8c631f2@sentry.io/176038"),
+    'infrared':         ('Orange-Infrared', ORANGE_SPECTROSCOPY),
+    'spectroscopy':     ('Orange-Spectroscopy', ORANGE_SPECTROSCOPY),
     'monroe_anal':      ('monroe-anal', "https://26940ac80e9f4cf095dd6c90e7e7e674:37d903fdd6364d52be6e50614d5cfccf@sentry.io/242335"),
     'spark':            ('Orange3-spark', DSN_3RDPARTY),
     'tomwer':           ('tomwer', DSN_3RDPARTY),
