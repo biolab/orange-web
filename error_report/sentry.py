@@ -73,6 +73,7 @@ NAMESPACE_TO_ADDON = {
     '_textable':        ('Orange3-Textable', DSN_TEXTABLE),
     'variants':         ('Orange3-Variants', SINGLE_CELL),
     'single_cell':      ('Orange3-SingleCell', SINGLE_CELL),
+    'chem':             ('Orange3-Chemoinformatics', "https://a2cfd734538c4892ad3c02679891fa44:1fdd2cbd5bef4c7897d1a10077e9de97@sentry.io/275477"),
 }
 
 
