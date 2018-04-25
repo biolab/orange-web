@@ -54,7 +54,7 @@ class TestDownloadLink(TestCase):
     def test_osx(self):
         template = Template("""
 {% load tag_extras %}
-{% download_link 'mac-os-x' %}
+{% download_link 'macos' %}
         """)
         self.assertEqual('MAC_DAILY', template.render(Context()).strip())
 
