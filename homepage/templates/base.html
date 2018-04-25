@@ -127,7 +127,7 @@
                             <ul class="links list-sitemap">
                                 <li><a class="sitemap-cat" href="{% url 'download' %}">Download</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'download' %}windows/">Windows</a></li>
-                                <li><a class="sitemap-sub" href="{% url 'download' %}mac-os-x/">Mac OS</a></li>
+                                <li><a class="sitemap-sub" href="{% url 'download' %}macos/">Mac OS</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'download' %}linux/">Linux</a></li>
                             </ul>
                         </div>
@@ -194,7 +194,7 @@
     </footer><!--//footer-->
 
 
-    <!-- Javascript --> 
+    <!-- Javascript -->
     <script type="text/javascript" src="{% static 'plugins/jquery-1.10.2.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/jquery-migrate-1.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
@@ -231,11 +231,11 @@
     <script type="text/javascript">
       $( document ).ready( function () {
 
-        $('a').off("click").click( function ( event ) { 
+        $('a').off("click").click( function ( event ) {
            ga('send', 'event', "a", event.type, $(this).attr("id"), 1 );
         });
 
-        $('[class *= trackClicks_]').off("click").click( function ( event ) { 
+        $('[class *= trackClicks_]').off("click").click( function ( event ) {
            var classList = $(this).attr('class').split(/\s+/);
            var trackname = "";
            $.each(classList, function(index, item) {
