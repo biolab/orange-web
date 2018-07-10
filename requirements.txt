@@ -11,7 +11,7 @@ Pillow==4.0.0
 pylint
 pytz==2017.2
 raven>=6.3.0
-requests
+requests==2.19.1
 six
 wrapt==1.10.8
 certifi
