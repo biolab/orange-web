@@ -28,7 +28,7 @@ def grab_feed_all():
     rss_feed = 'https://blog.biolab.si/feed/'
     try:
       resp = requests.get(rss_feed, timeout=3.0)
-    except requests.ReadTimeout:
+    except requests.exceptions.ReadTimeout:
       logger.warn("Timeout when reading RSS %s", rss_feed)
       return
 
