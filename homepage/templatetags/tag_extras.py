@@ -31,6 +31,10 @@ def grab_feed_all():
     except requests.ReadTimeout:
       logger.warn("Timeout when reading RSS %s", rss_feed)
       return
+    except requests.exceptions.ConnectionError:
+      # This problem may be caused by bad DNS server
+      logger.warn("Connection error when reading RSS %s", rss_feed)
+      return
 
     # Put it to memory stream object universal feedparser
     content = BytesIO(resp.content)
