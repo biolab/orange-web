@@ -88,7 +88,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'orange_web.wsgi.application'
 
 ADMINS = (
-    ('Info', 'info@biolab.si'),
+#    ('Info', 'info@biolab.si'),
+    ('Ajda Pretnar', 'ajda.pretnar@fri.uni-lj.si'),
 )
 
 # Database
