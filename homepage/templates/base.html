@@ -115,9 +115,10 @@
 
                         <div class="col-sm-4 sitemap-group">
                             <ul class="links list-sitemap">
-                                <li><b><a class="sitemap-cat" href="/">Orange</a></b></li>
+                                <li><b><div class="sitemap-cat">Orange</div></b></li>
+                                <li><a class="sitemap-sub" href="{% url 'faq' %}">FAQ</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'license' %}">License</a></li>
-                                <li><a class="sitemap-sub" href="{% url 'privacy' %}">Privacy Policy</a></li>
+                                <li><a class="sitemap-sub" href="{% url 'privacy' %}">Privacy</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'citation' %}">Citation</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'contact' %}">Contact</a></li>
                             </ul>
@@ -125,7 +126,7 @@
 
                         <div class="col-sm-4 sitemap-group">
                             <ul class="links list-sitemap">
-                                <li><a class="sitemap-cat" href="{% url 'download' %}">Download</a></li>
+                                <li><div class="sitemap-cat">Download</div></li>
                                 <li><a class="sitemap-sub" href="{% url 'download' %}windows/">Windows</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'download' %}macos/">Mac OS</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'download' %}linux/">Linux</a></li>
@@ -135,11 +136,11 @@
                         <div class="col-sm-4 sitemap-group">
 
                             <ul class="links list-sitemap">
-                                <li><b><a class="sitemap-cat" href="{% url 'community' %}">Community</a></b></li>
-                                <li><a class="sitemap-sub" href="https://datascience.stackexchange.com/questions/tagged/orange">Stack Exchange</a></li>
+                                <li><b><div class="sitemap-cat">Community</div></b></li>
                                 <li><a class="sitemap-sub" href="https://www.facebook.com/orangedm">Facebook</a></li>
                                 <li><a class="sitemap-sub" href="https://www.youtube.com/channel/UClKKWBe2SCAEyv7ZNGhIe4g">YouTube</a></li>
-                                <li><a class="sitemap-sub" href="https://twitter.com/orangedataminer">@OrangeDataMiner</a></li>
+                                <li><a class="sitemap-sub" href="https://twitter.com/orangedataminer">Twitter</a></li>
+                                <li><a class="sitemap-sub" href="https://datascience.stackexchange.com/questions/tagged/orange">Stack Exchange</a></li>
                             </ul>
 
                         </div>
@@ -150,19 +151,18 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="row">
 
-                        <div class="col-sm-6 sitemap-group docs-devs">
+                        <div class="col-sm-5 col-md-7 col-lg-6 sitemap-group docs-devs">
                             <ul class="links list-sitemap">
-                                <li><a class="sitemap-cat" href="{% url 'faq' %}">FAQ</a></li>
-                                <li><a class="sitemap-cat" href="{% url 'docs' %}">Documentation</a></li>
+                                <li><div class="sitemap-cat">Documentation</div></li>
                                 <li><a class="sitemap-sub" href="{% url 'start' %}">Get started</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'toolbox' %}">Widgets</a></li>
                                 <li><a class="sitemap-sub" href="http://docs.orange.biolab.si/3/data-mining-library/">Scripting</a></li>
                             </ul>
                         </div>
 
-                        <div class="col-sm-6 sitemap-group">
+                        <div class="col-sm-3 sitemap-group">
                             <ul class="links list-sitemap">
-                                <li><b><a class="sitemap-cat" href="https://github.com/biolab/orange3">Developers</a></b></li>
+                                <li><b><div class="sitemap-cat" href="https://github.com/biolab/orange3">Developers</div></b></li>
                                 <li><a class="sitemap-sub" href="https://github.com/biolab/orange3">GitHub</a></li>
                                 <li><a class="sitemap-sub" href="{% url 'contribute' %}">Contribute</a></li>
                             </ul>
