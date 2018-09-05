@@ -49,6 +49,8 @@ h6, .h6 {
 }
 
 .sitemap-sub {
+    white-space: nowrap;
+    overflow: hidden;
     /*padding-left: 1em;*/
 }
 
