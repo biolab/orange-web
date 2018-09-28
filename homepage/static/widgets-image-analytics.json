@@ -1,0 +1,32 @@
+[
+  [
+    "Image Analytics",
+    [
+      {
+        "doc": "https://orange3-imageanalytics.readthedocs.io/en/latest/widgets/importimages.html",
+        "img": "https://orange3-imageanalytics.readthedocs.io/en/latest/_images/import-images.png",
+        "keywords": [],
+        "text": "Import Images"
+      },
+      {
+        "doc": "https://orange3-imageanalytics.readthedocs.io/en/latest/widgets/imageembedding.html",
+        "img": "https://orange3-imageanalytics.readthedocs.io/en/latest/_images/image-embedding.png",
+        "keywords": [],
+        "text": "Image Embedding"
+      },
+      {
+        "doc": "https://orange3-imageanalytics.readthedocs.io/en/latest/widgets/imageviewer.html",
+        "img": "https://orange3-imageanalytics.readthedocs.io/en/latest/_images/image-viewer.png",
+        "keywords": [],
+        "text": "Image Viewer"
+      },
+      {
+        "doc": "https://orange3-imageanalytics.readthedocs.io/en/latest/widgets/imagegrid.html",
+        "img": "https://orange3-imageanalytics.readthedocs.io/en/latest/_images/image-grid.png",
+        "keywords": [],
+        "text": "Image Grid"
+      }
+    ]
+  ]
+]
+
