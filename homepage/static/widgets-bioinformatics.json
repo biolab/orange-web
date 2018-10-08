@@ -3,55 +3,55 @@
     "Bioinformatics",
     [
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/databasesupdate.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/databases_update.html",
         "img": "http://file.biolab.si/icons-temp/databases-update.png",
         "keywords": [],
         "text": "Databases Update"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/geodatasets.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/geo_data_sets.html",
         "img": "http://file.biolab.si/icons-temp/geo-data-sets.png",
         "keywords": [],
         "text": "GEO Data Sets"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/dictyExpress.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/dicty_express.html",
         "img": "http://file.biolab.si/icons-temp/dicty-express.png",
         "keywords": [],
         "text": "Dicty Express"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/genenamematcher.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/gene_name_matcher.html",
         "img": "http://file.biolab.si/icons-temp/gene-name-matcher.png",
         "keywords": [],
         "text": "Gene Name Matcher"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/differentialexpression.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/differential_expression.html",
         "img": "http://file.biolab.si/icons-temp/differential-expression.png",
         "keywords": [],
         "text": "Differential Expression"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/gobrowser.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/go_browser.html",
         "img": "http://file.biolab.si/icons-temp/go-browser.png",
         "keywords": [],
         "text": "GO Browser"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/keggpathways.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/kegg_pathways.html",
         "img": "http://file.biolab.si/icons-temp/kegg-pathways.png",
         "keywords": [],
         "text": "KEGG Pathways"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/genesetenrichment.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/gene_set_enrichment.html",
         "img": "http://file.biolab.si/icons-temp/gene-set-enrichment.png",
         "keywords": [],
         "text": "Gene Set Enrichment"
       },
       {
-        "doc": "http://orange-bioinformatics.readthedocs.io/en/latest/widgets/clusteranalysis.html",
+        "doc": "https://orange3-bioinformatics.readthedocs.io/en/latest/widgets/cluster_analysis.html",
         "img": "http://file.biolab.si/icons-temp/cluster-analysis.png",
         "keywords": [],
         "text": "Cluster Analysis"
