@@ -48,7 +48,7 @@ DSN_ORANGE = "https://6f0311046ad2438598ae121cdabd878f:df101b5249ea4c89a82fc1f5d
 # must be provided for reporting addon version as release.
 NAMESPACE_TO_ADDON = {
     'associate':        ('Orange3-Associate', "https://cde61b47c74c4f98931264c1112b1bc2:10cfb3b76a16466fb6583a7952c660a8@sentry.io/167541"),
-    'bio':              ('Orange-Bioinformatics', "https://ddadbc7a4cdd4b32a6f7f15eb2ca991e:8858577a9d214f56a0a9e3c571b2ec5d@sentry.io/167549"),
+    'bioinformatics':   ('Orange3-Bioinformatics', "https://2e100fa55b83432e83aa04dc54962e5f@sentry.io/1311211"),
     'conformal':        ('Orange3-Conformal-Prediction', "https://3cf0bca1e5ed4b6a811c9980f27ed8ee:94015ed538b04bdcb4da2c35f0d792f8@sentry.io/167539"),
     'datafusion':       ('Orange3-DataFusion', "https://894bd2e1f47a4271834b8fbc019fc90b:e9d52ebb81354ca0b84fa64624f3882a@sentry.io/167542"),
     'wbd':              ORANGE3_DATASETS,
