@@ -99,7 +99,7 @@ def _get_download(key):
     filename = downloads[key]
     return dict(
         filename=filename,
-        url='https://download.biolab.si/files/' + filename,
+        url=reverse('download') + 'files/' + filename,
         version=_get_version(filename)
     )
 
