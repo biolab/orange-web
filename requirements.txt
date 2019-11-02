@@ -7,7 +7,7 @@ lazy-object-proxy==1.2.2
 logilab-common==0.61.0
 olefile==0.44
 pep8
-Pillow==4.0.0
+Pillow==6.2.0
 pylint
 pytz==2017.2
 raven>=6.3.0
